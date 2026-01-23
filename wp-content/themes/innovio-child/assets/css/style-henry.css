@@ -23,6 +23,21 @@ footer .widget .mkdf-widget-title-holder {
   margin-top: 30px !important;
 }
 
+.mkdf-blog-holder article .mkdf-post-image img {
+  min-height: 23vh;
+}
+
+.entry-title a {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* tối đa 3 dòng */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  line-height: 1.4;
+  max-height: calc(1.4em * 3);
+}
+
 /* Footer Bottom Alignment */
 .mkdf-footer-bottom-holder .mkdf-grid-row {
   display: flex;
@@ -79,6 +94,10 @@ footer .widget .mkdf-widget-title-holder {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+.mkdf-main-menu>ul>li>a {
+  padding: 0 1.5vw !important;
 }
 
 .mkdf-blog-filter-bar {
@@ -591,6 +610,86 @@ footer .widget .mkdf-widget-title-holder {
   }
 }
 
+.research-popup-container .cf7-download-form p {
+  text-align: center !important;
+}
+
+/* ========================================
+   RESEARCH POPUP - SOCIAL ICONS
+   ======================================== */
+.research-popup-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 25px 0;
+}
+
+.research-popup-divider::before,
+.research-popup-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.research-popup-divider span {
+  padding: 0 15px;
+  color: #888;
+  font-size: 14px;
+  text-transform: lowercase;
+}
+
+.research-popup-social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icon-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.social-icon-btn:hover svg {
+  transform: scale(1.1);
+}
+
+.social-facebook {
+  background: #1877f2;
+  color: #fff;
+}
+
+.social-facebook:hover {
+  background: #166fe5;
+}
+
+.social-gmail {
+  background: #ea4335;
+  color: #fff;
+}
+
+.social-gmail:hover {
+  background: #d33426;
+}
+
+.social-linkedin {
+  background: #0a66c2;
+  color: #fff;
+}
+
+.social-linkedin:hover {
+  background: #0959a8;
+}
+
 .subscribe-popup-overlay {
   display: none;
   position: fixed;
@@ -617,6 +716,10 @@ footer .widget .mkdf-widget-title-holder {
   position: relative;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   animation: popupSlideIn 0.3s ease;
+}
+
+.subscribe-popup-container .cf7-download-form p {
+  text-align: center !important;
 }
 
 @keyframes popupSlideIn {
@@ -663,4 +766,121 @@ footer .widget .mkdf-widget-title-holder {
 
 .menu-item-subscribe>a {
   cursor: pointer;
+}
+
+/* Subscribe Button - Simple Style */
+.menu-item-subscribe .subscribe-btn {
+  display: flex !important;
+  align-items: center !important;
+  padding: 6px 18px !important;
+  background-color: #e82c75 !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  border-radius: 4px !important;
+  text-decoration: none !important;
+  transition: filter 0.3s ease, transform 0.2s ease !important;
+  height: 35px;
+}
+
+.menu-item-subscribe .subscribe-btn:hover {
+  filter: brightness(1.15) !important;
+  transform: translateY(-1px) !important;
+}
+
+.menu-item-subscribe .subscribe-btn-text {
+  color: #ffffff !important;
+}
+
+/* Hide default menu styling */
+#menu-second-menu .menu-item-subscribe>a .item_outer,
+#menu-second-menu .menu-item-subscribe>a .item_text {
+  display: none !important;
+}
+
+/* ========================================
+   UNSUBSCRIBE POPUP
+   ======================================== */
+.unsubscribe-popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999999;
+  justify-content: center;
+  align-items: center;
+}
+
+.unsubscribe-popup-overlay.active {
+  display: flex;
+}
+
+.unsubscribe-popup-container {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  height: 65vh;
+  overflow-y: auto;
+  padding: 40px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: popupSlideIn 0.3s ease;
+}
+
+.unsubscribe-popup-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.unsubscribe-popup-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.unsubscribe-popup-container::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.unsubscribe-popup-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.unsubscribe-popup-container textarea {
+  line-height: 1px !important;
+}
+
+.unsubscribe-popup-container .wpcf7-list-item {
+  display: block;
+}
+
+.unsubscribe-popup-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s;
+}
+
+.unsubscribe-popup-close:hover {
+  color: #000;
+}
+
+.unsubscribe-popup-title {
+  margin: 0 0 10px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.unsubscribe-popup-desc {
+  margin: 0 0 20px;
+  color: #666;
+  text-align: center;
+  font-size: 14px;
 }
