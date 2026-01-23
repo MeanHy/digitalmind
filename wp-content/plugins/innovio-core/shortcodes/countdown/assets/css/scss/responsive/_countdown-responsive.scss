@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Countdown shortcode responsive style - begin
+   ========================================================================== */
+
+@include laptop-landscape-large{
+    .mkdf-countdown {
+        &.mkdf-countdown-white-box,
+        &.mkdf-countdown-white-box-with-shadow {
+            .countdown-row .countdown-section {
+
+                .countdown-amount,
+                .countdown-period {
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+}
+
+@include ipad-landscape {
+    .mkdf-countdown {
+		&.mkdf-countdown-white-box,
+		&.mkdf-countdown-white-box-with-shadow {
+			.countdown-row {
+                margin: 0 -10px;
+                .countdown-section {
+                    padding: 33px 10px 47px;
+                }
+            }
+		}
+	}
+}
+
+@include ipad-portrait {
+    
+    .mkdf-countdown {
+        
+        .countdown-row {
+
+            &.countdown-show4,
+            &.countdown-show5,
+            &.countdown-show6 {
+
+                .countdown-section {
+                    width: 33.33333333333333%;
+                }
+            }
+	
+	        .countdown-section {
+		
+		        .countdown-amount {
+			        font-size: 50px;
+		        }
+	        }
+        }
+
+        &.mkdf-countdown-white-box,
+        &.mkdf-countdown-white-box-with-shadow {
+            .countdown-row {
+                &.countdown-show5,
+                &.countdown-show6,
+                &.countdown-show4 {
+
+                    .countdown-section {
+                        width: 33.33333333333333%;
+                        margin-bottom: 32px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include phone-landscape {
+	
+	.mkdf-countdown {
+		
+		.countdown-row {
+			
+			.countdown-section {
+
+                text-align: center!important;
+				
+				.countdown-amount {
+					font-size: 40px;
+				}
+                .countdown-amount,
+                .countdown-period {
+                    padding-left: 0!important;
+                }
+			}
+
+            &.countdown-show4,
+            &.countdown-show5,
+            &.countdown-show6 {
+
+                .countdown-section {
+                    width: 50%!important;
+                }
+            }
+		}
+	}
+}
+/* ==========================================================================
+   Countdown shortcode responsive style - end
+   ========================================================================== */

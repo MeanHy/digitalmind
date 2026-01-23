@@ -1,0 +1,23 @@
+@include laptop-landscape-large {
+    .mkdf-team-holder {
+        &.mkdf-team-info-on-image {
+            &.mkdf-team-color-overlay {
+                .mkdf-team-social-inner {
+                    padding: 20px 50px 55px 60px;
+                }
+            }
+        }
+    }
+}
+
+@include laptop-landscape-medium {
+    .mkdf-team-holder{
+        &.mkdf-team-info-on-image{
+            &.mkdf-team-hover-image {
+                .mkdf-team-social-inner {
+                    padding: 20px 35px;
+                }
+            }
+        }
+    }
+}

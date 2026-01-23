@@ -1,0 +1,3564 @@
+# Copyright (C) 2023 freemius
+# This file is distributed under the same license as the freemius package.
+msgid ""
+msgstr ""
+"Project-Id-Version: freemius\n"
+"Report-Msgid-Bugs-To: https://github.com/Freemius/wordpress-sdk/issues\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Freemius Team <admin@freemius.com>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: get_text_inline;fs_text_inline;fs_echo_inline;"
+"fs_esc_js_inline;fs_esc_attr_inline;fs_esc_attr_echo_inline;"
+"fs_esc_html_inline;fs_esc_html_echo_inline;get_text_x_inline:1,2c;"
+"fs_text_x_inline:1,2c;fs_echo_x_inline:1,2c;fs_esc_attr_x_inline:1,2c;"
+"fs_esc_js_x_inline:1,2c;fs_esc_js_echo_x_inline:1,2c;"
+"fs_esc_html_x_inline:1,2c;fs_esc_html_echo_x_inline:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/class-freemius.php:1748, templates/account.php:947
+msgid ""
+"An update to a Beta version will replace your installed version of %s with "
+"the latest Beta release - use with caution, and not on production sites. You "
+"have been warned."
+msgstr ""
+"Bản cập nhật lên phiên bản Beta sẽ thay thế phiên bản %s đã cài đặt của bạn "
+"bằng bản phát hành Beta mới nhất - hãy sử dụng một cách thận trọng và không "
+"sử dụng trên các trang web sản xuất. Bạn đã được cảnh báo."
+
+#: includes/class-freemius.php:1755
+msgid "Would you like to proceed with the update?"
+msgstr "Bạn có muốn tiếp tục cập nhật không?"
+
+#: includes/class-freemius.php:1980
+msgid ""
+"Freemius SDK couldn't find the plugin's main file. Please contact "
+"sdk@freemius.com with the current error."
+msgstr ""
+"SDK Freemius không thể tìm thấy tệp chính của plugin. Vui lòng liên hệ "
+"sdk@freemius.com với lỗi hiện tại."
+
+#: includes/class-freemius.php:1982, includes/fs-plugin-info-dialog.php:1517
+msgid "Error"
+msgstr "Lỗi"
+
+#: includes/class-freemius.php:2428
+msgid "I found a better %s"
+msgstr "Tôi đã tìm thấy một thứ tốt hơn %s"
+
+#: includes/class-freemius.php:2430
+msgid "What's the %s's name?"
+msgstr "Tên của %s là gì?"
+
+#: includes/class-freemius.php:2436
+msgid "It's a temporary %s - I'm troubleshooting an issue"
+msgstr "Đó chỉ là tạm thời %s - Tôi đang khắc phục sự cố"
+
+#: includes/class-freemius.php:2438
+msgid "Deactivation"
+msgstr "Hủy kích hoạt sản phẩm"
+
+#: includes/class-freemius.php:2439
+msgid "Theme Switch"
+msgstr "Chuyển đổi chủ đề"
+
+#: includes/class-freemius.php:2448, templates/forms/resend-key.php:24,
+#: templates/forms/user-change.php:29
+msgid "Other"
+msgstr "Khác"
+
+#: includes/class-freemius.php:2456
+msgid "I no longer need the %s"
+msgstr "Tôi không cần %s nữa"
+
+#: includes/class-freemius.php:2463
+msgid "I only needed the %s for a short period"
+msgstr "Tôi chỉ cần %s trong một thời gian ngắn"
+
+#: includes/class-freemius.php:2469
+msgid "The %s broke my site"
+msgstr "%s đã phá hỏng trang web của tôi"
+
+#: includes/class-freemius.php:2476
+msgid "The %s suddenly stopped working"
+msgstr "%s đột nhiên ngừng hoạt động"
+
+#: includes/class-freemius.php:2486
+msgid "I can't pay for it anymore"
+msgstr "Tôi không thể trả tiền cho nó nữa"
+
+#: includes/class-freemius.php:2488
+msgid "What price would you feel comfortable paying?"
+msgstr "Bạn sẽ cảm thấy thoải mái khi trả mức giá nào?"
+
+#: includes/class-freemius.php:2494
+msgid "I don't like to share my information with you"
+msgstr "Tôi không muốn chia sẻ thông tin của tôi với bạn"
+
+#: includes/class-freemius.php:2515
+msgid "The %s didn't work"
+msgstr "%s không hoạt động"
+
+#: includes/class-freemius.php:2525
+msgid "I couldn't understand how to make it work"
+msgstr "Tôi không thể hiểu làm thế nào để nó hoạt động"
+
+#: includes/class-freemius.php:2533
+msgid "The %s is great, but I need specific feature that you don't support"
+msgstr "%s rất tuyệt, nhưng tôi cần tính năng cụ thể mà bạn không hỗ trợ"
+
+#: includes/class-freemius.php:2535
+msgid "What feature?"
+msgstr "Tính năng gì?"
+
+#: includes/class-freemius.php:2539
+msgid "The %s is not working"
+msgstr "%s không hoạt động"
+
+#: includes/class-freemius.php:2541
+msgid "Kindly share what didn't work so we can fix it for future users..."
+msgstr ""
+"Vui lòng chia sẻ những gì không hiệu quả để chúng tôi có thể khắc phục cho "
+"những người dùng trong tương lai..."
+
+#: includes/class-freemius.php:2545
+msgid "It's not what I was looking for"
+msgstr "Đó không phải là thứ tôi đang tìm kiếm"
+
+#: includes/class-freemius.php:2547
+msgid "What you've been looking for?"
+msgstr "Bạn đang tìm kiếm điều gì?"
+
+#: includes/class-freemius.php:2551
+msgid "The %s didn't work as expected"
+msgstr "%s không hoạt động như mong đợi"
+
+#: includes/class-freemius.php:2553
+msgid "What did you expect?"
+msgstr "Những gì bạn đã mong đợi?"
+
+#: includes/class-freemius.php:3641, templates/debug.php:24
+msgid "Freemius Debug"
+msgstr "Gỡ lỗi Freemius"
+
+#: includes/class-freemius.php:4755
+msgid "You have purchased a %s license."
+msgstr "Bạn đã mua giấy phép %s."
+
+#: includes/class-freemius.php:4759
+msgid ""
+" The %s's %sdownload link%s, license key, and installation instructions have "
+"been sent to %s. If you can't find the email after 5 min, please check your "
+"spam box."
+msgstr ""
+" %sLiên kết tải xuống%s, khóa cấp phép và hướng dẫn cài đặt của %s đã được "
+"gửi tới %s. Nếu bạn không thể tìm thấy email sau 5 phút, vui lòng kiểm tra "
+"hộp thư rác."
+
+#: includes/class-freemius.php:4769, includes/class-freemius.php:21125,
+#: includes/class-freemius.php:24783
+msgctxt "interjection expressing joy or exuberance"
+msgid "Yee-haw"
+msgstr "Yee-haw"
+
+#: includes/class-freemius.php:4783
+msgctxt "addonX cannot run without pluginY"
+msgid "%s cannot run without %s."
+msgstr "%s không thể chạy nếu không có %s."
+
+#: includes/class-freemius.php:4784
+msgctxt "addonX cannot run..."
+msgid "%s cannot run without the plugin."
+msgstr "%s không thể chạy nếu không có plugin."
+
+#: includes/class-freemius.php:4786, includes/class-freemius.php:5978,
+#: includes/class-freemius.php:13730, includes/class-freemius.php:14469,
+#: includes/class-freemius.php:18281, includes/class-freemius.php:18394,
+#: includes/class-freemius.php:18571, includes/class-freemius.php:20856,
+#: includes/class-freemius.php:21955, includes/class-freemius.php:22971,
+#: includes/class-freemius.php:23101, includes/class-freemius.php:23231,
+#: templates/add-ons.php:57
+msgctxt "exclamation"
+msgid "Oops"
+msgstr "Rất tiếc"
+
+#: includes/class-freemius.php:5065
+msgid ""
+"There was an unexpected API error while processing your request. Please try "
+"again in a few minutes and if it still doesn't work, contact the %s's author "
+"with the following:"
+msgstr ""
+"Đã xảy ra lỗi API không mong muốn khi xử lý yêu cầu của bạn. Vui lòng thử "
+"lại sau vài phút và nếu nó vẫn không hoạt động, hãy liên hệ với tác giả của "
+"%s bằng cách sau:"
+
+#: includes/class-freemius.php:5645
+msgid "Premium %s version was successfully activated."
+msgstr "Phiên bản %s cao cấp đã được kích hoạt thành công."
+
+#: includes/class-freemius.php:5657, includes/class-freemius.php:7692
+msgctxt ""
+"Used to express elation, enthusiasm, or triumph (especially in electronic "
+"communication)."
+msgid "W00t"
+msgstr "W00t"
+
+#: includes/class-freemius.php:5672
+msgid "You have a %s license."
+msgstr "Bạn có giấy phép %s."
+
+#: includes/class-freemius.php:5961
+msgid ""
+"%s free trial was successfully cancelled. Since the add-on is premium only "
+"it was automatically deactivated. If you like to use it in the future, "
+"you'll have to purchase a license."
+msgstr ""
+"Bản dùng thử miễn phí %s đã bị hủy thành công. Vì tiện ích bổ sung này chỉ "
+"có tính chất cao cấp nên nó đã tự động bị vô hiệu hóa. Nếu bạn muốn sử dụng "
+"nó trong tương lai, bạn sẽ phải mua giấy phép."
+
+#: includes/class-freemius.php:5965
+msgid ""
+"%s is a premium only add-on. You have to purchase a license first before "
+"activating the plugin."
+msgstr ""
+"%s chỉ là tiện ích bổ sung cao cấp. Bạn phải mua giấy phép trước khi kích "
+"hoạt plugin."
+
+#: includes/class-freemius.php:5974, templates/add-ons.php:186,
+#: templates/account/partials/addon.php:386
+msgid "More information about %s"
+msgstr "Thông tin thêm về %s"
+
+#: includes/class-freemius.php:5975
+msgid "Purchase License"
+msgstr "Giấy phép mua bán"
+
+#. translators: %3$s: action (e.g.: "start the trial" or "complete the opt-in")
+#: includes/class-freemius.php:6971
+msgid ""
+"You should receive a confirmation email for %1$s to your mailbox at %2$s. "
+"Please make sure you click the button in that email to %3$s."
+msgstr ""
+"Bạn sẽ nhận được email xác nhận cho %1$s tới hộp thư của mình tại %2$s. Hãy "
+"đảm bảo bạn nhấp vào nút trong email đó để tới %3$s."
+
+#: includes/class-freemius.php:6974
+msgid "start the trial"
+msgstr "bắt đầu thử nghiệm"
+
+#: includes/class-freemius.php:6975, templates/connect.php:218
+msgid "complete the opt-in"
+msgstr "hoàn tất việc chọn tham gia"
+
+#: includes/class-freemius.php:6977
+msgid "Thanks!"
+msgstr "Cám ơn!"
+
+#. translators: %3$s: What the user is expected to receive via email (e.g.: "the installation instructions" or "a license key")
+#: includes/class-freemius.php:6980
+msgid ""
+"You should receive %3$s for %1$s to your mailbox at %2$s in the next 5 "
+"minutes."
+msgstr ""
+"Bạn sẽ nhận được %3$s cho %1$s vào hộp thư của mình tại %2$s trong 5 phút "
+"tới."
+
+#: includes/class-freemius.php:6983
+msgctxt ""
+"Part of the message telling the user what they should receive via email."
+msgid "the installation instructions"
+msgstr "hướng dẫn cài đặt"
+
+#: includes/class-freemius.php:6989
+#, fuzzy
+msgctxt ""
+"Part of the message telling the user what they should receive via email."
+msgid "a license key"
+msgstr "Khóa giấy phép"
+
+#: includes/class-freemius.php:6997
+msgid "%s to activate the license once you get it."
+msgstr "%s để kích hoạt giấy phép sau khi bạn nhận được giấy phép."
+
+#: includes/class-freemius.php:7005
+#, fuzzy
+msgctxt "Part of an activation link message."
+msgid "Click here"
+msgstr "Ấn vào đây"
+
+#: includes/class-freemius.php:7012
+msgctxt ""
+"Part of the message that tells the user to check their spam folder for a "
+"specific email."
+msgid "the product's support email address"
+msgstr "địa chỉ email hỗ trợ của sản phẩm"
+
+#: includes/class-freemius.php:7018
+msgid ""
+"If you didn't get the email, try checking your spam folder or search for "
+"emails from %4$s."
+msgstr ""
+"Nếu bạn không nhận được email, hãy thử kiểm tra thư mục thư rác hoặc tìm "
+"kiếm email từ %4$s."
+
+#: includes/class-freemius.php:7020
+msgid "Thanks for upgrading."
+msgstr "Cảm ơn bạn đã nâng cấp."
+
+#: includes/class-freemius.php:7156
+msgid "You are just one step away - %s"
+msgstr "Bạn chỉ còn một bước nữa - %s"
+
+#: includes/class-freemius.php:7159
+msgctxt "%s - plugin name. As complete \"PluginX\" activation now"
+msgid "Complete \"%s\" Activation Now"
+msgstr "Hoàn tất kích hoạt \"%s\" ngay bây giờ"
+
+#: includes/class-freemius.php:7241
+msgid "We made a few tweaks to the %s, %s"
+msgstr "Chúng tôi đã thực hiện một số chỉnh sửa đối với %s, %s"
+
+#: includes/class-freemius.php:7245
+msgid "Opt in to make \"%s\" better!"
+msgstr "Hãy chọn tham gia để làm cho \"%s\" tốt hơn!"
+
+#: includes/class-freemius.php:7691
+msgid "The upgrade of %s was successfully completed."
+msgstr "Quá trình nâng cấp %s đã hoàn tất thành công."
+
+#: includes/class-freemius.php:10441,
+#: includes/class-fs-plugin-updater.php:1100,
+#: includes/class-fs-plugin-updater.php:1315,
+#: includes/class-fs-plugin-updater.php:1322,
+#: templates/auto-installation.php:32
+#, fuzzy
+msgid "Add-On"
+msgstr "Thêm"
+
+#: includes/class-freemius.php:10443, templates/account.php:411,
+#: templates/account.php:419, templates/debug.php:399, templates/debug.php:619
+#, fuzzy
+msgid "Plugin"
+msgstr "Tiện ích"
+
+#: includes/class-freemius.php:10444, templates/account.php:412,
+#: templates/account.php:420, templates/debug.php:399, templates/debug.php:619,
+#: templates/forms/deactivation/form.php:107
+#, fuzzy
+msgid "Theme"
+msgstr "Giao diện"
+
+#: includes/class-freemius.php:13549
+msgid ""
+"An unknown error has occurred while trying to toggle the license's white-"
+"label mode."
+msgstr ""
+"Đã xảy ra lỗi không xác định khi cố gắng chuyển đổi chế độ nhãn trắng của "
+"giấy phép."
+
+#: includes/class-freemius.php:13563
+msgid ""
+"Your %s license was flagged as white-labeled to hide sensitive information "
+"from the WP Admin (e.g. your email, license key, prices, billing address & "
+"invoices). If you ever wish to revert it back, you can easily do it through "
+"your %s. If this was a mistake you can also %s."
+msgstr ""
+"Giấy phép %s của bạn đã được gắn cờ là được gắn nhãn trắng để ẩn thông tin "
+"nhạy cảm khỏi Quản trị viên WP (ví dụ: email, khóa cấp phép, giá cả, địa chỉ "
+"thanh toán và hóa đơn của bạn). Nếu bạn muốn hoàn nguyên lại, bạn có thể dễ "
+"dàng thực hiện việc đó thông qua %s của mình. Nếu đây là lỗi bạn cũng có thể "
+"%s."
+
+#: includes/class-freemius.php:13568,
+#: templates/account/partials/disconnect-button.php:84
+msgid "User Dashboard"
+msgstr "Bảng điều khiển Người dùng"
+
+#: includes/class-freemius.php:13569
+msgid "revert it now"
+msgstr "hoàn nguyên nó ngay bây giờ"
+
+#: includes/class-freemius.php:13627
+msgid "An unknown error has occurred while trying to set the user's beta mode."
+msgstr ""
+"Đã xảy ra lỗi không xác định khi cố gắng đặt chế độ beta của người dùng."
+
+#: includes/class-freemius.php:13701
+msgid "Invalid new user ID or email address."
+msgstr "ID người dùng hoặc địa chỉ email mới không hợp lệ."
+
+#: includes/class-freemius.php:13731
+msgid ""
+"Sorry, we could not complete the email update. Another user with the same "
+"email is already registered."
+msgstr ""
+"Rất tiếc, chúng tôi không thể hoàn tất việc cập nhật email. Một người dùng "
+"khác có cùng email đã được đăng ký."
+
+#: includes/class-freemius.php:13732
+msgid ""
+"If you would like to give up the ownership of the %s's account to %s click "
+"the Change Ownership button."
+msgstr ""
+"Nếu bạn muốn từ bỏ quyền sở hữu tài khoản của %s cho %s hãy nhấp vào nút "
+"Thay đổi quyền sở hữu."
+
+#: includes/class-freemius.php:13739
+msgid "Change Ownership"
+msgstr "Thay đổi quyền sở hữu"
+
+#: includes/class-freemius.php:14336
+msgid "Invalid site details collection."
+msgstr "Bộ sưu tập chi tiết trang web không hợp lệ."
+
+#: includes/class-freemius.php:14456
+msgid ""
+"We couldn't find your email address in the system, are you sure it's the "
+"right address?"
+msgstr ""
+"Chúng tôi không thể tìm thấy địa chỉ email của bạn trong hệ thống, bạn có "
+"chắc đó là địa chỉ chính xác không?"
+
+#: includes/class-freemius.php:14458
+msgid ""
+"We can't see any active licenses associated with that email address, are you "
+"sure it's the right address?"
+msgstr ""
+"Chúng tôi không thể thấy bất kỳ giấy phép hoạt động nào được liên kết với "
+"địa chỉ email đó, bạn có chắc đó là địa chỉ chính xác không?"
+
+#: includes/class-freemius.php:14756
+msgid ""
+"Account is pending activation. Please check your email and click the link to "
+"activate your account and then submit the affiliate form again."
+msgstr ""
+"Tài khoản đang chờ kích hoạt. Vui lòng kiểm tra email của bạn và nhấp vào "
+"liên kết để kích hoạt tài khoản của bạn và sau đó gửi lại biểu mẫu liên kết."
+
+#: includes/class-freemius.php:14870,
+#: templates/forms/premium-versions-upgrade-handler.php:47
+msgid "Buy a license now"
+msgstr "Mua giấy phép ngay bây giờ"
+
+#: includes/class-freemius.php:14882,
+#: templates/forms/premium-versions-upgrade-handler.php:46
+msgid "Renew your license now"
+msgstr "Gia hạn giấy phép của bạn bây giờ"
+
+#: includes/class-freemius.php:14886
+msgid "%s to access version %s security & feature updates, and support."
+msgstr ""
+"%s để truy cập vào các bản cập nhật và hỗ trợ tính năng & bảo mật của phiên "
+"bản %s."
+
+#: includes/class-freemius.php:17621
+msgid "%s opt-in was successfully completed."
+msgstr "Việc chọn tham gia %s đã được hoàn tất thành công."
+
+#: includes/class-freemius.php:17635
+msgid "Your account was successfully activated with the %s plan."
+msgstr "Tài khoản của bạn đã được kích hoạt thành công với gói %s."
+
+#: includes/class-freemius.php:17645, includes/class-freemius.php:21566
+msgid "Your trial has been successfully started."
+msgstr "Quá trình dùng thử của bạn đã được bắt đầu thành công."
+
+#: includes/class-freemius.php:18279, includes/class-freemius.php:18392,
+#: includes/class-freemius.php:18569
+msgid "Couldn't activate %s."
+msgstr "Không thể kích hoạt %s."
+
+#: includes/class-freemius.php:18280, includes/class-freemius.php:18393,
+#: includes/class-freemius.php:18570
+msgid "Please contact us with the following message:"
+msgstr "Vui lòng liên hệ với chúng tôi bằng tin nhắn sau:"
+
+#: includes/class-freemius.php:18389, templates/forms/data-debug-mode.php:162
+msgid "An unknown error has occurred."
+msgstr "Một lỗi không biết đã xảy ra."
+
+#: includes/class-freemius.php:18931, includes/class-freemius.php:24339
+#, fuzzy
+msgid "Upgrade"
+msgstr "Nâng cấp"
+
+#: includes/class-freemius.php:18937
+msgid "Start Trial"
+msgstr "Bắt đầu thử nghiệm"
+
+#: includes/class-freemius.php:18939
+#, fuzzy
+msgid "Pricing"
+msgstr "Giá cả"
+
+#: includes/class-freemius.php:19019, includes/class-freemius.php:19021
+msgid "Affiliation"
+msgstr "liên kết"
+
+#: includes/class-freemius.php:19049, includes/class-freemius.php:19051,
+#: templates/account.php:264, templates/debug.php:366
+msgid "Account"
+msgstr "Tài khoản"
+
+#: includes/class-freemius.php:19065, includes/class-freemius.php:19067,
+#: includes/customizer/class-fs-customizer-support-section.php:60
+msgid "Contact Us"
+msgstr "Liên hệ chúng tôi"
+
+#: includes/class-freemius.php:19078, includes/class-freemius.php:19080,
+#: includes/class-freemius.php:24353, templates/account.php:134,
+#: templates/account/partials/addon.php:49
+msgid "Add-Ons"
+msgstr "Tiện ích bổ sung"
+
+#: includes/class-freemius.php:19114
+msgctxt "ASCII arrow left icon"
+msgid "&#x2190;"
+msgstr "←"
+
+#: includes/class-freemius.php:19114
+msgctxt "ASCII arrow right icon"
+msgid "&#x27a4;"
+msgstr "➤"
+
+#: includes/class-freemius.php:19116, templates/pricing.php:110
+#, fuzzy
+msgctxt "noun"
+msgid "Pricing"
+msgstr "Giá cả"
+
+#: includes/class-freemius.php:19329,
+#: includes/customizer/class-fs-customizer-support-section.php:67
+msgid "Support Forum"
+msgstr "Diễn đàn hỗ trợ"
+
+#: includes/class-freemius.php:20350
+msgid "Your email has been successfully verified - you are AWESOME!"
+msgstr "Email của bạn đã được xác minh thành công - bạn thật TUYỆT VỜI!"
+
+#: includes/class-freemius.php:20351
+#, fuzzy
+msgctxt "a positive response"
+msgid "Right on"
+msgstr "Bên phải"
+
+#: includes/class-freemius.php:20857
+msgid "seems like the key you entered doesn't match our records."
+msgstr "có vẻ như khóa bạn đã nhập không khớp với hồ sơ của chúng tôi."
+
+#: includes/class-freemius.php:20881
+msgid ""
+"Debug mode was successfully enabled and will be automatically disabled in 60 "
+"min. You can also disable it earlier by clicking the \"Stop Debug\" link."
+msgstr ""
+"Chế độ gỡ lỗi đã được bật thành công và sẽ tự động bị tắt sau 60 phút. Bạn "
+"cũng có thể tắt nó sớm hơn bằng cách nhấp vào liên kết \"Dừng gỡ lỗi\"."
+
+#: includes/class-freemius.php:21116
+msgid "Your %s Add-on plan was successfully upgraded."
+msgstr "Gói tiện ích bổ sung %s của bạn đã được nâng cấp thành công."
+
+#: includes/class-freemius.php:21118
+msgid "%s Add-on was successfully purchased."
+msgstr "%s Tiện ích bổ sung đã được mua thành công."
+
+#: includes/class-freemius.php:21121
+msgid "Download the latest version"
+msgstr "Tải xuống phiên bản mới nhất"
+
+#: includes/class-freemius.php:21239
+msgid ""
+"It seems like one of the authentication parameters is wrong. Update your "
+"Public Key, Secret Key & User ID, and try again."
+msgstr ""
+"Có vẻ như một trong các tham số xác thực bị sai. Hãy cập nhật Khóa công "
+"khai, Khóa bí mật & ID người dùng của bạn rồi thử lại."
+
+#: includes/class-freemius.php:21239, includes/class-freemius.php:21636,
+#: includes/class-freemius.php:21737, includes/class-freemius.php:21824
+msgid "Error received from the server:"
+msgstr "Lỗi nhận được từ máy chủ:"
+
+#: includes/class-freemius.php:21470, includes/class-freemius.php:21742,
+#: includes/class-freemius.php:21795, includes/class-freemius.php:21902
+msgctxt ""
+"something somebody says when they are thinking about what you have just said."
+msgid "Hmm"
+msgstr "Ừm"
+
+#: includes/class-freemius.php:21483
+msgid ""
+"It looks like you are still on the %s plan. If you did upgrade or change "
+"your plan, it's probably an issue on our side - sorry."
+msgstr ""
+"Có vẻ như bạn vẫn đang sử dụng gói %s. Nếu bạn đã nâng cấp hoặc thay đổi gói "
+"của mình thì đó có thể là vấn đề từ phía chúng tôi - xin lỗi."
+
+#: includes/class-freemius.php:21484, templates/account.php:136,
+#: templates/add-ons.php:250, templates/account/partials/addon.php:51
+msgctxt "trial period"
+msgid "Trial"
+msgstr "Dùng thử"
+
+#: includes/class-freemius.php:21489
+msgid ""
+"I have upgraded my account but when I try to Sync the License, the plan "
+"remains %s."
+msgstr ""
+"Tôi đã nâng cấp tài khoản của mình nhưng khi tôi cố gắng Đồng bộ hóa Giấy "
+"phép thì gói vẫn còn %s."
+
+#: includes/class-freemius.php:21493, includes/class-freemius.php:21545
+msgid "Please contact us here"
+msgstr "Vui lòng liên hệ với chúng tôi tại đây"
+
+#: includes/class-freemius.php:21515
+msgid "Your plan was successfully changed to %s."
+msgstr "Kế hoạch của bạn đã được thay đổi thành công thành %s."
+
+#: includes/class-freemius.php:21531
+msgid ""
+"Your license has expired. You can still continue using the free %s forever."
+msgstr ""
+"Giấy phép của bạn đã hết hạn. Bạn vẫn có thể tiếp tục sử dụng %s miễn phí "
+"mãi mãi."
+
+#: includes/class-freemius.php:21533
+msgid ""
+"Your license has expired. %1$sUpgrade now%2$s to continue using the %3$s "
+"without interruptions."
+msgstr ""
+"Giấy phép của bạn đã hết hạn. %1$sNâng cấp ngay bây giờ%2$s để tiếp tục sử "
+"dụng %3$s mà không bị gián đoạn."
+
+#: includes/class-freemius.php:21541
+msgid ""
+"Your license has been cancelled. If you think it's a mistake, please contact "
+"support."
+msgstr ""
+"Giấy phép của bạn đã bị hủy. Nếu bạn cho rằng có sự nhầm lẫn, vui lòng liên "
+"hệ với bộ phận hỗ trợ."
+
+#: includes/class-freemius.php:21554
+msgid ""
+"Your license has expired. You can still continue using all the %s features, "
+"but you'll need to renew your license to continue getting updates and "
+"support."
+msgstr ""
+"Giấy phép của bạn đã hết hạn. Bạn vẫn có thể tiếp tục sử dụng tất cả các "
+"tính năng của %s nhưng bạn sẽ cần gia hạn giấy phép của mình để tiếp tục "
+"nhận được bản cập nhật và hỗ trợ."
+
+#: includes/class-freemius.php:21580
+msgid ""
+"Your free trial has expired. You can still continue using all our free "
+"features."
+msgstr ""
+"Bản thử nghiệm miễn phí của bạn đã hết hạn. Bạn vẫn có thể tiếp tục sử dụng "
+"tất cả các tính năng miễn phí của chúng tôi."
+
+#: includes/class-freemius.php:21582
+msgid ""
+"Your free trial has expired. %1$sUpgrade now%2$s to continue using the %3$s "
+"without interruptions."
+msgstr ""
+"Bản thử nghiệm miễn phí của bạn đã hết hạn. %1$sNâng cấp ngay bây giờ%2$s để "
+"tiếp tục sử dụng %3$s mà không bị gián đoạn."
+
+#: includes/class-freemius.php:21628
+msgid ""
+"Your server is blocking the access to Freemius' API, which is crucial for "
+"%1$s synchronization. Please contact your host to whitelist the following "
+"domains:%2$s"
+msgstr ""
+"Máy chủ của bạn đang chặn quyền truy cập vào API của Freemius, điều này rất "
+"quan trọng cho việc đồng bộ hóa %1$s. Vui lòng liên hệ với máy chủ của bạn "
+"để đưa các miền sau vào danh sách trắng:%2$s"
+
+#: includes/class-freemius.php:21630
+msgid "Show error details"
+msgstr "Hiển thị chi tiết lỗi"
+
+#: includes/class-freemius.php:21733
+msgid "It looks like the license could not be activated."
+msgstr "Có vẻ như giấy phép không thể được kích hoạt."
+
+#: includes/class-freemius.php:21775
+msgid "Your license was successfully activated."
+msgstr "Giấy phép của bạn đã được kích hoạt thành công."
+
+#: includes/class-freemius.php:21799
+msgid "It looks like your site currently doesn't have an active license."
+msgstr "Có vẻ như trang web của bạn hiện không có giấy phép hoạt động."
+
+#: includes/class-freemius.php:21823
+msgid "It looks like the license deactivation failed."
+msgstr "Có vẻ như việc hủy kích hoạt giấy phép không thành công."
+
+#: includes/class-freemius.php:21852
+msgid "Your %s license was successfully deactivated."
+msgstr "Giấy phép %s của bạn đã được hủy kích hoạt thành công."
+
+#: includes/class-freemius.php:21853
+msgid "Your license was successfully deactivated, you are back to the %s plan."
+msgstr ""
+"Giấy phép của bạn đã được hủy kích hoạt thành công, bạn quay lại gói %s."
+
+#: includes/class-freemius.php:21856
+msgid "O.K"
+msgstr "ĐƯỢC RỒI"
+
+#: includes/class-freemius.php:21909
+msgid ""
+"Seems like we are having some temporary issue with your subscription "
+"cancellation. Please try again in few minutes."
+msgstr ""
+"Có vẻ như chúng tôi đang gặp một số vấn đề tạm thời với việc hủy đăng ký của "
+"bạn. Vui lòng thử lại sau vài phút."
+
+#: includes/class-freemius.php:21918
+msgid ""
+"Your subscription was successfully cancelled. Your %s plan license will "
+"expire in %s."
+msgstr ""
+"Đăng ký của bạn đã được hủy thành công. Giấy phép gói %s của bạn sẽ hết hạn "
+"sau %s."
+
+#: includes/class-freemius.php:21960
+msgid "You are already running the %s in a trial mode."
+msgstr "Bạn hiện đang chạy %s ở chế độ dùng thử."
+
+#: includes/class-freemius.php:21971
+msgid "You already utilized a trial before."
+msgstr "Bạn đã sử dụng bản dùng thử trước đây."
+
+#: includes/class-freemius.php:21985
+msgid "Plan %s do not exist, therefore, can't start a trial."
+msgstr "Do đó, gói %s không tồn tại nên không thể bắt đầu dùng thử."
+
+#: includes/class-freemius.php:21996
+msgid "Plan %s does not support a trial period."
+msgstr "Gói %s không hỗ trợ thời gian dùng thử."
+
+#: includes/class-freemius.php:22007
+msgid "None of the %s's plans supports a trial period."
+msgstr "Không có gói nào của %s hỗ trợ thời gian dùng thử."
+
+#: includes/class-freemius.php:22056
+msgid ""
+"It looks like you are not in trial mode anymore so there's nothing to "
+"cancel :)"
+msgstr "Có vẻ như bạn không ở chế độ dùng thử nữa nên không có gì để hủy :)"
+
+#: includes/class-freemius.php:22092
+msgid ""
+"Seems like we are having some temporary issue with your trial cancellation. "
+"Please try again in few minutes."
+msgstr ""
+"Có vẻ như chúng tôi đang gặp phải một số vấn đề tạm thời với việc hủy dùng "
+"thử của bạn. Vui lòng thử lại sau vài phút."
+
+#: includes/class-freemius.php:22111
+msgid "Your %s free trial was successfully cancelled."
+msgstr "Bản dùng thử miễn phí %s của bạn đã bị hủy thành công."
+
+#: includes/class-freemius.php:22438
+msgid "Version %s was released."
+msgstr "Phiên bản %s đã được phát hành."
+
+#: includes/class-freemius.php:22438
+msgid "Please download %s."
+msgstr "Vui lòng tải xuống %s."
+
+#: includes/class-freemius.php:22445
+msgid "the latest %s version here"
+msgstr "phiên bản %s mới nhất tại đây"
+
+#: includes/class-freemius.php:22450
+msgid "New"
+msgstr "Mới"
+
+#: includes/class-freemius.php:22455
+msgid "Seems like you got the latest release."
+msgstr "Có vẻ như bạn đã có bản phát hành mới nhất."
+
+#: includes/class-freemius.php:22456
+msgid "You are all good!"
+msgstr "Tất cả các bạn đều tốt!"
+
+#: includes/class-freemius.php:22859
+msgid ""
+"Verification mail was just sent to %s. If you can't find it after 5 min, "
+"please check your spam box."
+msgstr ""
+"Thư xác minh vừa được gửi tới %s. Nếu sau 5 phút không tìm thấy, vui lòng "
+"kiểm tra hộp thư rác."
+
+#: includes/class-freemius.php:22999
+msgid "Site successfully opted in."
+msgstr "Trang web đã chọn tham gia thành công."
+
+#: includes/class-freemius.php:23000, includes/class-freemius.php:24049
+msgid "Awesome"
+msgstr "Tuyệt vời"
+
+#: includes/class-freemius.php:23016
+msgid ""
+"Sharing diagnostic data with %s helps to provide functionality that's more "
+"relevant to your website, avoid WordPress or PHP version incompatibilities "
+"that can break your website, and recognize which languages & regions the "
+"plugin should be translated and tailored to."
+msgstr ""
+"Chia sẻ dữ liệu chẩn đoán với %s giúp cung cấp chức năng phù hợp hơn với "
+"trang web của bạn, tránh sự không tương thích của phiên bản WordPress hoặc "
+"PHP có thể làm hỏng trang web của bạn và nhận ra ngôn ngữ và khu vực nào mà "
+"plugin nên được dịch và điều chỉnh cho phù hợp."
+
+#: includes/class-freemius.php:23017
+msgid "Thank you!"
+msgstr "Cảm ơn!"
+
+#: includes/class-freemius.php:23026
+msgid "Diagnostic data will no longer be sent from %s to %s."
+msgstr "Dữ liệu chẩn đoán sẽ không còn được gửi từ %s đến %s nữa."
+
+#: includes/class-freemius.php:23181
+msgid ""
+"A confirmation email was just sent to %s. The email owner must confirm the "
+"update within the next 4 hours."
+msgstr ""
+"Email xác nhận vừa được gửi tới %s. Chủ sở hữu email phải xác nhận cập nhật "
+"trong vòng 4 giờ tới."
+
+#: includes/class-freemius.php:23183
+msgid ""
+"A confirmation email was just sent to %s. You must confirm the update within "
+"the next 4 hours. If you cannot find the email, please check your spam "
+"folder."
+msgstr ""
+"Email xác nhận vừa được gửi tới %s. Bạn phải xác nhận cập nhật trong vòng 4 "
+"giờ tới. Nếu bạn không thể tìm thấy email, vui lòng kiểm tra thư mục thư rác."
+
+#: includes/class-freemius.php:23190
+msgid ""
+"Thanks for confirming the ownership change. An email was just sent to %s for "
+"final approval."
+msgstr ""
+"Cảm ơn bạn đã xác nhận thay đổi quyền sở hữu. Một email vừa được gửi tới %s "
+"để phê duyệt lần cuối."
+
+#: includes/class-freemius.php:23195
+msgid "%s is the new owner of the account."
+msgstr "%s là chủ sở hữu mới của tài khoản."
+
+#: includes/class-freemius.php:23197
+#, fuzzy
+msgctxt "as congratulations"
+msgid "Congrats"
+msgstr "Chúc mừng!"
+
+#: includes/class-freemius.php:23214
+msgid "Please provide your full name."
+msgstr "Vui lòng cung cấp tên đầy đủ của bạn."
+
+#: includes/class-freemius.php:23219
+msgid "Your name was successfully updated."
+msgstr "Tên của bạn đã được cập nhật thành công."
+
+#: includes/class-freemius.php:23280
+msgid "You have successfully updated your %s."
+msgstr "Bạn đã cập nhật thành công %s của mình."
+
+#: includes/class-freemius.php:23339
+msgid ""
+"Is this your client's site? %s if you wish to hide sensitive info like your "
+"email, license key, prices, billing address & invoices from the WP Admin."
+msgstr ""
+"Đây có phải là trang web của khách hàng của bạn? %s nếu bạn muốn ẩn thông "
+"tin nhạy cảm như email, khóa cấp phép, giá cả, địa chỉ thanh toán và hóa đơn "
+"khỏi Quản trị viên WP."
+
+#: includes/class-freemius.php:23342
+#, fuzzy
+msgid "Click here"
+msgstr "Ấn vào đây"
+
+#: includes/class-freemius.php:23379, includes/class-freemius.php:23376
+msgid "Bundle"
+msgstr "Gói"
+
+#: includes/class-freemius.php:23459
+msgid ""
+"Just letting you know that the add-ons information of %s is being pulled "
+"from an external server."
+msgstr ""
+"Chỉ cho bạn biết rằng thông tin tiện ích bổ sung của %s đang được lấy từ máy "
+"chủ bên ngoài."
+
+#: includes/class-freemius.php:23460
+#, fuzzy
+msgctxt "advance notice of something that will need attention."
+msgid "Heads up"
+msgstr "Đứng lên!"
+
+#: includes/class-freemius.php:24089
+msgctxt "exclamation"
+msgid "Hey"
+msgstr "Bạn cui lòng"
+
+#: includes/class-freemius.php:24089
+msgid ""
+"How do you like %s so far? Test all our %s premium features with a %d-day "
+"free trial."
+msgstr ""
+"Cho đến nay bạn thích %s như thế nào? Kiểm tra tất cả các tính năng cao cấp "
+"%s của chúng tôi bằng bản dùng thử miễn phí %d ngày."
+
+#: includes/class-freemius.php:24097
+msgid "No commitment for %s days - cancel anytime!"
+msgstr "Không có cam kết trong %s ngày - hủy bất kỳ lúc nào!"
+
+#: includes/class-freemius.php:24098
+msgid "No credit card required"
+msgstr "Không cần thẻ tín dụng"
+
+#: includes/class-freemius.php:24105, templates/forms/trial-start.php:53
+msgctxt "call to action"
+msgid "Start free trial"
+msgstr "Bắt đầu dùng thử miễn phí"
+
+#: includes/class-freemius.php:24182
+msgid ""
+"Hey there, did you know that %s has an affiliate program? If you like the %s "
+"you can become our ambassador and earn some cash!"
+msgstr ""
+"Xin chào, bạn có biết rằng %s có chương trình liên kết không? Nếu bạn thích "
+"%s, bạn có thể trở thành đại sứ của chúng tôi và kiếm một số tiền mặt!"
+
+#: includes/class-freemius.php:24191
+#, fuzzy
+msgid "Learn more"
+msgstr "Tìm hiểu thêm"
+
+#: includes/class-freemius.php:24377, templates/account.php:573,
+#: templates/account.php:725, templates/connect.php:221,
+#: templates/connect.php:447,
+#: includes/managers/class-fs-clone-manager.php:1295,
+#: templates/forms/license-activation.php:27,
+#: templates/account/partials/addon.php:326
+#, fuzzy
+msgid "Activate License"
+msgstr "Kích hoạt Giấy phép"
+
+#: includes/class-freemius.php:24378, templates/account.php:667,
+#: templates/account.php:724, templates/account/partials/addon.php:327,
+#: templates/account/partials/site.php:273
+msgid "Change License"
+msgstr "Thay đổi giấy phép"
+
+#: includes/class-freemius.php:24485, templates/account/partials/site.php:170
+msgid "Opt Out"
+msgstr "Chọn không tham gia"
+
+#: includes/class-freemius.php:24487, includes/class-freemius.php:24493,
+#: templates/account/partials/site.php:49,
+#: templates/account/partials/site.php:170
+msgid "Opt In"
+msgstr "Chọn tham gia"
+
+#: includes/class-freemius.php:24728
+msgid ""
+" The paid version of %1$s is already installed. Please activate it to start "
+"benefiting the %2$s features. %3$s"
+msgstr ""
+" Phiên bản trả phí của %1$s đã được cài đặt. Vui lòng kích hoạt nó để bắt "
+"đầu hưởng lợi từ các tính năng của %2$s. %3$s"
+
+#: includes/class-freemius.php:24738
+msgid "Activate %s features"
+msgstr "Kích hoạt tính năng %s"
+
+#: includes/class-freemius.php:24751
+msgid "Please follow these steps to complete the upgrade"
+msgstr "Vui lòng làm theo các bước sau để hoàn tất nâng cấp"
+
+#: includes/class-freemius.php:24755
+msgid "Download the latest %s version"
+msgstr "Tải xuống phiên bản %s mới nhất"
+
+#: includes/class-freemius.php:24759
+msgid "Upload and activate the downloaded version"
+msgstr "Tải lên và kích hoạt phiên bản đã tải xuống"
+
+#: includes/class-freemius.php:24761
+msgid "How to upload and activate?"
+msgstr "Làm thế nào để tải lên và kích hoạt?"
+
+#: includes/class-freemius.php:24796
+msgid "Your plan was successfully upgraded."
+msgstr "Kế hoạch của bạn đã được nâng cấp thành công."
+
+#: includes/class-freemius.php:24797
+msgid "Your plan was successfully activated."
+msgstr "Kế hoạch của bạn đã được kích hoạt thành công."
+
+#: includes/class-freemius.php:24927
+msgid ""
+"%sClick here%s to choose the sites where you'd like to activate the license "
+"on."
+msgstr ""
+"%sNhấp vào đây%s để chọn các trang web mà bạn muốn kích hoạt giấy phép."
+
+#: includes/class-freemius.php:25096
+msgid "Auto installation only works for opted-in users."
+msgstr "Cài đặt tự động chỉ hoạt động đối với người dùng đã chọn tham gia."
+
+#: includes/class-freemius.php:25106, includes/class-freemius.php:25139,
+#: includes/class-fs-plugin-updater.php:1294,
+#: includes/class-fs-plugin-updater.php:1308
+msgid "Invalid module ID."
+msgstr "ID mô-đun không hợp lệ."
+
+#: includes/class-freemius.php:25115, includes/class-fs-plugin-updater.php:1330
+msgid "Premium version already active."
+msgstr "Phiên bản cao cấp đã hoạt động."
+
+#: includes/class-freemius.php:25122
+msgid "You do not have a valid license to access the premium version."
+msgstr "Bạn không có giấy phép hợp lệ để truy cập phiên bản cao cấp."
+
+#: includes/class-freemius.php:25129
+msgid ""
+"Plugin is a \"Serviceware\" which means it does not have a premium code "
+"version."
+msgstr ""
+"Plugin là một \"Phần mềm dịch vụ\" có nghĩa là nó không có phiên bản mã cao "
+"cấp."
+
+#: includes/class-freemius.php:25147, includes/class-fs-plugin-updater.php:1329
+msgid "Premium add-on version already installed."
+msgstr "Phiên bản tiện ích bổ sung cao cấp đã được cài đặt."
+
+#: includes/class-freemius.php:25501
+msgid "View paid features"
+msgstr "Xem các tính năng trả phí"
+
+#: includes/class-freemius.php:25805
+msgid "Thank you so much for using %s and its add-ons!"
+msgstr "Cảm ơn bạn rất nhiều vì đã sử dụng %s và các tiện ích bổ sung của nó!"
+
+#: includes/class-freemius.php:25806
+msgid "Thank you so much for using %s!"
+msgstr "Cảm ơn bạn rất nhiều vì đã sử dụng %s!"
+
+#: includes/class-freemius.php:25812
+msgid ""
+"You've already opted-in to our usage-tracking, which helps us keep improving "
+"the %s."
+msgstr ""
+"Bạn đã chọn tham gia theo dõi việc sử dụng của chúng tôi, điều này giúp "
+"chúng tôi tiếp tục cải thiện %s."
+
+#: includes/class-freemius.php:25816
+msgid "Thank you so much for using our products!"
+msgstr "Cảm ơn bạn rất nhiều vì đã sử dụng sản phẩm của chúng tôi!"
+
+#: includes/class-freemius.php:25817
+msgid ""
+"You've already opted-in to our usage-tracking, which helps us keep improving "
+"them."
+msgstr ""
+"Bạn đã chọn tham gia theo dõi việc sử dụng của chúng tôi, điều này giúp "
+"chúng tôi tiếp tục cải thiện chúng."
+
+#: includes/class-freemius.php:25836
+msgid "%s and its add-ons"
+msgstr "%s và các tiện ích bổ sung của nó"
+
+#: includes/class-freemius.php:25845
+msgid "Products"
+msgstr "Sản phẩm"
+
+#: includes/class-freemius.php:25852, templates/connect.php:322
+#, fuzzy
+msgid "Yes"
+msgstr "Có"
+
+#: includes/class-freemius.php:25853, templates/connect.php:323
+msgid "send me security & feature updates, educational content and offers."
+msgstr ""
+"gửi cho tôi các bản cập nhật về bảo mật và tính năng, nội dung giáo dục và "
+"ưu đãi."
+
+#: includes/class-freemius.php:25854, templates/connect.php:328
+msgid "No"
+msgstr "Không"
+
+#: includes/class-freemius.php:25856, templates/connect.php:330
+msgid ""
+"do %sNOT%s send me security & feature updates, educational content and "
+"offers."
+msgstr ""
+"hãy %sNOT% gửi cho tôi các bản cập nhật tính năng và bảo mật, nội dung giáo "
+"dục và ưu đãi."
+
+#: includes/class-freemius.php:25866
+msgid ""
+"Due to the new %sEU General Data Protection Regulation (GDPR)%s compliance "
+"requirements it is required that you provide your explicit consent, again, "
+"confirming that you are onboard :-)"
+msgstr ""
+"Do các yêu cầu tuân thủ %sQuy định chung về bảo vệ dữ liệu của EU (GDPR)%s "
+"mới, bạn bắt buộc phải cung cấp sự đồng ý rõ ràng của mình một lần nữa, xác "
+"nhận rằng bạn đồng ý :-)"
+
+#: includes/class-freemius.php:25868, templates/connect.php:337
+msgid ""
+"Please let us know if you'd like us to contact you for security & feature "
+"updates, educational content, and occasional offers:"
+msgstr ""
+"Vui lòng cho chúng tôi biết nếu bạn muốn chúng tôi liên hệ với bạn để cập "
+"nhật tính năng và bảo mật, nội dung giáo dục và các ưu đãi không thường "
+"xuyên:"
+
+#: includes/class-freemius.php:26158
+msgid "License key is empty."
+msgstr "Khóa cấp phép trống."
+
+#: includes/class-fs-plugin-updater.php:210,
+#: templates/forms/premium-versions-upgrade-handler.php:57
+msgid "Renew license"
+msgstr "Gia hạn giấy phép"
+
+#: includes/class-fs-plugin-updater.php:215,
+#: templates/forms/premium-versions-upgrade-handler.php:58
+msgid "Buy license"
+msgstr "Mua giấy phép"
+
+#: includes/class-fs-plugin-updater.php:335,
+#: includes/class-fs-plugin-updater.php:368
+msgid "There is a %s of %s available."
+msgstr "Hiện có sẵn %s trong số %s."
+
+#: includes/class-fs-plugin-updater.php:337,
+#: includes/class-fs-plugin-updater.php:373
+msgid "new Beta version"
+msgstr "phiên bản Beta mới"
+
+#: includes/class-fs-plugin-updater.php:338,
+#: includes/class-fs-plugin-updater.php:374
+#, fuzzy
+msgid "new version"
+msgstr "Đã có phiên bản mới của plugin %s."
+
+#: includes/class-fs-plugin-updater.php:397
+msgid "Important Upgrade Notice:"
+msgstr "Thông báo nâng cấp quan trọng:"
+
+#: includes/class-fs-plugin-updater.php:1359
+#, fuzzy
+msgid "Installing plugin: %s"
+msgstr "Cài đặt Plugin: %s"
+
+#: includes/class-fs-plugin-updater.php:1400
+msgid "Unable to connect to the filesystem. Please confirm your credentials."
+msgstr "Không thể kết nối tới filesystem. Vui lòng xác nhận thông tin của bạn."
+
+#: includes/class-fs-plugin-updater.php:1582
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+"Gói plugin từ xa không chứa thư mục có sên mong muốn và việc đổi tên không "
+"hoạt động."
+
+#: includes/fs-plugin-info-dialog.php:542
+msgid "Purchase More"
+msgstr "Mua thêm"
+
+#: includes/fs-plugin-info-dialog.php:543,
+#: templates/account/partials/addon.php:390
+#, fuzzy
+msgctxt "verb"
+msgid "Purchase"
+msgstr "Mua"
+
+#: includes/fs-plugin-info-dialog.php:547
+msgid "Start my free %s"
+msgstr "Bắt đầu %s miễn phí của tôi"
+
+#: includes/fs-plugin-info-dialog.php:745
+msgid "Install Free Version Update Now"
+msgstr "Cài đặt phiên bản miễn phí Cập nhật ngay"
+
+#: includes/fs-plugin-info-dialog.php:746, templates/account.php:656
+msgid "Install Update Now"
+msgstr "Cài đặt cập nhật ngay"
+
+#: includes/fs-plugin-info-dialog.php:755
+msgid "Install Free Version Now"
+msgstr "Cài đặt phiên bản miễn phí ngay"
+
+#: includes/fs-plugin-info-dialog.php:756, templates/add-ons.php:323,
+#: templates/auto-installation.php:111,
+#: templates/account/partials/addon.php:370,
+#: templates/account/partials/addon.php:423
+msgid "Install Now"
+msgstr "Cài đặt"
+
+#: includes/fs-plugin-info-dialog.php:772
+msgctxt "as download latest version"
+msgid "Download Latest Free Version"
+msgstr "Tải xuống phiên bản miễn phí mới nhất"
+
+#: includes/fs-plugin-info-dialog.php:773, templates/account.php:114,
+#: templates/add-ons.php:37, templates/account/partials/addon.php:30
+msgctxt "as download latest version"
+msgid "Download Latest"
+msgstr "Tải về mới nhất"
+
+#: includes/fs-plugin-info-dialog.php:788, templates/add-ons.php:329,
+#: templates/account/partials/addon.php:361,
+#: templates/account/partials/addon.php:417
+msgid "Activate this add-on"
+msgstr "Kích hoạt tiện ích bổ sung này"
+
+#: includes/fs-plugin-info-dialog.php:790, templates/connect.php:444
+msgid "Activate Free Version"
+msgstr "Kích hoạt phiên bản miễn phí"
+
+#: includes/fs-plugin-info-dialog.php:791, templates/account.php:138,
+#: templates/add-ons.php:330, templates/account/partials/addon.php:53
+msgid "Activate"
+msgstr "Kích hoạt"
+
+#: includes/fs-plugin-info-dialog.php:1003
+msgctxt "Plugin installer section title"
+msgid "Description"
+msgstr "Mô tả"
+
+#: includes/fs-plugin-info-dialog.php:1004
+msgctxt "Plugin installer section title"
+msgid "Installation"
+msgstr "Cài đặt"
+
+#: includes/fs-plugin-info-dialog.php:1005
+msgctxt "Plugin installer section title"
+msgid "FAQ"
+msgstr "Câu hỏi thường gặp"
+
+#: includes/fs-plugin-info-dialog.php:1006,
+#: templates/plugin-info/description.php:55
+msgid "Screenshots"
+msgstr "Ảnh chụp màn hình"
+
+#: includes/fs-plugin-info-dialog.php:1007
+msgctxt "Plugin installer section title"
+msgid "Changelog"
+msgstr "Nhật ký thay đổi"
+
+#: includes/fs-plugin-info-dialog.php:1008
+msgctxt "Plugin installer section title"
+msgid "Reviews"
+msgstr "Đánh giá"
+
+#: includes/fs-plugin-info-dialog.php:1009
+msgctxt "Plugin installer section title"
+msgid "Other Notes"
+msgstr "Ghi chú khác"
+
+#: includes/fs-plugin-info-dialog.php:1024
+msgctxt "Plugin installer section title"
+msgid "Features & Pricing"
+msgstr "Tính năng & Giá cả"
+
+#: includes/fs-plugin-info-dialog.php:1034
+msgid "Plugin Install"
+msgstr "Cài đặt plugin"
+
+#: includes/fs-plugin-info-dialog.php:1106
+msgctxt "e.g. Professional Plan"
+msgid "%s Plan"
+msgstr "%s Kế hoạch"
+
+#: includes/fs-plugin-info-dialog.php:1132
+msgctxt "e.g. the best product"
+msgid "Best"
+msgstr "Tốt"
+
+#: includes/fs-plugin-info-dialog.php:1138,
+#: includes/fs-plugin-info-dialog.php:1158
+#, fuzzy
+msgctxt "as every month"
+msgid "Monthly"
+msgstr "Hàng tháng"
+
+#: includes/fs-plugin-info-dialog.php:1141
+msgctxt "as once a year"
+msgid "Annual"
+msgstr "Hàng năm"
+
+#: includes/fs-plugin-info-dialog.php:1144
+msgid "Lifetime"
+msgstr "Trọn đời"
+
+#: includes/fs-plugin-info-dialog.php:1158,
+#: includes/fs-plugin-info-dialog.php:1160,
+#: includes/fs-plugin-info-dialog.php:1162
+msgctxt "e.g. billed monthly"
+msgid "Billed %s"
+msgstr "Đã thanh toán %s"
+
+#: includes/fs-plugin-info-dialog.php:1160
+msgctxt "as once a year"
+msgid "Annually"
+msgstr "Hàng năm"
+
+#: includes/fs-plugin-info-dialog.php:1162
+msgctxt "as once a year"
+msgid "Once"
+msgstr "Một lần"
+
+#: includes/fs-plugin-info-dialog.php:1168
+msgid "Single Site License"
+msgstr "Giấy phép trang web duy nhất"
+
+#: includes/fs-plugin-info-dialog.php:1170
+msgid "Unlimited Licenses"
+msgstr "Giấy phép không giới hạn"
+
+#: includes/fs-plugin-info-dialog.php:1172
+msgid "Up to %s Sites"
+msgstr "Tối đa %s trang web"
+
+#: includes/fs-plugin-info-dialog.php:1182,
+#: templates/plugin-info/features.php:82
+msgctxt "as monthly period"
+msgid "mo"
+msgstr "mo"
+
+#: includes/fs-plugin-info-dialog.php:1189,
+#: templates/plugin-info/features.php:80
+msgctxt "as annual period"
+msgid "year"
+msgstr "năm"
+
+#: includes/fs-plugin-info-dialog.php:1243
+msgctxt "noun"
+msgid "Price"
+msgstr "Giá"
+
+#: includes/fs-plugin-info-dialog.php:1291
+msgid "Save %s"
+msgstr "Lưu %s"
+
+#: includes/fs-plugin-info-dialog.php:1301
+msgid "No commitment for %s - cancel anytime"
+msgstr "Không có cam kết cho %s - hủy bất kỳ lúc nào"
+
+#: includes/fs-plugin-info-dialog.php:1304
+msgid "After your free %s, pay as little as %s"
+msgstr "Sau %s miễn phí của bạn, hãy trả ít nhất là %s"
+
+#: includes/fs-plugin-info-dialog.php:1315
+msgid "Details"
+msgstr "Chi tiết"
+
+#: includes/fs-plugin-info-dialog.php:1319, templates/account.php:125,
+#: templates/debug.php:232, templates/debug.php:269, templates/debug.php:518,
+#: templates/account/partials/addon.php:41
+msgctxt "product version"
+msgid "Version"
+msgstr "Phiên bản"
+
+#: includes/fs-plugin-info-dialog.php:1326
+msgctxt "as the plugin author"
+msgid "Author"
+msgstr "Tác giả"
+
+#: includes/fs-plugin-info-dialog.php:1333
+msgid "Last Updated"
+msgstr "Cập nhật mới nhất"
+
+#: includes/fs-plugin-info-dialog.php:1338, templates/account.php:544
+msgctxt "x-ago"
+msgid "%s ago"
+msgstr "%s trước"
+
+#: includes/fs-plugin-info-dialog.php:1347
+msgid "Requires WordPress Version"
+msgstr "Yêu cầu phiên bản WordPress"
+
+#: includes/fs-plugin-info-dialog.php:1350,
+#: includes/fs-plugin-info-dialog.php:1370
+msgid "%s or higher"
+msgstr "%s trở lên"
+
+#: includes/fs-plugin-info-dialog.php:1358
+msgid "Compatible up to"
+msgstr "Tương thích lên đến"
+
+#: includes/fs-plugin-info-dialog.php:1366
+msgid "Requires PHP Version"
+msgstr "Yêu cầu phiên bản PHP"
+
+#: includes/fs-plugin-info-dialog.php:1379
+msgid "Downloaded"
+msgstr "Đã tải xuống"
+
+#: includes/fs-plugin-info-dialog.php:1383
+msgid "%s time"
+msgstr "%s lần"
+
+#: includes/fs-plugin-info-dialog.php:1385
+msgid "%s times"
+msgstr "%s lần"
+
+#: includes/fs-plugin-info-dialog.php:1396
+msgid "WordPress.org Plugin Page"
+msgstr "Trang plugin WordPress.org"
+
+#: includes/fs-plugin-info-dialog.php:1405
+msgid "Plugin Homepage"
+msgstr "Trang chủ plugin"
+
+#: includes/fs-plugin-info-dialog.php:1414,
+#: includes/fs-plugin-info-dialog.php:1498
+msgid "Donate to this plugin"
+msgstr "Đóng góp cho plugin này"
+
+#: includes/fs-plugin-info-dialog.php:1421
+#, fuzzy
+msgid "Average Rating"
+msgstr "Đánh giá Trung bình"
+
+#: includes/fs-plugin-info-dialog.php:1428
+msgid "based on %s"
+msgstr "dựa trên %s"
+
+#: includes/fs-plugin-info-dialog.php:1432
+msgid "%s rating"
+msgstr "%s đánh giá"
+
+#: includes/fs-plugin-info-dialog.php:1434
+msgid "%s ratings"
+msgstr "%s xếp hạng"
+
+#: includes/fs-plugin-info-dialog.php:1449
+msgid "%s star"
+msgstr "%s sao"
+
+#: includes/fs-plugin-info-dialog.php:1451
+msgid "%s stars"
+msgstr "%s sao"
+
+#: includes/fs-plugin-info-dialog.php:1463
+msgid "Click to see reviews that provided a rating of %s"
+msgstr "Nhấp để xem các bài đánh giá có xếp hạng %s"
+
+#: includes/fs-plugin-info-dialog.php:1476
+msgid "Contributors"
+msgstr "Người đóng góp"
+
+#: includes/fs-plugin-info-dialog.php:1517
+msgid "This plugin requires a newer version of PHP."
+msgstr "Plugin này yêu cầu phiên bản PHP mới hơn."
+
+#: includes/fs-plugin-info-dialog.php:1526
+msgid ""
+"<a href=\"%s\" target=\"_blank\">Click here to learn more about updating "
+"PHP</a>."
+msgstr ""
+"<a href=\"%s\" target=\"_blank\">Bấm vào đây để tìm hiểu thêm về cách cập "
+"nhật PHP</a> ."
+
+#: includes/fs-plugin-info-dialog.php:1540,
+#: includes/fs-plugin-info-dialog.php:1542
+msgid "Warning"
+msgstr "Cảnh báo"
+
+#: includes/fs-plugin-info-dialog.php:1540
+msgid "This plugin has not been tested with your current version of WordPress."
+msgstr ""
+"Plugin này chưa được thử nghiệm với phiên bản WordPress hiện tại của bạn."
+
+#: includes/fs-plugin-info-dialog.php:1542
+msgid ""
+"This plugin has not been marked as compatible with your version of WordPress."
+msgstr ""
+"Plugin này chưa được đánh dấu là tương thích với phiên bản WordPress của bạn."
+
+#: includes/fs-plugin-info-dialog.php:1561
+msgid "Paid add-on must be deployed to Freemius."
+msgstr "Tiện ích bổ sung trả phí phải được triển khai cho Freemius."
+
+#: includes/fs-plugin-info-dialog.php:1562
+msgid "Add-on must be deployed to WordPress.org or Freemius."
+msgstr ""
+"Tiện ích bổ sung phải được triển khai trên WordPress.org hoặc Freemius."
+
+#: includes/fs-plugin-info-dialog.php:1583
+msgid "Newer Version (%s) Installed"
+msgstr "Phiên bản mới hơn (%s) Đã cài đặt"
+
+#: includes/fs-plugin-info-dialog.php:1584
+msgid "Newer Free Version (%s) Installed"
+msgstr "Đã cài đặt phiên bản miễn phí mới hơn (%s)"
+
+#: includes/fs-plugin-info-dialog.php:1591
+msgid "Latest Version Installed"
+msgstr "Phiên bản mới nhất được cài đặt"
+
+#: includes/fs-plugin-info-dialog.php:1592
+msgid "Latest Free Version Installed"
+msgstr "Đã cài đặt phiên bản miễn phí mới nhất"
+
+#: templates/account.php:115, templates/forms/subscription-cancellation.php:96,
+#: templates/account/partials/addon.php:31,
+#: templates/account/partials/site.php:313
+msgid "Downgrading your plan"
+msgstr "Hạ cấp gói của bạn"
+
+#: templates/account.php:116, templates/forms/subscription-cancellation.php:97,
+#: templates/account/partials/addon.php:32,
+#: templates/account/partials/site.php:314
+msgid "Cancelling the subscription"
+msgstr "Hủy đăng ký"
+
+#. translators: %1$s: Either 'Downgrading your plan' or 'Cancelling the subscription'
+#: templates/account.php:118, templates/forms/subscription-cancellation.php:99,
+#: templates/account/partials/site.php:316
+msgid ""
+"%1$s will immediately stop all future recurring payments and your %2$s plan "
+"license will expire in %3$s."
+msgstr ""
+"%1$s sẽ ngay lập tức ngừng tất cả các khoản thanh toán định kỳ trong tương "
+"lai và giấy phép gói %2$s của bạn sẽ hết hạn sau %3$s."
+
+#: templates/account.php:119,
+#: templates/forms/subscription-cancellation.php:100,
+#: templates/account/partials/addon.php:35,
+#: templates/account/partials/site.php:317
+msgid ""
+"Please note that we will not be able to grandfather outdated pricing for "
+"renewals/new subscriptions after a cancellation. If you choose to renew the "
+"subscription manually in the future, after a price increase, which typically "
+"occurs once a year, you will be charged the updated price."
+msgstr ""
+"Xin lưu ý rằng chúng tôi sẽ không thể đưa ra mức giá lỗi thời cho các lần "
+"gia hạn/đăng ký mới sau khi hủy. Nếu bạn chọn gia hạn đăng ký theo cách thủ "
+"công trong tương lai, sau khi tăng giá, thường xảy ra mỗi năm một lần, bạn "
+"sẽ bị tính phí theo giá cập nhật."
+
+#: templates/account.php:120,
+#: templates/forms/subscription-cancellation.php:106,
+#: templates/account/partials/addon.php:36
+msgid ""
+"Cancelling the trial will immediately block access to all premium features. "
+"Are you sure?"
+msgstr ""
+"Việc hủy bản dùng thử sẽ ngay lập tức chặn quyền truy cập vào tất cả các "
+"tính năng cao cấp. Bạn có chắc không?"
+
+#: templates/account.php:121,
+#: templates/forms/subscription-cancellation.php:101,
+#: templates/account/partials/addon.php:37,
+#: templates/account/partials/site.php:318
+msgid ""
+"You can still enjoy all %s features but you will not have access to %s "
+"security & feature updates, nor support."
+msgstr ""
+"Bạn vẫn có thể tận hưởng tất cả các tính năng của %s nhưng bạn sẽ không có "
+"quyền truy cập vào các bản cập nhật tính năng và bảo mật của %s cũng như "
+"không được hỗ trợ."
+
+#: templates/account.php:122,
+#: templates/forms/subscription-cancellation.php:102,
+#: templates/account/partials/addon.php:38,
+#: templates/account/partials/site.php:319
+msgid ""
+"Once your license expires you can still use the Free version but you will "
+"NOT have access to the %s features."
+msgstr ""
+"Sau khi giấy phép của bạn hết hạn, bạn vẫn có thể sử dụng phiên bản Miễn phí "
+"nhưng bạn sẽ KHÔNG có quyền truy cập vào các tính năng của %s."
+
+#. translators: %s: Plan title (e.g. "Professional")
+#: templates/account.php:124,
+#: templates/account/partials/activate-license-button.php:31,
+#: templates/account/partials/addon.php:40
+msgid "Activate %s Plan"
+msgstr "Kích hoạt gói %s"
+
+#. translators: %s: Time period (e.g. Auto renews in "2 months")
+#: templates/account.php:127, templates/account/partials/addon.php:43,
+#: templates/account/partials/site.php:293
+msgid "Auto renews in %s"
+msgstr "Tự động gia hạn sau %s"
+
+#. translators: %s: Time period (e.g. Expires in "2 months")
+#: templates/account.php:129, templates/account/partials/addon.php:45,
+#: templates/account/partials/site.php:295
+msgid "Expires in %s"
+msgstr "Hết hạn sau %s"
+
+#: templates/account.php:130
+msgctxt "as synchronize license"
+msgid "Sync License"
+msgstr "Giấy phép đồng bộ hóa"
+
+#: templates/account.php:131, templates/account/partials/addon.php:46
+msgid "Cancel Trial"
+msgstr "Hủy bản dùng thử"
+
+#: templates/account.php:132, templates/account/partials/addon.php:47
+msgid "Change Plan"
+msgstr "Thay đổi kế hoạch"
+
+#: templates/account.php:133, templates/account/partials/addon.php:48
+#, fuzzy
+msgctxt "verb"
+msgid "Upgrade"
+msgstr "Nâng cấp"
+
+#: templates/account.php:135, templates/account/partials/addon.php:50,
+#: templates/account/partials/site.php:320
+msgctxt "verb"
+msgid "Downgrade"
+msgstr "Downgrade"
+
+#: templates/account.php:137, templates/add-ons.php:246,
+#: templates/plugin-info/features.php:72,
+#: templates/account/partials/addon.php:52,
+#: templates/account/partials/site.php:33
+msgid "Free"
+msgstr "Miễn phí"
+
+#: templates/account.php:139, templates/debug.php:412,
+#: includes/customizer/class-fs-customizer-upsell-control.php:110,
+#: templates/account/partials/addon.php:54
+msgctxt "as product pricing plan"
+msgid "Plan"
+msgstr "Gói"
+
+#: templates/account.php:140
+msgid "Bundle Plan"
+msgstr "Gói"
+
+#: templates/account.php:272
+msgid "Free Trial"
+msgstr "Dùng thử miễn phí"
+
+#: templates/account.php:283
+msgid "Account Details"
+msgstr "Thông tin tài khoản"
+
+#: templates/account.php:290, templates/forms/data-debug-mode.php:33
+msgid "Start Debug"
+msgstr "Bắt đầu gỡ lỗi"
+
+#: templates/account.php:292
+msgid "Stop Debug"
+msgstr "Dừng gỡ lỗi"
+
+#: templates/account.php:299
+msgid "Billing & Invoices"
+msgstr "Thanh toán & Hóa đơn"
+
+#: templates/account.php:322, templates/account/partials/addon.php:236,
+#: templates/account/partials/deactivate-license-button.php:35
+#, fuzzy
+msgid "Deactivate License"
+msgstr "Thuê chuyên gia để có dịch vụ Web tốt nhất"
+
+#: templates/account.php:345, templates/forms/subscription-cancellation.php:125
+msgid "Are you sure you want to proceed?"
+msgstr "Bạn có chắc chắn muốn xử lý?"
+
+#: templates/account.php:345, templates/account/partials/addon.php:260
+msgid "Cancel Subscription"
+msgstr "Hủy bỏ đăng ký"
+
+#: templates/account.php:374, templates/account/partials/addon.php:345
+msgctxt "as synchronize"
+msgid "Sync"
+msgstr "Đồng bộ"
+
+#: templates/account.php:389, templates/debug.php:575
+#, fuzzy
+msgid "Name"
+msgstr "Tên"
+
+#: templates/account.php:395, templates/debug.php:576
+msgid "Email"
+msgstr "Email"
+
+#: templates/account.php:402, templates/debug.php:410, templates/debug.php:625
+msgid "User ID"
+msgstr "ID người dùng"
+
+#: templates/account.php:420, templates/account.php:738,
+#: templates/account.php:789, templates/debug.php:267, templates/debug.php:404,
+#: templates/debug.php:515, templates/debug.php:574, templates/debug.php:623,
+#: templates/debug.php:702, templates/account/payments.php:35,
+#: templates/debug/logger.php:21
+msgid "ID"
+msgstr "ID"
+
+#: templates/account.php:427
+msgid "Site ID"
+msgstr "ID Site"
+
+#: templates/account.php:430
+#, fuzzy
+msgid "No ID"
+msgstr "ID"
+
+#: templates/account.php:435, templates/debug.php:274, templates/debug.php:413,
+#: templates/debug.php:519, templates/debug.php:578,
+#: templates/account/partials/site.php:228
+msgid "Public Key"
+msgstr "Mã công khai"
+
+#: templates/account.php:441, templates/debug.php:414, templates/debug.php:520,
+#: templates/debug.php:579, templates/account/partials/site.php:241
+#, fuzzy
+msgid "Secret Key"
+msgstr "Secret Key"
+
+#: templates/account.php:444
+#, fuzzy
+msgctxt "as secret encryption key missing"
+msgid "No Secret"
+msgstr "Bí mật"
+
+#: templates/account.php:471, templates/account/partials/site.php:120,
+#: templates/account/partials/site.php:122
+msgid "Trial"
+msgstr "Dùng thử"
+
+#: templates/account.php:498, templates/debug.php:631,
+#: templates/account/partials/site.php:262
+#, fuzzy
+msgid "License Key"
+msgstr "Khóa cấp phép"
+
+#: templates/account.php:529
+msgid "Join the Beta program"
+msgstr "Tham gia chương trình Beta"
+
+#: templates/account.php:535
+#, fuzzy
+msgid "not verified"
+msgstr "xác minh chủ tài khoản"
+
+#: templates/account.php:544, templates/account/partials/addon.php:195
+msgid "Expired"
+msgstr "Đã hết hạn"
+
+#: templates/account.php:602
+msgid "Premium version"
+msgstr "Phiên bản cao cấp"
+
+#: templates/account.php:604
+msgid "Free version"
+msgstr "Phiên bản miễn phí"
+
+#: templates/account.php:616
+msgid "Verify Email"
+msgstr "Xác nhận Email"
+
+#: templates/account.php:630
+msgid "Download %s Version"
+msgstr "Tải xuống phiên bản %s"
+
+#: templates/account.php:646
+msgid "Download Paid Version"
+msgstr "Tải xuống phiên bản trả phí"
+
+#: templates/account.php:664, templates/account.php:927,
+#: templates/account/partials/site.php:250,
+#: templates/account/partials/site.php:272
+#, fuzzy
+msgctxt "verb"
+msgid "Show"
+msgstr "Hiển thị"
+
+#: templates/account.php:680
+msgid "What is your %s?"
+msgstr "%s của bạn là gì?"
+
+#: templates/account.php:688, templates/account/billing.php:21
+#, fuzzy
+msgctxt "verb"
+msgid "Edit"
+msgstr "Sửa"
+
+#: templates/account.php:693, templates/forms/user-change.php:27
+#, fuzzy
+msgid "Change User"
+msgstr "Thay đổi ID người dùng 1"
+
+#: templates/account.php:717
+msgid "Sites"
+msgstr "Trang web"
+
+#: templates/account.php:730
+msgid "Search by address"
+msgstr "Tìm kiếm theo địa chỉ"
+
+#: templates/account.php:739, templates/debug.php:407
+msgid "Address"
+msgstr "Địa chỉ"
+
+#: templates/account.php:740
+msgid "License"
+msgstr "Giấy phép"
+
+#: templates/account.php:741
+msgid "Plan"
+msgstr "Gói"
+
+#: templates/account.php:792
+msgctxt "as software license"
+msgid "License"
+msgstr "Giấy phép"
+
+#: templates/account.php:921
+#, fuzzy
+msgctxt "verb"
+msgid "Hide"
+msgstr "Ẩn"
+
+#: templates/account.php:943, templates/forms/data-debug-mode.php:31,
+#: templates/forms/deactivation/form.php:358,
+#: templates/forms/deactivation/form.php:389
+msgid "Processing"
+msgstr "Đang xử lý"
+
+#: templates/account.php:946
+msgid "Get updates for bleeding edge Beta versions of %s."
+msgstr "Nhận bản cập nhật cho phiên bản Beta tiên tiến của %s."
+
+#: templates/account.php:1004
+msgid "Cancelling %s"
+msgstr "Đang hủy %s"
+
+#: templates/account.php:1004, templates/account.php:1021,
+#: templates/forms/subscription-cancellation.php:27,
+#: templates/forms/deactivation/form.php:178
+#, fuzzy
+msgid "trial"
+msgstr "Có ngày dùng thử? (tính bằng ngày)"
+
+#: templates/account.php:1019, templates/forms/deactivation/form.php:195
+msgid "Cancelling %s..."
+msgstr "Đang hủy %s..."
+
+#: templates/account.php:1022,
+#: templates/forms/subscription-cancellation.php:28,
+#: templates/forms/deactivation/form.php:179
+msgid "subscription"
+msgstr "Đăng ký"
+
+#: templates/account.php:1036
+msgid ""
+"Deactivating your license will block all premium features, but will enable "
+"activating the license on another site. Are you sure you want to proceed?"
+msgstr ""
+"Việc vô hiệu hóa giấy phép của bạn sẽ chặn tất cả các tính năng cao cấp "
+"nhưng sẽ cho phép kích hoạt giấy phép trên một trang web khác. Bạn có chắc "
+"muốn tiếp tục?"
+
+#: templates/account.php:1110
+msgid "Disabling white-label mode"
+msgstr "Tắt chế độ nhãn trắng"
+
+#: templates/account.php:1111
+msgid "Enabling white-label mode"
+msgstr "Bật chế độ nhãn trắng"
+
+#: templates/add-ons.php:38
+msgid "View details"
+msgstr "Xem chi tiết"
+
+#: templates/add-ons.php:48
+msgid "Add Ons for %s"
+msgstr "Tiện ích bổ sung cho %s"
+
+#: templates/add-ons.php:58
+msgid ""
+"We couldn't load the add-ons list. It's probably an issue on our side, "
+"please try to come back in few minutes."
+msgstr ""
+"Chúng tôi không thể tải danh sách tiện ích bổ sung. Có lẽ đó là sự cố từ "
+"phía chúng tôi, vui lòng thử quay lại sau vài phút."
+
+#: templates/add-ons.php:229
+#, fuzzy
+msgctxt "active add-on"
+msgid "Active"
+msgstr "Kích hoạt"
+
+#: templates/add-ons.php:230
+msgctxt "installed add-on"
+msgid "Installed"
+msgstr "Đã cài đặt"
+
+#: templates/admin-notice.php:13, templates/forms/license-activation.php:243,
+#: templates/forms/resend-key.php:80
+#, fuzzy
+msgctxt "as close a window"
+msgid "Dismiss"
+msgstr "Hủy"
+
+#: templates/auto-installation.php:45
+msgid "%s sec"
+msgstr "%s giây"
+
+#: templates/auto-installation.php:83
+msgid "Automatic Installation"
+msgstr "Cài đặt tự động"
+
+#: templates/auto-installation.php:93
+msgid ""
+"An automated download and installation of %s (paid version) from %s will "
+"start in %s. If you would like to do it manually - click the cancellation "
+"button now."
+msgstr ""
+"Quá trình tải xuống và cài đặt tự động của %s (phiên bản trả phí) từ %s sẽ "
+"bắt đầu sau %s. Nếu bạn muốn thực hiện thủ công - hãy nhấp vào nút hủy ngay "
+"bây giờ."
+
+#: templates/auto-installation.php:104
+msgid ""
+"The installation process has started and may take a few minutes to complete. "
+"Please wait until it is done - do not refresh this page."
+msgstr ""
+"Quá trình cài đặt đã bắt đầu và có thể mất vài phút để hoàn tất. Vui lòng "
+"đợi cho đến khi hoàn tất - không làm mới trang này."
+
+#: templates/auto-installation.php:109
+msgid "Cancel Installation"
+msgstr "Hủy cài đặt"
+
+#: templates/checkout.php:181
+#, fuzzy
+msgid "Checkout"
+msgstr "Thủ tục thanh toán"
+
+#: templates/checkout.php:181
+msgid "PCI compliant"
+msgstr "tuân thủ PCI"
+
+#. translators: %s: name (e.g. Hey John,)
+#: templates/connect.php:127
+#, fuzzy
+msgctxt "greeting"
+msgid "Hey %s,"
+msgstr "Này %s!"
+
+#: templates/connect.php:187
+msgid "Never miss an important update"
+msgstr "Không bao giờ bỏ lỡ một bản cập nhật quan trọng"
+
+#: templates/connect.php:195
+msgid "Thank you for updating to %1$s v%2$s!"
+msgstr "Cảm ơn bạn đã cập nhật lên %1$s v%2$s!"
+
+#: templates/connect.php:205
+msgid "Allow & Continue"
+msgstr "Cho phép & Tiếp tục"
+
+#: templates/connect.php:209
+msgid "Re-send activation email"
+msgstr "Gửi lại email kich hoạt"
+
+#: templates/connect.php:213
+msgid "Thanks %s!"
+msgstr "Cảm ơn %s!"
+
+#: templates/connect.php:214
+msgid ""
+"You should receive a confirmation email for %s to your mailbox at %s. Please "
+"make sure you click the button in that email to %s."
+msgstr ""
+"Bạn sẽ nhận được email xác nhận cho %s tới hộp thư của mình tại %s. Hãy đảm "
+"bảo bạn nhấp vào nút trong email đó để tới %s."
+
+#: templates/connect.php:225
+msgid "Welcome to %s! To get started, please enter your license key:"
+msgstr ""
+"Chào mừng bạn đến với %s! Để bắt đầu, vui lòng nhập mã cấp phép của bạn:"
+
+#: templates/connect.php:236
+msgid ""
+"Opt in to get email notifications for security & feature updates, "
+"educational content, and occasional offers, and to share some basic "
+"WordPress environment info. This will help us make the %s more compatible "
+"with your site and better at doing what you need it to."
+msgstr ""
+"Chọn tham gia để nhận thông báo qua email về các bản cập nhật tính năng và "
+"bảo mật, nội dung giáo dục và các ưu đãi không thường xuyên cũng như chia sẻ "
+"một số thông tin cơ bản về môi trường WordPress. Điều này sẽ giúp chúng tôi "
+"làm cho %s tương thích hơn với trang web của bạn và thực hiện tốt hơn những "
+"gì bạn cần."
+
+#. translators: %s: module type (plugin, theme, or add-on)
+#: templates/connect.php:245
+msgid ""
+"We have introduced this opt-in so you never miss an important update and "
+"help us make the %s more compatible with your site and better at doing what "
+"you need it to."
+msgstr ""
+"Chúng tôi đã giới thiệu tính năng chọn tham gia này để bạn không bao giờ bỏ "
+"lỡ bản cập nhật quan trọng và giúp chúng tôi làm cho %s tương thích hơn với "
+"trang web của bạn và thực hiện tốt hơn những gì bạn cần."
+
+#: templates/connect.php:247
+msgid ""
+"Opt in to get email notifications for security & feature updates, "
+"educational content, and occasional offers, and to share some basic "
+"WordPress environment info."
+msgstr ""
+"Chọn tham gia để nhận thông báo qua email về các bản cập nhật tính năng và "
+"bảo mật, nội dung giáo dục và các ưu đãi không thường xuyên cũng như chia sẻ "
+"một số thông tin cơ bản về môi trường WordPress."
+
+#: templates/connect.php:250
+msgid "If you skip this, that's okay! %1$s will still work just fine."
+msgstr "Nếu bạn bỏ qua điều này, không sao cả! %1$s vẫn sẽ hoạt động tốt."
+
+#: templates/connect.php:280
+msgid "We're excited to introduce the Freemius network-level integration."
+msgstr ""
+"Chúng tôi rất vui mừng được giới thiệu tính năng tích hợp cấp mạng Freemius."
+
+#: templates/connect.php:283
+msgid ""
+"During the update process we detected %d site(s) that are still pending "
+"license activation."
+msgstr ""
+"Trong quá trình cập nhật, chúng tôi đã phát hiện thấy %d trang web vẫn đang "
+"chờ kích hoạt giấy phép."
+
+#: templates/connect.php:285
+msgid ""
+"If you'd like to use the %s on those sites, please enter your license key "
+"below and click the activation button."
+msgstr ""
+"Nếu bạn muốn sử dụng %s trên các trang web đó, vui lòng nhập khóa cấp phép "
+"của bạn bên dưới và nhấp vào nút kích hoạt."
+
+#: templates/connect.php:287
+msgid "%s's paid features"
+msgstr "Các tính năng trả phí của %s"
+
+#: templates/connect.php:292
+msgid ""
+"Alternatively, you can skip it for now and activate the license later, in "
+"your %s's network-level Account page."
+msgstr ""
+"Ngoài ra, bạn có thể bỏ qua ngay bây giờ và kích hoạt giấy phép sau, trên "
+"trang Tài khoản cấp mạng của %s của bạn."
+
+#: templates/connect.php:294
+msgid ""
+"During the update process we detected %s site(s) in the network that are "
+"still pending your attention."
+msgstr ""
+"Trong quá trình cập nhật, chúng tôi đã phát hiện thấy %s trang web trong "
+"mạng vẫn đang chờ bạn chú ý."
+
+#: templates/connect.php:303, templates/forms/data-debug-mode.php:35,
+#: templates/forms/license-activation.php:42
+#, fuzzy
+msgid "License key"
+msgstr "Khóa giấy phép"
+
+#: templates/connect.php:306, templates/forms/license-activation.php:22
+msgid "Can't find your license key?"
+msgstr "Không thể tìm thấy mã cấp phép của bạn?"
+
+#: templates/connect.php:369, templates/connect.php:693,
+#: templates/forms/deactivation/retry-skip.php:20
+msgctxt "verb"
+msgid "Skip"
+msgstr "Bỏ qua"
+
+#: templates/connect.php:372
+msgid "Delegate to Site Admins"
+msgstr "Ủy quyền cho quản trị viên trang web"
+
+#: templates/connect.php:372
+msgid ""
+"If you click it, this decision will be delegated to the sites administrators."
+msgstr ""
+"Nếu bạn nhấp vào nó, quyết định này sẽ được ủy quyền cho quản trị viên trang "
+"web."
+
+#: templates/connect.php:399
+msgid "License issues?"
+msgstr "Vấn đề về giấy phép?"
+
+#: templates/connect.php:423
+msgid ""
+"For delivery of security & feature updates, and license management, %s needs "
+"to"
+msgstr ""
+"Để cung cấp các bản cập nhật tính năng và bảo mật cũng như quản lý giấy "
+"phép, %s cần phải"
+
+#: templates/connect.php:428
+msgid "This will allow %s to"
+msgstr "Điều này sẽ cho phép %s"
+
+#: templates/connect.php:443
+msgid "Don't have a license key?"
+msgstr "Bạn không có mã cấp phép?"
+
+#: templates/connect.php:446
+msgid "Have a license key?"
+msgstr "Có chìa khóa cấp phép?"
+
+#: templates/connect.php:454
+msgid "Freemius is our licensing and software updates engine"
+msgstr "Freemius là công cụ cấp phép và cập nhật phần mềm của chúng tôi"
+
+#: templates/connect.php:457
+msgid "Privacy Policy"
+msgstr "Chính sách bảo mật"
+
+#: templates/connect.php:459
+msgid "License Agreement"
+msgstr "Thỏa thuận cấp phép"
+
+#: templates/connect.php:459
+msgid "Terms of Service"
+msgstr "Điều khoản dịch vụ"
+
+#: templates/connect.php:879
+#, fuzzy
+msgctxt "as in the process of sending an email"
+msgid "Sending email"
+msgstr "Gửi email..."
+
+#: templates/connect.php:880
+msgctxt "as activating plugin"
+msgid "Activating"
+msgstr "Đang kích hoạt"
+
+#: templates/contact.php:78
+#, fuzzy
+msgid "Contact"
+msgstr "Liên hệ"
+
+#: templates/debug.php:17
+msgctxt "as turned off"
+msgid "Off"
+msgstr "Tắt"
+
+#: templates/debug.php:18
+msgctxt "as turned on"
+msgid "On"
+msgstr "Bật"
+
+#: templates/debug.php:24
+msgid "SDK"
+msgstr "SDK"
+
+#: templates/debug.php:28
+msgctxt "as code debugging"
+msgid "Debugging"
+msgstr "Sửa lỗi"
+
+#: templates/debug.php:58, templates/debug.php:279, templates/debug.php:415,
+#: templates/debug.php:580
+#, fuzzy
+msgid "Actions"
+msgstr "Hành động"
+
+#: templates/debug.php:68
+msgid "Are you sure you want to delete all Freemius data?"
+msgstr "Bạn có chắc chắn muốn xóa tất cả dữ liệu Freemius không?"
+
+#: templates/debug.php:68
+msgid "Delete All Accounts"
+msgstr "Xóa tất cả tài khoản"
+
+#: templates/debug.php:75
+msgid "Clear API Cache"
+msgstr "Xóa bộ đệm API"
+
+#: templates/debug.php:83
+msgid "Clear Updates Transients"
+msgstr "Xóa cập nhật tạm thời"
+
+#: templates/debug.php:92
+msgid "Reset Deactivation Snoozing"
+msgstr "Đặt lại báo lại việc hủy kích hoạt"
+
+#: templates/debug.php:100
+msgid "Sync Data From Server"
+msgstr "Đồng bộ hóa dữ liệu từ máy chủ"
+
+#: templates/debug.php:109
+msgid "Migrate Options to Network"
+msgstr "Di chuyển tùy chọn sang mạng"
+
+#: templates/debug.php:114
+msgid "Load DB Option"
+msgstr "Tải tùy chọn DB"
+
+#: templates/debug.php:117
+msgid "Set DB Option"
+msgstr "Đặt tùy chọn DB"
+
+#: templates/debug.php:211
+msgid "Key"
+msgstr "Khóa"
+
+#: templates/debug.php:212
+msgid "Value"
+msgstr "Giá trị"
+
+#: templates/debug.php:228
+msgctxt "as software development kit versions"
+msgid "SDK Versions"
+msgstr "Phiên bản SDK"
+
+#: templates/debug.php:233
+msgid "SDK Path"
+msgstr "Đường dẫn SDK"
+
+#: templates/debug.php:234, templates/debug.php:273
+msgid "Module Path"
+msgstr "Đường dẫn mô-đun"
+
+#: templates/debug.php:235
+msgid "Is Active"
+msgstr "Là Kích hoạt"
+
+#: templates/debug.php:263, templates/debug/plugins-themes-sync.php:35
+#, fuzzy
+msgid "Plugins"
+msgstr "Gói mở rộng"
+
+#: templates/debug.php:263, templates/debug/plugins-themes-sync.php:56
+msgid "Themes"
+msgstr "Giao diện"
+
+#: templates/debug.php:268, templates/debug.php:409, templates/debug.php:517,
+#: templates/debug/scheduled-crons.php:80
+#, fuzzy
+msgid "Slug"
+msgstr "Đường dẫn tĩnh"
+
+#: templates/debug.php:270, templates/debug.php:516
+#, fuzzy
+msgid "Title"
+msgstr "Để ẩn tiêu đề"
+
+#: templates/debug.php:271
+msgctxt "as application program interface"
+msgid "API"
+msgstr "API"
+
+#: templates/debug.php:272
+msgid "Freemius State"
+msgstr "Bang Freemius"
+
+#: templates/debug.php:276
+msgid "Network Blog"
+msgstr "Blog mạng"
+
+#: templates/debug.php:277
+msgid "Network User"
+msgstr "Người dùng mạng"
+
+#: templates/debug.php:323
+msgctxt "as connection was successful"
+msgid "Connected"
+msgstr "Đã kết nối"
+
+#: templates/debug.php:325
+msgctxt "as connection blocked"
+msgid "Blocked"
+msgstr "Bị chặn"
+
+#: templates/debug.php:326
+#, fuzzy
+msgctxt "API connectivity state is unknown"
+msgid "Unknown"
+msgstr "Không rõ"
+
+#: templates/debug.php:362
+msgid "Simulate Trial Promotion"
+msgstr "Mô phỏng khuyến mãi dùng thử"
+
+#: templates/debug.php:374
+msgid "Simulate Network Upgrade"
+msgstr "Mô phỏng nâng cấp mạng"
+
+#: templates/debug.php:398
+msgid "%s Installs"
+msgstr "%s Số lượt cài đặt"
+
+#: templates/debug.php:400
+msgctxt "like websites"
+msgid "Sites"
+msgstr "Trang web"
+
+#: templates/debug.php:406, templates/account/partials/site.php:156
+msgid "Blog ID"
+msgstr "ID Blog"
+
+#: templates/debug.php:411
+msgid "License ID"
+msgstr "ID giấy phép"
+
+#: templates/debug.php:497, templates/debug.php:603,
+#: templates/account/partials/addon.php:440
+#, fuzzy
+msgctxt "verb"
+msgid "Delete"
+msgstr "Xóa dữ liệu"
+
+#: templates/debug.php:511
+msgid "Add Ons of module %s"
+msgstr "Tiện ích bổ sung của mô-đun %s"
+
+#: templates/debug.php:570
+#, fuzzy
+msgid "Users"
+msgstr "Người dùng"
+
+#: templates/debug.php:577
+msgid "Verified"
+msgstr "Đã xác minh"
+
+#: templates/debug.php:619
+msgid "%s Licenses"
+msgstr "%s Giấy phép"
+
+#: templates/debug.php:624
+msgid "Plugin ID"
+msgstr "Mã plugin"
+
+#: templates/debug.php:626
+msgid "Plan ID"
+msgstr "Mã gói"
+
+#: templates/debug.php:627
+msgid "Quota"
+msgstr "Hạn ngạch"
+
+#: templates/debug.php:628
+msgid "Activated"
+msgstr "Kích hoạt"
+
+#: templates/debug.php:629
+msgid "Blocking"
+msgstr "Chặn"
+
+#: templates/debug.php:630, templates/debug.php:701,
+#: templates/debug/logger.php:22
+#, fuzzy
+msgid "Type"
+msgstr "Loại"
+
+#: templates/debug.php:632
+msgctxt "as expiration date"
+msgid "Expiration"
+msgstr "Hết hạn"
+
+#: templates/debug.php:660
+msgid "Debug Log"
+msgstr "Nhật ký gỡ lỗi"
+
+#: templates/debug.php:664
+msgid "All Types"
+msgstr "Tất cả các loại"
+
+#: templates/debug.php:671
+msgid "All Requests"
+msgstr "Tất cả yêu cầu"
+
+#: templates/debug.php:676, templates/debug.php:705,
+#: templates/debug/logger.php:25
+#, fuzzy
+msgid "File"
+msgstr "Tập tin"
+
+#: templates/debug.php:677, templates/debug.php:703,
+#: templates/debug/logger.php:23
+msgid "Function"
+msgstr "Chức năng"
+
+#: templates/debug.php:678
+msgid "Process ID"
+msgstr "Xử lý ID"
+
+#: templates/debug.php:679
+msgid "Logger"
+msgstr "Tiều phu"
+
+#: templates/debug.php:680, templates/debug.php:704,
+#: templates/debug/logger.php:24
+msgid "Message"
+msgstr "Tin nhắn"
+
+#: templates/debug.php:682
+msgid "Filter"
+msgstr "Lọc"
+
+#: templates/debug.php:690
+#, fuzzy
+msgid "Download"
+msgstr "Tải xuống"
+
+#: templates/debug.php:706, templates/debug/logger.php:26
+#, fuzzy
+msgid "Timestamp"
+msgstr "Dấu thời gian"
+
+#: templates/secure-https-header.php:28
+msgid "Secure HTTPS %s page, running from an external domain"
+msgstr "Trang HTTPS %s an toàn, chạy từ miền bên ngoài"
+
+#: includes/customizer/class-fs-customizer-support-section.php:55,
+#: templates/plugin-info/features.php:43
+msgid "Support"
+msgstr "Hỗ trợ"
+
+#: includes/debug/class-fs-debug-bar-panel.php:48,
+#: templates/debug/api-calls.php:54, templates/debug/logger.php:62
+msgctxt "milliseconds"
+msgid "ms"
+msgstr "ms"
+
+#: includes/debug/debug-bar-start.php:41
+msgid "Freemius API"
+msgstr "API Freemius"
+
+#: includes/debug/debug-bar-start.php:42
+msgid "Requests"
+msgstr "Yêu cầu"
+
+#: includes/managers/class-fs-clone-manager.php:839
+msgid "Invalid clone resolution action."
+msgstr "Hành động giải quyết bản sao không hợp lệ."
+
+#: includes/managers/class-fs-clone-manager.php:1024
+msgid "products"
+msgstr "sản phẩm"
+
+#: includes/managers/class-fs-clone-manager.php:1205
+msgid ""
+"%1$s has been placed into safe mode because we noticed that %2$s is an exact "
+"copy of %3$s."
+msgstr ""
+"%1$s đã được đặt ở chế độ an toàn vì chúng tôi nhận thấy rằng %2$s là bản "
+"sao chính xác của %3$s."
+
+#: includes/managers/class-fs-clone-manager.php:1211
+msgid ""
+"The products below have been placed into safe mode because we noticed that "
+"%2$s is an exact copy of %3$s:%1$s"
+msgstr ""
+"Các sản phẩm bên dưới đã được đặt ở chế độ an toàn vì chúng tôi nhận thấy "
+"rằng %2$s là bản sao chính xác của %3$s:%1$s"
+
+#: includes/managers/class-fs-clone-manager.php:1212
+msgid ""
+"The products below have been placed into safe mode because we noticed that "
+"%2$s is an exact copy of these sites:%3$s%1$s"
+msgstr ""
+"Các sản phẩm bên dưới đã được đặt ở chế độ an toàn vì chúng tôi nhận thấy "
+"rằng %2$s là bản sao chính xác của các trang web này:%3$s%1$s"
+
+#: includes/managers/class-fs-clone-manager.php:1238
+msgid "the above-mentioned sites"
+msgstr "các trang web nêu trên"
+
+#: includes/managers/class-fs-clone-manager.php:1251
+msgid "Is %2$s a duplicate of %4$s?"
+msgstr "%2$s có phải là bản sao của %4$s không?"
+
+#: includes/managers/class-fs-clone-manager.php:1252
+msgid ""
+"Yes, %2$s is a duplicate of %4$s for the purpose of testing, staging, or "
+"development."
+msgstr ""
+"Có, %2$s là bản sao của %4$s nhằm mục đích thử nghiệm, dàn dựng hoặc phát "
+"triển."
+
+#: includes/managers/class-fs-clone-manager.php:1257
+msgid "Long-Term Duplicate"
+msgstr "Bản sao dài hạn"
+
+#: includes/managers/class-fs-clone-manager.php:1262
+msgid "Duplicate Website"
+msgstr "Trang web trùng lặp"
+
+#: includes/managers/class-fs-clone-manager.php:1268
+msgid "Is %2$s the new home of %4$s?"
+msgstr "%2$s có phải là ngôi nhà mới của %4$s không?"
+
+#: includes/managers/class-fs-clone-manager.php:1270
+msgid ""
+"Yes, %%2$s is replacing %%4$s. I would like to migrate my %s from %%4$s to %"
+"%2$s."
+msgstr ""
+"Có, %%2$s sẽ thay thế %%4$s. Tôi muốn di chuyển %s của mình từ %%4$s sang %"
+"%2$s."
+
+#: includes/managers/class-fs-clone-manager.php:1271,
+#: templates/forms/subscription-cancellation.php:52
+#, fuzzy
+msgid "license"
+msgstr "Giấy phép"
+
+#: includes/managers/class-fs-clone-manager.php:1271
+msgid "data"
+msgstr "dữ liệu"
+
+#: includes/managers/class-fs-clone-manager.php:1277
+msgid "Migrate License"
+msgstr "Di chuyển giấy phép"
+
+#: includes/managers/class-fs-clone-manager.php:1278
+msgid "Migrate"
+msgstr "Dịch chuyển"
+
+#: includes/managers/class-fs-clone-manager.php:1284
+msgid "Is %2$s a new website?"
+msgstr "%2$s có phải là trang web mới không?"
+
+#: includes/managers/class-fs-clone-manager.php:1285
+msgid "Yes, %2$s is a new and different website that is separate from %4$s."
+msgstr "Có, %2$s là một trang web mới và khác biệt với %4$s."
+
+#: includes/managers/class-fs-clone-manager.php:1287
+msgid "It requires license activation."
+msgstr "Nó yêu cầu kích hoạt giấy phép."
+
+#: includes/managers/class-fs-clone-manager.php:1294
+msgid "New Website"
+msgstr "Trang web mới"
+
+#: includes/managers/class-fs-clone-manager.php:1319
+msgctxt "Clone resolution admin notice products list label"
+msgid "Products"
+msgstr "Sản phẩm"
+
+#: includes/managers/class-fs-clone-manager.php:1408
+msgid "You marked this website, %s, as a temporary duplicate of %s."
+msgstr "Bạn đã đánh dấu trang web này, %s, là bản sao tạm thời của %s."
+
+#: includes/managers/class-fs-clone-manager.php:1409
+msgid "You marked this website, %s, as a temporary duplicate of these sites"
+msgstr ""
+"Bạn đã đánh dấu trang web này, %s, là bản sao tạm thời của các trang web này"
+
+#: includes/managers/class-fs-clone-manager.php:1423
+msgid ""
+"%s automatic security & feature updates and paid functionality will keep "
+"working without interruptions until %s (or when your license expires, "
+"whatever comes first)."
+msgstr ""
+"%s các bản cập nhật tính năng & bảo mật tự động cũng như chức năng trả phí "
+"sẽ tiếp tục hoạt động mà không bị gián đoạn cho đến %s (hoặc khi giấy phép "
+"của bạn hết hạn, tùy điều kiện nào đến trước)."
+
+#: includes/managers/class-fs-clone-manager.php:1426
+#, fuzzy
+msgctxt "\"The <product_label>\", e.g.: \"The plugin\""
+msgid "The %s's"
+msgstr "bật %s"
+
+#: includes/managers/class-fs-clone-manager.php:1429
+#, fuzzy
+msgid "The following products'"
+msgstr ""
+"Các sản phẩm sau đây không được hệ thống cấp phép công nhận. Điều này có thể "
+"do lỗi mã sản phẩm, sự cố máy chủ tạm thời hoặc do sản phẩm không còn được "
+"hỗ trợ."
+
+#: includes/managers/class-fs-clone-manager.php:1437
+msgid ""
+"If this is a long term duplicate, to keep automatic updates and paid "
+"functionality after %s, please %s."
+msgstr ""
+"Nếu đây là bản sao dài hạn, để tiếp tục cập nhật tự động và chức năng trả "
+"phí sau %s, vui lòng %s."
+
+#: includes/managers/class-fs-clone-manager.php:1439
+msgid "activate a license here"
+msgstr "kích hoạt giấy phép tại đây"
+
+#: includes/managers/class-fs-permission-manager.php:191
+msgid "View Basic Website Info"
+msgstr "Xem thông tin trang web cơ bản"
+
+#: includes/managers/class-fs-permission-manager.php:192
+msgid "Homepage URL & title, WP & PHP versions, and site language"
+msgstr "URL và tiêu đề trang chủ, phiên bản WP & PHP và ngôn ngữ trang web"
+
+#: includes/managers/class-fs-permission-manager.php:195
+msgid ""
+"To provide additional functionality that's relevant to your website, avoid "
+"WordPress or PHP version incompatibilities that can break your website, and "
+"recognize which languages & regions the %s should be translated and tailored "
+"to."
+msgstr ""
+"Để cung cấp chức năng bổ sung có liên quan đến trang web của bạn, hãy tránh "
+"tính không tương thích của phiên bản WordPress hoặc PHP có thể làm hỏng "
+"trang web của bạn và nhận ra ngôn ngữ và khu vực nào mà %s cần được dịch và "
+"điều chỉnh cho phù hợp."
+
+#: includes/managers/class-fs-permission-manager.php:207
+msgid "View Basic %s Info"
+msgstr "Xem thông tin cơ bản về %s"
+
+#: includes/managers/class-fs-permission-manager.php:210
+msgid "Current %s & SDK versions, and if active or uninstalled"
+msgstr "Phiên bản %s & SDK hiện tại và nếu đang hoạt động hoặc đã gỡ cài đặt"
+
+#: includes/managers/class-fs-permission-manager.php:261
+msgid "View License Essentials"
+msgstr "Xem thông tin cơ bản về giấy phép"
+
+#: includes/managers/class-fs-permission-manager.php:272
+msgid ""
+"To let you manage & control where the license is activated and ensure %s "
+"security & feature updates are only delivered to websites you authorize."
+msgstr ""
+"Để cho phép bạn quản lý và kiểm soát nơi giấy phép được kích hoạt và đảm bảo "
+"rằng các bản cập nhật tính năng và bảo mật của %s chỉ được gửi đến các trang "
+"web mà bạn ủy quyền."
+
+#: includes/managers/class-fs-permission-manager.php:284
+msgid "View %s State"
+msgstr "Xem trạng thái %s"
+
+#: includes/managers/class-fs-permission-manager.php:287
+msgid "Is active, deactivated, or uninstalled"
+msgstr "Đang hoạt động, bị vô hiệu hóa hoặc bị gỡ cài đặt"
+
+#: includes/managers/class-fs-permission-manager.php:290
+msgid "So you can reuse the license when the %s is no longer active."
+msgstr "Vì vậy, bạn có thể sử dụng lại giấy phép khi %s không còn hoạt động."
+
+#: includes/managers/class-fs-permission-manager.php:326
+msgid "View Diagnostic Info"
+msgstr "Xem thông tin chẩn đoán"
+
+#: includes/managers/class-fs-permission-manager.php:326,
+#: includes/managers/class-fs-permission-manager.php:363
+msgid "optional"
+msgstr "tuỳ chọn"
+
+#: includes/managers/class-fs-permission-manager.php:327
+msgid "WordPress & PHP versions, site language & title"
+msgstr "Phiên bản WordPress & PHP, ngôn ngữ và tiêu đề trang web"
+
+#: includes/managers/class-fs-permission-manager.php:330
+msgid ""
+"To avoid breaking your website due to WordPress or PHP version "
+"incompatibilities, and recognize which languages & regions the %s should be "
+"translated and tailored to."
+msgstr ""
+"Để tránh làm hỏng trang web của bạn do phiên bản WordPress hoặc PHP không "
+"tương thích, đồng thời nhận ra ngôn ngữ và khu vực nào mà %s cần được dịch "
+"và điều chỉnh cho phù hợp."
+
+#: includes/managers/class-fs-permission-manager.php:363
+msgid "View Plugins & Themes List"
+msgstr "Xem danh sách plugin & chủ đề"
+
+#: includes/managers/class-fs-permission-manager.php:364
+msgid "Names, slugs, versions, and if active or not"
+msgstr "Tên, sên, phiên bản và nếu hoạt động hay không"
+
+#: includes/managers/class-fs-permission-manager.php:365
+msgid ""
+"To ensure compatibility and avoid conflicts with your installed plugins and "
+"themes."
+msgstr ""
+"Để đảm bảo khả năng tương thích và tránh xung đột với các plugin và chủ đề "
+"đã cài đặt của bạn."
+
+#: includes/managers/class-fs-permission-manager.php:382
+msgid "View Basic Profile Info"
+msgstr "Xem thông tin hồ sơ cơ bản"
+
+#: includes/managers/class-fs-permission-manager.php:383
+msgid "Your WordPress user's: first & last name, and email address"
+msgstr "Người dùng WordPress của bạn: họ và tên và địa chỉ email"
+
+#: includes/managers/class-fs-permission-manager.php:384
+msgid ""
+"Never miss important updates, get security warnings before they become "
+"public knowledge, and receive notifications about special offers and awesome "
+"new features."
+msgstr ""
+"Không bao giờ bỏ lỡ các bản cập nhật quan trọng, nhận cảnh báo bảo mật trước "
+"khi chúng được công bố rộng rãi và nhận thông báo về các ưu đãi đặc biệt và "
+"các tính năng mới tuyệt vời."
+
+#: includes/managers/class-fs-permission-manager.php:405
+msgid "Newsletter"
+msgstr "Bản tin"
+
+#: includes/managers/class-fs-permission-manager.php:406
+msgid "Updates, announcements, marketing, no spam"
+msgstr "Cập nhật, thông báo, tiếp thị, không spam"
+
+#: templates/account/billing.php:22
+msgctxt "verb"
+msgid "Update"
+msgstr "Cập nhật"
+
+#: templates/account/billing.php:33
+msgid "Billing"
+msgstr "Thanh toán"
+
+#: templates/account/billing.php:38, templates/account/billing.php:38
+msgid "Business name"
+msgstr "Tên doanh nghiệp"
+
+#: templates/account/billing.php:39, templates/account/billing.php:39
+msgid "Tax / VAT ID"
+msgstr "ID thuế / VAT"
+
+#: templates/account/billing.php:42, templates/account/billing.php:43,
+#: templates/account/billing.php:43
+msgid "Address Line %d"
+msgstr "Dòng địa chỉ %d"
+
+#: templates/account/billing.php:46, templates/account/billing.php:46
+msgid "City"
+msgstr "Thành phố"
+
+#: templates/account/billing.php:46, templates/account/billing.php:46
+msgid "Town"
+msgstr "Thị trấn/ thị xã"
+
+#: templates/account/billing.php:47, templates/account/billing.php:47
+msgid "ZIP / Postal Code"
+msgstr "Mã ZIP/Mã Bưu Chính"
+
+#: templates/account/billing.php:302
+msgid "Country"
+msgstr "Quốc gia"
+
+#: templates/account/billing.php:304
+msgid "Select Country"
+msgstr "Chọn quốc gia"
+
+#: templates/account/billing.php:311, templates/account/billing.php:312
+#, fuzzy
+msgid "State"
+msgstr "Bang"
+
+#: templates/account/billing.php:311, templates/account/billing.php:312
+msgid "Province"
+msgstr "Tỉnh"
+
+#: templates/account/payments.php:29
+msgid "Payments"
+msgstr "Thanh toán"
+
+#: templates/account/payments.php:36
+#, fuzzy
+msgid "Date"
+msgstr "Ngày"
+
+#: templates/account/payments.php:37
+msgid "Amount"
+msgstr "Số tiền"
+
+#: templates/account/payments.php:38, templates/account/payments.php:50
+msgid "Invoice"
+msgstr "Hóa đơn"
+
+#: templates/connect/permissions-group.php:31, templates/forms/optout.php:26,
+#: templates/js/permissions.php:78
+msgctxt "verb"
+msgid "Opt Out"
+msgstr "Chọn không tham gia"
+
+#: templates/connect/permissions-group.php:32, templates/js/permissions.php:77
+msgctxt "verb"
+msgid "Opt In"
+msgstr "Chọn tham gia"
+
+#: templates/debug/api-calls.php:56
+msgid "API"
+msgstr "API"
+
+#: templates/debug/api-calls.php:68
+msgid "Method"
+msgstr "Phương thức"
+
+#: templates/debug/api-calls.php:69
+msgid "Code"
+msgstr "Mã"
+
+#: templates/debug/api-calls.php:70
+#, fuzzy
+msgid "Length"
+msgstr "Thời lượng"
+
+#: templates/debug/api-calls.php:71
+#, fuzzy
+msgctxt "as file/folder path"
+msgid "Path"
+msgstr "Đường chuyển động"
+
+#: templates/debug/api-calls.php:73
+#, fuzzy
+msgid "Body"
+msgstr "Body"
+
+#: templates/debug/api-calls.php:75
+msgid "Result"
+msgstr "Kết quả"
+
+#: templates/debug/api-calls.php:76
+msgid "Start"
+msgstr "Bắt đầu"
+
+#: templates/debug/api-calls.php:77
+msgid "End"
+msgstr "Kết thúc"
+
+#: templates/debug/logger.php:15
+msgid "Log"
+msgstr "Nhật ký"
+
+#. translators: %s: time period (e.g. In "2 hours")
+#: templates/debug/plugins-themes-sync.php:18,
+#: templates/debug/scheduled-crons.php:91
+msgid "In %s"
+msgstr "Trong %s"
+
+#. translators: %s: time period (e.g. "2 hours" ago)
+#: templates/debug/plugins-themes-sync.php:20,
+#: templates/debug/scheduled-crons.php:93
+msgid "%s ago"
+msgstr "%s trước"
+
+#: templates/debug/plugins-themes-sync.php:21,
+#: templates/debug/scheduled-crons.php:74
+msgctxt "seconds"
+msgid "sec"
+msgstr "giây"
+
+#: templates/debug/plugins-themes-sync.php:23
+msgid "Plugins & Themes Sync"
+msgstr "Đồng bộ hóa plugin & chủ đề"
+
+#: templates/debug/plugins-themes-sync.php:28
+#, fuzzy
+msgid "Total"
+msgstr "Tổng"
+
+#: templates/debug/plugins-themes-sync.php:29,
+#: templates/debug/scheduled-crons.php:84
+msgid "Last"
+msgstr "Cuối cùng"
+
+#: templates/debug/scheduled-crons.php:76
+msgid "Scheduled Crons"
+msgstr "Crons theo lịch trình"
+
+#: templates/debug/scheduled-crons.php:81
+msgid "Module"
+msgstr "Chức năng"
+
+#: templates/debug/scheduled-crons.php:82
+msgid "Module Type"
+msgstr "Loại mô-đun"
+
+#: templates/debug/scheduled-crons.php:83
+msgid "Cron Type"
+msgstr "Loại Cron"
+
+#: templates/debug/scheduled-crons.php:85
+#, fuzzy
+msgid "Next"
+msgstr "Kế tiếp"
+
+#: templates/forms/affiliation.php:83
+msgid "Non-expiring"
+msgstr "Không hết hạn"
+
+#: templates/forms/affiliation.php:86
+msgid "Apply to become an affiliate"
+msgstr "Đăng ký để trở thành chi nhánh"
+
+#: templates/forms/affiliation.php:108
+msgid ""
+"Your affiliate application for %s has been accepted! Log in to your "
+"affiliate area at: %s."
+msgstr ""
+"Đơn đăng ký liên kết của bạn cho %s đã được chấp nhận! Đăng nhập vào khu vực "
+"liên kết của bạn tại: %s."
+
+#: templates/forms/affiliation.php:123
+msgid ""
+"Thank you for applying for our affiliate program, we'll review your details "
+"during the next 14 days and will get back to you with further information."
+msgstr ""
+"Cảm ơn bạn đã đăng ký chương trình liên kết của chúng tôi, chúng tôi sẽ xem "
+"xét thông tin chi tiết của bạn trong 14 ngày tới và sẽ liên hệ lại với bạn "
+"để cung cấp thêm thông tin."
+
+#: templates/forms/affiliation.php:126
+msgid "Your affiliation account was temporarily suspended."
+msgstr "Tài khoản liên kết của bạn đã tạm thời bị đình chỉ."
+
+#: templates/forms/affiliation.php:129
+msgid ""
+"Thank you for applying for our affiliate program, unfortunately, we've "
+"decided at this point to reject your application. Please try again in 30 "
+"days."
+msgstr ""
+"Cảm ơn bạn đã đăng ký chương trình liên kết của chúng tôi, thật không may, "
+"tại thời điểm này, chúng tôi đã quyết định từ chối đơn đăng ký của bạn. Vui "
+"lòng thử lại sau 30 ngày."
+
+#: templates/forms/affiliation.php:132
+msgid ""
+"Due to violation of our affiliation terms, we decided to temporarily block "
+"your affiliation account. If you have any questions, please contact support."
+msgstr ""
+"Do vi phạm điều khoản liên kết của chúng tôi, chúng tôi đã quyết định tạm "
+"thời chặn tài khoản liên kết của bạn. Nếu bạn có bất kỳ câu hỏi nào, xin vui "
+"lòng liên hệ với bộ phận hỗ trợ."
+
+#: templates/forms/affiliation.php:145
+msgid "Like the %s? Become our ambassador and earn cash ;-)"
+msgstr "Giống như %s? Trở thành đại sứ của chúng tôi và kiếm tiền ;-)"
+
+#: templates/forms/affiliation.php:146
+msgid ""
+"Refer new customers to our %s and earn %s commission on each successful sale "
+"you refer!"
+msgstr ""
+"Giới thiệu khách hàng mới đến %s của chúng tôi và kiếm hoa hồng %s cho mỗi "
+"lần bán hàng thành công mà bạn giới thiệu!"
+
+#: templates/forms/affiliation.php:149
+msgid "Program Summary"
+msgstr "Tóm tắt chương trình"
+
+#: templates/forms/affiliation.php:151
+msgid "%s commission when a customer purchases a new license."
+msgstr "%s hoa hồng khi khách hàng mua giấy phép mới."
+
+#: templates/forms/affiliation.php:153
+msgid "Get commission for automated subscription renewals."
+msgstr "Nhận hoa hồng cho việc gia hạn đăng ký tự động."
+
+#: templates/forms/affiliation.php:156
+msgid ""
+"%s tracking cookie after the first visit to maximize earnings potential."
+msgstr ""
+"%s cookie theo dõi sau lần truy cập đầu tiên để tối đa hóa tiềm năng thu "
+"nhập."
+
+#: templates/forms/affiliation.php:159
+msgid "Unlimited commissions."
+msgstr "Hoa hồng không giới hạn."
+
+#: templates/forms/affiliation.php:161
+msgid "%s minimum payout amount."
+msgstr "%s số tiền thanh toán tối thiểu."
+
+#: templates/forms/affiliation.php:162
+msgid "Payouts are in USD and processed monthly via PayPal."
+msgstr "Các khoản thanh toán bằng USD và được xử lý hàng tháng qua PayPal."
+
+#: templates/forms/affiliation.php:163
+msgid ""
+"As we reserve 30 days for potential refunds, we only pay commissions that "
+"are older than 30 days."
+msgstr ""
+"Vì chúng tôi dành 30 ngày để có thể hoàn lại tiền nên chúng tôi chỉ thanh "
+"toán hoa hồng có thời hạn hơn 30 ngày."
+
+#: templates/forms/affiliation.php:166
+msgid "Affiliate"
+msgstr "Cộng tác viên"
+
+#: templates/forms/affiliation.php:169, templates/forms/resend-key.php:23
+#, fuzzy
+msgid "Email address"
+msgstr "Địa chỉ email"
+
+#: templates/forms/affiliation.php:173
+msgid "Full name"
+msgstr "Họ và tên"
+
+#: templates/forms/affiliation.php:177
+msgid "PayPal account email address"
+msgstr "PayPal account email address"
+
+#: templates/forms/affiliation.php:181
+msgid "Where are you going to promote the %s?"
+msgstr "Bạn định quảng cáo %s ở đâu?"
+
+#: templates/forms/affiliation.php:183
+msgid ""
+"Enter the domain of your website or other websites from where you plan to "
+"promote the %s."
+msgstr ""
+"Nhập tên miền của trang web của bạn hoặc các trang web khác từ nơi bạn dự "
+"định quảng cáo %s."
+
+#: templates/forms/affiliation.php:185
+msgid "Add another domain"
+msgstr "Thêm một tên miền khác"
+
+#: templates/forms/affiliation.php:189
+msgid "Extra Domains"
+msgstr "Tên miền bổ sung"
+
+#: templates/forms/affiliation.php:190
+msgid "Extra domains where you will be marketing the product from."
+msgstr "Các miền bổ sung nơi bạn sẽ tiếp thị sản phẩm."
+
+#: templates/forms/affiliation.php:200
+msgid "Promotion methods"
+msgstr "Phương thức khuyến mãi"
+
+#: templates/forms/affiliation.php:203
+msgid "Social media (Facebook, Twitter, etc.)"
+msgstr "Phương tiện truyền thông xã hội (Facebook, Twitter, v.v.)"
+
+#: templates/forms/affiliation.php:207
+msgid "Mobile apps"
+msgstr "Ứng dụng di động"
+
+#: templates/forms/affiliation.php:211
+msgid "Website, email, and social media statistics (optional)"
+msgstr ""
+"Thống kê trang web, email và phương tiện truyền thông xã hội (tùy chọn)"
+
+#: templates/forms/affiliation.php:214
+msgid ""
+"Please feel free to provide any relevant website or social media statistics, "
+"e.g. monthly unique site visits, number of email subscribers, followers, "
+"etc. (we will keep this information confidential)."
+msgstr ""
+"Vui lòng cung cấp bất kỳ số liệu thống kê về trang web hoặc phương tiện "
+"truyền thông xã hội có liên quan nào, ví dụ: lượt truy cập trang web duy "
+"nhất hàng tháng, số lượng người đăng ký email, người theo dõi, v.v. (chúng "
+"tôi sẽ giữ bí mật thông tin này)."
+
+#: templates/forms/affiliation.php:218
+msgid "How will you promote us?"
+msgstr "Làm thế nào để bạn thúc đẩy chúng tôi"
+
+#: templates/forms/affiliation.php:221
+msgid ""
+"Please provide details on how you intend to promote %s (please be as "
+"specific as possible)."
+msgstr ""
+"Vui lòng cung cấp chi tiết về cách bạn dự định quảng cáo %s (vui lòng càng "
+"cụ thể càng tốt)."
+
+#: templates/forms/affiliation.php:233, templates/forms/resend-key.php:22,
+#: templates/account/partials/disconnect-button.php:92
+#, fuzzy
+msgid "Cancel"
+msgstr "Hủy bỏ"
+
+#: templates/forms/affiliation.php:235
+msgid "Become an affiliate"
+msgstr "Trở thành một CTV"
+
+#: templates/forms/data-debug-mode.php:25
+msgid "Please enter the license key to enable the debug mode:"
+msgstr "Vui lòng nhập mã cấp phép để bật chế độ gỡ lỗi:"
+
+#: templates/forms/data-debug-mode.php:27
+msgid ""
+"To enter the debug mode, please enter the secret key of the license owner "
+"(UserID = %d), which you can find in your \"My Profile\" section of your "
+"User Dashboard:"
+msgstr ""
+"Để vào chế độ gỡ lỗi, vui lòng nhập khóa bí mật của chủ sở hữu giấy phép "
+"(UserID = %d), bạn có thể tìm thấy khóa này trong phần \"Hồ sơ của tôi\" "
+"trên Bảng điều khiển người dùng:"
+
+#: templates/forms/data-debug-mode.php:32
+#, fuzzy
+msgid "Submit"
+msgstr "Gửi đi"
+
+#: templates/forms/data-debug-mode.php:36
+msgid "User key"
+msgstr "Khóa người dùng"
+
+#: templates/forms/email-address-update.php:32
+msgid "Email address update"
+msgstr "Cập nhật địa chỉ email"
+
+#: templates/forms/email-address-update.php:33,
+#: templates/forms/user-change.php:81
+#, fuzzy
+msgctxt "close window"
+msgid "Dismiss"
+msgstr "Hủy"
+
+#: templates/forms/email-address-update.php:38
+msgid "Enter the new email address"
+msgstr "Nhập địa chỉ email mới"
+
+#: templates/forms/email-address-update.php:42
+msgid "Are both %s and %s your email addresses?"
+msgstr "Cả hai địa chỉ email của bạn là %s và %s phải không?"
+
+#: templates/forms/email-address-update.php:50
+msgid "Yes - both addresses are mine"
+msgstr "Có - cả hai địa chỉ đều là của tôi"
+
+#: templates/forms/email-address-update.php:57
+msgid "%s is my client's email address"
+msgstr "%s là địa chỉ email khách hàng của tôi"
+
+#: templates/forms/email-address-update.php:66
+msgid "%s is my email address"
+msgstr "%s là địa chỉ email của tôi"
+
+#: templates/forms/email-address-update.php:75
+msgid "Would you like to merge %s into %s?"
+msgstr "Bạn có muốn hợp nhất %s vào %s không?"
+
+#: templates/forms/email-address-update.php:84
+msgid "Yes - move all my data and assets from %s to %s"
+msgstr "Có - di chuyển tất cả dữ liệu và nội dung của tôi từ %s sang %s"
+
+#: templates/forms/email-address-update.php:94
+msgid "No - only move this site's data to %s"
+msgstr "Không - chỉ di chuyển dữ liệu của trang web này sang %s"
+
+#: templates/forms/email-address-update.php:292,
+#: templates/forms/email-address-update.php:298
+msgid "Update"
+msgstr "Cập nhật"
+
+#: templates/forms/license-activation.php:23
+msgid ""
+"Please enter the license key that you received in the email right after the "
+"purchase:"
+msgstr ""
+"Vui lòng nhập mã cấp phép mà bạn nhận được trong email ngay sau khi mua:"
+
+#: templates/forms/license-activation.php:28
+msgid "Update License"
+msgstr "Cập nhật giấy phép"
+
+#: templates/forms/license-activation.php:34
+msgid ""
+"The %1$s will be periodically sending essential license data to %2$s to "
+"check for security and feature updates, and verify the validity of your "
+"license."
+msgstr ""
+"%1$s sẽ định kỳ gửi dữ liệu giấy phép cần thiết tới %2$s để kiểm tra các bản "
+"cập nhật tính năng và bảo mật cũng như xác minh tính hợp lệ của giấy phép "
+"của bạn."
+
+#: templates/forms/license-activation.php:39
+msgid "Agree & Activate License"
+msgstr "Đồng ý và kích hoạt giấy phép"
+
+#: templates/forms/license-activation.php:204
+msgid "Associate with the license owner's account."
+msgstr "Liên kết với tài khoản của chủ sở hữu giấy phép."
+
+#: templates/forms/optout.php:44
+msgid "Communication"
+msgstr "Giao tiếp"
+
+#: templates/forms/optout.php:56
+msgid "Stay Connected"
+msgstr "Giữ liên lạc"
+
+#: templates/forms/optout.php:61
+msgid "Diagnostic Info"
+msgstr "Thông tin chẩn đoán"
+
+#: templates/forms/optout.php:77
+msgid "Keep Sharing"
+msgstr "Tiếp tục chia sẻ"
+
+#: templates/forms/optout.php:82
+#, fuzzy
+msgid "Extensions"
+msgstr "Tiện ích mở rộng"
+
+#: templates/forms/optout.php:104
+msgid "Keep automatic updates"
+msgstr "Giữ cập nhật tự động"
+
+#: templates/forms/premium-versions-upgrade-handler.php:40
+#, fuzzy
+msgid "There is a new version of %s available."
+msgstr ""
+"Đã có phiên bản mới của %s, nhưng nó không tương thích với phiên bản PHP của "
+"bạn."
+
+#: templates/forms/premium-versions-upgrade-handler.php:41
+msgid " %s to access version %s security & feature updates, and support."
+msgstr ""
+" %s để truy cập vào các bản cập nhật và hỗ trợ tính năng & bảo mật của phiên "
+"bản %s."
+
+#: templates/forms/premium-versions-upgrade-handler.php:54
+msgid "New Version Available"
+msgstr "Đã có phiên bản mới"
+
+#: templates/forms/premium-versions-upgrade-handler.php:75
+#, fuzzy
+msgctxt "close a window"
+msgid "Dismiss"
+msgstr "Hủy"
+
+#: templates/forms/resend-key.php:21
+msgid "Send License Key"
+msgstr "Gửi mã bản quyền"
+
+#: templates/forms/resend-key.php:58
+msgid ""
+"Enter the email address you've used during the purchase and we will resend "
+"you the license key."
+msgstr ""
+"Nhập địa chỉ email bạn đã sử dụng trong quá trình mua hàng và chúng tôi sẽ "
+"gửi lại cho bạn mã cấp phép."
+
+#: templates/forms/resend-key.php:59
+msgid ""
+"Enter the email address you've used for the upgrade below and we will resend "
+"you the license key."
+msgstr ""
+"Nhập địa chỉ email bạn đã sử dụng để nâng cấp bên dưới và chúng tôi sẽ gửi "
+"lại cho bạn mã cấp phép."
+
+#: templates/forms/subscription-cancellation.php:37
+msgid ""
+"Deactivating or uninstalling the %s will automatically disable the license, "
+"which you'll be able to use on another site."
+msgstr ""
+"Việc vô hiệu hóa hoặc gỡ cài đặt %s sẽ tự động vô hiệu hóa giấy phép mà bạn "
+"có thể sử dụng trên một trang web khác."
+
+#: templates/forms/subscription-cancellation.php:47
+msgid ""
+"In case you are NOT planning on using this %s on this site (or any other "
+"site) - would you like to cancel the %s as well?"
+msgstr ""
+"Trong trường hợp bạn KHÔNG có ý định sử dụng %s này trên trang web này (hoặc "
+"bất kỳ trang web nào khác) - bạn có muốn hủy cả %s không?"
+
+#: templates/forms/subscription-cancellation.php:57
+msgid ""
+"Cancel %s - I no longer need any security & feature updates, nor support for "
+"%s because I'm not planning to use the %s on this, or any other site."
+msgstr ""
+"Hủy %s - Tôi không cần bất kỳ bản cập nhật tính năng & bảo mật nào cũng như "
+"không hỗ trợ cho %s nữa vì tôi không định sử dụng %s trên trang này hoặc bất "
+"kỳ trang web nào khác."
+
+#: templates/forms/subscription-cancellation.php:68
+msgid ""
+"Don't cancel %s - I'm still interested in getting security & feature "
+"updates, as well as be able to contact support."
+msgstr ""
+"Đừng hủy %s - Tôi vẫn muốn nhận các bản cập nhật tính năng và bảo mật cũng "
+"như có thể liên hệ với bộ phận hỗ trợ."
+
+#: templates/forms/subscription-cancellation.php:103
+msgid ""
+"Once your license expires you will no longer be able to use the %s, unless "
+"you activate it again with a valid premium license."
+msgstr ""
+"Sau khi giấy phép của bạn hết hạn, bạn sẽ không thể sử dụng %s nữa trừ khi "
+"bạn kích hoạt lại giấy phép đó bằng giấy phép cao cấp hợp lệ."
+
+#: templates/forms/subscription-cancellation.php:136
+msgid "Cancel %s?"
+msgstr "Hủy %s?"
+
+#: templates/forms/subscription-cancellation.php:143
+msgid "Proceed"
+msgstr "Xử lý"
+
+#: templates/forms/subscription-cancellation.php:191,
+#: templates/forms/deactivation/form.php:216
+msgid "Cancel %s & Proceed"
+msgstr "Hủy %s và tiếp tục"
+
+#: templates/forms/trial-start.php:22
+msgid ""
+"You are 1-click away from starting your %1$s-day free trial of the %2$s plan."
+msgstr ""
+"Bạn chỉ cần 1 cú nhấp chuột là có thể bắt đầu dùng thử miễn phí gói %2$s "
+"trong %1$s ngày."
+
+#: templates/forms/trial-start.php:28
+msgid ""
+"For compliance with the WordPress.org guidelines, before we start the trial "
+"we ask that you opt in with your user and non-sensitive site information, "
+"allowing the %s to periodically send data to %s to check for version updates "
+"and to validate your trial."
+msgstr ""
+"Để tuân thủ các nguyên tắc của WordPress.org, trước khi bắt đầu dùng thử, "
+"chúng tôi yêu cầu bạn chọn tham gia thông tin người dùng và trang web không "
+"nhạy cảm của mình, cho phép %s gửi dữ liệu định kỳ tới %s để kiểm tra các "
+"bản cập nhật phiên bản và để xác nhận thử nghiệm của bạn."
+
+#: templates/forms/user-change.php:26
+msgid "By changing the user, you agree to transfer the account ownership to:"
+msgstr ""
+"Bằng việc thay đổi người dùng, bạn đồng ý chuyển quyền sở hữu tài khoản cho:"
+
+#: templates/forms/user-change.php:28
+msgid "I Agree - Change User"
+msgstr "Tôi đồng ý - Thay đổi người dùng"
+
+#: templates/forms/user-change.php:30
+#, fuzzy
+msgid "Enter email address"
+msgstr "Nhập địa chỉ email"
+
+#: templates/js/permissions.php:337, templates/js/permissions.php:485
+msgid "Saved"
+msgstr "Đã lưu"
+
+#: templates/js/style-premium-theme.php:39
+msgid "Premium"
+msgstr "Gói cao cấp"
+
+#: templates/js/style-premium-theme.php:42
+msgid "Beta"
+msgstr "Thử nghiệm"
+
+#: templates/partials/network-activation.php:32
+msgid "Activate license on all sites in the network."
+msgstr "Kích hoạt giấy phép trên tất cả các trang web trong mạng."
+
+#: templates/partials/network-activation.php:33
+msgid "Apply on all sites in the network."
+msgstr "Áp dụng trên tất cả các trang web trong mạng."
+
+#: templates/partials/network-activation.php:36
+msgid "Activate license on all pending sites."
+msgstr "Kích hoạt giấy phép trên tất cả các trang web đang chờ xử lý."
+
+#: templates/partials/network-activation.php:37
+msgid "Apply on all pending sites."
+msgstr "Áp dụng trên tất cả các trang web đang chờ xử lý."
+
+#: templates/partials/network-activation.php:45,
+#: templates/partials/network-activation.php:79
+#, fuzzy
+msgid "allow"
+msgstr "Cho phép"
+
+#: templates/partials/network-activation.php:48,
+#: templates/partials/network-activation.php:82
+msgid "delegate"
+msgstr "đại biểu"
+
+#: templates/partials/network-activation.php:52,
+#: templates/partials/network-activation.php:86
+#, fuzzy
+msgid "skip"
+msgstr "Bỏ qua"
+
+#: templates/plugin-info/description.php:72,
+#: templates/plugin-info/screenshots.php:31
+msgid "Click to view full-size screenshot %d"
+msgstr "Nhấp để xem ảnh chụp màn hình ở kích thước đầy đủ %d"
+
+#: templates/plugin-info/features.php:56
+msgid "Unlimited Updates"
+msgstr "Cập nhật không giới hạn"
+
+#: templates/account/partials/activate-license-button.php:46
+msgid "Localhost"
+msgstr "Localhost"
+
+#: templates/account/partials/activate-license-button.php:50
+msgctxt "as 5 licenses left"
+msgid "%s left"
+msgstr "%s còn lại"
+
+#: templates/account/partials/activate-license-button.php:51
+msgid "Last license"
+msgstr "Giấy phép cuối cùng"
+
+#. translators: %1$s: Either 'Downgrading your plan' or 'Cancelling the subscription'
+#: templates/account/partials/addon.php:34
+msgid ""
+"%1$s will immediately stop all future recurring payments and your %s plan "
+"license will expire in %s."
+msgstr ""
+"%1$s sẽ ngay lập tức ngừng tất cả các khoản thanh toán định kỳ trong tương "
+"lai và giấy phép gói %s của bạn sẽ hết hạn sau %s."
+
+#: templates/account/partials/addon.php:190
+msgid "Cancelled"
+msgstr "Đã hủy"
+
+#: templates/account/partials/addon.php:200
+msgid "No expiration"
+msgstr "Không có ngày hết hạn"
+
+#: templates/account/partials/disconnect-button.php:74
+msgid ""
+"By disconnecting the website, previously shared diagnostic data about %1$s "
+"will be deleted and no longer visible to %2$s."
+msgstr ""
+"Bằng cách ngắt kết nối trang web, dữ liệu chẩn đoán được chia sẻ trước đây "
+"về %1$s sẽ bị xóa và không còn hiển thị với %2$s."
+
+#: templates/account/partials/disconnect-button.php:78
+msgid ""
+"Disconnecting the website will permanently remove %s from your User "
+"Dashboard's account."
+msgstr ""
+"Ngắt kết nối trang web sẽ xóa vĩnh viễn %s khỏi tài khoản Bảng điều khiển "
+"người dùng của bạn."
+
+#: templates/account/partials/disconnect-button.php:84
+msgid ""
+"If you wish to cancel your %1$s plan's subscription instead, please navigate "
+"to the %2$s and cancel it there."
+msgstr ""
+"Thay vào đó, nếu bạn muốn hủy đăng ký gói %1$s của mình, vui lòng điều hướng "
+"đến %2$s và hủy đăng ký ở đó."
+
+#: templates/account/partials/disconnect-button.php:88
+msgid "Are you sure you would like to proceed with the disconnection?"
+msgstr "Bạn có chắc chắn muốn tiếp tục ngắt kết nối không?"
+
+#: templates/account/partials/site.php:190
+msgid "Owner Name"
+msgstr "Tên chủ sở hữu"
+
+#: templates/account/partials/site.php:202
+msgid "Owner Email"
+msgstr "Email chủ sở hữu"
+
+#: templates/account/partials/site.php:214
+msgid "Owner ID"
+msgstr "ID chủ sở hữu"
+
+#: templates/account/partials/site.php:288
+msgid "Subscription"
+msgstr "Đăng ký"
+
+#: templates/forms/deactivation/contact.php:19
+msgid ""
+"Sorry for the inconvenience and we are here to help if you give us a chance."
+msgstr ""
+"Xin lỗi vì sự bất tiện này và chúng tôi sẵn sàng trợ giúp nếu bạn cho chúng "
+"tôi cơ hội."
+
+#: templates/forms/deactivation/contact.php:22
+msgid "Contact Support"
+msgstr "Liên hệ hỗ trợ"
+
+#: templates/forms/deactivation/form.php:65
+msgid "Anonymous feedback"
+msgstr "Phản hồi ẩn danh"
+
+#: templates/forms/deactivation/form.php:71
+msgid "hour"
+msgstr "giờ"
+
+#: templates/forms/deactivation/form.php:76
+msgid "hours"
+msgstr "giờ"
+
+#: templates/forms/deactivation/form.php:81,
+#: templates/forms/deactivation/form.php:86
+msgid "days"
+msgstr "ngày"
+
+#: templates/forms/deactivation/form.php:106
+#, fuzzy
+msgid "Deactivate"
+msgstr "Ngừng kích hoạt"
+
+#: templates/forms/deactivation/form.php:108
+msgid "Activate %s"
+msgstr "Kích hoạt %s"
+
+#: templates/forms/deactivation/form.php:111
+msgid "Submit & %s"
+msgstr "Gửi & %s"
+
+#: templates/forms/deactivation/form.php:130
+msgid "Quick Feedback"
+msgstr "Phản hồi nhanh"
+
+#: templates/forms/deactivation/form.php:134
+msgid "If you have a moment, please let us know why you are %s"
+msgstr "Nếu bạn có thời gian, vui lòng cho chúng tôi biết lý do bạn là %s"
+
+#: templates/forms/deactivation/form.php:134
+#, fuzzy
+msgid "deactivating"
+msgstr "Đang hủy kích hoạt..."
+
+#: templates/forms/deactivation/form.php:134
+#, fuzzy
+msgid "switching"
+msgstr ""
+"Bạn không có quyền tạo trang tổng quan mới. Hãy thử chuyển sang trang tổng "
+"quan hoặc yêu cầu quản trị viên mời bạn tham gia một trang tổng quan."
+
+#: templates/forms/deactivation/form.php:448
+msgid "Kindly tell us the reason so we can improve."
+msgstr "Vui lòng cho chúng tôi biết lý do để chúng tôi có thể cải thiện."
+
+#: templates/forms/deactivation/form.php:478
+msgid "Snooze & %s"
+msgstr "Báo lại & %s"
+
+#: templates/forms/deactivation/form.php:638
+msgid "Yes - %s"
+msgstr "Có - %s"
+
+#: templates/forms/deactivation/form.php:645
+msgid "Skip & %s"
+msgstr "Bỏ qua & %s"
+
+#: templates/forms/deactivation/retry-skip.php:21
+msgid "Click here to use the plugin anonymously"
+msgstr "Nhấn vào đây để sử dụng plugin ẩn danh"
+
+#: templates/forms/deactivation/retry-skip.php:23
+msgid ""
+"You might have missed it, but you don't have to share any data and can just "
+"%s the opt-in."
+msgstr ""
+"Bạn có thể đã bỏ lỡ nhưng bạn không phải chia sẻ bất kỳ dữ liệu nào và chỉ "
+"có thể %s chọn tham gia."

@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Section Title shortcode styles - begin
+   ========================================================================== */
+
+.mkdf-section-title-holder {
+    @include mkdfRelativeHolderLayout();
+	box-sizing: border-box;
+	text-align: center;
+
+    &.mkdf-section-title-appeared {
+        .mkdf-st-title {
+            .mkdf-st-title-hightlight{
+
+                > span {
+                    @include mkdfTransform(translateY(-100%));
+                    opacity: 0;
+                }
+
+
+                &:after {
+                    @include mkdfTransform(translateY(0));
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .mkdf-st-tagline {
+        display: block;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 0.08em;
+        text-transform: capitalize;
+        margin-bottom: 4px;
+    }
+	
+    .mkdf-st-title {
+	    display: block;
+        margin: 0;
+
+        .mkdf-st-title-hightlight {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: top;
+            padding-right: 2px;
+            padding-bottom: 2px;
+
+            > span {
+                display: inline-block;
+                @include mkdfTransition(transform .5s .2s, opacity 0s .5s);
+            }
+
+            &:after {
+                content: attr(data-text);
+                color: $first-main-color;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                @include mkdfTransform(translateY(100%));
+                @include mkdfTransition(transform .5s .2s, opacity 0s .1s);
+            }
+        }
+    }
+
+    h1.mkdf-st-title {
+        .mkdf-st-title-hightlight {
+            padding-bottom: 8px;
+        }
+    }
+
+    .mkdf-st-separator {
+        width: 50px;
+        height: 2px;
+        background-color: #3e49f3;
+        margin: 13px auto 0;
+    }
+
+    &.mkdf-st-left-aligned {
+        .mkdf-st-separator {
+            margin: 13px 0 0;
+        }
+    }
+
+    &.mkdf-st-right-aligned {
+        .mkdf-st-separator {
+            margin: 13px 0 0 auto;
+        }
+    }
+    
+    .mkdf-st-text {
+	    display: block;
+        margin: 19px 0 0;
+    }
+
+    p.mkdf-st-text {
+        font-size: 18px; //due to design
+        line-height: 26px;
+    }
+}
+/* ==========================================================================
+   Section Title shortcode styles - end
+   ========================================================================== */
+
+

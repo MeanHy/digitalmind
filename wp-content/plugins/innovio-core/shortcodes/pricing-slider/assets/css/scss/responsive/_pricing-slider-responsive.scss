@@ -1,0 +1,23 @@
+@include ipad-landscape {
+    .mkdf-pricing-slider {
+        .mkdf-pricing-slider-info-holder {
+            width: 42%;
+        }
+    }
+}
+
+@include ipad-portrait {
+    .mkdf-pricing-slider {
+        .mkdf-pricing-slider-info-holder {
+            width: 50%;
+        }
+    }
+}
+
+@include ipad-portrait {
+    .mkdf-pricing-slider {
+        .mkdf-pricing-slider-info-holder {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Social Icon widget style - begin
+   ========================================================================== */
+@keyframes navglitch {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-5px);
+    -moz-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes navglitchreverse {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(5px);
+    -moz-transform: translateX(5px);
+    transform: translateX(5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.mkdf-social-icon-widget-holder {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.mkdf-social-icon-widget-holder .mkdf-social-icon-widget {
+  color: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+}
+
+.mkdf-dark-header .mkdf-page-header > div:not(.mkdf-sticky-header):not(.fixed) .mkdf-social-icon-widget-holder {
+  color: #08104d !important;
+}
+
+.mkdf-dark-header .mkdf-page-header > div:not(.mkdf-sticky-header):not(.fixed) .mkdf-social-icon-widget-holder:hover {
+  color: #ff4b36 !important;
+}
+
+.mkdf-light-header .mkdf-page-header > div:not(.mkdf-sticky-header):not(.fixed) .mkdf-social-icon-widget-holder {
+  color: #fff !important;
+}
+
+.mkdf-light-header .mkdf-page-header > div:not(.mkdf-sticky-header):not(.fixed) .mkdf-social-icon-widget-holder:hover {
+  color: #ff4b36 !important;
+}
+
+/* ==========================================================================
+   Social Icon widget style - end
+   ========================================================================== */
+
+/*# sourceMappingURL=social-icon-widget-map.css.map */

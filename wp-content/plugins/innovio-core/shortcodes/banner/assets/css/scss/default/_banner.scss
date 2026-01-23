@@ -1,0 +1,183 @@
+/* ==========================================================================
+   Banner shortcode style - begin
+   ========================================================================== */
+
+.mkdf-banner-holder {
+    @include mkdfRelativeHolderLayout();
+
+	.touch & {
+		cursor: pointer;
+	}
+
+	&.mkdf-has-shadow {
+		.mkdf-banner-text-holder {
+			box-shadow: 0 5px 20px 0 rgba(171, 184, 243, 0.26);
+		}
+	}
+	
+	.mkdf-banner-text-holder {
+		@include mkdfRelativeHolderLayout();
+		padding: 30px 40px;
+		background-color: #fff;
+        border-radius: 3px;
+        box-sizing: border-box;
+        @include mkdfTransition(.2s);
+
+		@include ipad-portrait {
+			padding: 25px !important;
+		}
+
+		&:hover {
+			background-color: $third-main-color;
+
+            .mkdf-banner-title,
+            .mkdf-banner-subtitle {
+                color: #fff;
+            }
+		}
+	}
+
+	&:not(.mkdf-has-custom-btn-hover) {
+		.mkdf-banner-text-holder {
+			&:hover {
+				.mkdf-btn.mkdf-btn-simple {
+					color: #fff !important;
+
+					.mkdf-btn-plus {
+						border-color: #fff !important;
+					}
+				}
+			}
+		}
+	}
+	
+	.mkdf-banner-text-outer {
+		@include mkdfTableLayout();
+	}
+	
+	.mkdf-banner-text-inner {
+		position: relative;
+		display: table-cell;
+		height: 100%;
+		width: 100%;
+		vertical-align: bottom;
+
+        .mkdf-banner-subtitle-light {
+            color: $first-main-color;
+        }
+	}
+
+    span.mkdf-banner-subtitle {
+        display: block;
+		font-size: 13px;
+		letter-spacing: .02em;
+		margin-bottom: 6px;
+    }
+	
+	.mkdf-banner-title {
+		margin: 0 0 70px;
+
+		@include phone-landscape {
+			margin-bottom: 50px!important;
+		}
+	}
+	
+	.mkdf-banner-link-text {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		margin: 11px 0 0;
+		color: #fff;
+		line-height: 1em;
+		z-index: 2;
+		@include mkdfTransform(translateZ(0));
+		
+		&:hover {
+			
+			.mkdf-banner-link-hover {
+				width: 100%;
+			}
+		}
+		
+		.mkdf-banner-link-original {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			width: 100%;
+			
+			span {
+				color: inherit;
+			}
+		}
+		
+		.mkdf-banner-link-hover {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0.1%;
+			height: 100%;
+			display: inline-block;
+			vertical-align: top;
+			white-space: nowrap;
+			overflow: hidden;
+			@include mkdfTransition(width .4s ease-in-out);
+			
+			span {
+				color: $first-main-color;
+			}
+		}
+		
+		.mkdf-banner-link-icon,
+		.mkdf-banner-link-label {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+		}
+		
+		.mkdf-banner-link-icon {
+			margin: 0 2px 0 0;
+			font-size: 15px;
+		}
+		
+		.mkdf-banner-link-label {
+			font-size: 14px;
+			line-height: inherit;
+		}
+	}
+
+	.mkdf-banner-link {
+		@include mkdfAbsoluteHolderLayout();
+		z-index: 1;
+	}
+
+	&.mkdf-banner-standard {
+        .mkdf-btn {
+            @include mkdfTransition(none);
+
+            &.mkdf-btn-simple .mkdf-btn-plus {
+                @include mkdfTransition(transform .2s ease);
+            }
+        }
+	}
+
+    &.mkdf-banner-button-on-hover {
+
+        .mkdf-banner-text-holder {
+            .mkdf-banner-button {
+                opacity: 0;
+                @include mkdfTransform(translate3d(30px,0,0));
+                @include mkdfTransitionTransform(.2s ease);
+            }
+
+            &:hover {
+                .mkdf-banner-button {
+                    opacity: 1;
+                    @include mkdfTransform(translate3d(0,0,0));
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Banner shortcode style - end
+   ========================================================================== */

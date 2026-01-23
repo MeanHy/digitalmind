@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Search responsive styles - begin
+   ========================================================================== */
+@keyframes navglitch {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-5px);
+    -moz-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes navglitchreverse {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(5px);
+    -moz-transform: translateX(5px);
+    transform: translateX(5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+/* ==========================================================================
+# Search template responsive style - begin
+========================================================================== */
+@media only screen and (max-width: 1024px) {
+  .mkdf-search-page-holder article .mkdf-post-image {
+    width: 80px;
+  }
+  .mkdf-search-page-holder article .mkdf-post-title-area {
+    padding: 0 0 0 105px;
+    min-height: 80px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .mkdf-search-page-holder article .mkdf-post-image {
+    width: 60px;
+  }
+  .mkdf-search-page-holder article .mkdf-post-title-area {
+    padding: 0 0 0 80px;
+    min-height: 60px;
+  }
+}
+
+/* ==========================================================================
+# Search template responsive style - end
+========================================================================== */
+/* ==========================================================================
+   Search responsive styles - end
+   ========================================================================== */
+
+/*# sourceMappingURL=search-map-responsive.css.map */

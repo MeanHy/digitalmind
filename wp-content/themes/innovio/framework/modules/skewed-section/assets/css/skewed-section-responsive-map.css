@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Skew Section styles - begin
+   ========================================================================== */
+@keyframes navglitch {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-5px);
+    -moz-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes navglitchreverse {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(5px);
+    -moz-transform: translateX(5px);
+    transform: translateX(5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+/* ==========================================================================
+# Skewed Section responsive style - begin
+========================================================================== */
+@media only screen and (max-width: 1440px) {
+  .mkdf-skewed-section-effect > svg {
+    width: 100%;
+  }
+  .mkdf-skewed-section-effect > svg * {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .mkdf-disable-header-ss-on-mobile .mkdf-header-skewed-section-effect {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .mkdf-disable-title-ss-on-mobile .mkdf-title-skewed-section-effect,
+  .mkdf-disable-ss-on-mobile .vc_row .mkdf-skewed-section-effect {
+    display: none;
+  }
+  .mkdf-top-skewed-section-effect:not(.mkdf-top-reverse-skewed-section-effect) {
+    -webkit-transform: rotate(-180deg) translateY(70%);
+    -moz-transform: rotate(-180deg) translateY(70%);
+    transform: rotate(-180deg) translateY(70%);
+  }
+  .mkdf-top-reverse-skewed-section-effect {
+    -webkit-transform: scaleY(-1) translateY(70%);
+    -moz-transform: scaleY(-1) translateY(70%);
+    transform: scaleY(-1) translateY(70%);
+  }
+  .mkdf-bottom-skewed-section-effect:not(.mkdf-bottom-reverse-skewed-section-effect) {
+    -webkit-transform: translateY(70%);
+    -moz-transform: translateY(70%);
+    transform: translateY(70%);
+  }
+  .mkdf-bottom-reverse-skewed-section-effect {
+    -webkit-transform: scaleX(-1) translateY(70%);
+    -moz-transform: scaleX(-1) translateY(70%);
+    transform: scaleX(-1) translateY(70%);
+  }
+}
+
+/* ==========================================================================
+# Skewed Section responsive style - end
+========================================================================== */
+/* ==========================================================================
+   Skew Section styles - end
+   ========================================================================== */
+
+/*# sourceMappingURL=skewed-section-responsive-map.css.map */

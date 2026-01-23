@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Global partials
+   ========================================================================== */
+@keyframes navglitch {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-5px);
+    -moz-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes navglitchreverse {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(5px);
+    -moz-transform: translateX(5px);
+    transform: translateX(5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+/* ==========================================================================
+   Shortcodes responsive styles
+   ========================================================================== */
+
+/*# sourceMappingURL=../../../../plugins/innovio-twitter-feed/assets/css/shortcodes-map-responsive.css.map */

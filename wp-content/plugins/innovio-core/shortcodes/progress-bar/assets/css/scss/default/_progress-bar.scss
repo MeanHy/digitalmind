@@ -1,0 +1,103 @@
+/* ==========================================================================
+   Progress Bar shortcode style - begin
+   ========================================================================== */
+
+.mkdf-progress-bar {
+    @include mkdfRelativeHolderLayout();
+    
+    &.mkdf-pb-percent-floating {
+        width: 100%;
+
+        .mkdf-pb-percent-holder {
+            position: absolute;
+            left: 0;
+            right: auto;
+            bottom: -2px;
+            @include mkdfTransform(translateX(-26px));
+        }
+    }
+    
+    .mkdf-pb-title-holder {
+        position: relative;
+        margin: 10px 0;
+        
+        .mkdf-pb-title {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            z-index: 100;
+        }
+    }
+
+    p.mkdf-pb-title-holder {
+        font-size: 13px;
+        letter-spacing: 0.02em;
+        color: $default-text-color;
+    }
+
+
+    .mkdf-pb-percent-holder {
+        position: absolute;
+        right: -26px;
+        bottom: -2px;
+        width: 52px;
+        display: inline-block;
+        vertical-align: middle;
+        height: 32px;
+        color: $first-main-color;
+        background-color: $first-main-color;
+        border-radius: 4px;
+        opacity: 0;
+        z-index: 10;
+
+        &:after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 5px 6px 0;
+            border-color: currentColor transparent transparent;
+            margin: 0;
+            position: absolute;
+            bottom: -5px;
+            left: calc(50% - 6px);
+        }
+    }
+	
+    .mkdf-pb-percent {
+        position: absolute;
+        right: calc(50% - 1px);
+        bottom: 0;
+        width: auto;
+	    display: inline-block;
+	    vertical-align: middle;
+        font-size: 13px;
+        line-height: 33px;
+	    opacity: 0;
+	    z-index: 10;
+        color: #fff;
+        @include mkdfTransform(translateX(50%));
+        
+        &:after {
+            content: '%';
+        }
+    }
+    
+    .mkdf-pb-content-holder {
+        position: relative;
+        height: 6px;
+        overflow: hidden;
+        background-color: #ecf3ff;
+        border-radius: 3px;
+        
+        .mkdf-pb-content {
+            height: 6px;
+            max-width: 100%;
+            overflow: hidden;
+            background-color: $first-main-color;
+        }
+    }
+}
+/* ==========================================================================
+   Progress Bar shortcode style - end
+   ========================================================================== */

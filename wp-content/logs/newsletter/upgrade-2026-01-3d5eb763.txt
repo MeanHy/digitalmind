@@ -1,0 +1,38 @@
+22-01-2026 13:29:01 - INFO  - 9.1.1 - 24.6 MB/512 MB - digitalmind > Start upgrade from 0.0.0
+22-01-2026 13:29:02 - INFO  - 9.1.1 - 24.6 MB/512 MB - digitalmind > Array
+(
+    [wp_newsletter_emails] => Created table `wp_newsletter_emails`
+)
+
+22-01-2026 13:29:02 - INFO  - 9.1.1 - 24.6 MB/512 MB - digitalmind > Array
+(
+    [wp_newsletter_sent] => Created table `wp_newsletter_sent`
+)
+
+22-01-2026 13:29:02 - INFO  - 9.1.1 - 24.6 MB/512 MB - digitalmind > Array
+(
+    [wp_newsletter] => Created table `wp_newsletter`
+)
+
+22-01-2026 13:29:02 - INFO  - 9.1.1 - 24.6 MB/512 MB - digitalmind > Array
+(
+    [wp_newsletter_user_logs] => Created table `wp_newsletter_user_logs`
+)
+
+22-01-2026 13:29:02 - INFO  - 9.1.1 - 24.6 MB/512 MB - digitalmind > Array
+(
+    [wp_newsletter_user_meta] => Created table `wp_newsletter_user_meta`
+)
+
+22-01-2026 13:29:02 - INFO  - 9.1.1 - 24.6 MB/512 MB - digitalmind > Array
+(
+    [wp_newsletter_stats] => Created table `wp_newsletter_stats`
+)
+
+22-01-2026 13:29:02 - INFO  - 9.1.1 - 24.6 MB/512 MB - digitalmind > Array
+(
+    [wp_newsletter_logs] => Created table `wp_newsletter_logs`
+)
+
+22-01-2026 13:29:02 - INFO  - 9.1.1 - 24.6 MB/512 MB - digitalmind > Backing up options of 0.0.0
+22-01-2026 13:29:02 - INFO  - 9.1.1 - 24.6 MB/512 MB - digitalmind > End

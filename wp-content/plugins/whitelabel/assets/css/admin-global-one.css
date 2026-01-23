@@ -1,0 +1,1178 @@
+/* Start Admin notice */
+#setting-error-tgmpa,
+#wp-optimize-dashnotice,
+.update-nag,
+#pagestats_wp_dashboard,
+#yith_dashboard_products_news,
+#yith_dashboard_blog_news,
+#quadlayers-dashboard-overview,
+.Rebuild-SearchBox-Cache,
+#application-passwords-section,
+.woocommerce-task-dashboard__container,
+.woocommerce-homepage-notes-wrapper,
+#postcustom,
+#woocommerce-order-downloads,
+#coupon-roo,
+.wp-core-ui .notice.is-dismissible,
+.notice.notice-warning,
+.wpmltm-notice,
+.notice.notice-info.wcf-notice,
+.notice.notice-error,
+.notice.notice-warning,
+#message,
+.fs-notice-body,
+#wp-admin-bar-wp-ultimo,
+.updated,
+.notice.notice-warning.is-dismissible,
+.info.notice-info.notice.otgs-notice,
+#welcome-panel {
+    display: none !important
+}
+
+/* End Admin notice */
+/* start Admin css */
+.media-frame-toolbar .media-toolbar {
+    top: 0px !important
+}
+
+ul.wolmart-admin-menu li:nth-child(2) ul.wolmart-admin-submenu li:nth-child(4),
+ul.wolmart-admin-menu li:nth-child(1),
+ul.wolmart-admin-menu li:nth-child(2) {
+    display: none !important;
+}
+
+/* end Admin css */
+/* Start b2bking */
+.b2bking_user_shipping_payment_methods_container {
+    border-radius: 0px;
+}
+
+.b2bking_user_shipping_payment_methods_container_top {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border-bottom: 1px solid #a5a5a5 !important;
+    font-size: 18px;
+    padding: 10px 25px;
+}
+
+/* Admin layout B2BKing plugin option */
+#b2bking_tabs_wrapper div[data-tab="troubleshooter"] {
+    display: none !important;
+}
+
+.b2bking_attached_content_wrapper .message,
+div[class="ui labeled stackable large vertical menu attached"],
+#b2bking_menu_logo,
+#wpwrap div#wpfooter {
+    display: none !important;
+}
+
+#b2bking_tools_setusersubaccounts input[type="text"] {
+    width: 25%;
+}
+
+a[href="https://dacsan.sanfb.com/wp-admin/edit.php?post_type=b2bking_conversation"],
+a[href="https://dacsan.sanfb.com/wp-admin/edit.php?post_type=shop_order"] {
+    width: 100%
+}
+
+.b2bking_dashboard_page_wrapper>.container-fluid {
+    padding: 0px;
+}
+
+#b2bking_admin_wrapper {
+    padding: 15px;
+}
+
+.ui.primary.button {
+    margin-left: 15px
+}
+
+#wpcontent {
+    padding-left: 0px;
+}
+
+#wpcontent {
+    padding: 50px 0px 0px 0px;
+}
+
+.b2bking_admin_groups_main_container_main_row {
+    margin-top: 0px;
+}
+
+div#b2bking_admin_groups_main_container {
+    margin: 0px;
+    margin-left: 15px;
+}
+
+.wrap {
+    margin: 10px 15px 0 15px;
+}
+
+.wrap h1.wp-heading-inline {
+    margin-top: 75px
+}
+
+#b2bking_admin_wrapper_import {
+    padding: 15px;
+}
+
+div#b2bking_admin_customers_table_container {
+    margin: 15px;
+    padding: 20px;
+}
+
+#wpcontent,
+.b2bking_page_b2bking_customers,
+.b2bking_page_b2bking_groups {
+    background: #eee !important;
+}
+
+#b2bking_admin_menu {
+    background: #f2f2f2 !important;
+}
+
+.ui.menu .item {
+    color: rgba(117, 117, 117, 1.0) !important;
+}
+
+.item .b2bking_menu_description {
+    color: #b2b1b1 !important;
+}
+
+a.item.active::after,
+#b2bking_admin_menu .active,
+#b2bking_admin_menu.ui.menu .item.active:hover {
+    background: #fcfcfc !important;
+}
+
+#b2bking_admin_menu .active,
+.item.active .b2bking_menu_description,
+.ui.menu .item.green:hover,
+.ui.menu .item.green:hover .header,
+.ui.menu .item.green:hover .b2bking_menu_description,
+#b2bking_admin_menu .active .icon {
+    color: #23282d !important;
+}
+
+#b2bking_admin_menu.ui.menu .item:hover {
+    background: #ffffff !important;
+}
+
+.ui.vertical.menu .item {
+    background: #e7e7e7 !important;
+}
+
+.b2bking_admin_groups_main_title,
+.b2bking_admin_groups_main_container_main_row_title {
+    color: #000000 !important;
+}
+
+#woocommerce-product-data ul.wc-tabs li.b2bking_options a::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: "\f512" !important;
+}
+
+/* End b2bking */
+/* Start digixon admin */
+#wd-Panel table.form-table tr td {
+    width: auto !important
+}
+
+#wd-Panel .wd-validate,
+#wpbody #wpbody-content .panel-logo {
+    margin-right: 1%
+}
+
+.wp-admin select {
+    line-height: 15px
+}
+
+#wpbody .form-table td select {
+    min-height: 37px;
+    width: auto
+}
+
+#wd-Panel table .assets_colors>li {
+    width: 150%;
+}
+
+.form-table .font_weight_list.main_fonts {
+    height: 68px !important
+}
+
+#setting-error-tgmpa {
+    display: none !important;
+}
+
+/* End digixon admin */
+/* Start dokan */
+#dokan-upgrade-notice,
+#dokan-pro-whats-new-notice,
+.dokan-dashboard .widgets-wrapper .left-side .postbox.dokan-postbox:nth-child(2) {
+    display: none
+}
+
+.error {
+    display: none
+}
+
+/* Admin layout Dokan plugin option */
+.dokan-admin-header .dokan-admin-header__menu,
+.dokan-dashboard .dokan-upgrade-bar,
+.rss-widget ul,
+.subscribe-box .form-wrap,
+a[href^="admin.php?page=dokan#/pro-modules"],
+a[href^="admin.php?page=dokan#/help"],
+#dokan-settings-banner,
+a[href^="admin.php?page=dokan_updates"] {
+    display: none !important
+}
+
+.fb_app_url.dokan-settings-field-type-html td p[class="description"] {
+    display: block !important
+}
+
+.dokan-settings-field-type-html td p[class="description"] {
+    display: block !important
+}
+
+a[href^="https://wedevs.com/"],
+.dokan-admin-header {
+    display: none !important
+}
+
+/* End dokan */
+/* Start econis admin */
+#setting-error-econis {
+    display: none !important;
+}
+
+/* End econis admin */
+/* Start hide_user */
+.language-switcher,
+#setting-error-tgmpa,
+#wp-optimize-dashnotice,
+.update-nag,
+#pagestats_wp_dashboard,
+#yith_dashboard_products_news,
+#yith_dashboard_blog_news,
+#quadlayers-dashboard-overview,
+.Rebuild-SearchBox-Cache,
+#application-passwords-section,
+.woocommerce-task-dashboard__container,
+.woocommerce-homepage-notes-wrapper {
+    display: none !important
+}
+
+/* End hide_user */
+/* Start hide-my-wp */
+.modal-backdrop {
+    display: none !important
+}
+
+/* End hide-my-wp */
+/* Start wp ultimo one*/
+#wp-ultimo-header {
+    display: none;
+}
+
+#wp-ultimo-footer {
+    display: none;
+}
+
+#wp-ultimo-giay-phep-cua-ban {
+    display: none;
+}
+
+/* End wp ultimo one*/
+/* Start js_composer */
+.nav-tab-wrapper a[href$="page=vc-updater"],
+.nav-tab-wrapper a[href$="page=vc-roles"],
+.nav-tab-wrapper a[href$="page=vc-welcome&tab=vc-faq"],
+.nav-tab-wrapper a[href$="page=vc-welcome&tab=vc-resources"] {
+    display: none !important;
+}
+
+.vc-page-welcome img.vc-featured-img,
+.vc-page-welcome .vc-thank-you {
+    display: none
+}
+
+#wp-admin-bar-wp-rocket,
+#wp-admin-bar-autoptimize,
+.notice.notice-error.is-dismissible.qc-notice-error {
+    display: none !important;
+}
+
+/* End js_composer */
+/* Start login-by-zalo */
+.ufa-nav .nav .nav-item-support,
+.ufa-nav .nav .nav-item-beer {
+    display: none !important
+}
+
+/* End login-by-zalo */
+/* Start mtrl*/
+.media-frame-toolbar .media-toolbar {
+    bottom: -90px;
+}
+
+#wpfooter #footer-left {
+    display: none;
+}
+
+.form-table tbody tr td .ms-parent .ms-drop.bottom {
+    position: inherit !important
+}
+
+/* End mtrl */
+/* Start product-import-export-for-woo */
+.wt-import-export-upsell-wrapper.market-box,
+.wt-webtoffee-icon {
+    display: none;
+}
+
+/* End product-import-export-for-woo */
+/* Start replace admin menu icon */
+#adminmenu #toplevel_page_WP-Optimize div.wp-menu-image,
+#adminmenu #toplevel_page_WP-Optimize div.wp-menu-image::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: '\f311';
+}
+
+#adminmenu #toplevel_page_ns-cloner div.wp-menu-image,
+#adminmenu #toplevel_page_ns-cloner div.wp-menu-image::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: '\f105';
+}
+
+#adminmenu #toplevel_page_woocommerce div.wp-menu-image,
+#adminmenu #toplevel_page_woocommerce div.wp-menu-image::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: '\f174';
+}
+
+#adminmenu #toplevel_page_sitepress-multilingual-cms-menu-network div.wp-menu-image,
+#adminmenu #toplevel_page_sitepress-multilingual-cms-menu-network div.wp-menu-image::before,
+#adminmenu #toplevel_page_sitepress-multilingual-cms-menu-languages div.wp-menu-image,
+#toplevel_page_sitepress-multilingual-cms-menu-languages div.wp-menu-image::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: '\f326';
+}
+
+#wpfooter #footer-left,
+#adminmenu #toplevel_page_sitepress-multilingual-cms-menu-network div.wp-menu-image img,
+#adminmenu #toplevel_page_sitepress-multilingual-cms-menu-languages div.wp-menu-image img,
+#adminmenu #toplevel_page_beyond-multisite div.wp-menu-image img,
+#adminmenu #toplevel_page_ns-cloner div.wp-menu-image img,
+#adminmenu #toplevel_page_b2bking div.wp-menu-image img,
+#adminmenu #toplevel_page_salesking div.wp-menu-image img {
+    display: none;
+}
+
+#adminmenu #toplevel_page_beyond-multisite div.wp-menu-image,
+#adminmenu #toplevel_page_beyond-multisite div.wp-menu-image::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: '\f325';
+}
+
+#adminmenu #toplevel_page_wpclever div.wp-menu-image,
+#adminmenu #toplevel_page_wpclever div.wp-menu-image::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: '\f111';
+}
+
+#adminmenu #toplevel_page_wpbingo div.wp-menu-image,
+#adminmenu #toplevel_page_wpbingo div.wp-menu-image::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: '\f309';
+}
+
+#adminmenu #toplevel_page_dokan div.wp-menu-image,
+#adminmenu #toplevel_page_dokan div.wp-menu-image::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: '\f238';
+}
+
+#adminmenu #toplevel_page_dokan div.wp-menu-image,
+#adminmenu #toplevel_page_b2bking div.wp-menu-image::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: '\f512';
+}
+
+#adminmenu #toplevel_page_dokan div.wp-menu-image,
+#adminmenu #toplevel_page_salesking div.wp-menu-image::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: '\f124';
+}
+
+/* End replace admin menu icon */
+/* Start revslider one */
+.plugin_inforow,
+#plugin_update_row,
+#plugin_activation_row,
+#plugin_news_row,
+#linktodocumentation,
+#contactsupport,
+#rso_menu_notices,
+.div150,
+#rs_memarea_registered,
+#rb_the_logo,
+#help-mode-buttons #help_mode_documentation,
+div[id^="rs_advert_"],
+#new_slider_from_template {
+    display: none !important;
+}
+
+#wpfooter,
+#wpadmin_overlay,
+#add_on_management,
+#gst_sl_9 {
+    opacity: 0 !important;
+}
+
+/* #wpadminbar{background-color: rgba(233,0,6,1.0) !important;z-index: 999999 !important;filter: grayscale(0%) !important;} */
+.toplevel_page_revslider #rs_overview,
+.toplevel_page_revslider #wpwrap #wpcontent,
+#rs_overview_menu,
+.toplevel_page_revslider #wpwrap {
+    background-color: #eeeeee !important;
+}
+
+.rs-high-contrast .layer_submodule_trigger:hover,
+.rs-high-contrast .layer_submodule_trigger.selected,
+.rs-high-contrast .slide_submodule_trigger:hover,
+.rs-high-contrast .slide_submodule_trigger.selected,
+.rs-high-contrast .general_submodule_trigger:hover,
+.rs-high-contrast .general_submodule_trigger.selected,
+.rs-high-contrast .nav_submodule_trigger:hover,
+.rs-high-contrast .nav_submodule_trigger.selected,
+.rs-high-contrast .ol_filter_listelement:hover,
+.rs-high-contrast .ol_filter_listelement.selected,
+.rs-high-contrast #obj_fil_favorite:hover,
+.rs-high-contrast #obj_updatefromserver:hover,
+.rs-high-contrast #obj_fil_favorite.selected,
+.rs-high-contrast i.olibrary_favorit.material-icons:hover,
+.rs-high-contrast i.olibrary_favorit.material-icons.selected,
+.rs-high-contrast #rs_copyright:hover,
+.rs-high-contrast .main_mode_selector:hover,
+.rs-high-contrast .rso_scrollmenuitem.active,
+.rso_scrollmenuitem:hover,
+.rs-high-contrast .action_button:hover,
+.active,
+.rs_overview .ddTP_C:hover .ddTP_S__rendered,
+.action_button:hover {
+    color: #9e9e9e !important;
+}
+
+#rs_overview .title {
+    color: #797b7e !important;
+}
+
+#rs_overview_menu {
+    top: 50px !important;
+    left: 250px;
+}
+
+.rs_overview input.flat_input {
+    background: #979797 !important;
+    padding: 10px !important;
+}
+
+/* End revsilder one*/
+/* Start salesking */
+.salesking_switch-field input:checked+label {
+    background-color: #e90006;
+    color: #fff;
+    box-shadow: none;
+}
+
+.salesking_user_shipping_payment_methods_container {
+    border-radius: 0px;
+}
+
+.salesking_user_shipping_payment_methods_container_top {
+    background: #ffffff;
+    border-radius: 0px 0px 0px 0px;
+    border-bottom: 1px solid #a5a5a5;
+    color: #000000;
+    font-size: 18px;
+    padding: 10px 25px;
+}
+
+/* Admin layout SalesKing plugin option */
+#salesking_admin_menu #salesking_menu_logo,
+#wpwrap div#wpfooter {
+    display: none
+}
+
+#wpcontent {
+    background: #eee
+}
+
+#salesking_admin_menu {
+    background: #f2f2f2;
+}
+
+.ui.menu .item,
+.item .salesking_menu_description {
+    color: rgba(117, 117, 117, 1.0);
+}
+
+a.item.active:after,
+#salesking_admin_menu .active,
+#salesking_admin_menu.ui.menu .item.active:hover,
+#salesking_admin_menu.ui.menu .item:hover {
+    background: #fcfcfc;
+}
+
+.ui.menu .item.green:hover,
+.ui.menu .item.green:hover .header,
+.ui.menu .item.green:hover .salesking_menu_description,
+#salesking_admin_menu .active .icon,
+.ui.menu .item.green.active .header,
+.item.active .salesking_menu_description {
+    color: #000000
+}
+
+.ui.vertical.menu .item {
+    background: #e7e7e7;
+}
+
+.wp-core-ui .notice.is-dismissible {
+    margin: 10px 0px;
+}
+
+/* End salesking */
+/* Start yoast seo */
+#wp-toolbar #wp-admin-bar-top-secondary #wp-admin-bar-my-account {
+    background-color: #e90006;
+    left: 7%;
+}
+
+.yith-plugin-fw-rate {
+    display: none;
+}
+
+.update-nag {
+    display: none;
+}
+
+/* End yoast seo */
+/* Start social auto poster */
+#wpw-auto-poster-upgrade-notice,
+img.wpw-auto-poster-logo {
+    display: none !important;
+}
+
+/* End social auto poster */
+/* Start ultimate tours builder */
+#wutb_mainPanel.wutb_bootstraped {
+    height: calc(100% - 50px) !important;
+    width: calc(100% - 230px) !important;
+    top: 50px !important;
+    left: 230px !important;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif !important;
+}
+
+body.folded #wutb_mainPanel.wutb_bootstraped {
+    width: calc(100% - 60px) !important;
+    left: 60px !important;
+}
+
+#wutb_mainPanel.wutb_bootstraped .wutb_stepBloc h4 {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif !important;
+}
+
+.wutb .wutb-notification {
+    font-family: "Roboto", Arial, Helvetica, sans-serif !important;
+}
+
+div[id^="ui-id-"] {
+    position: absolute;
+    background: #fff;
+    color: #000;
+    padding: 3px 3px
+}
+
+/* End ultimate tours builder */
+/* Start updraftplus */
+#wp-admin-bar-updraft_admin_node div {
+    color: #ffffff !important;
+}
+
+#updraftaddons_updatewarning,
+#wp-admin-bar-updraft_admin_node_addons {
+    display: none !important;
+}
+
+#updraft_central,
+#updraft-navtab-addons,
+.updraftplus_com_login em,
+#updraft-navtab-addons-content div ul,
+#updraft-navtab-addons-content div h3,
+#addon-all,
+#addon-lockadmin,
+#addon-dropbox-folders,
+#addon-cloudfiles-enhanced,
+#addon-backblaze,
+#addon-migrator,
+#addon-reporting,
+#addon-azure,
+#addon-anonymisation,
+#addon-importer,
+#addon-sftp,
+#addon-morefiles,
+#addon-webdav,
+#addon-multisite,
+#addon-noadverts,
+#addon-incremental,
+#addon-autobackup,
+#addon-moredatabase,
+#addon-onedrive,
+#addon-fixtime,
+#addon-morestorage,
+#addon-s3-enhanced,
+#addon-googlecloud,
+#addon-google-enhanced,
+#addon-wp-cli,
+.updraftplus-settings-footer,
+#updraftcentral_cloud_connect_container,
+#updraft_migrate_tab_main h2,
+.updraftplus-clone,
+.updraftplus-top-menu,
+#wp-optimize-dashnotice,
+#wpcontent::before,
+.wpo-introduction-notice {
+    display: none !important;
+}
+
+/* End updraftplus */
+/* Start woocommencre one */
+#wp-admin-bar-WPML_ALS div span {
+    color: #ffffff !important;
+}
+
+div[class="wcml-wrap wcml-notice otgs-is-dismissible"],
+div.woocommerce-task-dashboard__container,
+#wp-admin-bar-WPML_ALS div i.otgs-ico-help,
+#wp-admin-bar-WPML_ALS-default #wp-admin-bar-WPML_ALS_all,
+.otgs-installer-notice-wpml,
+div[data-id="wcml-multi-currency-missing"] {
+    display: none;
+}
+
+.woocommerce table.form-table select {
+    line-height: 18px;
+}
+
+select#dropdown_shop_report_currency,
+select.wcml_translation_status_lang {
+    width: 145px !important;
+}
+
+select.wcml_product_status {
+    width: 170px;
+}
+
+/* End woocommencre one */
+/* Start wp optimize */
+.wpo-main-header {
+    top: 50px !important;
+    left: 230px !important;
+    z-index: 999 !important;
+}
+
+.wpo-logo__container .wpo-logo,
+.wpo-logo__container .wpo-version,
+.wpo-feedback,
+.wpo-header-links__mobile,
+.wpo-header-links,
+.wpo-pages-menu span.dashicons-admin-plugins,
+.wpo-pages-menu span.dashicons-admin-plugins+span,
+.wpo-pages-menu span.dashicons-sos,
+.wpo-pages-menu span.dashicons-sos+span,
+#wp-optimize-dashnotice,
+#wpcontent::before,
+.wpo-introduction-notice {
+    display: none !important;
+}
+
+/* End wp optimize */
+/* Start wp ultimo*/
+#wp-ultimo-header {
+    display: none;
+}
+
+#wp-ultimo-footer {
+    display: none;
+}
+
+#wp-ultimo-giay-phep-cua-ban {
+    display: none;
+}
+
+#wu-toolbox {
+    display: none;
+}
+
+/* End wp ultimo */
+/* Start wpbingo */
+img[src$="wpbingo/assets/images/icon.png"] {
+    display: none !important;
+}
+
+/* End wpbingo */
+/* Start Chat Bot*/
+.col-sm-6.text-right.woo-chatbot-version,
+.woo-chatbot-tabs.woo-chatbot-tabs-style-flip nav ul li:nth-child(13) {
+    display: none;
+}
+
+/* End Chat Bot */
+/* Start Chat Bot*/
+#automatewoo-workflow-tabs-root,
+#toplevel_page_woowbot ul.wp-submenu.wp-submenu-wrap li:nth-child(6) {
+    display: none !important;
+}
+
+/* End Chat Bot */
+/* Start FS-POSTER*/
+.notice.notice-warning,
+.notice.notice-error,
+.fsp-card a[href="?page=fs-poster-settings&setting=wordpress"],
+.wp-tab-title-custom,
+.wp-metabox-tab-custom,
+.wp-tab-shedules-custom,
+.fsp-title-button a[href="https://www.fs-poster.com/documentation/how-to-set-up-a-cron-job-on-wordpress-fs-poster-wp-plugin"],
+#fspAddSchedule_4 .fsp-custom-messages-container .fsp-card-body .fsp-custom-messages-tabs.fsp-custom-messages-tab.fsp-tooltip.fsp-temp-tooltip,
+#fspModalSnSelector option[value="wordpress"] {
+    display: none !important;
+}
+
+/* END FS-POSTER*/
+/*Ẩn CSS của plugin woocommerce*/
+div.wcml-wrap div p:nth-child(2) {
+    display: none !important;
+}
+
+tr td.forminp.forminp-select p.description {
+    display: none !important;
+}
+
+tr td.forminp.forminp-checkbox p.description {
+    display: none !important;
+}
+
+div#slider_revolution_metabox div.inside ul.revslider_settings._TPRB_ li div.rs_wp_plg_act_wrapper span {
+    display: none !important;
+}
+
+div#postexcerpt div.inside p a {
+    display: none;
+}
+
+/*Ẩn CSS của plugin Tiện ích bán hàng*/
+.wpclever-notice.notice {
+    display: none !important;
+}
+
+.wpclever_settings_page_desc.about-text p {
+    display: none !important;
+}
+
+.wpclever_settings_page_desc.about-text p {
+    display: none !important;
+}
+
+p.description {
+    /* display: none !important; */
+}
+
+div.wpclever_settings_page_nav h2.nav-tab-wrapper a.nav-tab:nth-child(2) {
+    display: none !important;
+}
+
+div.wpclever_settings_page_nav h2.nav-tab-wrapper a.nav-tab:nth-child(3) {
+    display: none !important;
+}
+
+div.wpclever_settings_page_nav h2.nav-tab-wrapper a.nav-tab:nth-child(4) {
+    display: none !important;
+}
+
+.wpclever_settings_page_content_text {
+    display: none !important;
+}
+
+.wpclever_settings_page.wrap h1.wpclever_settings_page_title {
+    display: none !important;
+}
+
+/*Chỉnh CSS độ dài của nút*/
+select#icl_post_language {
+    width: 90px;
+}
+
+select#page_header_style {
+    width: 85px;
+}
+
+/*Chỉnh CSS về lại đúng vị trí trong Giao diện*/
+div#wbc_demo_importer-custom_imports {
+    width: 500px;
+    height: 380px;
+}
+
+.edit-widgets-header {
+    padding: unset !important;
+}
+
+td.version.column-version {
+    width: 200px;
+}
+
+/*CSS Giao diện -> Cài đặt plugin -> Nguồn hàng*/
+td.source.column-source {
+    width: 118.9px;
+}
+
+/*CSS Giao diện -> Cài đặt plugin -> Đề nghị*/
+td.type.column-type {
+    width: 118.9px;
+}
+
+/*Chỉnh CSS màu */
+.wrap.redux-wrap-div .redux-container .redux-sidebar .redux-group-menu li .subsection .redux-group-tab-link-li .redux-group-tab-link-a {
+    color: #000000 !important;
+    background-color: #f6f7f7 !important;
+}
+
+.wrap.redux-wrap-div .redux-container .redux-sidebar .redux-group-menu li .subsection .redux-group-tab-link-li .redux-group-tab-link-a:hover {
+    background-color: rgba(238, 238, 238, 1.0) !important;
+    opacity: 1;
+}
+
+/*Ẩn các đường link trong plugin Form liên hệ*/
+div#form-panel fieldset legend a {
+    display: none !important;
+}
+
+div#messages-panel fieldset legend a {
+    display: none !important;
+}
+
+div#additional-settings-panel fieldset legend a {
+    display: none !important;
+}
+
+.inside p a {
+    display: none !important;
+}
+
+/*Ẩn các đường link trong plugin SEO*/
+a.sc-hgKjYe.etGIeo {
+    display: none !important;
+}
+
+.yoast_premium_upsell {
+    display: none !important;
+}
+
+div#sidebar {
+    display: none !important;
+}
+
+button.sc-dkPtyc.gnliEL {
+    display: none !important;
+}
+
+.sc-bdvvaa.fvYQPN.BeaconFabButtonFrame {
+    display: none !important;
+}
+
+div#pinterest p:nth-child(4) {
+    display: none !important;
+}
+
+input#submit {
+    /* margin: 0px 60% 0px 40%; */
+}
+
+div#wpseo-settings-general-knowledge-graph-container a {
+    display: none !important;
+}
+
+.yoast-container__configuration-wizard--content p a {
+    display: none !important;
+}
+
+.yoast-settings-section.yoast-settings-section-disabled {
+    display: none !important;
+}
+
+.yoast-alert.yoast-alert--info {
+    display: none !important;
+}
+
+div#dashboard div.tab-block:nth-child(2) {
+    display: none !important;
+}
+
+/*NEW CSS*/
+/*Ẩn link của plugin*/
+ul.subsubsub li:nth-child(5) a {
+    display: none !important;
+}
+
+/*Ẩn nút của plugin */
+button.toggle-sub-orders.button {
+    display: none !important;
+}
+
+/*Chỉnh CSS các nút*/
+select#dropdown_shop_order_currency {
+    width: 200px;
+}
+
+.post-type-shop_order .wp-list-table .column-order_total a span {
+    float: center;
+}
+
+/*Ẩn link của plugin Sàn giao dịch*/
+.form-group div.column:nth-child(4) {
+    display: none !important;
+}
+
+.form-group div.column:nth-child(5) {
+    display: none !important;
+}
+
+.vendor-info ul li.publishing {
+    display: none !important;
+}
+
+/*Ẩn link của plugin Bán Sỉ*/
+h4.card-title.text-white.op-5 {
+    display: none !important;
+}
+
+/* Chỉnh CSS các cột trong Bán hàng -> Báo cáo  */
+th#product {
+    text-align: center;
+}
+
+th#parent {
+    width: 127px;
+}
+
+th#stock_level {
+    width: 185px;
+}
+
+th#stock_status {
+    width: 243px;
+}
+
+th#wc_actions {
+    width: 320px;
+}
+
+tbody#the-list tr td.parent.column-parent {
+    width: 198px;
+}
+
+tbody#the-list tr td.stock_status.column-stock_status {
+    width: 230px;
+}
+
+tbody#the-list tr td.wc_actions.column-wc_actions {
+    width: 388px;
+}
+
+td.stock_status.column-stock_status {
+    width: 334px;
+}
+
+td.stock_level.column-stock_level {
+    width: 279px;
+}
+
+td.parent.column-parent {
+    width: 388px;
+}
+
+th.manage-column.column-stock_status {
+    width: 268px;
+}
+
+th.manage-column.column-product.column-primary {
+    text-align: center;
+}
+
+th.manage-column.column-parent {
+    width: 188px;
+}
+
+th.manage-column.column-stock_level {
+    width: 250px;
+}
+
+th.manage-column.column-stock_status {
+    width: 172px;
+}
+
+/* Chỉnh CSS cột trong Giao diện >> Widget */
+.edit-widgets-header__actions {
+    display: flex;
+    align-content: flex-end;
+    align-items: flex-end;
+    height: 56px;
+}
+
+.edit-widgets-header__navigable-toolbar-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 66px;
+    flex-wrap: wrap;
+    align-content: flex-end;
+}
+
+/* Ẩn link trong plugin Tiện ích bán hàng >> So sánh thông minh */
+tr:nth-child(17) td span.description {
+    display: none !important;
+}
+
+/* Ẩn link trong plugin Tiện ích bán hàng >> Mong muốn thông minh */
+tr:nth-child(4) td span.description {
+    display: none !important;
+}
+
+tr:nth-child(5) td p {
+    display: none !important;
+}
+
+table.form-table tbody tr:nth-child(5) {
+    display: none !important;
+}
+
+/* Ẩn link trong plugin Chủ đề Admin >> Cài đặt Email */
+table.form-table tbody tr:nth-child(2) td fieldset#mtrl_demo-from-mail-name div.description.field-desc {
+    display: none !important;
+}
+
+/* Ẩn link trong plugin Chủ đề Admin >> Cài đặt bổ sung */
+table.form-table tbody tr:nth-child(2) td fieldset#mtrl_demo-footer_version div.description.field-desc {
+    display: none !important;
+}
+
+/* Ẩn link CSS trong Bán hàng */
+.components-card.woocommerce-store-alerts.is-alert-update.css-1xs3c37-CardUI.e1q7k77g0 {
+    display: none;
+}
+
+/* HD - Plugin Wooco Smart Coupon */
+/* Ẩn BTN ReadMore  */
+td.forminp.forminp-checkbox>fieldset>label>a[target="_blank"] {
+    display: none;
+}
+
+td.forminp.forminp-select .smart_coupons_storewide_offer_coupon_code>small {
+    display: none;
+}
+
+/* Ẩn Btn Use translations */
+div#sc_setting_labels-description>p>a[target="_blank"] {
+    display: none;
+}
+
+/* Ẩn BTN FAQ */
+div#wpbody-content .wrap.woocommerce div#smart_coupons_tabs h2.nav-tab-wrapper .sc-quick-links>a[target="_blank"] {
+    display: none;
+}
+
+/* HD - Plugin Wooco Green Popup */
+/* Ẩn Btn Olin Documen */
+div#wpbody div#wpbody-content .wrap.lepopup-admin h2>a.lepopup-button-h2[target="_blank"] {
+    display: none;
+}
+
+div#wpbody-content .wrap.lepopup-admin>h2>a.lepopup-button-h2 {
+    display: none;
+}
+
+/* HD - Plugin Mautic */
+/* Edit backgorud tabs */
+.mauwoo-tabs a#mautic_integration_for_woocommerce_get_started {
+    background: #bf3132a8;
+}
+
+.mauwoo-gs-right ul li i {
+    background-color: #bf3132a8 !important;
+}
+
+.mauwoo-button,
+.submit input[type="submit"] {
+    background-color: #bf3132a8 !important;
+}
+
+.mauwoo-tabs .nav-tab-active,
+.mauwoo-tabs .nav-tab-active:focus,
+.mauwoo-tabs .nav-tab-active:focus:active,
+.mauwoo-tabs .nav-tab-active:hover {
+    background-color: #bf3132a8 !important;
+}
+
+.mauwoo-desc-num {
+    background-color: #bf3132a8 !important;
+}
+
+.mauwoo-error-log-head a {
+    background-color: #bf3132a8 !important;
+}
+
+.mauwoo-segments-created .mauwoo-segments-created-list table td .mauwoo-create-single-segment {
+    background-color: #bf3132a8 !important;
+}
+
+.mauwoo-coupon-navigations a.nav-tab-active {
+    background-color: #bf3132a8 !important;
+}
+
+.mauwoo-button,
+.submit input[type="submit"] {
+    background-color: #bf3132a8 !important;
+}
+
+.mauwoo-activity-wrapper h2,
+.mauwoo-bg-heading-common {
+    background-color: #bf3132a8 !important;
+}
+
+.wcmlim-form-divider {
+    display: none !important;
+}

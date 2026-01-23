@@ -1,0 +1,177 @@
+/* ==========================================================================
+   Icon With Text shortcode style - begin
+   ========================================================================== */
+
+.mkdf-iwt {
+	@include mkdfRelativeHolderLayout();
+	
+	.mkdf-iwt-icon {
+		
+		a {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		
+		.mkdf-icon-shortcode {
+			line-height: 1;
+			
+			&.mkdf-circle,
+			&.mkdf-square {
+				line-height: 2;
+			}
+		}
+	}
+
+    span.mkdf-iwt-subtitle {
+        display: block;
+        font-size: 13px;
+		text-transform: capitalize;
+		letter-spacing: .05em;
+		margin-bottom: 3px;
+    }
+
+	.mkdf-iwt-subtitle {
+		margin: 0;
+	}
+
+	.mkdf-iwt-subtitle-text {
+		display: block;
+	}
+	
+	.mkdf-iwt-title {
+		margin: 0;
+		line-height: 1.2em;
+		
+		a {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+	
+	.mkdf-iwt-title-text {
+		display: block;
+	}
+
+	.mkdf-iwt-separator {
+		width: 50px;
+        height: 2px;
+        background-color: #3e49f3;
+        margin: 11px auto 0;
+	}
+	
+	.mkdf-iwt-text {
+		margin: 8px 0 0;
+	}
+
+    .mkdf-iwt-link-button {
+        margin-top: 25px;
+		color: $default-text-color;
+    }
+	
+	&.mkdf-iwt-icon-left {
+		width: auto;
+		
+		.mkdf-iwt-icon,
+		.mkdf-iwt-content {
+			display: table-cell;
+			vertical-align: top;
+		}
+		
+		.mkdf-iwt-icon {
+			position: relative;
+			top: 5px;
+			
+			img {
+				max-width: none;
+			}
+		}
+
+        .mkdf-iwt-separator {
+            margin: 11px 0 0;
+        }
+		
+		.mkdf-iwt-content {
+			padding: 0 0 0 32px;
+
+			@include ipad-landscape {
+				padding: 0 0 0 24px;
+			}
+		}
+	}
+	
+	&.mkdf-iwt-icon-left-from-title {
+		
+		.mkdf-iwt-icon,
+		.mkdf-iwt-title-text {
+			position: relative;
+			display: table-cell;
+			vertical-align: middle;
+		}
+		
+		.mkdf-iwt-icon {
+			
+			.mkdf-icon-element {
+				@include mkdfTransition(none);
+			}
+			
+			img {
+				max-width: none;
+			}
+		}
+		
+		.mkdf-iwt-title-text {
+			padding: 0 0 0 17px;
+		}
+	}
+	
+	&.mkdf-iwt-icon-top {
+		text-align: center;
+		
+		.mkdf-iwt-content {
+			padding: 27px 14% 0;
+		}
+	}
+
+	&.mkdf-iwt-with-hover-shadow {
+		.mkdf-iwt-inner {
+			@include mkdfRelativeHolderLayout();
+			padding: 58px 28px 50px;
+			width: 100%;
+			box-sizing: border-box;
+			border-radius: 3px;
+			@include mkdfTransition(all 0.2s cubic-bezier(0.02, 0.54, 0.58, 1));
+		}
+
+		&:hover {
+            background-color: #fff;
+			box-shadow: 0px 5px 20px 0px rgba(212, 225, 250, 0.75);
+		}
+	}
+
+    &.mkdf-iwt-with-custom-icon {
+        .mkdf-iwt-icon {
+            img:first-child {
+                display: block;
+				margin: 0 auto;
+                @include mkdfTransition(all .35s cubic-bezier(.38,3,.57,1.6));
+
+                &.mkdf-animate {
+                    @include mkdfTransform(translate3d(0,-6px,0));
+                }
+            }
+            img:nth-child(2) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                z-index: -1;
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Icon With Text shortcode style - end
+   ========================================================================== */

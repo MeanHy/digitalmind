@@ -1,0 +1,62 @@
+/* ==========================================================================
+   Content Bottom styles - begin
+   ========================================================================== */
+@keyframes navglitch {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-5px);
+    -moz-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes navglitchreverse {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(5px);
+    -moz-transform: translateX(5px);
+    transform: translateX(5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+/* ==========================================================================
+   #Content bottom styles - begin
+   ========================================================================== */
+.mkdf-content-bottom .mkdf-content-bottom-inner {
+  box-sizing: border-box;
+}
+
+.mkdf-content-bottom .mkdf-content-bottom-inner.mkdf-grid {
+  padding: 20px 0;
+}
+
+.mkdf-content-bottom .mkdf-content-bottom-inner.mkdf-full-width {
+  padding: 20px 40px;
+}
+
+/* ==========================================================================
+   #Content bottom styles - end
+   ========================================================================== */
+/* ==========================================================================
+   Content Bottom styles - end
+   ========================================================================== */
+
+/*# sourceMappingURL=content-bottom-map.css.map */

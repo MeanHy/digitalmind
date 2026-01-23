@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Portfolio Item Layout - Gallery Overlay Dark style - begin
+   ========================================================================== */
+
+.mkdf-portfolio-list-holder {
+
+    &.mkdf-pl-gallery-center-overlay {
+
+        article {
+
+            &:hover {
+                .mkdf-pli-text-holder {
+                    opacity: 1;
+
+                    .mkdf-pli-text {
+                        @include mkdfTransform(translate3d(0,0,0));
+                    }
+                }
+            }
+
+            &.mkdf-pl-light-skin {
+                .mkdf-pli-text {
+                    .mkdf-pli-title,
+                    .mkdf-pli-excerpt,
+                    .mkdf-btn.mkdf-btn-simple,
+                    .mkdf-pli-category-holder a{
+                        color: #fff;
+                    }
+                }
+            }
+
+            .mkdf-pl-item-inner {
+                overflow: hidden;
+            }
+
+            .mkdf-pli-text {
+
+                .mkdf-pli-category-holder {
+                    margin-bottom: 4px;
+                    a {
+                        color: $default-heading-color;
+
+                        &:hover {
+                            color: $first-main-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.mkdf-pl-has-rounded-corners {
+            article {
+                .mkdf-pl-item-inner {
+                    border-radius: 3px;
+                }
+            }
+        }
+
+        .mkdf-pli-text-holder {
+            @include mkdfAbsoluteHolderLayout();
+            opacity: 0;
+            padding: 0;
+            box-sizing: border-box;
+            @include mkdfTransition(opacity .2s ease-in-out);
+            text-align: center;
+            background-color: #f2f7ff;
+
+            .mkdf-pli-text {
+                @include mkdfTransitionTransform(.45s cubic-bezier(0.64, 0.01, 0.15, 1.16));
+                @include mkdfTransform(translate3d(0,40px,0));
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Portfolio Item Layout - Gallery Overlay Dark style - end
+   ========================================================================== */

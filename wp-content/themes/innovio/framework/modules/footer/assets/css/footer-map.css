@@ -1,0 +1,163 @@
+/* ==========================================================================
+   Footer styles - begin
+   ========================================================================== */
+@keyframes navglitch {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-5px);
+    -moz-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes navglitchreverse {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(5px);
+    -moz-transform: translateX(5px);
+    transform: translateX(5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+/* ==========================================================================
+   Footer style - begin
+   ========================================================================== */
+.mkdf-page-footer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  z-index: 100;
+  box-sizing: border-box;
+  color: #cfd3e5;
+}
+
+.no-touch body:not(.error404) .mkdf-page-footer.mkdf-footer-uncover {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  -webkit-transition: left 0.33s cubic-bezier(0.694, 0.0482, 0.335, 1);
+  -moz-transition: left 0.33s cubic-bezier(0.694, 0.0482, 0.335, 1);
+  transition: left 0.33s cubic-bezier(0.694, 0.0482, 0.335, 1);
+}
+
+.mkdf-right-side-menu-opened .mkdf-page-footer.mkdf-footer-uncover {
+  left: -270px;
+}
+
+.mkdf-page-footer .mkdf-footer-top-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  background-color: #16161a;
+  border-top: 0 solid #d7e3f7;
+  box-sizing: border-box;
+}
+
+.mkdf-page-footer .mkdf-footer-top-holder .mkdf-tweet-text a {
+  color: #3e49f3 !important;
+}
+
+.mkdf-page-footer .mkdf-footer-top-holder .mkdf-footer-top-alignment-center {
+  text-align: center;
+}
+
+.mkdf-page-footer .mkdf-footer-top-holder .mkdf-footer-top-alignment-left {
+  text-align: left;
+}
+
+.mkdf-page-footer .mkdf-footer-top-holder .mkdf-footer-top-alignment-right {
+  text-align: right;
+}
+
+.mkdf-page-footer .mkdf-footer-top-holder .mkdf-footer-top-inner {
+  box-sizing: border-box;
+}
+
+.mkdf-page-footer .mkdf-footer-top-holder .mkdf-footer-top-inner.mkdf-grid {
+  padding: 122px 0 108px;
+}
+
+.mkdf-page-footer .mkdf-footer-top-holder .mkdf-footer-top-inner.mkdf-full-width {
+  padding: 76px 40px;
+}
+
+.mkdf-page-footer .mkdf-footer-bottom-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  background-color: #0b0b0d;
+  border-top: 0 solid #d7e3f7;
+  box-sizing: border-box;
+}
+
+.mkdf-page-footer .mkdf-footer-bottom-holder .mkdf-grid-col-4:first-child .widget_media_image {
+  padding-top: 10px;
+}
+
+.mkdf-page-footer .mkdf-footer-bottom-holder .mkdf-grid-col-4:nth-child(2) {
+  text-align: center;
+}
+
+.mkdf-page-footer .mkdf-footer-bottom-holder .mkdf-grid-col-4:last-child {
+  text-align: right;
+}
+
+.mkdf-page-footer .mkdf-footer-bottom-holder .mkdf-grid-col-4:last-child .widget_text {
+  vertical-align: top;
+}
+
+.mkdf-page-footer .mkdf-footer-bottom-holder .widget {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.mkdf-page-footer .mkdf-footer-bottom-holder .widget.widget_text {
+  font-size: 12px;
+}
+
+.mkdf-page-footer .mkdf-footer-bottom-holder .mkdf-social-icons-group-widget {
+  margin: -5px 0 0 20px;
+}
+
+.mkdf-page-footer .mkdf-footer-bottom-holder .mkdf-footer-bottom-inner {
+  box-sizing: border-box;
+}
+
+.mkdf-page-footer .mkdf-footer-bottom-holder .mkdf-footer-bottom-inner.mkdf-grid {
+  padding: 42px 0 35px;
+}
+
+.mkdf-page-footer .mkdf-footer-bottom-holder .mkdf-footer-bottom-inner.mkdf-full-width {
+  padding: 19px 40px;
+}
+
+/* ==========================================================================
+   Footer style - end
+   ========================================================================== */
+/* ==========================================================================
+   Footer styles - end
+   ========================================================================== */
+
+/*# sourceMappingURL=footer-map.css.map */

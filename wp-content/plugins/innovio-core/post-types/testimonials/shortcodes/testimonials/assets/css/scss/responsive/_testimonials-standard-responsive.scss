@@ -1,0 +1,14 @@
+@include phone-landscape {
+    .mkdf-testimonials-holder {
+        &.mkdf-testimonials-standard {
+
+            .mkdf-testimonial-text {
+                padding: 0;
+            }
+
+            .owl-nav {
+                display: none;
+            }
+        }
+    }
+}

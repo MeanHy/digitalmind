@@ -1,0 +1,59 @@
+.mkdf-pricing-info {
+    text-align: center;
+    padding: 30px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background-color: $additional-blue-color;
+
+    .mkdf-pricing-info-title {
+        margin-bottom: 16px;
+    }
+
+    .mkdf-pricing-info-description {
+        margin-bottom: 48px;
+        line-height: 21px;
+    }
+
+    .mkdf-pricing-info-pricing {
+        display: inline-block;
+        line-height: 1;
+        margin-bottom: 54px;
+        .mkdf-value,
+        .mkdf-price {
+            font-size: 45px;
+            font-weight: 700;
+            color: $default-heading-color;
+            vertical-align: middle;
+        }
+
+        .mkdf-mark {
+            color: $default-text-color;
+            font-size: 13px;
+            margin-left: 10px;
+            vertical-align: middle;
+            text-transform: capitalize;
+            &:before {
+                content: "/";
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .mkdf-pricing-info-button {
+        margin-bottom: 30px;
+    }
+
+    &.mkdf-light-skin {
+        .mkdf-pricing-info-title,
+        .mkdf-pricing-info-description {
+            color: #fff;
+        }
+        .mkdf-pricing-info-pricing {
+            .mkdf-value,
+            .mkdf-price,
+            .mkdf-mark {
+                color: #fff;
+            }
+        }
+    }
+}

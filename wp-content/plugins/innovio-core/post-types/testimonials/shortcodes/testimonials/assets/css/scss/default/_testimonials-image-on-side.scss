@@ -1,0 +1,172 @@
+.mkdf-testimonials-holder {
+
+    &.mkdf-testimonials-image-on-side {
+
+        .swiper-container-vertical {
+            height: 292px !important;
+            overflow: hidden;
+
+            .swiper-slide {
+                padding: 30px 0;
+                box-sizing: border-box;
+            }
+        }
+        .mkdf-testimonial-image {
+            @include mkdfRelativeHolderLayout();
+            width: 140px;
+            height: 140px;
+            margin: 20px 88px 20px 15px;
+
+            &:before {
+                content: '“';
+                position: absolute;
+                font-family: $default-text-font;
+                font-weight: 900;
+                right: -30px;
+                top: 19px;
+                display: inline-block;
+                font-size: 120px;
+                letter-spacing: -0.04em;
+                color: $default-heading-color;
+                z-index: 40;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: -15px;
+                left: -15px;
+                width: calc(100% + 30px);
+                height: calc(100% + 30px);
+                box-sizing: border-box;
+                border: 3px solid $second-main-color;
+                border-radius: 50%;
+            }
+
+            img {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+        .mkdf-testimonial-text-holder {
+            width: 66%;
+
+            .mkdf-testimonial-title {
+                margin: 0;
+            }
+
+            .mkdf-testimonial-text {
+                margin: 18px 0 0;
+                font-size: 18px;
+                line-height: 29px;
+            }
+
+            .mkdf-testimonial-author {
+                margin: 16px 0 0;
+
+                .mkdf-testimonials-author-name {
+                    display: block;
+                }
+
+                .mkdf-testimonials-author-job {
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: #656073;
+                    letter-spacing: 0.02em;
+                    text-transform: capitalize;
+                }
+            }
+        }
+
+        .swiper-pagination {
+            position: absolute;
+            margin: 0;
+            right: -40px;
+            bottom: 50%;
+            @include mkdfTransform(rotate(90deg));
+            counter-reset: section;
+            z-index: 100;
+
+            .swiper-pagination-bullet {
+                vertical-align: middle;
+                padding: 4px;
+                margin: 0 8px;
+                width: 4px;
+                height: 4px;
+                background: none;
+                border: 0;
+                border-radius: 0;
+                opacity: 1;
+                outline: none;
+                -webkit-appearance: none;
+                position: relative;
+                display: block;
+                float: left;
+                border-radius: 50%;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+
+                &:before {
+                    content: "0" counter(section);
+                    position: absolute;
+                    display: block;
+                    font-size: 14px !important;
+                    font-family: $default-text-font;
+                    letter-spacing: 0.05em;
+                    font-weight: 600;
+                    color: $default-heading-color;
+                    top: 17px;
+                    left: -2px !important;
+                    @include mkdfTransform(rotate(-90deg));
+                    counter-increment: section;
+                    visibility: hidden;
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    display: inline-block;
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                }
+
+                &.swiper-pagination-bullet-active {
+
+                    &:after {
+                        @include mkdfTransform(scale(2));
+                    }
+
+                    &:before {
+                        visibility: visible !important;
+                        pointer-events: none;
+                        cursor: default;
+                    }
+                }
+
+                &:nth-child(3n + 1) {
+                    &:after {
+                        background-color: $default-heading-color;
+                    }
+                }
+
+                &:nth-child(3n + 2) {
+                    &:after {
+                        background-color: $first-main-color;
+                    }
+                }
+
+                &:nth-child(3n) {
+                    &:after {
+                        background-color: $third-main-color;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Social Icons Group widget style - begin
+   ========================================================================== */
+@keyframes navglitch {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-5px);
+    -moz-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes navglitchreverse {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(5px);
+    -moz-transform: translateX(5px);
+    transform: translateX(5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.mkdf-social-icons-group-widget .mkdf-social-icon-widget-holder {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px 0 0;
+  text-align: center;
+  border: 2px solid #172ccb;
+  border-radius: 100%;
+  width: 49px;
+  height: 49px;
+  -webkit-transition: background-color 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out;
+}
+
+.mkdf-social-icons-group-widget .mkdf-social-icon-widget-holder > span {
+  line-height: 49px;
+}
+
+.mkdf-social-icons-group-widget .mkdf-social-icon-widget-holder:hover {
+  color: #fff;
+  background-color: #172ccb;
+}
+
+.mkdf-social-icons-group-widget .mkdf-social-icon-widget-holder:first-child {
+  margin-left: 0;
+}
+
+.mkdf-social-icons-group-widget .mkdf-social-icon-widget-holder:last-child {
+  margin-right: 0;
+}
+
+/* ==========================================================================
+   Social Icons Group widget style - end
+   ========================================================================== */
+
+/*# sourceMappingURL=social-icons-group-widget-map.css.map */

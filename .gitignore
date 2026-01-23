@@ -1,0 +1,6 @@
+wp-content/uploads
+*.log
+wp-content/cache
+wp-content/wp-rocket-config
+.htaccess
+wp-config.php

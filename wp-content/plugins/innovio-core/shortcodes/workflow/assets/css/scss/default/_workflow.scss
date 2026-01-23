@@ -1,0 +1,353 @@
+.mkdf-workflow {
+	margin-top: 50px;
+	position: relative;
+
+	&.mkdf-workflow-skin-light {
+
+        .main-line {
+            background: #fff;
+        }
+        .mkdf-workflow-item {
+            .line {
+                background-color: #fff;
+            }
+            .mkdf-workflow-item-inner {
+                .mkdf-workflow-text {
+
+                    .circle {
+                        background: #fff;
+                        border: 3px solid #fff;
+                    }
+
+                    .mkdf-workflow-item-title {
+                        color: #fff;
+                    }
+
+                    .mkdf-workflow-item-subtitle {
+                        color: #cfd3e5;
+                    }
+
+					.mkdf-workflow-item-text {
+						color: #d3d8ff;
+					}
+                }
+            }
+			.mkdf-workflow-item-featured {
+				.mkdf-workflow-text{
+					.mkdf-workflow-item-subtitle,
+					.mkdf-workflow-item-text {
+						color: #cfd3e5;
+					}
+				}
+			}
+        }
+	}
+
+	.main-line {
+		background: #eee;
+		left: 50%;
+		margin-left: -3px;
+		position: absolute;
+		right: 50%;
+		top: 0;
+		height: 100%;
+		width: 6px;
+        border-radius: 3px;
+	}
+
+	.mkdf-workflow-item {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 90%;
+		position: relative;
+		padding: 15px 0;
+
+
+        &:nth-child(3),
+        &:nth-child(5),
+        &:nth-child(7) {
+            .mkdf-workflow-curve {
+                &.mkdf-workflow-curve-1 {
+                    right: calc(50% - 80px);
+                    left: auto;
+                }
+
+                &.mkdf-workflow-curve-2 {
+                    right: calc(50% - 80px);
+                    left: auto;
+                }
+
+                &.mkdf-workflow-curve-3 {
+                    right: calc(50% - 80px);
+                    left: auto;
+                }
+            }
+        }
+
+        &:last-child {
+            .mkdf-workflow-curve {
+                display: none;
+            }
+        }
+
+		.mkdf-workflow-curve {
+			position: absolute;
+			background-color: #4256d6;
+			z-index: -1;
+
+			&.mkdf-workflow-curve-1 {
+				top: 50%;
+				left: calc(50% - 80px);
+				height: 3px;
+				width: 0;
+			}
+
+			&.mkdf-workflow-curve-2 {
+				top: 50%;
+				left: calc(50% - 80px);
+				height: 0;
+				width: 3px;
+			}
+
+			&.mkdf-workflow-curve-3 {
+				bottom: calc(-50% - 1px);
+				left: calc(50% - 80px);
+				height: 3px;
+				width: 0;
+			}
+		}
+
+		&:nth-of-type(2n) {
+			text-align: left;
+
+			.mkdf-workflow-item-inner {
+				.mkdf-workflow-image {
+					text-align: right;
+				}
+			}
+		}
+
+		&:nth-of-type(2n+1) {
+
+			.mkdf-workflow-item-inner {
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-orient: horizontal;
+				-webkit-box-direction: reverse;
+				-webkit-flex-direction: row-reverse;
+				-ms-flex-direction: row-reverse;
+				flex-direction: row-reverse;
+				-webkit-flex-wrap: wrap;
+				-ms-flex-wrap: wrap;
+				flex-wrap: wrap;
+                align-items:center;
+
+				.mkdf-workflow-image {
+					text-align: left;
+				}
+			}
+
+            &.mkdf-workflow-item-featured {
+                .mkdf-workflow-text {
+                    .circle {
+                        left: auto;
+                        right: -9px;
+                    }
+                    &:after {
+                        left: auto;
+                        right: 90px;
+                    }
+                }
+            }
+		}
+
+		.mkdf-workflow-item-inner {
+			display: inline-block;
+			position: relative;
+			width: 100%;
+			vertical-align: middle;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            align-items: center;
+
+			.mkdf-workflow-image,
+			.mkdf-workflow-text {
+				float: left;
+				margin: 0;
+				width: 50%;
+				box-sizing: border-box;
+			}
+
+			.mkdf-workflow-image {
+				padding: 30px 120px;
+			}
+
+			.mkdf-workflow-text {
+				padding: 30px 120px;
+
+				.mkdf-workflow-item-title {
+					margin-top: 0;
+					margin-bottom: 0;
+				}
+
+				p.mkdf-workflow-item-text {
+					margin-top: 10px;
+				}
+
+                .mkdf-workflow-item-subtitle {
+                    font-size: 11px;
+                    letter-spacing: .1em;
+                    text-transform: uppercase;
+                }
+
+				.mkdf-workflow-item-separator {
+                    width: 50px;
+                    height: 2px;
+                    background-color: #3e49f3;
+                    margin: 13px 0 0;
+				}
+
+				.circle {
+					background: $default-heading-color;
+					border: 3px solid $default-heading-color;
+					border-radius: 50%;
+					content: "";
+					height: 12px;
+					left: 50%;
+					margin: -9px 0 0 -9px;
+					position: absolute;
+					top: 50%;
+					width: 12px;
+                    z-index: 2;
+				}
+
+                .circle-lines {
+                    background-color: $third-main-color;
+                }
+			}
+
+		}
+
+		.line {
+			display: none;
+			background-color: #eee;
+			height: 100%;
+            top: 0;
+			left: 50%;
+			margin-left: -3px;
+			position: absolute;
+			width: 6px;
+		}
+
+        &.mkdf-workflow-item-reached {
+            .line {
+                display: block;
+                background-color: $first-main-color;
+            }
+        }
+
+        &.mkdf-workflow-item-reached + .mkdf-workflow-item:not(.mkdf-workflow-item-reached) {
+            overflow: visible;
+
+            .line {
+                display: block;
+                top: -50%;
+            }
+        }
+
+		&.mkdf-workflow-item-featured {
+			.mkdf-workflow-text {
+
+                position: relative;
+
+				.mkdf-workflow-item-subtitle,
+				.mkdf-workflow-item-title,
+				.mkdf-workflow-item-text {
+					color: #fff;
+				}
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    background-color: #4a60d7;
+                    width: calc(100% - 90px);
+                    height: 100%;
+                    top: 0;
+                    left: 90px;
+					border-radius: 3px;
+                    z-index: -1;
+                }
+
+                .circle {
+                    left: 0;
+                }
+			}
+		}
+
+	}
+
+
+	&.mkdf-workflow-animate {
+		@include mkdfTransform(translateY(100px));
+		opacity: 0;
+		-webkit-transition: opacity .55s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform .55s cubic-bezier(0.23, 1, 0.32, 1);
+		transition: opacity .55s cubic-bezier(0.23, 1, 0.32, 1), transform .55s cubic-bezier(0.23, 1, 0.32, 1);
+		.main-line {
+			opacity: 0;
+			height: 0;
+			@include mkdfTransition(opacity .55s cubic-bezier(0.23, 1, 0.32, 1), height 1.8s ease-out);
+		}
+		.circle {
+			@include mkdfTransform(scale(.2));
+			-webkit-transition: -webkit-transform .6s cubic-bezier(0.18, 0.89, 0.32, 1.68) .5s;
+			transition: transform .6s cubic-bezier(0.18, 0.89, 0.32, 1.68) .5s;
+		}
+		.mkdf-workflow-item {
+			.mkdf-workflow-item-inner {
+				.mkdf-workflow-image {
+					opacity: 0;
+					@include mkdfTransform(scale(.6));
+					-webkit-transition: -webkit-transform .6s cubic-bezier(0.18, 0.89, 0.32, 1), opacity .3s ease-out;
+					transition: transform .6s cubic-bezier(0.18, 0.89, 0.32, 1), opacity .3s ease-out;
+				}
+				.mkdf-workflow-text {
+					h4, p {
+						opacity: 0;
+						@include mkdfTransition(opacity .5s cubic-bezier(0.22, 0.61, 0.36, 1) .2s);
+					}
+				}
+			}
+		}
+		&.mkdf-appeared {
+			@include mkdfTransform(translateY(0));
+			opacity: 1;
+			.main-line {
+				opacity: 1;
+				height: 100%;
+			}
+			.mkdf-workflow-item.mkdf-appeared {
+				.mkdf-workflow-image {
+					opacity: 1;
+					@include mkdfTransform(scale(1));
+				}
+				.mkdf-workflow-text {
+					h4, p {
+						opacity: 1;
+					}
+				}
+
+			}
+			.circle {
+				@include mkdfTransform(scale(1));
+			}
+		}
+	}
+}

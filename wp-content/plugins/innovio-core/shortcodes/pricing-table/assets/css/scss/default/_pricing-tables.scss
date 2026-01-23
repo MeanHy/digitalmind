@@ -1,0 +1,134 @@
+/* ==========================================================================
+   Pricing Tables shortcode style - begin
+   ========================================================================== */
+
+.mkdf-pricing-tables {
+    @include mkdfRelativeHolderLayout();
+
+    &.mkdf-pt-white-skin {
+        .mkdf-price-table .mkdf-pt-inner ul li.mkdf-pt-content-holder .mkdf-pt-content ul li:before {
+            color: #fff;
+        }
+    }
+}
+
+.mkdf-price-table {
+
+    .mkdf-pt-inner {
+        @include mkdfRelativeHolderLayout();
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                margin: 0;
+
+                &.mkdf-pt-prices {
+                    position: absolute;
+                    padding: 30px 0 0;
+                    top: 0;
+                    left: 0;
+                    max-width: 120px;
+                    box-sizing: border-box;
+
+                    .mkdf-pt-value {
+                        position: relative;
+                        vertical-align: super;
+                        bottom: -2px;
+                        font-size: 35px;
+                        line-height: 1em;
+                        font-weight: 600;
+                        color: $default-heading-color;
+                    }
+
+                    .mkdf-pt-price {
+                        position: relative;
+                        display: inline-block;
+                        vertical-align: middle;
+                        font-family: $default-text-font;
+                        font-weight: 600;
+                        font-size: 60px;
+                        line-height: 1em;
+                        color: $default-heading-color;
+                    }
+
+                    .mkdf-pt-mark {
+                        position: relative;
+                        display: block;
+                        margin: 8px 0 0 0;
+                        font-family: $default-text-font;
+                        color: $default-text-color;
+                        font-size: 13px;
+                        line-height: 20px;
+                        text-transform: capitalize;
+                        letter-spacing: 0.02em;
+                    }
+                }
+
+                &.mkdf-pt-content-holder {
+                    padding: 30px 15px 0 111px;
+
+                    .mkdf-pt-title-holder {
+                        position: relative;
+                        color: $default-heading-color;
+                        font-family: $default-text-font;
+                        font-size: 27px;
+                        line-height: 29px;
+                        font-weight: 700;
+
+                        .mkdf-pt-title {
+                            display: block;
+                            padding: 5px 0 0;
+                            box-sizing: border-box;
+                        }
+                    }
+
+                    .mkdf-pt-additional-title-holder {
+                        font-size: 18px;
+                        position: relative;
+                        color: $default-text-color;
+
+                        .mkdf-pt-additional-title {
+                            display: block;
+                            padding: 14px 0 0 0;
+                            box-sizing: border-box;
+                        }
+                    }
+
+                    .mkdf-pt-separator {
+                        width: 50px;
+                        height: 2px;
+                        background-color: #3e49f3;
+                        margin: 13px 0 0;
+                    }
+
+                    .mkdf-pt-content {
+                        padding: 18px 0 50px;
+                        ul li {
+                            padding: 5px 0;
+
+                            &:before {
+                                content: "\4e";
+                                font-family: ElegantIcons;
+                                font-size: 18px;
+                                color: $default-heading-color;
+                                position: relative;
+                                top: 3px;
+                                padding-right: 15px;
+                            }
+                        }
+                    }
+
+                    .mkdf-pt-button {
+                        padding: 0 0 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Pricing Tables shortcode style - end
+   ========================================================================== */

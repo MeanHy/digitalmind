@@ -1,0 +1,128 @@
+.mkdf-pricing-slider {
+    text-align: center;
+
+    .mkdf-pricing-slider-button-holder {
+        display: none;
+    }
+
+    .mkdf-pricing-slider-bar-holder {
+        position: relative;
+        height: 6px;
+        background-color: $second-main-color;
+        margin-bottom: 100px;
+        border-radius: 3px;
+    }
+    .mkdf-pricing-slider-drag {
+        width: 36px;
+        height: 36px;
+        border-radius: 20px;
+        display: inline-block;
+        background-color: $additional-blue-color;
+        position: absolute;
+        line-height: 36px;
+        top: -15px !important;
+        left: 0;
+        cursor: pointer;
+
+        .arrow_carrot-left {
+            font-size: 20px;
+            color: $second-main-color;
+            position: absolute;
+            left: 1px;
+            top: 7px;
+        }
+
+        .arrow_carrot-right {
+            font-size: 20px;
+            color: $first-main-color;
+            position: absolute;
+            left: 15px;
+            top: 7px;
+        }
+
+        z-index: 10;
+    }
+
+    .mkdf-pricing-slider-bar {
+        height: 100%;
+        background-color: $first-main-color;
+        border-radius: 3px;
+    }
+
+    .delimiter {
+        position: absolute;
+        display: inline-block;
+        width: 1px;
+        height: 40px;
+        background-color: #e0dfe3;
+        top: -17px;
+        left: 10%;
+        z-index: 0;
+    }
+
+    .mkdf-pricing-slider-info-holder {
+        width: 28%;
+        margin: 0 auto;
+    }
+
+    .mkdf-pricing-info {
+        padding: 32px 30px 30px;
+        .mkdf-pricing-info-pricing {
+            margin-bottom: 55px;
+        }
+    }
+
+    .mkdf-pricing-slider-value-holder  {
+        text-align: center;
+        position: absolute;
+        z-index: 100;
+        opacity: 1;
+        top: 45px;
+        box-sizing: border-box;
+        width: 120px;
+        @include mkdfTransform(translateX(-50%));
+
+        .mkdf-pricing-slider-value {
+            display: inline-block;
+            text-align: center;
+            font-weight: 700;
+            font-size: 20px;
+            color: $default-heading-color;
+            height: 20px;
+            line-height: 20px;
+        }
+    }
+
+    .mkdf-btn.mkdf-btn-solid:not(.mkdf-btn-custom-hover-bg) {
+        background-color: $first-main-color!important;
+
+        &:hover {
+            background-color: $first-main-color!important;
+        }
+    }
+
+    &.mkdf-light-skin {
+        .delimiter {
+            background-color: rgba(255,255,255,.15);
+        }
+        .mkdf-pricing-slider-drag {
+            background-color: #f1f6f8;
+        }
+        .mkdf-pricing-info {
+            background-color: #2a31a3;
+        }
+        .mkdf-pricing-info-title{
+            color: #fff;
+        }
+        .mkdf-pricing-info-description,
+        .mkdf-pricing-info-pricing .mkdf-mark {
+            color: #c9cfff;
+        }
+        .mkdf-pricing-info-pricing {
+            .mkdf-value,
+            .mkdf-price {
+                color: #fff;
+            }
+        }
+    }
+}

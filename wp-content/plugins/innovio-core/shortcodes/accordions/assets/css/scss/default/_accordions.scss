@@ -1,0 +1,164 @@
+/* ==========================================================================
+   Accordions shortcode style - begin
+   ========================================================================== */
+
+.mkdf-accordion-holder {
+    @include mkdfRelativeHolderLayout();
+    border-bottom: 2px solid #f2f6ff;
+
+    .mkdf-accordion-title {
+        position: relative;
+        cursor: pointer;
+        margin: 0;
+        padding: 33px 95px 33px 95px;
+        border-top: 2px solid #f2f6ff;
+        box-sizing: border-box;
+        @include mkdfTransform(translateZ(0px));
+        @include mkdfTransition(color .2s ease-out, background-color .2s ease-out);
+	
+	    .mkdf-tab-title {
+		    display: block;
+		    line-height: inherit;
+	    }
+
+        .mkdf-accordion-num {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 80px;
+            text-align: center;
+
+            .mkdf-accordion-number,
+            .mkdf-accordion-label {
+                display: block;
+            }
+
+            .mkdf-accordion-number {
+                font-weight: 600;
+                font-size: 28px;
+                letter-spacing: -0.04em;
+                line-height: 32px;
+                padding-top: 21px;
+                border-top: 2px solid $third-main-color;
+                margin-top: -2px;
+            }
+
+            .mkdf-accordion-label {
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 18px;
+                letter-spacing: 0;
+                text-transform: uppercase;
+            }
+        }
+
+        .mkdf-accordion-mark {
+            position: absolute;
+            display: inline-block;
+            vertical-align: middle;
+            top: calc(50% - 22px);
+	        right: 40px;
+            width: 46px;
+            height: 46px;
+	        margin: -1px 0 0;
+	        font-size: 20px;
+	        line-height: 20px;
+            text-align: center;
+            will-change: transform;
+            background-color: transparent;
+            border-radius: 100%;
+            box-sizing: border-box;
+            border: 2px solid #4772ff;
+            @include mkdfTransition(all .2s ease);
+	
+	        span {
+		        position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+
+                &:before{
+                    background-color: currentColor;
+                    content: '';
+                    @include mkdfTransition(background-color .2s ease-in-out);
+                }
+		
+		        &.mkdf-accordion-line-1:before {
+                    width: 1px;
+                    height: 12px;
+                }
+                &.mkdf-accordion-line-2:before {
+                    height: 1px;
+                    width: 12px;
+                }
+	        }
+        }
+
+        &.ui-state-hover:not(.ui-state-active) {
+            .mkdf-accordion-mark {
+                @include mkdfTransform(rotate(90deg));
+            }
+        }
+	    
+	    &.ui-state-active {
+            .mkdf-accordion-mark {
+                span {
+                    &.mkdf-accordion-line-1 {
+                        opacity: 0;
+                    }
+                }
+            }
+	    }
+    }
+
+    .mkdf-accordion-content {
+        margin: 0;
+        padding: 0 95px 33px 95px;
+        border-top: 2px solid transparent;
+	    
+	    p {
+		    margin: 0;
+	    }
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 2px;
+        left: 0;
+        bottom: -2px;
+        background-color: $third-main-color;
+    }
+
+    &.mkdf-white-skin {
+        border-bottom-color: #677ddf;
+        .mkdf-accordion-title {
+            color: #fff;
+            border-top-color: #677ddf;
+
+            .mkdf-accordion-mark {
+                border-color: #3349d3;
+            }
+
+            .mkdf-accordion-num {
+                .mkdf-accordion-number {
+                    border-top-color: #fff;
+                }
+            }
+
+            .mkdf-accordion-mark:after {
+                border-color: $first-main-color;
+            }
+        }
+        &:after {
+            background-color: #fff;
+        }
+    }
+}
+/* ==========================================================================
+   Accordions shortcode style - end
+   ========================================================================== */

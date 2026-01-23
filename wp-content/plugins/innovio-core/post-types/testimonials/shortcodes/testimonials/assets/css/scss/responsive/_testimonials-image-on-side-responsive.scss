@@ -1,0 +1,60 @@
+.mkdf-testimonials-holder {
+
+    &.mkdf-testimonials-image-on-side {
+
+        @include ipad-landscape {
+
+            .swiper-container-vertical {
+                height: 492px !important;
+            }
+
+            .mkdf-testimonial-image {
+                float: none;
+                margin-bottom: 30px;
+            }
+
+            .mkdf-testimonial-text-holder {
+                display: block;
+                width: 70%;
+            }
+
+        }
+
+        @include ipad-portrait {
+
+            .swiper-container-vertical {
+                height: 512px !important;
+            }
+
+            .mkdf-testimonial-text-holder {
+                width: 86%;
+            }
+        }
+
+        @include phone-landscape {
+
+            .swiper-container-vertical {
+                height: 592px !important;
+            }
+            .swiper-pagination {
+                display: none;
+            }
+            .mkdf-testimonial-text-holder {
+                width: 100%;
+            }
+        }
+
+        @include phone-portrait {
+
+            .swiper-container-vertical {
+                height: 622px !important;
+            }
+        }
+
+        @include smaller-phone-portrait {
+            .swiper-container-vertical {
+                height: 652px !important;
+            }
+        }
+    }
+}

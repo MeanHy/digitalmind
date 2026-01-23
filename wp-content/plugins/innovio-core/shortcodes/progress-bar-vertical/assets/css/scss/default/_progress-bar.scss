@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Vertical progress bar shortcode start styles
+   ========================================================================== */
+.mkdf-progress-bar-vertical {
+    .mkdf-progress-bar-content-outer {
+        height: 240px;
+        position: relative;
+        background-color: #ecf3ff;
+        border-radius: 3px 3px 0 0;
+    }
+    .mkdf-progress-bar-number {
+        line-height: 1em;
+        color: $default-heading-color;
+        display: block;
+        position: relative;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0;
+        margin-bottom: 10px;
+
+        &.yes:after{
+            content: '%';
+            margin-left: -5px;
+            font-size: 20px;
+            font-weight: 700;
+            font-family: $default-text-font;
+        }
+    }
+    .mkdf-progress-bar-title {
+        margin-bottom: 1px;
+        margin-top: 17px;
+    }
+
+    p.mkdf-progress-bar-title {
+        font-size: 13px;
+        letter-spacing: 0.02em;
+        text-transform: capitalize;
+    }
+
+    .mkdf-progress-bar-content-outer {
+        .mkdf-progress-bar-progress-content {
+            display: inline-block;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: $first-main-color;
+            border: 1px solid transparent;
+            border-radius: 0 0 3px 3px;
+            box-sizing: border-box;
+        }
+    }
+}
+
+/* ==========================================================================
+   Vertical progress bar shortcode end styles
+   ========================================================================== */

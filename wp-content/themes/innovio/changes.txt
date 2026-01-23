@@ -1,0 +1,75 @@
+1.7
+- Added WordPress 5.8 compatibility
+- Added WooCommerce 5.5 compatibility
+- Updated Innovio Core plugin to 1.2.3
+- Updated Innovio Instagram Feed plugin to 2.0.2
+- Updated Innovio Twitter Feed plugin to 1.0.3
+- Updated WPBakery Page Builder to 6.7.0
+- Updated Revolution Slider to 6.5.6
+- Fixed Instagram Feed connection
+- Fixed review star style
+
+1.6
+- Added WordPress 5.7.1 compatibility
+- Added WooCommerce 5.3.0 compatibility
+- Updated Innovio Core plugin to 1.2.2
+- Updated Innovio Instagram Feed plugin to 2.0.1
+- Updated Innovio Twitter Feed plugin to 1.0.2
+- Updated Revolution Slider plugin to 6.4.11
+- Updated WPBakery Visual Composer plugin to 6.6.0
+- Fixed countdown calculation
+- Fixed Revolution Slider preview functionality
+- Fixed word wrap animation on Custom title shortcode for new Revolution Slider versions
+- Fixed Woo archive pages header settings rendering
+- Improved PHP 8 compatibility
+- Removed Google Plus share option
+
+1.5.1
+- Updated Innovio Instagram Feed plugin to 2.0
+- Updated Revolution Slider plugin to 6.2.23
+- Updated WPBakery Visual Composer plugin to 6.4.1
+
+1.5
+- Added WordPress 5.5 compatibility
+- Updated Innovio Core plugin to 1.2.1
+- Updated Revolution Slider plugin to 6.2.22
+- Updated WPBakery Visual Composer plugin to 6.3.0
+- Added WooCommerce 4.4.1 compatibility
+
+1.4
+- Added Innovio Dashboard
+- Added WooCommerce 3.8.1 compatibility
+- Updated WPBakery Page Builder to 6.1
+- Updated Revolution Slider to 6.1.5
+- Updated Innovio Core to 1.2
+� Removed unused file instagram-redirect.php from Innovio Instagram Feed plugin
+� Removed unused file twitter-redirect.php from Innovio Twitter Feed plugin
+� Updated Innovio Instagram Feed plugin to 1.0.1
+� Updated Innovio Twitter Feed plugin to 1.0.1
+- Updated Innovio Child theme to 1.0.1
+- Improved Import
+- Improved Welcome Page
+- Changed Innovio Options Position
+
+1.3
+- Added WooCommerce 3.7.0 compatibility
+- Updated WPBakery Page Builder to 6.0.5
+- Updated Revolution Slider to 6.1.3
+- Updated Innovio Core plugin to 1.1.2
+- Minor improvements
+
+1.2
+- Added WooCommerce 3.6.5 compatibility
+- Updated Visual Composer to 6.0.3
+
+1.1.1
+- Added WooCommerce 3.6.1 compatibility
+- Improved theme files
+- Updated Innovio Core plugin to 1.1.1
+
+1.1
+- Improved framework files
+- Updated Innovio Core plugin to 1.1
+- Updated Visual Composer to 5.7
+- Updated Revolution Slider to 5.4.8.3
+- Updated pot file

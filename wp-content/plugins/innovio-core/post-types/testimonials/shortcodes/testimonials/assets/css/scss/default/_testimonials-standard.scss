@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Testimonials standard style - begin
+   ========================================================================== */
+
+.mkdf-testimonials-holder {
+    
+    &.mkdf-testimonials-standard {
+        text-align: center;
+
+        .mkdf-testimonial-image {
+            @include mkdfRelativeHolderLayout();
+            margin: 25px 0 0;
+
+            img {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+        .mkdf-testimonial-author {
+            margin: 24px 0 0;
+
+            .mkdf-testimonials-author-name {
+                display: block;
+                margin-bottom: 4px;
+            }
+
+            .mkdf-testimonials-author-job {
+                text-transform: capitalize;
+                font-size: 13px;
+                font-weight: 500;
+                letter-spacing: 0.02em;
+                color: $default-text-color;
+            }
+        }
+
+        .mkdf-testimonial-text {
+            margin: 23px 0 0;
+            font-size: 18px;
+            line-height: 29px;
+            color: $default-text-color;
+            padding: 0 13%;
+        }
+
+        /* Light/Dark styles */
+        &.mkdf-testimonials-light {
+            
+            .mkdf-testimonial-title,
+            .mkdf-testimonial-text,
+            .mkdf-testimonial-author {
+                color: #fff;
+            }
+
+            .owl-dots {
+                
+                .owl-dot {
+                    
+                    span {
+                        border: 2px solid rgba(#fff, .5);
+                    }
+                    
+                    &:hover,
+                    &.active {
+
+                        span {
+                            background-color: #fff;
+                            border-color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Testimonials standard style - end
+   ========================================================================== */

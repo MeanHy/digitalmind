@@ -1,0 +1,1617 @@
+# Copyright (C) 2015 Team Reduk
+# This file is distributed under the GPL3+.
+msgid ""
+msgstr ""
+"Project-Id-Version: Reduk Framework 3.5.3\n"
+"Report-Msgid-Bugs-To: https://github.com/RedukFramework/RedukFramework/issues\n"
+"POT-Creation-Date: 2015-04-15 23:15:00+00:00\n"
+"PO-Revision-Date: 2021-08-04 18:56+0700\n"
+"Language-Team: LANGUAGE <admin@ecomyze.com>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;"
+"esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"Last-Translator: \n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: RedukCore/core/enqueue.php:397
+#: RedukCore/inc/extensions/customizer/extension_customizer.php:566
+msgid "You have changes that are not saved. Would you like to save them now?"
+msgstr "Bạn có những thay đổi chưa được lưu. Bạn có muốn lưu chúng ngay bây giờ không?"
+
+#: RedukCore/core/enqueue.php:405
+#: RedukCore/inc/extensions/customizer/extension_customizer.php:567
+msgid "Are you sure? Resetting will lose all custom values."
+msgstr "Bạn có chắc không? Đặt lại sẽ mất tất cả các giá trị tùy chỉnh."
+
+#: RedukCore/core/enqueue.php:413
+msgid "Are you sure? Resetting will lose all custom values in this section."
+msgstr "Bạn có chắc không? Việc đặt lại sẽ làm mất tất cả các giá trị tùy chỉnh trong phần này."
+
+#: RedukCore/core/enqueue.php:421
+#: RedukCore/inc/extensions/customizer/extension_customizer.php:568
+msgid ""
+"Your current options will be replaced with the values of this preset. Would you like to "
+"proceed?"
+msgstr ""
+"Các tùy chọn hiện tại của bạn sẽ được thay thế bằng các giá trị của tập đặt trước này. Bạn có "
+"muốn tiếp tục không?"
+
+#: RedukCore/core/enqueue.php:428
+msgid "Please Wait"
+msgstr "Vui Lòng Chờ"
+
+#: RedukCore/core/enqueue.php:439
+msgid "There was an error saving. Here is the result of your action:"
+msgstr "Đã xảy ra lỗi khi lưu. Đây là kết quả của hành động của bạn:"
+
+#: RedukCore/core/enqueue.php:440
+msgid "There was a problem with your action. Please try again or reload the page."
+msgstr "Đã xảy ra sự cố với hành động của bạn. Vui lòng thử lại hoặc tải lại trang."
+
+#: RedukCore/core/panel.php:65
+msgid "Warning- This options panel will not work properly without javascript!"
+msgstr "Cảnh báo- Bảng tùy chọn này sẽ không hoạt động bình thường nếu không có javascript!"
+
+#: RedukCore/core/panel.php:141
+msgid "Settings Imported!"
+msgstr "Đã Nhập Cài Đặt!"
+
+#: RedukCore/core/panel.php:156
+msgid "All Defaults Restored!"
+msgstr "Giá Trị Mặc Định Đã Được Khôi Phục!"
+
+#: RedukCore/core/panel.php:170
+msgid "Section Defaults Restored!"
+msgstr "Đã Khôi Phục Giá Trị Mặc Định Cho Phần Này!"
+
+#: RedukCore/core/panel.php:184
+msgid "Settings Saved!"
+msgstr "Đã Lưu Cài Đặt!"
+
+#: RedukCore/core/panel.php:204
+msgid "Settings have changed, you should save them!"
+msgstr "Cài đặt đã thay đổi, bạn nên lưu thông tin lại!"
+
+#: RedukCore/core/panel.php:212
+msgid "error(s) were found!"
+msgstr "lỗi đã được tìm thấy!"
+
+#: RedukCore/core/panel.php:220
+msgid "warning(s) were found!"
+msgstr "cảnh báo đã được tìm thấy!"
+
+#: RedukCore/core/panel.php:340
+msgid ""
+"<strong>Your panel has bundled outdated copies of Reduk Framework template files</strong> "
+"&#8211; if you encounter functionality issues this could be the reason. Ensure you update or "
+"remove them."
+msgstr ""
+"<strong> Bảng điều khiển của bạn chứa các bản sao lỗi thời của các mẫu Reduk Framework </"
+"strong> &#8211; nếu bạn gặp phải các lỗi về chức năng, đây có thể là lý do. Đảm bảo bạn cập "
+"nhật hoặc xóa các mẫu này đi."
+
+#: RedukCore/framework.php:220
+msgid "Options panel created using %1$s"
+msgstr "Bảng tùy chọn được tạo sử dụng %1$s"
+
+#. Plugin Name of the plugin/theme
+msgid "Reduk Framework"
+msgstr "Reduk Framework"
+
+#: RedukCore/framework.php:224 RedukCore/framework.php:228
+msgid "Options"
+msgstr "Tùy Chọn"
+
+#: RedukCore/framework.php:1389 RedukCore/templates/panel/menu_container.tpl.php:63
+msgid "System Info"
+msgstr "Thông Tin Hệ Thống"
+
+#: RedukCore/framework.php:1692
+msgid "Enable"
+msgstr "Cho Phép"
+
+#: RedukCore/framework.php:1697
+msgid "Disable"
+msgstr "Vô Hiệu"
+
+#: RedukCore/framework.php:1703
+msgid "moving the mouse over"
+msgstr "di chuyển chuột qua"
+
+#: RedukCore/framework.php:1705
+msgid "clicking"
+msgstr "nhấp chuột"
+
+#: RedukCore/framework.php:1709
+msgid ""
+"Hints are tooltips that popup when %d the hint icon, offering addition information about the "
+"field in which they appear.  They can be %d d by using the link below."
+msgstr ""
+"Gợi ý là các chú giải công cụ bật lên khi %d biểu tượng gợi ý, cung cấp thông tin bổ sung về "
+"trường thông tin cần được chú giải. Chúng có thể là %d d bằng cách sử dụng liên kết bên dưới."
+
+#: RedukCore/framework.php:1714
+msgid "Hints"
+msgstr "Gợi Ý"
+
+#: RedukCore/framework.php:1841
+msgid "Default"
+msgstr "Mặc Định"
+
+#: RedukCore/framework.php:2680
+msgid "Invalid security credential, please reload the page and try again."
+msgstr "Thông tin xác thực bảo mật không hợp lệ, vui lòng tải lại trang và thử lại."
+
+#: RedukCore/framework.php:2766
+msgid "Your panel has no fields. Nothing to save."
+msgstr "Bảng điều khiển của bạn không có trường thông tin nào. Không có gì để lưu lại."
+
+#: RedukCore/inc/class.reduk_filesystem.php:23
+msgid "Unable to modify required files. Please ensure that"
+msgstr "Không thể sửa đổi các tệp được yêu cầu. Hãy đảm bảo rằng"
+
+#: RedukCore/inc/class.reduk_filesystem.php:25
+msgid "has the proper read/write permissions or enter your FTP information below."
+msgstr "có quyền đọc/ghi thích hợp hoặc nhập thông tin FTP của bạn bên dưới."
+
+#: RedukCore/inc/class.reduk_functions.php:237
+msgid "Dismiss"
+msgstr "Miễn nhiệm"
+
+#: RedukCore/inc/class.reduk_helpers.php:589
+msgid ""
+"<code>%s</code> version <strong style=\"color:red\">%s</strong> is out of date. The core "
+"version is %s"
+msgstr ""
+"<code>%s</code> phiên bản <strong style = \\\"color: red\\\">%s</strong> đã lỗi thời. Phiên "
+"bản chính là %s"
+
+#: RedukCore/inc/class.reduk_themecheck.php:61
+msgid ""
+"The theme you are testing has %s embedded. We invite you to read the %sTheme-Check "
+"Documentation%s to understand some warnings you will see because of Reduk."
+msgstr ""
+"Mẫu chủ đề bạn đang thử nghiệm đã nhúng %s. Chúng tôi mời bạn đọc %s Tài Liệu Kiểm Tra Mẫu "
+"Giao Diện %s để hiểu một số cảnh báo bạn sẽ thấy khi sử dụng Reduk."
+
+#: RedukCore/inc/class.reduk_themecheck.php:109
+msgid ""
+"The following directories & files are still located in your <strong>Reduk</strong>  directory. "
+"They may cause errors in Theme-Check."
+msgstr ""
+"Các thư mục & tệp sau đây vẫn nằm trong thư mục <strong>Reduk</strong> của bạn. Chúng có thể "
+"gây ra lỗi khi Kiểm Tra Mẫu Giao Diện."
+
+#: RedukCore/inc/debug.php:41 RedukCore/inc/debug.php:69 RedukCore/inc/debug.php:76
+#: RedukCore/inc/debug.php:77
+msgid "Options Object"
+msgstr "Đối Tượng Tùy Chọn"
+
+#: RedukCore/inc/debug.php:54
+msgid "Show Object in Javascript Console Object"
+msgstr "Hiển Thị Đối Tượng Trong Bảng Điều Khiển Đối Tượng Javascript"
+
+#: RedukCore/inc/extensions/customizer/extension_customizer.php:601
+msgid "You have changes that are not saved.  Would you like to save them now?"
+msgstr "Bạn có những thay đổi chưa được lưu. Bạn có muốn lưu chúng ngay bây giờ không?"
+
+#: RedukCore/inc/extensions/customizer/extension_customizer.php:602
+msgid "Are you sure?  Resetting will lose all custom values."
+msgstr "Bạn có chắc không? Đặt lại sẽ mất tất cả các giá trị tùy chỉnh."
+
+#: RedukCore/inc/extensions/customizer/extension_customizer.php:603
+msgid ""
+"Your current options will be replaced with the values of this preset.  Would you like to "
+"proceed?"
+msgstr ""
+"Các tùy chọn hiện tại của bạn sẽ được thay thế bằng các giá trị của giá trị đặt trước này. Bạn "
+"có muốn tiếp tục không?"
+
+#: RedukCore/inc/extensions/import_export/extension_import_export.php:120
+msgid "Import / Export"
+msgstr "Nhập Dữ Liệu / Xuất Dữ Liệu"
+
+#: RedukCore/inc/extensions/import_export/import_export/field_import_export.php:103
+msgid "Import Options"
+msgstr "Tùy Chọn Nhập Liệu"
+
+#: RedukCore/inc/extensions/import_export/import_export/field_import_export.php:104
+msgid "Import from File"
+msgstr "Nhập Từ Tệp"
+
+#: RedukCore/inc/extensions/import_export/import_export/field_import_export.php:104
+msgid "Import from URL"
+msgstr "Nhập Từ URL"
+
+#: RedukCore/inc/extensions/import_export/import_export/field_import_export.php:107
+msgid "Input your backup file below and hit Import to restore your sites options from a backup."
+msgstr ""
+"Nhập tệp sao lưu của bạn bên dưới và nhấn Nhập để khôi phục các tùy chọn trang web của bạn từ "
+"bản sao lưu."
+
+#: RedukCore/inc/extensions/import_export/import_export/field_import_export.php:112
+msgid ""
+"Input the URL to another sites options set and hit Import to load the options from that site."
+msgstr ""
+"Nhập URL vào các tùy chọn trang web khác được đặt và nhấn Nhập để tải các tùy chọn từ trang "
+"web đó."
+
+#: RedukCore/inc/extensions/import_export/import_export/field_import_export.php:116
+msgid "Import"
+msgstr "Nhập Dữ Liệu"
+
+#: RedukCore/inc/extensions/import_export/import_export/field_import_export.php:116
+msgid "WARNING! This will overwrite all existing option values, please proceed with caution!"
+msgstr ""
+"CẢNH BÁO! Thao tác này sẽ ghi đè lên tất cả các giá trị tùy chọn hiện có, hãy tiến hành một "
+"cách thận trọng!"
+
+#: RedukCore/inc/extensions/import_export/import_export/field_import_export.php:119
+msgid "Export Options"
+msgstr "Tùy Chọn Xuất Dữ Liệu"
+
+#: RedukCore/inc/extensions/import_export/import_export/field_import_export.php:121
+msgid ""
+"Here you can copy/download your current option settings. Keep this safe as you can use it as a "
+"backup should anything go wrong, or you can use it to restore your settings on this site (or "
+"any other site)."
+msgstr ""
+"Tại đây, bạn có thể sao chép / tải xuống cài đặt tùy chọn hiện tại của mình. Giữ an toàn này "
+"vì bạn có thể sử dụng nó như một bản sao lưu nếu có bất kỳ sự cố nào xảy ra hoặc bạn có thể sử "
+"dụng nó để khôi phục cài đặt của mình trên trang web này (hoặc bất kỳ trang web nào khác)."
+
+#: RedukCore/inc/extensions/import_export/import_export/field_import_export.php:126
+msgid "Copy Data"
+msgstr "Sao Chép Dữ Liệu"
+
+#: RedukCore/inc/extensions/import_export/import_export/field_import_export.php:126
+msgid "Download Data File"
+msgstr "Tải Xuống Tệp Dữ Liệu"
+
+#: RedukCore/inc/extensions/import_export/import_export/field_import_export.php:126
+msgid "Copy Export URL"
+msgstr "Sao Chép URL Xuất Dữ Liệu"
+
+#: RedukCore/inc/fields/background/field_background.php:124
+#: RedukCore/inc/fields/color/field_color.php:73
+#: RedukCore/inc/fields/color_gradient/field_color_gradient.php:79
+#: RedukCore/inc/fields/color_gradient/field_color_gradient.php:91
+msgid "Transparent"
+msgstr "Trong Suốt"
+
+#: RedukCore/inc/fields/background/field_background.php:141
+msgid "Background Repeat"
+msgstr "Lặp Lại Ảnh Nền"
+
+#: RedukCore/inc/fields/background/field_background.php:157
+msgid "Background Clip"
+msgstr "Clip Nền"
+
+#: RedukCore/inc/fields/background/field_background.php:173
+msgid "Background Origin"
+msgstr "Hình Nền Gốc"
+
+#: RedukCore/inc/fields/background/field_background.php:188
+msgid "Background Size"
+msgstr "Kích Thước Hình Nền"
+
+#: RedukCore/inc/fields/background/field_background.php:203
+msgid "Background Attachment"
+msgstr "Tệp Đính Nèm Nền"
+
+#: RedukCore/inc/fields/background/field_background.php:223
+msgid "Background Position"
+msgstr "Vị Trí Nền"
+
+#: RedukCore/inc/fields/background/field_background.php:277
+#: RedukCore/inc/fields/media/field_media.php:149
+msgid "No media selected"
+msgstr "Không có đa phương tiện nào được chọn"
+
+#: RedukCore/inc/fields/background/field_background.php:314
+#: RedukCore/inc/fields/media/field_media.php:198
+#: RedukCore/inc/fields/slides/field_slides.php:126
+#: RedukCore/inc/fields/slides/field_slides.php:188
+msgid "Upload"
+msgstr "Tải Lên"
+
+#: RedukCore/inc/fields/background/field_background.php:321
+#: RedukCore/inc/fields/media/field_media.php:205
+#: RedukCore/inc/fields/multi_text/field_multi_text.php:69
+#: RedukCore/inc/fields/multi_text/field_multi_text.php:73
+#: RedukCore/inc/fields/multi_text/field_multi_text.php:76
+#: RedukCore/inc/fields/slides/field_slides.php:133
+#: RedukCore/inc/fields/slides/field_slides.php:190
+msgid "Remove"
+msgstr "Xóa"
+
+#: RedukCore/inc/fields/border/field_border.php:125
+#: RedukCore/inc/fields/spacing/field_spacing.php:191
+msgid "All"
+msgstr "Tất Cả"
+
+#: RedukCore/inc/fields/border/field_border.php:138
+#: RedukCore/inc/fields/spacing/field_spacing.php:215
+msgid "Top"
+msgstr "Hàng Đầu"
+
+#: RedukCore/inc/fields/border/field_border.php:145
+#: RedukCore/inc/fields/spacing/field_spacing.php:222
+msgid "Right"
+msgstr "Bên Phải"
+
+#: RedukCore/inc/fields/border/field_border.php:152
+#: RedukCore/inc/fields/spacing/field_spacing.php:229
+msgid "Bottom"
+msgstr "Hàng Cuối"
+
+#: RedukCore/inc/fields/border/field_border.php:159
+#: RedukCore/inc/fields/spacing/field_spacing.php:236
+msgid "Left"
+msgstr "Bên Trái"
+
+#: RedukCore/inc/fields/border/field_border.php:173
+msgid "Border style"
+msgstr "Kiểu đường viền"
+
+#: RedukCore/inc/fields/color_gradient/field_color_gradient.php:68
+msgid "From "
+msgstr "Từ "
+
+#: RedukCore/inc/fields/color_gradient/field_color_gradient.php:82
+msgid "To "
+msgstr "Đến "
+
+#: RedukCore/inc/fields/dimensions/field_dimensions.php:162
+msgid "Width"
+msgstr "Chiều Rộng"
+
+#: RedukCore/inc/fields/dimensions/field_dimensions.php:178
+#: RedukCore/inc/fields/typography/field_typography.php:442
+msgid "Height"
+msgstr "Chiều Cao"
+
+#: RedukCore/inc/fields/dimensions/field_dimensions.php:189
+#: RedukCore/inc/fields/dimensions/field_dimensions.php:190
+#: RedukCore/inc/fields/spacing/field_spacing.php:245
+#: RedukCore/inc/fields/spacing/field_spacing.php:246
+msgid "Units"
+msgstr "Đơn Vị"
+
+#: RedukCore/inc/fields/gallery/field_gallery.php:73
+msgid "Add/Edit Gallery"
+msgstr "Thêm/Chỉnh Sửa Thư Viện"
+
+#: RedukCore/inc/fields/gallery/field_gallery.php:74
+msgid "Clear Gallery"
+msgstr "Xóa Thư Viện"
+
+#: RedukCore/inc/fields/link_color/field_link_color.php:87
+msgid "Regular"
+msgstr "Thông Thường"
+
+#: RedukCore/inc/fields/link_color/field_link_color.php:91
+msgid "Hover"
+msgstr "Khi Đưa Chuột Lên Trên"
+
+#: RedukCore/inc/fields/link_color/field_link_color.php:95
+msgid "Visited"
+msgstr "Đã Nhấn Vào"
+
+#: RedukCore/inc/fields/link_color/field_link_color.php:99
+msgid "Active"
+msgstr "Được Bật"
+
+#: RedukCore/inc/fields/multi_text/field_multi_text.php:61
+msgid "Add More"
+msgstr "Bổ Sung Thêm"
+
+#: RedukCore/inc/fields/password/field_password.php:62
+msgid "Password"
+msgstr "Mật Khẩu"
+
+#: RedukCore/inc/fields/password/field_password.php:63
+msgid "Username"
+msgstr "Tên Tài Khoản"
+
+#: RedukCore/inc/fields/select/field_select.php:83
+#: RedukCore/inc/fields/select_image/field_select_image.php:63
+msgid "Select an item"
+msgstr "Chọn một mục"
+
+#: RedukCore/inc/fields/select/field_select.php:134
+#: RedukCore/inc/fields/select_image/field_select_image.php:144
+msgid "No items of this type were found."
+msgstr "Không có mục nào thuộc loại này được tìm thấy."
+
+#: RedukCore/inc/fields/slides/field_slides.php:68
+msgid "Slide"
+msgstr "Trang Trình Chiếu"
+
+#: RedukCore/inc/fields/slides/field_slides.php:73
+#: RedukCore/inc/fields/slides/field_slides.php:174
+msgid "New %s"
+msgstr "Thêm Mới %s"
+
+#: RedukCore/inc/fields/slides/field_slides.php:145
+#: RedukCore/inc/fields/slides/field_slides.php:200
+msgid "Title"
+msgstr "Tiêu Đề"
+
+#: RedukCore/inc/fields/slides/field_slides.php:149
+#: RedukCore/inc/fields/slides/field_slides.php:204
+msgid "Description"
+msgstr "Mô Tả"
+
+#: RedukCore/inc/fields/slides/field_slides.php:153
+#: RedukCore/inc/fields/slides/field_slides.php:207
+msgid "URL"
+msgstr "URL"
+
+#: RedukCore/inc/fields/slides/field_slides.php:167
+#: RedukCore/inc/fields/slides/field_slides.php:220
+msgid "Delete"
+msgstr "Xóa"
+
+#: RedukCore/inc/fields/slides/field_slides.php:223
+msgid "Add %s"
+msgstr "Thêm %s"
+
+#: RedukCore/inc/fields/switch/field_switch.php:41
+msgid "On"
+msgstr "Bật"
+
+#: RedukCore/inc/fields/switch/field_switch.php:44
+msgid "Off"
+msgstr "Tắt"
+
+#: RedukCore/inc/fields/typography/field_typography.php:231
+msgid "Font Family"
+msgstr "Họ Phông Chữ"
+
+#: RedukCore/inc/fields/typography/field_typography.php:232
+msgid "Font family"
+msgstr "Họ Phông Chữ"
+
+#: RedukCore/inc/fields/typography/field_typography.php:258
+#: RedukCore/inc/fields/typography/field_typography.php:259
+msgid "Backup Font Family"
+msgstr "Họ Phông Chữ Dự Phòng"
+
+#: RedukCore/inc/fields/typography/field_typography.php:273
+#: RedukCore/inc/fields/typography/field_typography.php:281
+msgid "Font style"
+msgstr "Kiểu chữ"
+
+#: RedukCore/inc/fields/typography/field_typography.php:274
+msgid "Font Weight &amp; Style"
+msgstr "Độ In Đậm &amp; Kiểu Chữ"
+
+#: RedukCore/inc/fields/typography/field_typography.php:281
+msgid "Style"
+msgstr "Kiểu Chữ"
+
+#: RedukCore/inc/fields/typography/field_typography.php:321
+msgid "Font subsets"
+msgstr "Tập Con Phông Chữ"
+
+#: RedukCore/inc/fields/typography/field_typography.php:323
+msgid "Font Subsets"
+msgstr "Tập Con Phông Chữ"
+
+#: RedukCore/inc/fields/typography/field_typography.php:325
+msgid "Subsets"
+msgstr "Tập Con"
+
+#: RedukCore/inc/fields/typography/field_typography.php:325
+msgid "Font script"
+msgstr "Nét chữ"
+
+#: RedukCore/inc/fields/typography/field_typography.php:342
+#: RedukCore/inc/fields/typography/field_typography.php:343
+#: RedukCore/inc/fields/typography/field_typography.php:344
+msgid "Text Align"
+msgstr "Canh Lề"
+
+#: RedukCore/inc/fields/typography/field_typography.php:365
+#: RedukCore/inc/fields/typography/field_typography.php:366
+#: RedukCore/inc/fields/typography/field_typography.php:367
+msgid "Text Transform"
+msgstr "Chuyển Đổi Văn Bản"
+
+#: RedukCore/inc/fields/typography/field_typography.php:388
+#: RedukCore/inc/fields/typography/field_typography.php:389
+#: RedukCore/inc/fields/typography/field_typography.php:390
+msgid "Font Variant"
+msgstr "Biến Thể Phông Chữ"
+
+#: RedukCore/inc/fields/typography/field_typography.php:408
+#: RedukCore/inc/fields/typography/field_typography.php:409
+#: RedukCore/inc/fields/typography/field_typography.php:410
+msgid "Text Decoration"
+msgstr "Trang Trí Văn Bản"
+
+#: RedukCore/inc/fields/typography/field_typography.php:432
+#: RedukCore/inc/fields/typography/field_typography.php:433
+msgid "Font Size"
+msgstr "Cỡ Chữ"
+
+#: RedukCore/inc/fields/typography/field_typography.php:433
+msgid "Size"
+msgstr "Kích Thước"
+
+#: RedukCore/inc/fields/typography/field_typography.php:441
+#: RedukCore/inc/fields/typography/field_typography.php:442
+msgid "Line Height"
+msgstr "Chiều Cao Giữa Các Dòng"
+
+#: RedukCore/inc/fields/typography/field_typography.php:450
+#: RedukCore/inc/fields/typography/field_typography.php:451
+msgid "Word Spacing"
+msgstr "Khoảng Cách Từ"
+
+#: RedukCore/inc/fields/typography/field_typography.php:459
+#: RedukCore/inc/fields/typography/field_typography.php:460
+msgid "Letter Spacing"
+msgstr "Khoảng Cách Chữ Cái"
+
+#: RedukCore/inc/fields/typography/field_typography.php:478
+msgid "Font Color"
+msgstr "Màu Chữ"
+
+#: RedukCore/inc/fields/typography/field_typography.php:480
+msgid "Font color"
+msgstr "Màu chữ"
+
+#: RedukCore/inc/fields/typography/field_typography.php:879
+msgid "Standard Fonts"
+msgstr "Phông Chuẩn"
+
+#: RedukCore/inc/fields/typography/field_typography.php:980
+msgid "Google Webfonts"
+msgstr "Font Web Google"
+
+#: RedukCore/inc/tracking.php:129
+msgid "Help improve Our Panel"
+msgstr "Giúp Cải Tiến Bảng Điều Khiển Của Chúng Tôi"
+
+#: RedukCore/inc/tracking.php:130
+msgid ""
+"Please helps us improve our panel by allowing us to gather anonymous usage stats so we know "
+"which configurations, plugins and themes to test to ensure compatibility."
+msgstr ""
+"Vui lòng giúp chúng tôi cải tiến bảng điều khiển của mình bằng cách cho phép chúng tôi thu "
+"thập số liệu thống kê sử dụng ẩn danh để chúng tôi biết cấu hình, plugin và chủ đề nào cần "
+"kiểm tra để đảm bảo tính tương thích."
+
+#: RedukCore/inc/tracking.php:135
+msgid "Allow tracking"
+msgstr "Cho phép theo dõi"
+
+#: RedukCore/inc/tracking.php:140
+msgid "Do not allow tracking"
+msgstr "Không cho phép theo dõi"
+
+#: RedukCore/inc/tracking.php:151
+msgid "Welcome to the Reduk Demo Panel"
+msgstr "Chào mừng bạn đến với Bảng Demo Reduk"
+
+#: RedukCore/inc/tracking.php:152
+msgid "Getting Started"
+msgstr "Bắt Đầu"
+
+#: RedukCore/inc/tracking.php:152
+msgid ""
+"This panel demonstrates the many features of Reduk.  Before digging in, we suggest you get up "
+"to speed by reviewing %1$s."
+msgstr ""
+"Bảng điều khiển này thể hiện nhiều tính năng của Reduk. Trước khi tìm hiểu, chúng tôi khuyên "
+"bạn nên bắt kịp tốc độ bằng cách xem lại %1$s."
+
+#: RedukCore/inc/tracking.php:152
+msgid "our documentation"
+msgstr "tài liệu của chúng tôi"
+
+#: RedukCore/inc/tracking.php:153
+msgid "Reduk Generator"
+msgstr "Máy Khởi Tạo Reduk"
+
+#: RedukCore/inc/tracking.php:153
+msgid ""
+"Want to get a head start? Use the %1$s. It will create a customized boilerplate theme or a "
+"standalone admin folder complete with all things Reduk (with the help of Underscores and TGM). "
+"Save yourself a headache and try it today."
+msgstr ""
+"Muốn có một khởi đầu thuận lợi? Sử dụng %1$s. Nó sẽ tạo một chủ đề soạn sẵn tùy chỉnh hoặc một "
+"thư mục quản trị độc lập hoàn chỉnh với tất cả mọi thứ trong Reduk (với sự trợ giúp của "
+"Underscores và TGM). Tránh đau đầu và hãy thử ngay hôm nay."
+
+#: RedukCore/inc/tracking.php:154 RedukCore/inc/welcome/welcome.php:214
+msgid "Reduk Extensions"
+msgstr "Phần Mở Rộng Reduk"
+
+#: RedukCore/inc/tracking.php:154
+msgid ""
+"Did you know we have extensions, which greatly enhance the features of Reduk?  Visit our %1$s "
+"to learn more!"
+msgstr ""
+"Bạn có biết chúng tôi có các tiện ích mở rộng, giúp nâng cao đáng kể các tính năng của Reduk? "
+"Truy cập% 1 $ s của chúng tôi để tìm hiểu thêm!"
+
+#: RedukCore/inc/tracking.php:154
+msgid "extensions directory"
+msgstr "thư mục phần mở rộng"
+
+#: RedukCore/inc/tracking.php:155
+msgid "Like Reduk?"
+msgstr "Thích Reduk?"
+
+#: RedukCore/inc/tracking.php:155
+msgid ""
+"If so, please %1$s and consider making a %2$s to keep development of Reduk moving forward."
+msgstr ""
+"Nếu vậy, vui lòng %1$s và cân nhắc thực hiện %2$s để tiếp tục phát triển Reduk trong tương lai."
+
+#: RedukCore/inc/tracking.php:155
+msgid "leave us a favorable review on WordPress.org"
+msgstr "xin để lại cho chúng tôi một đánh giá tốt trên WordPress.org"
+
+#: RedukCore/inc/tracking.php:155
+msgid "donation"
+msgstr "quyên góp"
+
+#: RedukCore/inc/tracking.php:156
+msgid "Newsletter"
+msgstr "Bản Tin"
+
+#: RedukCore/inc/tracking.php:156
+msgid "If you'd like to keep up to with all things Reduk, please subscribe to our newsletter"
+msgstr "Nếu bạn muốn cập nhật mọi thứ về Reduk, vui lòng đăng ký nhận bản tin của chúng tôi"
+
+#: RedukCore/inc/tracking.php:157
+msgid "Email address"
+msgstr "Địa chỉ email"
+
+#: RedukCore/inc/tracking.php:157
+msgid "Subscribe"
+msgstr "Đăng Ký"
+
+#: RedukCore/inc/tracking.php:166
+msgid "Close"
+msgstr "Đóng"
+
+#: RedukCore/inc/validation/color/validation_color.php:15
+#: RedukCore/inc/validation/color_rgba/validation_color_rgba.php:14
+#: RedukCore/inc/validation/colorrgba/validation_colorrgba.php:16
+msgid "This field must be a valid color value."
+msgstr "Trường này phải chứa giá trị màu hợp lệ."
+
+#: RedukCore/inc/validation/comma_numeric/validation_comma_numeric.php:16
+msgid "You must provide a comma separated list of numerical values for this option."
+msgstr "Bạn phải cung cấp danh sách các giá trị số phân cách bằng dấu phẩy cho tùy chọn này."
+
+#: RedukCore/inc/validation/css/validation_css.php:38
+msgid "Unsafe strings were found in your CSS and have been filtered out."
+msgstr "Các chuỗi không an toàn đã được tìm thấy trong CSS của bạn và đã được lọc ra."
+
+#: RedukCore/inc/validation/date/validation_date.php:16
+msgid "This field must be a valid date."
+msgstr "Trường này phải là một giá trị ngày hợp lệ."
+
+#: RedukCore/inc/validation/email/validation_email.php:16
+#: RedukCore/inc/validation/email_not_empty/validation_email_not_empty.php:16
+msgid "You must provide a valid email for this option."
+msgstr "Bạn phải cung cấp một email hợp lệ cho tùy chọn này."
+
+#: RedukCore/inc/validation/no_html/validation_no_html.php:15
+msgid "You must not enter any HTML in this field, all HTML tags have been removed."
+msgstr "Bạn không được nhập bất kỳ HTML nào vào trường này, tất cả các thẻ HTML đã bị xóa."
+
+#: RedukCore/inc/validation/no_special_chars/validation_no_special_chars.php:16
+msgid ""
+"You must not enter any special characters in this field, all special characters have been "
+"removed."
+msgstr ""
+"Bạn không được nhập bất kỳ ký tự đặc biệt nào vào trường này, tất cả các ký tự đặc biệt đã bị "
+"xóa."
+
+#: RedukCore/inc/validation/not_empty/validation_not_empty.php:16
+msgid "This field cannot be empty. Please provide a value."
+msgstr "Trường này không thể để trống. Vui lòng điền dữ liệu."
+
+#: RedukCore/inc/validation/numeric/validation_numeric.php:16
+#: RedukCore/inc/validation/numeric_not_empty/validation_numeric_not_empty.php:16
+msgid "You must provide a numerical value for this option."
+msgstr "Bạn phải điền một giá trị số cho tùy chọn này."
+
+#: RedukCore/inc/validation/unique_slug/validation_unique_slug.php:16
+msgid "That URL slug is in use, please choose another. <code>%s</code> is open for use."
+msgstr "URL đó đã được sử dụng, vui lòng chọn giá trị khác. <code>%s</code> đang có thể sử dụng."
+
+#: RedukCore/inc/validation/url/validation_url.php:16
+msgid "You must provide a valid URL for this option."
+msgstr "Bạn phải cung cấp một URL hợp lệ cho tùy chọn này."
+
+#: RedukCore/inc/welcome/views/about.php:2
+msgid "Welcome to Reduk Framework %s"
+msgstr "Chào mừng bạn đến với Reduk Framework %s"
+
+#: RedukCore/inc/welcome/views/about.php:5
+msgid ""
+"Thank you for updating to the latest version! Reduk Framework %s is a huge step forward in "
+"Reduk Development. Look at all that's new."
+msgstr ""
+"Cảm ơn bạn đã cập nhật lên phiên bản mới nhất! Reduk Framework %s là một bước tiến vượt bậc "
+"trong Lịch Sử Phát Triển Reduk. Xem tất cả những gì mới."
+
+#: RedukCore/inc/welcome/views/about.php:8 RedukCore/inc/welcome/views/changelog.php:8
+#: RedukCore/inc/welcome/views/credits.php:8 RedukCore/inc/welcome/views/extensions.php:82
+#: RedukCore/inc/welcome/views/status_report.php:31 RedukCore/inc/welcome/views/support.php:8
+msgid "Version %s"
+msgstr "Phiên Bản %s"
+
+#: RedukCore/inc/welcome/views/about.php:15
+msgid "What is Reduk Framework?"
+msgstr "Reduk Framework là gì?"
+
+#: RedukCore/inc/welcome/views/about.php:17
+msgid ""
+"Reduk Framework is the core of many products on the web. It is an option framework which "
+"developers use to\n"
+"            enhance their products."
+msgstr ""
+"Reduk Framework là nền tảng của nhiều sản phẩm trên web. Đây là một khung tùy chọn mà các nhà "
+"phát triển sử dụng để \n"
+"nâng cao sản phẩm của họ."
+
+#: RedukCore/inc/welcome/views/about.php:22
+msgid "Learn More"
+msgstr "Tìm Hiểu Thêm"
+
+#: RedukCore/inc/welcome/views/about.php:28
+msgid "New in this Release"
+msgstr "Mới trong Bản Phát Hành Này"
+
+#: RedukCore/inc/welcome/views/changelog.php:2
+msgid "Reduk Framework - Changelog"
+msgstr "Reduk Framework - Lịch Sử Thay Đổi"
+
+#: RedukCore/inc/welcome/views/changelog.php:5 RedukCore/inc/welcome/views/status_report.php:28
+msgid ""
+"Our core mantra at Reduk is backwards compatibility. With hundreds of thousands of instances "
+"worldwide, you can be assured that we will take care of you and your clients."
+msgstr ""
+"Câu thần chú cốt lõi của chúng tôi tại Reduk là khả năng tương thích ngược. Với hàng trăm "
+"nghìn phiên bản trên toàn thế giới, bạn có thể yên tâm rằng chúng tôi sẽ chăm sóc bạn và khách "
+"hàng của bạn."
+
+#: RedukCore/inc/welcome/views/credits.php:2
+msgid "Reduk Framework - A Community Effort"
+msgstr "Reduk Framework - Nỗ Lực Của Cộng Đồng"
+
+#: RedukCore/inc/welcome/views/credits.php:5
+msgid ""
+"We recognize we are nothing without our community. We would like to thank all of those who "
+"help Reduk to be what it is. Thank you for your involvement."
+msgstr ""
+"Chúng tôi nhận ra chúng tôi không là gì nếu không có cộng đồng của chúng tôi. Chúng tôi muốn "
+"cảm ơn tất cả những người đã giúp Reduk trở thành hiện tại. Cảm ơn bạn đã tham gia của bạn."
+
+#: RedukCore/inc/welcome/views/credits.php:14
+msgid ""
+"Reduk is created by a community of developers world wide. Want to have your name listed too? "
+"<a href=\"https://github.com/redukframework/reduk-framework/blob/master/CONTRIBUTING.md\" "
+"target=\"_blank\">Contribute to Reduk</a>."
+msgstr ""
+"Reduk được tạo ra bởi một cộng đồng các nhà phát triển trên toàn thế giới. Bạn cũng muốn có "
+"tên của bạn được liệt kê? <a href=\\\"https://github.com/redukframework/reduk-framework/blob/"
+"master/CONTRIBUTING.md\\\" target=\\\"_blank\\\">Đóng Góp cho Reduk</a>."
+
+#: RedukCore/inc/welcome/views/extensions.php:76
+msgid "Reduk Framework - Extensions"
+msgstr "Reduk Framework - Phần Mở Rộng"
+
+#: RedukCore/inc/welcome/views/extensions.php:79
+msgid ""
+"Supercharge your Reduk experience. Our extensions provide you with features that will take "
+"your products to the next level."
+msgstr ""
+"Tăng cường trải nghiệm Reduk của bạn. Các tiện ích mở rộng của chúng tôi cung cấp cho bạn các "
+"tính năng sẽ đưa sản phẩm của bạn lên một tầm cao mới."
+
+#: RedukCore/inc/welcome/views/extensions.php:88
+msgid ""
+"While some are built specificially for developers, extensions such as Custom Fonts are sure to "
+"make any user happy."
+msgstr ""
+"Mặc dù một số được xây dựng dành riêng cho các nhà phát triển, nhưng các tiện ích mở rộng như "
+"Phông chữ Tùy chỉnh chắc chắn sẽ khiến bất kỳ người dùng nào hài lòng."
+
+#: RedukCore/inc/welcome/views/status_report.php:25
+msgid "Reduk Framework - System Status"
+msgstr "Reduk Framework - Trạng Thái Hệ Thống"
+
+#: RedukCore/inc/welcome/views/status_report.php:38
+msgid "Please copy and paste this information in your ticket when contacting support:"
+msgstr ""
+"Vui lòng sao chép và dán thông tin này vào yêu cầu của bạn khi liên hệ với bộ phận hỗ trợ:"
+
+#: RedukCore/inc/welcome/views/status_report.php:41
+msgid "Get System Report"
+msgstr "Nhận Báo Cáo Hệ Thống"
+
+#: RedukCore/inc/welcome/views/status_report.php:44
+msgid "Understanding the Status Report"
+msgstr "Hiểu Báo Cáo Trạng Thái"
+
+#: RedukCore/inc/welcome/views/status_report.php:51
+msgid "Copied!"
+msgstr "Đã Sao Chép!"
+
+#: RedukCore/inc/welcome/views/status_report.php:51
+msgid "Copy for Support"
+msgstr "Sao Chép để Được Hỗ Trợ"
+
+#: RedukCore/inc/welcome/views/status_report.php:60
+msgid "WordPress Environment"
+msgstr "Môi Trường WordPress"
+
+#: RedukCore/inc/welcome/views/status_report.php:65
+msgid "Home URL"
+msgstr "URL Trang Chủ"
+
+#: RedukCore/inc/welcome/views/status_report.php:66
+msgid "The URL of your site's homepage."
+msgstr "URL của trang chủ trên web của bạn."
+
+#: RedukCore/inc/welcome/views/status_report.php:70
+msgid "Site URL"
+msgstr "URL Trang Web"
+
+#: RedukCore/inc/welcome/views/status_report.php:71
+msgid "The root URL of your site."
+msgstr "URL gốc của trang web của bạn."
+
+#: RedukCore/inc/welcome/views/status_report.php:75
+msgid "Reduk Version"
+msgstr "Phiên Bản Reduk"
+
+#: RedukCore/inc/welcome/views/status_report.php:76
+msgid "The version of Reduk Framework installed on your site."
+msgstr "Phiên bản Reduk Framework được cài đặt trên trang web của bạn."
+
+#: RedukCore/inc/welcome/views/status_report.php:80
+msgid "Reduk Data Directory Writable"
+msgstr "Thư Mục Dữ Liệu Reduk Có Thể Ghi"
+
+#: RedukCore/inc/welcome/views/status_report.php:83
+msgid ""
+"Reduk and its extensions write data to the <code>uploads</code> directory. This directory must "
+"be writable."
+msgstr ""
+"Reduk và các phần mở rộng của nó ghi dữ liệu vào thư mục <code>uploads</code>. Thư mục này "
+"phải được cấp quyền ghi."
+
+#: RedukCore/inc/welcome/views/status_report.php:88
+msgid "To allow data saving, make <code>%s</code> writable."
+msgstr "Để cho phép tiết kiệm dữ liệu, hãy đặt <code>%s</code> có thể ghi được."
+
+#: RedukCore/inc/welcome/views/status_report.php:93
+msgid "WP Content URL"
+msgstr "URL Nội Dung WP"
+
+#: RedukCore/inc/welcome/views/status_report.php:96
+msgid "The location of Wordpress's content URL."
+msgstr "Vị trí của URL nội dung của Wordpress."
+
+#: RedukCore/inc/welcome/views/status_report.php:102
+msgid "WP Version"
+msgstr "Phiên Bản WP"
+
+#: RedukCore/inc/welcome/views/status_report.php:103
+msgid "The version of WordPress installed on your site."
+msgstr "Phiên bản WordPress được cài đặt trên trang web của bạn."
+
+#: RedukCore/inc/welcome/views/status_report.php:107
+msgid "WP Multisite"
+msgstr "WP Multisite"
+
+#: RedukCore/inc/welcome/views/status_report.php:108
+msgid "Whether or not you have WordPress Multisite enabled."
+msgstr "Cho dù bạn có bật WP Multisite hay không."
+
+#: RedukCore/inc/welcome/views/status_report.php:116
+msgid "Permalink Structure"
+msgstr "Cấu trúc Permalink"
+
+#: RedukCore/inc/welcome/views/status_report.php:117
+msgid "The current permalink structure as defined in Wordpress Settings->Permalinks."
+msgstr "Cấu trúc liên kết cố định hiện tại được định nghĩa trong Cài đặt Web->Liên Kết Cố Định."
+
+#: RedukCore/inc/welcome/views/status_report.php:122
+msgid "Front Page Display"
+msgstr "Hiển Thị Trang Phía Trước"
+
+#: RedukCore/inc/welcome/views/status_report.php:123
+msgid "The current Reading mode of Wordpress."
+msgstr "Chế độ đọc hiện tại của Web."
+
+#: RedukCore/inc/welcome/views/status_report.php:131
+msgid "Front Page"
+msgstr "Trang Trước"
+
+#: RedukCore/inc/welcome/views/status_report.php:132
+msgid "The currently selected page which acts as the site's Front Page."
+msgstr "Trang hiện được chọn hoạt động như Trang chính của trang web."
+
+#: RedukCore/inc/welcome/views/status_report.php:136
+msgid "Posts Page"
+msgstr "Trang Bài Viết"
+
+#: RedukCore/inc/welcome/views/status_report.php:137
+msgid "The currently selected page in where blog posts are displayed."
+msgstr "Trang hiện đang được chọn để hiển thị các bài đăng trên blog."
+
+#: RedukCore/inc/welcome/views/status_report.php:144
+msgid "WP Memory Limit"
+msgstr "Giới hạn bộ nhớ WP"
+
+#: RedukCore/inc/welcome/views/status_report.php:145
+msgid "The maximum amount of memory (RAM) that your site can use at one time."
+msgstr "Dung lượng bộ nhớ (RAM) tối đa mà trang web của bạn có thể sử dụng cùng một lúc."
+
+#: RedukCore/inc/welcome/views/status_report.php:150
+msgid ""
+"%s - We recommend setting memory to at least 40MB. See: <a href=\"%s\" target=\"_blank"
+"\">Increasing memory allocated to PHP</a>"
+msgstr ""
+"%s - Chúng tôi khuyên bạn nên đặt bộ nhớ ít nhất là 40MB. Xem: <a href=\\\"%s\\\" target=\\"
+"\"_blank\\\">Tăng bộ nhớ được phân bổ cho PHP</a>"
+
+#: RedukCore/inc/welcome/views/status_report.php:157
+msgid "Database Table Prefix"
+msgstr "Tiền Tố Tên Bảng Cơ Sở Dữ Liệu"
+
+#: RedukCore/inc/welcome/views/status_report.php:159
+msgid "The prefix structure of the current Wordpress database."
+msgstr "Cấu trúc tiền tố của cơ sở dữ liệu Wordpress hiện tại."
+
+#: RedukCore/inc/welcome/views/status_report.php:163
+msgid "WP Debug Mode"
+msgstr "Chế Độ Tìm Lỗi WP"
+
+#: RedukCore/inc/welcome/views/status_report.php:164
+msgid "Displays whether or not WordPress is in Debug Mode."
+msgstr "Hiển thị Web có đang ở Chế độ tìm lỗi hay không."
+
+#: RedukCore/inc/welcome/views/status_report.php:172
+msgid "Language"
+msgstr "Ngôn Ngữ"
+
+#: RedukCore/inc/welcome/views/status_report.php:173
+msgid "The current language used by WordPress. Default = English"
+msgstr "Ngôn ngữ hiện tại được sử dụng bởi WordPress. Mặc định = tiếng Anh"
+
+#: RedukCore/inc/welcome/views/status_report.php:181
+msgid "Browser"
+msgstr "Trình Duyệt"
+
+#: RedukCore/inc/welcome/views/status_report.php:186
+msgid "Browser Info"
+msgstr "Thông Tin Trình Duyệt"
+
+#: RedukCore/inc/welcome/views/status_report.php:187
+msgid "Information about web browser current in use."
+msgstr "Thông tin về trình duyệt web hiện đang được sử dụng."
+
+#: RedukCore/inc/welcome/views/status_report.php:202
+msgid "Server Environment"
+msgstr "Môi trường Máy Chủ"
+
+#: RedukCore/inc/welcome/views/status_report.php:207
+msgid "Server Info"
+msgstr "Thông Tin Máy Chủ"
+
+#: RedukCore/inc/welcome/views/status_report.php:208
+msgid "Information about the web server that is currently hosting your site."
+msgstr "Thông tin về máy chủ web hiện đang lưu trữ trang web của bạn."
+
+#: RedukCore/inc/welcome/views/status_report.php:212
+msgid "Localhost Environment"
+msgstr "Môi Trường Máy Chủ Cục Bộ"
+
+#: RedukCore/inc/welcome/views/status_report.php:213
+msgid "Is the server running in a localhost environment."
+msgstr "Máy chủ đang chạy trong môi trường localhost."
+
+#: RedukCore/inc/welcome/views/status_report.php:223
+msgid "PHP Version"
+msgstr "Phiên Bản PHP"
+
+#: RedukCore/inc/welcome/views/status_report.php:224
+msgid "The version of PHP installed on your hosting server."
+msgstr "Phiên bản PHP được cài đặt trên máy chủ lưu trữ của bạn."
+
+#: RedukCore/inc/welcome/views/status_report.php:228
+msgid "ABSPATH"
+msgstr "ABSPATH"
+
+#: RedukCore/inc/welcome/views/status_report.php:229
+msgid "The ABSPATH variable on the server."
+msgstr "Biến ABSPATH trên máy chủ."
+
+#: RedukCore/inc/welcome/views/status_report.php:235
+msgid "PHP Memory Limit"
+msgstr "Giới Hạn Bộ Nhớ PHP"
+
+#: RedukCore/inc/welcome/views/status_report.php:236
+#: RedukCore/inc/welcome/views/status_report.php:241
+msgid "The largest filesize that can be contained in one post."
+msgstr "Kích thước tệp lớn nhất có thể chứa trong một bài đăng."
+
+#: RedukCore/inc/welcome/views/status_report.php:240
+msgid "PHP Post Max Size"
+msgstr "Kích Thước Tối Da Của Lần Đăng PHP"
+
+#: RedukCore/inc/welcome/views/status_report.php:245
+msgid "PHP Time Limit"
+msgstr "Giới Hạn Thời Gian PHP"
+
+#: RedukCore/inc/welcome/views/status_report.php:246
+msgid ""
+"The amount of time (in seconds) that your site will spend on a single operation before timing "
+"out (to avoid server lockups)"
+msgstr ""
+"Lượng thời gian (tính bằng giây) mà trang web của bạn sẽ dành cho một thao tác trước khi hết "
+"thời gian (để tránh máy chủ bị khóa)"
+
+#: RedukCore/inc/welcome/views/status_report.php:250
+msgid "PHP Max Input Vars"
+msgstr "Biến Tối Đa Giá Trị Đầu Vào PHP"
+
+#: RedukCore/inc/welcome/views/status_report.php:251
+msgid ""
+"The maximum number of variables your server can use for a single function to avoid overloads."
+msgstr ""
+"Số lượng biến tối đa mà máy chủ của bạn có thể sử dụng cho một hàm duy nhất để tránh quá tải."
+
+#: RedukCore/inc/welcome/views/status_report.php:255
+msgid "PHP Display Errors"
+msgstr "Hiển Thị Lối PHP"
+
+#: RedukCore/inc/welcome/views/status_report.php:256
+msgid "Determines if PHP will display errors within the browser."
+msgstr "Xác định xem PHP có hiển thị lỗi trong trình duyệt hay không."
+
+#: RedukCore/inc/welcome/views/status_report.php:267
+msgid "SUHOSIN Installed"
+msgstr "SUHOSIN Đã Được Cài Đặt"
+
+#: RedukCore/inc/welcome/views/status_report.php:268
+msgid ""
+"Suhosin is an advanced protection system for PHP installations. It was designed to protect "
+"your servers on the one hand against a number of well known problems in PHP applications and "
+"on the other hand against potential unknown vulnerabilities within these applications or the "
+"PHP core itself.  If enabled on your server, Suhosin may need to be configured to increase its "
+"data submission limits."
+msgstr ""
+"Suhosin là một hệ thống bảo vệ nâng cao cho các cài đặt PHP. Nó được thiết kế để bảo vệ máy "
+"chủ của bạn một mặt chống lại một số vấn đề nổi tiếng trong các ứng dụng PHP và mặt khác chống "
+"lại các lỗ hổng tiềm ẩn không xác định trong các ứng dụng này hoặc chính lõi PHP. Nếu được bật "
+"trên máy chủ của bạn, Suhosin có thể cần được định cấu hình để tăng giới hạn gửi dữ liệu."
+
+#: RedukCore/inc/welcome/views/status_report.php:277
+msgid "MySQL Version"
+msgstr "Phiên bản MySQL"
+
+#: RedukCore/inc/welcome/views/status_report.php:278
+msgid "The version of MySQL installed on your hosting server."
+msgstr "Phiên bản MySQL được cài đặt trên máy chủ lưu trữ của bạn."
+
+#: RedukCore/inc/welcome/views/status_report.php:282
+msgid "Max Upload Size"
+msgstr "Kích Thước Tải Lên Tối Đa"
+
+#: RedukCore/inc/welcome/views/status_report.php:283
+msgid "The largest filesize that can be uploaded to your WordPress installation."
+msgstr "Kích thước tệp lớn nhất có thể được tải lên cài đặt Web của bạn."
+
+#: RedukCore/inc/welcome/views/status_report.php:287
+msgid "Default Timezone is UTC"
+msgstr "Múi Giờ Mặc Định là UTC"
+
+#: RedukCore/inc/welcome/views/status_report.php:290
+msgid "The default timezone for your server."
+msgstr "Múi giờ mặc định cho máy chủ của bạn."
+
+#: RedukCore/inc/welcome/views/status_report.php:293
+msgid "Default timezone is %s - it should be UTC"
+msgstr "Múi giờ mặc định là %s - cần phải là UTC"
+
+#: RedukCore/inc/welcome/views/status_report.php:304
+msgid "Used when communicating with remote services with PHP."
+msgstr "Được sử dụng khi giao tiếp với các dịch vụ từ xa bằng PHP."
+
+#: RedukCore/inc/welcome/views/status_report.php:310
+msgid ""
+"Your server does not have fsockopen or cURL enabled - cURL is used to communicate with other "
+"servers. Please contact your hosting provider."
+msgstr ""
+"Máy chủ của bạn chưa bật fsockopen hoặc cURL - cURL được sử dụng để giao tiếp với các máy chủ "
+"khác. Vui lòng liên hệ với nhà cung cấp dịch vụ lưu trữ của bạn."
+
+#: RedukCore/inc/welcome/views/status_report.php:349
+msgid "Remote Post"
+msgstr "Đăng Nội Dung Từ Xa"
+
+#: RedukCore/inc/welcome/views/status_report.php:350
+msgid "Used to send data to remote servers."
+msgstr "Được sử dụng để gửi dữ liệu đến các máy chủ từ xa."
+
+#: RedukCore/inc/welcome/views/status_report.php:355
+msgid ""
+"wp_remote_post() failed. Many advanced features may not function. Contact your hosting "
+"provider."
+msgstr ""
+"wp_remote_post() không thành công. Nhiều tính năng nâng cao có thể không hoạt động. Liên hệ "
+"với nhà cung cấp dịch vụ lưu trữ của bạn."
+
+#: RedukCore/inc/welcome/views/status_report.php:358
+#: RedukCore/inc/welcome/views/status_report.php:373
+msgid "Error: %s"
+msgstr "Lỗi: %s"
+
+#: RedukCore/inc/welcome/views/status_report.php:365
+msgid "Remote Get"
+msgstr "Nhận Từ Xa"
+
+#: RedukCore/inc/welcome/views/status_report.php:366
+msgid "Used to grab information from remote servers for updates updates."
+msgstr "Được sử dụng để lấy thông tin từ các máy chủ từ xa để cập nhật các bản cập nhật."
+
+#: RedukCore/inc/welcome/views/status_report.php:371
+msgid ""
+"wp_remote_get() failed. This is needed to get information from remote servers. Contact your "
+"hosting provider."
+msgstr ""
+"wp_remote_get() không thành công. Điều này là cần thiết để lấy thông tin từ các máy chủ từ xa. "
+"Liên hệ với nhà cung cấp dịch vụ lưu trữ của bạn."
+
+#: RedukCore/inc/welcome/views/status_report.php:405
+msgid "Active Plugins"
+msgstr "Các plugin hoạt động"
+
+#: RedukCore/inc/welcome/views/status_report.php:421
+msgid "Visit plugin homepage"
+msgstr "Truy cập trang plugin"
+
+#: RedukCore/inc/welcome/views/status_report.php:445
+msgid "Reduk Instance: "
+msgstr "Phiên Bản Reduk: "
+
+#: RedukCore/inc/welcome/views/status_report.php:452
+msgid "The opt_name argument for this instance of Reduk."
+msgstr "Đối số opt_name cho phiên bản Reduk này."
+
+#: RedukCore/inc/welcome/views/status_report.php:460
+msgid "The global_variable argument for this instance of Reduk."
+msgstr "Đối số global_variable cho phiên bản Reduk này."
+
+#: RedukCore/inc/welcome/views/status_report.php:468
+msgid "Indicates if developer mode is enabled for this instance of Reduk."
+msgstr "Cho biết chế độ nhà phát triển có được bật cho phiên bản Reduk này hay không."
+
+#: RedukCore/inc/welcome/views/status_report.php:473
+msgid "Indicates if ajax based saving is enabled for this instance of Reduk."
+msgstr "Cho biết liệu tính năng lưu dựa trên ajax có được bật cho phiên bản Reduk này hay không."
+
+#: RedukCore/inc/welcome/views/status_report.php:478
+msgid ""
+"The page slug denotes the string used for the options panel page for this instance of Reduk."
+msgstr ""
+"Slug của trang biểu thị chuỗi được sử dụng cho trang bảng điều khiển tùy chọn cho phiên bản "
+"Reduk này."
+
+#: RedukCore/inc/welcome/views/status_report.php:483
+msgid ""
+"The page permissions variable sets the permission level required to access the options panel "
+"for this instance of Reduk."
+msgstr ""
+"Biến quyền của trang đặt cấp độ quyền cần thiết để truy cập bảng tùy chọn cho phiên bản Reduk "
+"này."
+
+#: RedukCore/inc/welcome/views/status_report.php:488
+msgid ""
+"This variable set whether or not the menu is displayed as an admin menu item for this instance "
+"of Reduk."
+msgstr ""
+"Biến này đặt menu có được hiển thị dưới dạng một mục menu quản trị cho phiên bản Reduk này hay "
+"không."
+
+#: RedukCore/inc/welcome/views/status_report.php:493
+msgid ""
+"The page parent variable sets where the options menu will be placed on the WordPress admin "
+"sidebar for this instance of Reduk."
+msgstr ""
+"Biến cha của trang đặt nơi menu tùy chọn sẽ được đặt trên thanh bên quản trị WordPress cho "
+"phiên bản Reduk này."
+
+#: RedukCore/inc/welcome/views/status_report.php:499
+msgid "Indicates if the compiler flag is enabled for this instance of Reduk."
+msgstr "Cho biết nếu cờ trình biên dịch được bật cho phiên bản Reduk này."
+
+#: RedukCore/inc/welcome/views/status_report.php:504
+msgid ""
+"Indicates if output flag for globally shutting off all CSS output is enabled for this instance "
+"of Reduk."
+msgstr "Cho biết nếu cờ đầu ra để tắt toàn bộ đầu ra CSS được bật cho phiên bản Reduk này."
+
+#: RedukCore/inc/welcome/views/status_report.php:509
+msgid ""
+"The output_tag variable sets whether or not dynamic CSS will be generated for the customizer "
+"and Google fonts for this instance of Reduk."
+msgstr ""
+"Biến output_tag đặt liệu CSS động có được tạo cho tùy biến và phông chữ Google cho phiên bản "
+"Reduk này hay không."
+
+#: RedukCore/inc/welcome/views/status_report.php:518
+msgid "The specified template path containing custom template files for this instance of Reduk."
+msgstr "Đường dẫn mẫu được chỉ định chứa các tệp mẫu tùy chỉnh cho phiên bản Reduk này."
+
+#: RedukCore/inc/welcome/views/status_report.php:523
+msgid "List of template files overriding the default Reduk template files."
+msgstr "Danh sách các tệp mẫu ghi đè các tệp mẫu Reduk mặc định."
+
+#: RedukCore/inc/welcome/views/status_report.php:546
+msgid "Indicates the installed Reduk extensions and their version numbers."
+msgstr "Cho biết các tiện ích mở rộng Reduk đã cài đặt và số phiên bản của chúng."
+
+#: RedukCore/inc/welcome/views/status_report.php:577
+msgid "Theme"
+msgstr "Chủ Đề"
+
+#: RedukCore/inc/welcome/views/status_report.php:582
+msgid "Name"
+msgstr "Tên"
+
+#: RedukCore/inc/welcome/views/status_report.php:583
+msgid "The name of the current active theme."
+msgstr "Tên của chủ đề đang hoạt động hiện tại."
+
+#: RedukCore/inc/welcome/views/status_report.php:587
+msgid "Version"
+msgstr "Phiên Bản"
+
+#: RedukCore/inc/welcome/views/status_report.php:588
+msgid "The installed version of the current active theme."
+msgstr "Phiên bản đã cài đặt của giao chủ đề hoạt động hiện tại."
+
+#: RedukCore/inc/welcome/views/status_report.php:593
+msgid "is available"
+msgstr "có sẵn"
+
+#: RedukCore/inc/welcome/views/status_report.php:598
+msgid "Author URL"
+msgstr "URL Tác Giả"
+
+#: RedukCore/inc/welcome/views/status_report.php:599
+msgid "The theme developers URL."
+msgstr "URL của nhà phát triển chủ đề."
+
+#: RedukCore/inc/welcome/views/status_report.php:603
+msgid "Child Theme"
+msgstr "Chủ Đề Con"
+
+#: RedukCore/inc/welcome/views/status_report.php:604
+msgid "Displays whether or not the current theme is a child theme."
+msgstr "Hiển thị chủ đề hiện tại có phải là giao diện con hay không."
+
+#: RedukCore/inc/welcome/views/status_report.php:606
+msgid ""
+"If you're modifying Reduk Framework or a parent theme you didn't build personally, we "
+"recommend using a child theme. See: <a href=\"%s\" target=\"_blank\">How to create a child "
+"theme</a>"
+msgstr ""
+"Nếu bạn đang sửa đổi Reduk Framework hoặc chủ đề chính mà bạn không tự xây dựng, chúng tôi "
+"khuyên bạn nên sử dụng chủ đề con. Xem: <a href=\\\"%s\\\" target=\\\"_blank\\\">Cách tạo chủ "
+"đề con</a>"
+
+#: RedukCore/inc/welcome/views/status_report.php:614
+msgid "Parent Theme Name"
+msgstr "Tên Chủ Đề Chính"
+
+#: RedukCore/inc/welcome/views/status_report.php:616
+msgid "The name of the parent theme."
+msgstr "Tên của giao diện chính."
+
+#: RedukCore/inc/welcome/views/status_report.php:620
+msgid "Parent Theme Version"
+msgstr "Phiên Bản URL tác giả chủ đề chính Chính"
+
+#: RedukCore/inc/welcome/views/status_report.php:623
+msgid "The installed version of the parent theme."
+msgstr "Phiên bản đã cài đặt của chủ đề chính."
+
+#: RedukCore/inc/welcome/views/status_report.php:627
+msgid "Parent Theme Author URL"
+msgstr "URL tác giả chủ đề chính"
+
+#: RedukCore/inc/welcome/views/status_report.php:630
+msgid "The parent theme developers URL."
+msgstr "URL của nhà phát triển chủ đề chính."
+
+#: RedukCore/inc/welcome/views/support.php:2
+msgid "Reduk Framework - Support"
+msgstr "Reduk Framework - Hỗ Trợ"
+
+#: RedukCore/inc/welcome/views/support.php:5
+msgid "We are an open source project used by developers to make powerful control panels."
+msgstr ""
+"Chúng tôi là một dự án mã nguồn mở được các nhà phát triển sử dụng để tạo ra các bảng điều "
+"khiển mạnh mẽ."
+
+#: RedukCore/inc/welcome/views/support.php:20
+msgid "Generate a Support URL"
+msgstr "Tạo URL Hỗ Trợ"
+
+#: RedukCore/inc/welcome/views/support.php:21
+msgid "Select Support Type"
+msgstr "Chọn Loại Hỗ Trợ"
+
+#: RedukCore/inc/welcome/views/support.php:22 RedukCore/inc/welcome/views/support.php:65
+msgid "How to Get Support"
+msgstr "Cách Nhận Hỗ Trợ"
+
+#: RedukCore/inc/welcome/views/support.php:27
+msgid "Submit a Support Request"
+msgstr "Gửi Yêu Cầu Hỗ Trợ"
+
+#: RedukCore/inc/welcome/views/support.php:30
+msgid "To get started, we will need to generate a support hash."
+msgstr "Để bắt đầu, chúng tôi sẽ cần tạo một hàm băm hỗ trợ."
+
+#: RedukCore/inc/welcome/views/support.php:33
+msgid ""
+"This will provide to your developer all the information they may need to remedy your issue. "
+"This action WILL send information securely to a remote server. To see the type of information "
+"sent, please look at the  <a href=\"%s\">Status tab</a>."
+msgstr ""
+"Điều này sẽ cung cấp cho nhà phát triển của bạn tất cả thông tin mà họ có thể cần để khắc phục "
+"sự cố của bạn. Hành động này SẼ gửi thông tin một cách an toàn đến một máy chủ từ xa. Để xem "
+"loại thông tin được gửi, vui lòng xem <a href=\\\"%s\\\">tab Trạng Thái</a>."
+
+#: RedukCore/inc/welcome/views/support.php:37
+msgid ""
+"Generate\n"
+"                        a Support URL"
+msgstr ""
+"Tạo \n"
+"                        một URL Hỗ Trợ"
+
+#: RedukCore/inc/welcome/views/support.php:44
+msgid "Select Your Support Type"
+msgstr "Chọn Loại Hỗ Trợ Của Bạn"
+
+#: RedukCore/inc/welcome/views/support.php:47
+msgid "What type of user are you?"
+msgstr "Bạn Là Loại Người Dùng Nào?"
+
+#: RedukCore/inc/welcome/views/support.php:52
+msgid "User"
+msgstr "Người Sử Dụng"
+
+#: RedukCore/inc/welcome/views/support.php:53
+msgid "I am a user, using a pre-built product."
+msgstr "Tôi là một người dùng, sử dụng một sản phẩm được tạo sẵn."
+
+#: RedukCore/inc/welcome/views/support.php:56
+msgid "Developer"
+msgstr "Nhà Phát Triển"
+
+#: RedukCore/inc/welcome/views/support.php:57
+msgid "I am a developer, building a product using Reduk."
+msgstr "Tôi là nhà phát triển, đang xây dựng sản phẩm bằng Reduk."
+
+#: RedukCore/inc/welcome/views/support.php:68
+msgid ""
+"Please proceed to the Reduk Framework issue tracker and supply us with your support URL below. "
+"Please also provide any information that will help us to reproduce your issue."
+msgstr ""
+"Vui lòng chuyển đến trình theo dõi vấn đề của Reduk Framework và cung cấp cho chúng tôi URL hỗ "
+"trợ của bạn bên dưới. Vui lòng cung cấp bất kỳ thông tin nào sẽ giúp chúng tôi tái tạo sự cố "
+"của bạn."
+
+#: RedukCore/inc/welcome/views/support.php:74
+msgid ""
+"Listed below are the Wordpress plugins and/or theme installed on your site that utilize Reduk "
+"Framework. We do not directly support products created with our framework.  It is the "
+"responsibility of the plugin or theme developer to support their work. You will need to "
+"contact the author(s) of the products listed below with your support questions."
+msgstr ""
+"Dưới đây là danh sách các plugin và / hoặc chủ đề Wordpress được cài đặt trên trang web của "
+"bạn sử dụng Reduk Framework. Chúng tôi không hỗ trợ trực tiếp các sản phẩm được tạo bằng khuôn "
+"khổ của chúng tôi. Nhà phát triển plugin hoặc chủ đề có trách nhiệm hỗ trợ công việc của họ. "
+"Bạn sẽ cần liên hệ với (các) tác giả của các sản phẩm được liệt kê bên dưới với các câu hỏi hỗ "
+"trợ của bạn."
+
+#: RedukCore/inc/welcome/views/support.php:77
+msgid ""
+"Please be sure to include for your developer - via cut and paste - the Support URL in the box "
+"below."
+msgstr ""
+"Hãy đảm bảo cung cấp cho nhà phát triển của bạn - thông qua cắt và dán - URL hỗ trợ trong hộp "
+"bên dưới."
+
+#: RedukCore/inc/welcome/views/support.php:215
+msgid ""
+"Should the developer not be responsive, read the <a href=\"%s\" target=\"_blank\">following "
+"article</a> before asking for support from us directly."
+msgstr ""
+"Nếu nhà phát triển không phản hồi, hãy đọc <a href=\\\"%s\\\" target=\\\"_blank\\\">bài viết "
+"sau</a> trước khi yêu cầu hỗ trợ trực tiếp từ chúng tôi."
+
+#: RedukCore/inc/welcome/welcome.php:170
+msgid "Support hash could not be generated. Please try again later."
+msgstr "Không thể tạo hàm băm hỗ trợ. Vui lòng thử lại sau."
+
+#: RedukCore/inc/welcome/welcome.php:190
+msgid "Welcome to Reduk Framework"
+msgstr "Chào mừng bạn đến với Reduk Framework"
+
+#: RedukCore/inc/welcome/welcome.php:198
+msgid "Reduk Framework Changelog"
+msgstr "Lịch Sử Thay Đổi Reduk Framework"
+
+#: RedukCore/inc/welcome/welcome.php:206 class.reduk-plugin.php:411
+msgid "Get Support"
+msgstr "Nhận Hỗ Trợ"
+
+#: RedukCore/inc/welcome/welcome.php:223
+msgid "The people that develop Reduk Framework"
+msgstr "Những người phát triển Reduk Framework"
+
+#: RedukCore/inc/welcome/welcome.php:231
+msgid "Reduk Framework Status"
+msgstr "Trạng thái Reduk Framework"
+
+#: RedukCore/inc/welcome/welcome.php:336
+msgid "What's New"
+msgstr "Có Gì Mới"
+
+#: RedukCore/inc/welcome/welcome.php:340
+msgid "Extensions"
+msgstr "Tiện Ích Mở Rộng"
+
+#: RedukCore/inc/welcome/welcome.php:344
+msgid "Changelog"
+msgstr "Lịch Sử Thay Đổi"
+
+#: RedukCore/inc/welcome/welcome.php:348
+msgid "Credits"
+msgstr "Ghi Nhận"
+
+#: RedukCore/inc/welcome/welcome.php:352
+msgid "Support"
+msgstr "Hỗ Trợ"
+
+#: RedukCore/inc/welcome/welcome.php:356
+msgid "Status"
+msgstr "Tình Trạng"
+
+#: RedukCore/inc/welcome/welcome.php:513
+msgid "View %s"
+msgstr "Xem %s"
+
+#: RedukCore/templates/panel/footer.tpl.php:47
+#: RedukCore/templates/panel/header_stickybar.tpl.php:20
+msgid "Save Changes"
+msgstr "Lưu Thay Đổi"
+
+#: RedukCore/templates/panel/footer.tpl.php:50
+#: RedukCore/templates/panel/header_stickybar.tpl.php:22
+msgid "Reset Section"
+msgstr "Đặt Lại Vùng"
+
+#: RedukCore/templates/panel/footer.tpl.php:51
+#: RedukCore/templates/panel/header_stickybar.tpl.php:23
+msgid "Reset All"
+msgstr "Đặt Lại Tất Cả"
+
+#: RedukCore/templates/panel/footer.tpl.php:56
+#: RedukCore/templates/panel/header_stickybar.tpl.php:26
+msgid "Working..."
+msgstr "Đang Làm Việc..."
+
+#: RedukCore/templates/panel/header.tpl.php:18
+msgid "Developer Mode Enabled"
+msgstr "Chế Độ Nhà Phát Triển Đã Bật"
+
+#: RedukCore/templates/panel/header_stickybar.tpl.php:16
+msgid "Expand"
+msgstr "Mở Rộng"
+
+#: class.reduk-plugin.php:307
+msgid "Reduk Framework has an embedded demo."
+msgstr "Reduk Framework có một bản demo được nhúng."
+
+#: class.reduk-plugin.php:307
+msgid "Click here to activate the sample config file."
+msgstr "Nhấp vào đây để kích hoạt tệp cấu hình mẫu."
+
+#: class.reduk-plugin.php:408
+msgid "Docs"
+msgstr "Tài Liệu"
+
+#: class.reduk-plugin.php:409
+msgid "Repo"
+msgstr "Kho"
+
+#: class.reduk-plugin.php:410
+msgid "Builder"
+msgstr "Bộ Xây Dựng"
+
+#: class.reduk-plugin.php:416
+msgid "Deactivate Demo Mode"
+msgstr "Tắt Chế Độ Demo"
+
+#: class.reduk-plugin.php:418
+msgid "Activate Demo Mode"
+msgstr "Bật Chế Độ Demo"
+
+#: tests/includes/class-tivwp-dm-controller.php:28
+msgid "Must call in of after the \"plugins_loaded\" action."
+msgstr "Phải gọi sau hành động \\\"plugins_loaded\\\"."
+
+#: tests/includes/class-tivwp-dm-controller.php:138
+msgid "Unknown action \"%1$s\" specified for %2$s"
+msgstr "Hành động không xác định \\\"%1$s\\\" được chỉ định cho %2$s"
+
+#: tests/includes/class-tivwp-dm-controller.php:143
+msgid "The unknown action has been replaced with \"%s\""
+msgstr "Hành động không xác định đã được thay thế bằng \\\"% s\\\""
+
+#: tests/includes/class-tivwp-dm-controller.php:158
+msgid "Automatic action performed: \"%s\""
+msgstr "Hành động tự động được thực hiện: \\\"% s\\\""
+
+#: tests/includes/class-tivwp-dm.php:112
+msgid "Activate Development Plugins"
+msgstr "Kích hoạt các plugin phát triển"
+
+#: tests/includes/class-tivwp-dm.php:119
+msgid "Deactivate Development Plugins"
+msgstr "Hủy kích hoạt các plugin phát triển"
+
+#: tests/includes/class-tivwp-dm.php:131
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Bạn không có đủ quyền để truy cập trang này."
+
+#. Plugin URI of the plugin/theme
+msgid "http://wordpress.org/plugins/reduk-framework"
+msgstr "http://wordpress.org/plugins/reduk-framework"
+
+#. Description of the plugin/theme
+msgid "Reduk is a simple, truly extensible options framework for WordPress themes and plugins."
+msgstr ""
+"Reduk là một khung tùy chọn đơn giản, thực sự có thể mở rộng cho các chủ đề và plugin WP."
+
+#. Author of the plugin/theme
+msgid "Team Reduk"
+msgstr "Đội Reduk"
+
+#. Author URI of the plugin/theme
+msgid "http://redukframework.com"
+msgstr "http://redukframework.com"
+
+#: RedukCore/inc/welcome/views/status_report.php:427
+msgctxt "by author"
+msgid "by %s"
+msgstr "bởi %s"

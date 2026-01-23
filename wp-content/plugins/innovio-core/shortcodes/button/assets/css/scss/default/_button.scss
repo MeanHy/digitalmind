@@ -1,0 +1,214 @@
+/* ==========================================================================
+   Button shortcode style - begin
+   ========================================================================== */
+
+.mkdf-btn {
+    @include mkdfButtonDefaultStyle();
+    @include mkdfButtonSize();
+    cursor: pointer;
+    
+    &.mkdf-btn-simple {
+        padding: 0 !important;
+        color: $default-heading-color;
+        background-color: transparent;
+        border: 0;
+        vertical-align: middle;
+
+        .mkdf-btn-text {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .mkdf-btn-plus {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+            background-color: transparent;
+            border-radius: 100%;
+            box-sizing: border-box;
+            border: 2px solid;
+            @include mkdfTransition(transform .2s ease, border-color .2s ease-in-out);
+            width: 46px;
+            height: 46px;
+            will-change: transform;
+
+            .mkdf-btn-line-1,
+            .mkdf-btn-line-2{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+
+                &:before{
+                    background-color: currentColor;
+                    content: '';
+                    @include mkdfTransition(background-color .2s ease-in-out);
+                }
+            }
+
+            .mkdf-btn-line-1:before{
+                width: 1px;
+                height: 15px;
+            }
+
+            .mkdf-btn-line-2:before{
+                height: 1px;
+                width: 15px;
+            }
+        }
+
+        &.blue_style {
+            .mkdf-btn-plus{
+                border-color: #3349d3;
+            }
+        }
+
+        &.light_style {
+            .mkdf-btn-plus{
+                border-color: #d7e3f7;
+            }
+        }
+
+        &.grey_style {
+            .mkdf-btn-plus{
+                border-color: #353546;
+            }
+        }
+
+        &:not(.mkdf-btn-custom-hover-bg):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            background-color: transparent !important;
+        }
+
+        &:not(.mkdf-btn-custom-border-hover):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            border-color: transparent !important;
+        }
+
+        &:hover{
+            .mkdf-btn-plus{
+                @include mkdfTransform(rotate(90deg));
+                top: 0;
+            }
+        }
+    }
+
+    &.mkdf-btn-predefined-arrow {
+        overflow: hidden;
+
+        .mkdf-btn-text {
+            padding-right: 31px;
+            @include mkdfTransition(padding .17s .08s ease-in-out);
+        }
+
+        svg {
+            fill: currentColor;
+        }
+
+        svg.mkdf-btn-svg-one {
+            position: absolute;
+            width: 26px;
+            top: calc(50% - 4px);
+            left: 0;
+            opacity: 0;
+            @include mkdfTransform(translateX(17px));
+            @include mkdfTransition(transform .2s ease-out, opacity .2s ease-out);
+        }
+
+        svg.mkdf-btn-svg-two {
+            position: absolute;
+            right: 0;
+            top: calc(50% - 4px);
+            width: 26px;
+            opacity: 1;
+            @include mkdfTransform(translateX(-33px));
+            @include mkdfTransition(transform .2s .25s ease-out, opacity .2s .25s ease-out);
+        }
+
+        &.mkdf-btn-small {
+            svg.mkdf-btn-svg-two {
+                @include mkdfTransform(translateX(-26px));
+            }
+
+            &:hover {
+                svg.mkdf-btn-svg-one {
+                    @include mkdfTransform(translateX(22px));
+                }
+            }
+        }
+
+        &.mkdf-btn-large {
+
+        }
+
+        &:hover {
+
+            .mkdf-btn-text {
+                padding-left: 31px;
+                padding-right: 0;
+                @include mkdfTransition(padding .17s .08s ease-in-out);
+            }
+            svg.mkdf-btn-svg-two {
+                opacity: 0;
+                @include mkdfTransform(translateX(-17px));
+                @include mkdfTransition(transform .2s ease-out, opacity .2s ease-out);
+            }
+            svg.mkdf-btn-svg-one {
+                opacity: 1;
+                @include mkdfTransform(translateX(33px));
+                @include mkdfTransition(transform .2s .25s ease-out, opacity .2s .25s ease-out);
+            }
+        }
+    }
+
+    &.mkdf-btn-solid {
+        @include mkdfButtonSolidColor();
+        @include mkdfTransition(box-shadow .35s cubic-bezier(0.03, 1, 0.58, 1));
+    }
+
+    &.mkdf-btn-outline {
+        @include mkdfButtonOutlineColor();
+    }
+    
+    &.mkdf-btn-small {
+        @include mkdfButtonSize(small);
+    }
+    
+    &.mkdf-btn-large {
+        @include mkdfButtonSize(large);
+    }
+    
+    &.mkdf-btn-huge {
+        @include mkdfButtonSize(huge);
+    }
+
+    &.mkdf-btn-icon {
+
+        > i,
+        > span:not(.mkdf-btn-text) {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 0 0 4px;
+            font-size: 1.142857142857143em;
+            line-height: inherit;
+
+            &:before {
+                display: block;
+                line-height: inherit;
+            }
+        }
+
+        &.mkdf-btn-simple {
+            .icon_plus {
+                font-size: 20px;
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Button shortcode style - end
+   ========================================================================== */

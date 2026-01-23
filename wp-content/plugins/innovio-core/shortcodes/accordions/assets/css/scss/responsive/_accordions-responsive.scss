@@ -1,0 +1,14 @@
+@include phone-landscape {
+    .mkdf-accordion-holder {
+        .mkdf-accordion-title {
+            padding-right: 0;
+
+            .mkdf-accordion-mark {
+                display: none;
+            }
+        }
+        .mkdf-accordion-content {
+            padding-right: 0;
+        }
+    }
+}

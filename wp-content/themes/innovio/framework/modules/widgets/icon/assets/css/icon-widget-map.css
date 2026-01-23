@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Icon widget style - begin
+   ========================================================================== */
+@keyframes navglitch {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-5px);
+    -moz-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes navglitchreverse {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(5px);
+    -moz-transform: translateX(5px);
+    transform: translateX(5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.mkdf-icon-widget-holder {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.mkdf-icon-widget-holder > * {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.mkdf-icon-widget-holder .mkdf-icon-text {
+  padding: 0 0 0 10px;
+}
+
+.mkdf-icon-widget-holder .mkdf-icon-text.mkdf-no-icon {
+  padding: 0;
+}
+
+.mkdf-icon-widget-holder.mkdf-icon-has-hover:hover .mkdf-icon-text {
+  color: inherit !important;
+}
+
+.mkdf-dark-header .mkdf-page-header > div:not(.mkdf-sticky-header):not(.fixed) .mkdf-icon-widget-holder {
+  color: #08104d !important;
+}
+
+.mkdf-dark-header .mkdf-page-header > div:not(.mkdf-sticky-header):not(.fixed) .mkdf-icon-widget-holder:hover {
+  color: #ff4b36 !important;
+}
+
+.mkdf-light-header .mkdf-page-header > div:not(.mkdf-sticky-header):not(.fixed) .mkdf-icon-widget-holder {
+  color: #fff !important;
+}
+
+.mkdf-light-header .mkdf-page-header > div:not(.mkdf-sticky-header):not(.fixed) .mkdf-icon-widget-holder:hover {
+  color: #ff4b36 !important;
+}
+
+/* ==========================================================================
+   Icon widget style - end
+   ========================================================================== */
+
+/*# sourceMappingURL=icon-widget-map.css.map */

@@ -1,0 +1,126 @@
+/* ==========================================================================
+   Portfolio Item Layout - Gallery Overlay style - begin
+   ========================================================================== */
+
+.mkdf-portfolio-list-holder {
+	
+	&.mkdf-pl-gallery-overlay {
+		
+		&.mkdf-pl-has-shadow {
+			
+			.mkdf-pl-item-inner {
+				box-shadow: $default-box-shadow;
+			}
+		}
+		
+		article {
+			
+			&:hover {
+				
+				.mkdf-pli-text-holder {
+					opacity: 1;
+
+                    .mkdf-pli-text {
+                        vertical-align: top;
+
+                        .mkdf-pli-button,
+                        .mkdf-pli-category-holder,
+                        .mkdf-pli-title {
+                            @include mkdfTransform(translate3d(0,0,0));
+							@include mkdfTransitionTransform(.45s cubic-bezier(0.64, 0.01, 0.15, 1.16));
+                        }
+                    }
+				}
+			}
+
+			&.mkdf-pl-light-skin {
+				.mkdf-pli-text {
+					.mkdf-pli-title,
+					.mkdf-pli-excerpt,
+					.mkdf-btn.mkdf-btn-simple,
+					.mkdf-pli-category-holder a{
+						color: #fff;
+					}
+				}
+			}
+			
+			.mkdf-pl-item-inner {
+				overflow: hidden;
+			}
+			
+			.mkdf-pli-text {
+				.mkdf-pli-category-holder {
+					a {
+						padding-right: 39px;
+						position: relative;
+
+						&:hover {
+							&:after {
+								background-color: $default-heading-color;
+							}
+						}
+
+						&:after {
+							content: '';
+							width: 24px;
+							height: 1px;
+							background-color: currentColor;
+							position: absolute;
+							right: 6px;
+							top: 50%;
+							transform: translateX(-50);
+						}
+
+						&:last-child {
+							padding-right: 0;
+
+							&:after {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.mkdf-pl-has-rounded-corners {
+			article {
+				.mkdf-pl-item-inner {
+					border-radius: 3px;
+				}
+			}
+		}
+		
+		.mkdf-pli-text-holder {
+			@include mkdfAbsoluteHolderLayout();
+			opacity: 0;
+			padding: 30px 40px 35px;
+			background-color: #f2f7ff;
+			box-sizing: border-box;
+			@include mkdfTransition(opacity .3s);
+		}
+
+		.mkdf-pli-text {
+			vertical-align: top;
+
+            .mkdf-pli-category-holder,
+            .mkdf-pli-title {
+                @include mkdfTransitionTransform(.2s ease);
+                @include mkdfTransform(translate3d(0,-40px,0));
+            }
+
+			.mkdf-pli-button {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				z-index: 10;
+                @include mkdfTransitionTransform(.2s ease);
+                @include mkdfTransform(translate3d(0,40px,0));
+				display: flex;
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Portfolio Item Layout - Gallery Overlay style - end
+   ========================================================================== */

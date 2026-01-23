@@ -1,0 +1,39 @@
+/*
+Theme Name: Innovio Child
+Theme URI: https://innovio.qodeinteractive.com
+Description: A child theme of Innovio Theme
+Author: Mikado Themes
+Author URI: http://themeforest.net/user/mikado-themes
+Version: 1.0.1
+Text Domain: innovio
+Template: innovio
+*/
+/* language */
+.widget_polylang li.lang-item-first a img {
+	margin-top: 8px;
+}
+/* menu-icon */
+.mkdf-mobile-header .mkdf-mobile-menu-opener.mkdf-mobile-menu-opener-predefined .mkdf-mobile-menu-icon .mkdf-hm-lines {
+	margin: 0 auto;
+}
+
+.mkdf-mobile-header .mkdf-mobile-menu-opener.mkdf-mobile-menu-opener-predefined .mkdf-mobile-menu-icon .mkdf-hm-lines .mkdf-hm-line {
+	width: 70% !important;
+}
+
+.mkdf-mobile-header .mkdf-mobile-menu-opener.mkdf-mobile-menu-opener-predefined .mkdf-mobile-menu-icon {
+	background-color: #e82c75 !important;
+	width: 36px !important;
+	height: 36px !important;
+}
+
+.mkdf-side-menu-button-opener.mkdf-icon-has-hover.mkdf-side-menu-button-opener-predefined {
+	display: none;
+}
+.mkdf-position-left .mkdf-logo-wrapper a {
+	height: 50px !important;
+}
+
+.mkdf-mobile-header .mkdf-mobile-logo-wrapper a {
+	height: 50px !important;
+}

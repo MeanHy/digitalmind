@@ -1,0 +1,132 @@
+#wpfooter #footer-left{
+    display: none;
+}
+#adminmenu #toplevel_page_WP-Optimize div.wp-menu-image, #adminmenu #toplevel_page_WP-Optimize div.wp-menu-image::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: '\f311';
+}
+#adminmenu #toplevel_page_ns-cloner div.wp-menu-image, #adminmenu #toplevel_page_ns-cloner div.wp-menu-image::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: '\f105';
+}
+#adminmenu #toplevel_page_woocommerce div.wp-menu-image, #adminmenu #toplevel_page_woocommerce div.wp-menu-image::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: '\f174';
+}
+#adminmenu #toplevel_page_sitepress-multilingual-cms-menu-network div.wp-menu-image, #adminmenu #toplevel_page_sitepress-multilingual-cms-menu-network div.wp-menu-image::before, #adminmenu #toplevel_page_sitepress-multilingual-cms-menu-languages div.wp-menu-image, #toplevel_page_sitepress-multilingual-cms-menu-languages div.wp-menu-image::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: '\f326';
+}
+#adminmenu #toplevel_page_sitepress-multilingual-cms-menu-network div.wp-menu-image img, #adminmenu #toplevel_page_sitepress-multilingual-cms-menu-languages div.wp-menu-image img {
+    display: none;
+}
+#adminmenu #toplevel_page_beyond-multisite div.wp-menu-image, #adminmenu #toplevel_page_beyond-multisite div.wp-menu-image::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: '\f325';
+}
+#adminmenu #toplevel_page_wpclever div.wp-menu-image, #adminmenu #toplevel_page_wpclever div.wp-menu-image::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: '\f111';
+}
+#adminmenu #toplevel_page_wpbingo div.wp-menu-image, #adminmenu #toplevel_page_wpbingo div.wp-menu-image::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: '\f309';
+}
+#adminmenu #toplevel_page_dokan div.wp-menu-image, #adminmenu #toplevel_page_dokan div.wp-menu-image::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: '\f238';
+}
+#adminmenu #toplevel_page_dokan div.wp-menu-image, #adminmenu #toplevel_page_b2bking div.wp-menu-image::before {
+    background: none !important;
+    font-family: "dashicons";
+    font-size: 18px;
+    content: '\f512';
+}
+#adminmenu #toplevel_page_dokan div.wp-menu-image, #adminmenu #toplevel_page_salesking div.wp-menu-image::before {
+        background: none !important;
+        font-family: "dashicons";
+        font-size: 18px;
+        content: '\f124';
+}
+#adminmenu #toplevel_page_beyond-multisite div.wp-menu-image img,#adminmenu #toplevel_page_ns-cloner div.wp-menu-image img,#adminmenu #toplevel_page_b2bking div.wp-menu-image img,#adminmenu #toplevel_page_salesking div.wp-menu-image img,#adminmenu #toplevel_page_wpclever div.wp-menu-image img,#adminmenu #menu-posts-qcld_canned_reply div.wp-menu-image img,#adminmenu #toplevel_page_fs-poster div.wp-menu-image img{
+    display: none;
+}
+#adminmenu #toplevel_page_elementor div.wp-menu-image, #adminmenu #toplevel_page_elementor div.wp-menu-image::before {
+    background: none !important;
+    font-family: 'Font Awesome 5 Brands';
+    font-size: 18px;
+    content: "\f385";
+}
+#adminmenu #menu-posts-qcld_canned_reply div.wp-menu-image, #adminmenu #menu-posts-qcld_canned_reply div.wp-menu-image::before {
+    background: none !important;
+    font-family: 'Font Awesome 5 Brands';
+    font-size: 18px;
+    content: "\f6af";
+}
+#adminmenu #toplevel_page_mycred-main div.wp-menu-image, #adminmenu #toplevel_page_mycred-main div.wp-menu-image::before {
+    background: none !important;
+    font-family: 'FontAwesome';
+    font-size: 18px;
+    content: "\f1cd";
+}
+#adminmenu #toplevel_page_htpm-options div.wp-menu-image, #adminmenu #toplevel_page_htpm-options div.wp-menu-image::before {
+    background: none !important;
+    font-family: 'Font Awesome 5 Brands';
+    font-size: 18px;
+    content: "\f40d";
+}
+#adminmenu #toplevel_page_cartflows div.wp-menu-image, #adminmenu #toplevel_page_cartflows div.wp-menu-image::before {
+    background: none !important;
+    font-family: 'Font Awesome 5 Brands';
+    font-size: 18px;
+    content: "\f171";
+}
+#adminmenu #toplevel_page_automatewoo div.wp-menu-image, #adminmenu #toplevel_page_automatewoo div.wp-menu-image::before {
+    background: none !important;
+    font-family: 'Font Awesome 5 Brands';
+    font-size: 18px;
+    content: "\f3db";
+}
+#adminmenu #toplevel_page_fs-poster div.wp-menu-image, #adminmenu #toplevel_page_fs-poster div.wp-menu-image::before {
+    background: none !important;
+    font-family: 'Font Awesome 5 Brands';
+    font-size: 18px;
+    content: "\f5a3";
+}
+/* ADMIN PAGE FOR WOLMART*/
+/* change icon for menu wolmart */
+div.dashicons-wolmart-logo:before {
+    content: "\f13d" !important;
+    color: #a7aaad !important;
+}
+
+li#toplevel_page_wolmart:hover .wp-menu-image.dashicons-before.dashicons-wolmart-logo::before {
+    color: #212121 !important;
+}
+
+/* change icon for menu yith */
+#toplevel_page_yith_plugin_panel .wp-menu-image.dashicons-before:before {
+    content: "\f312" !important;
+}
+
+/* hidde header admin menu bar */
+li#wp-admin-bar-wolmart, li#wp-admin-bar-dokan, li#wp-admin-bar-fvm_menu, li#wp-admin-bar-_mtrloptions {
+    display: none !important;
+}
+/* END ADMIN PAGE FOR WOLMART*/

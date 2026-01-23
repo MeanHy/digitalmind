@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Author Info widget style - begin
+   ========================================================================== */
+@keyframes navglitch {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-5px);
+    -moz-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes navglitchreverse {
+  0% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(5px);
+    -moz-transform: translateX(5px);
+    transform: translateX(5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.mkdf-author-info-widget {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+.mkdf-author-info-widget .mkdf-aiw-image {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.mkdf-author-info-widget .mkdf-aiw-image img {
+  display: block;
+}
+
+.mkdf-author-info-widget .mkdf-aiw-title {
+  margin: 26px 0 0;
+}
+
+.mkdf-author-info-widget .mkdf-aiw-text {
+  display: block;
+  margin: 15px 0 0;
+}
+
+/* ==========================================================================
+   Author Info widget style - end
+   ========================================================================== */
+
+/*# sourceMappingURL=author-info-widget-map.css.map */
