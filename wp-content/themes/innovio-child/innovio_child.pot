@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Innovio Child\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-23 08:25+0000\n"
+"POT-Creation-Date: 2026-01-24 02:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -20,15 +20,35 @@ msgstr ""
 msgid "A child theme of Innovio Theme"
 msgstr ""
 
-#: functions.php:45
+#: functions.php:27
+msgid "Cancel"
+msgstr ""
+
+#: functions.php:26
+msgid "Confirm"
+msgstr ""
+
+#: functions.php:226
+msgid "Confirmed! Redirecting..."
+msgstr ""
+
+#: functions.php:86
 msgid "Download Now"
 msgstr ""
 
-#: functions.php:41
+#: functions.php:82
 msgid "Download Research Paper"
 msgstr ""
 
-#: functions.php:42
+#: functions.php:118
+msgid "Email Address"
+msgstr ""
+
+#: functions.php:114
+msgid "Full Name"
+msgstr ""
+
+#: functions.php:83
 msgid "Get full access to this research document"
 msgstr ""
 
@@ -44,38 +64,66 @@ msgstr ""
 msgid "Innovio Child"
 msgstr ""
 
+#: functions.php:252
+msgid "Login successful! Redirecting..."
+msgstr ""
+
+#: functions.php:32
+msgid "Login successful! Reloading..."
+msgstr ""
+
 #. Author of the theme
 msgid "Mikado Themes"
 msgstr ""
 
-#: functions.php:81 functions.php:139
+#: functions.php:131
 msgid "or"
 msgstr ""
 
-#: functions.php:75
+#: functions.php:31
+msgid "Please fill in all fields!"
+msgstr ""
+
+#: functions.php:234
+msgid "Please fill in all fields."
+msgstr ""
+
+#: functions.php:108
 msgid "Please provide your information to access the document"
 msgstr ""
 
-#: functions.php:72
+#: functions.php:28
+msgid "Processing..."
+msgstr ""
+
+#: functions.php:278
+msgid "Registration successful! Redirecting..."
+msgstr ""
+
+#: functions.php:29
+msgid "Server error. Please try again."
+msgstr ""
+
+#: functions.php:125
+msgid "Sign Up & Download"
+msgstr ""
+
+#: functions.php:105
 msgid "Sign up to download"
 msgstr ""
 
-#: functions.php:208
+#: functions.php:54
 msgid "SIGN UP TO RECEIVE THE REPORT"
 msgstr ""
 
-#: functions.php:134
-msgid "Stay updated with our latest news and offers"
+#: functions.php:30
+msgid "Thank you! Downloading document..."
 msgstr ""
 
-#: functions.php:131
-msgid "Subscribe to Newsletter"
-msgstr ""
-
-#: functions.php:189
+#: functions.php:351
 msgid "Unsubscribe"
 msgstr ""
 
-#: functions.php:192
+#: functions.php:354
 msgid "We are sorry to see you go. Please confirm your email to unsubscribe."
 msgstr ""

@@ -884,3 +884,39 @@ footer .widget .mkdf-widget-title-holder {
   text-align: center;
   font-size: 14px;
 }
+/* ========================================
+   DM RESEARCH REGISTER FORM
+   ======================================== */
+.dm-register-form .form-group {
+    margin-bottom: 15px;
+}
+.dm-register-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.dm-submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.dm-submit-btn:hover {
+    background: #0056b3;
+}
+.dm-form-message {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+.dm-form-message.error {
+    color: red;
+}
+.dm-form-message.success {
+    color: green;
+}

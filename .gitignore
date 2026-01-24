@@ -4,3 +4,5 @@ wp-content/cache
 wp-content/wp-rocket-config
 .htaccess
 wp-config.php
+*-backup-*.pot~
+*-backup-*.po~

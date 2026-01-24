@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Innovio Child\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-23 04:24+0000\n"
-"PO-Revision-Date: 2026-01-23 08:26+0000\n"
+"PO-Revision-Date: 2026-01-24 02:22+0000\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "Language: vi\n"
@@ -20,17 +20,42 @@ msgstr ""
 msgid "A child theme of Innovio Theme"
 msgstr "Một chủ đề con của Chủ đề Innovio"
 
-#: functions.php:45
+#: functions.php:27
+#, fuzzy
+msgid "Cancel"
+msgstr "Hủy bỏ"
+
+#: functions.php:26
+#, fuzzy
+msgid "Confirm"
+msgstr "Xác nhận"
+
+#: functions.php:226
+#, fuzzy
+msgid "Confirmed! Redirecting..."
+msgstr "Đã xác nhận!  Đang chuyển hướng..."
+
+#: functions.php:86
 #, fuzzy
 msgid "Download Now"
 msgstr "Tải xuống ngay"
 
-#: functions.php:41
+#: functions.php:82
 #, fuzzy
 msgid "Download Research Paper"
 msgstr "Tải tài liệu nghiên cứu"
 
-#: functions.php:42
+#: functions.php:118
+#, fuzzy
+msgid "Email Address"
+msgstr "Địa chỉ email"
+
+#: functions.php:114
+#, fuzzy
+msgid "Full Name"
+msgstr "Tên đầy đủ"
+
+#: functions.php:83
 #, fuzzy
 msgid "Get full access to this research document"
 msgstr "Có toàn quyền truy cập vào tài liệu nghiên cứu này"
@@ -49,43 +74,79 @@ msgstr "https://innovio.qodeinteractive.com"
 msgid "Innovio Child"
 msgstr "Innovio Child"
 
+#: functions.php:252
+#, fuzzy
+msgid "Login successful! Redirecting..."
+msgstr "Đăng nhập thành công!  Đang chuyển hướng..."
+
+#: functions.php:32
+#, fuzzy
+msgid "Login successful! Reloading..."
+msgstr "Đăng nhập thành công!  Đang tải lại..."
+
 #. Author of the theme
 msgid "Mikado Themes"
 msgstr "Mikado Themes"
 
-#: functions.php:81 functions.php:139
+#: functions.php:131
 msgid "or"
 msgstr "hoặc"
 
-#: functions.php:75
+#: functions.php:31
+#, fuzzy
+msgid "Please fill in all fields!"
+msgstr "Vui lòng điền vào tất cả các trường!"
+
+#: functions.php:234
+#, fuzzy
+msgid "Please fill in all fields."
+msgstr "Vui lòng điền vào tất cả các trường."
+
+#: functions.php:108
 #, fuzzy
 msgid "Please provide your information to access the document"
 msgstr "Vui lòng cung cấp thông tin của bạn để truy cập tài liệu"
 
-#: functions.php:72
+#: functions.php:28
+#, fuzzy
+msgid "Processing..."
+msgstr "Xử lý..."
+
+#: functions.php:278
+#, fuzzy
+msgid "Registration successful! Redirecting..."
+msgstr "Đăng ký thành công!  Đang chuyển hướng..."
+
+#: functions.php:29
+#, fuzzy
+msgid "Server error. Please try again."
+msgstr "Lỗi máy chủ.  Vui lòng thử lại."
+
+#: functions.php:125
+#, fuzzy
+msgid "Sign Up & Download"
+msgstr "Đăng ký và tải xuống"
+
+#: functions.php:105
 msgid "Sign up to download"
 msgstr "Đăng ký thông tin để tải xuống"
 
-#: functions.php:208
+#: functions.php:54
 msgid "SIGN UP TO RECEIVE THE REPORT"
 msgstr "ĐĂNG KÝ NHẬN BÁO CÁO"
 
-#: functions.php:134
+#: functions.php:30
 #, fuzzy
-msgid "Stay updated with our latest news and offers"
-msgstr "Luôn cập nhật những tin tức và ưu đãi mới nhất của chúng tôi"
+msgid "Thank you! Downloading document..."
+msgstr "Cảm ơn!  Đang tải tài liệu..."
 
-#: functions.php:131
-msgid "Subscribe to Newsletter"
-msgstr "Đăng ký nhận tin mới"
-
-#: functions.php:189
+#: functions.php:351
 #, fuzzy
 #| msgid "Subscribe"
 msgid "Unsubscribe"
 msgstr "Đăng ký "
 
-#: functions.php:192
+#: functions.php:354
 #, fuzzy
 msgid "We are sorry to see you go. Please confirm your email to unsubscribe."
 msgstr ""

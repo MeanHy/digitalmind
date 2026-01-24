@@ -1,94 +1,9 @@
-/**
- * Social Login Handler for Brevo Sync
- * Detects when user returns from social login and auto-submits their email to Brevo
- */
-(function () {
-    document.addEventListener('DOMContentLoaded', function () {
-        const urlParams = new URLSearchParams(window.location.search);
-        const isSocialLoginSuccess = urlParams.get('social_login') === 'success';
-
-        if (isSocialLoginSuccess && typeof socialLoginData !== 'undefined' && socialLoginData.isLoggedIn && socialLoginData.userEmail) {
-            // Clean the URL
-            const cleanUrl = window.location.origin + window.location.pathname;
-            window.history.replaceState({}, document.title, cleanUrl);
-
-            // Wait a bit for form to be ready
-            setTimeout(function () {
-                autoFillAndSubmitBrevoForm(socialLoginData.userEmail);
-            }, 500);
-        }
-    });
-
-    function autoFillAndSubmitBrevoForm(email) {
-        // Find Brevo form (sibwp_form)
-        var brevoForms = document.querySelectorAll('.sib-form form, form[id*="sib-form"]');
-
-        if (brevoForms.length === 0) {
-            // Try alternative selectors
-            brevoForms = document.querySelectorAll('form.sib-form-container form, .sib_signup_form');
-        }
-
-        brevoForms.forEach(function (form) {
-            // Find email input
-            var emailInput = form.querySelector('input[type="email"], input[name="EMAIL"], input[name="email"]');
-
-            if (emailInput) {
-                // Fill the email
-                emailInput.value = email;
-                emailInput.dispatchEvent(new Event('input', { bubbles: true }));
-                emailInput.dispatchEvent(new Event('change', { bubbles: true }));
-
-                // Find and click submit button
-                var submitBtn = form.querySelector('button[type="submit"], input[type="submit"], .sib-form-btn');
-
-                if (submitBtn) {
-                    // Small delay before submit
-                    setTimeout(function () {
-                        submitBtn.click();
-
-                        // Set cookie for research download if applicable
-                        setCookieHelper('research_email_verified', 'true', 365);
-
-                        // Show success message
-                        showSocialLoginToast('Đăng ký thành công với email: ' + email);
-                    }, 300);
-                }
-            }
-        });
-    }
-
-    function setCookieHelper(name, value, days) {
-        var expires = new Date();
-        expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
-        document.cookie = name + '=' + value + ';expires=' + expires.toUTCString() + ';path=/';
-    }
-
-    function showSocialLoginToast(message) {
-        var toast = document.getElementById('toastNotification');
-        if (toast) {
-            var toastIcon = toast.querySelector('.toast-icon');
-            var toastText = toast.querySelector('.toast-text');
-
-            if (toastIcon) toastIcon.textContent = '✓';
-            if (toastText) toastText.textContent = message;
-
-            toast.classList.remove('warning');
-            setTimeout(function () {
-                toast.classList.add('show');
-            }, 10);
-
-            setTimeout(function () {
-                toast.classList.remove('show');
-            }, 5000);
-        }
-    }
-})();
-
-(function () {
+﻿(function ($) {
+    "use strict";
     function setCookie(name, value, days) {
         const expires = new Date();
         expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
-        document.cookie = name + '=' + value + ';expires=' + expires.toUTCString() + ';path=/';
+        document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + expires.toUTCString() + ';path=/';
     }
 
     function getCookie(name) {
@@ -97,48 +12,13 @@
         for (let i = 0; i < ca.length; i++) {
             let c = ca[i];
             while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            if (c.indexOf(nameEQ) === 0) return decodeURIComponent(c.substring(nameEQ.length, c.length));
         }
         return null;
     }
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const fromBrevo = urlParams.get('from') === 'brevo' || urlParams.get('ref') === 'brevo';
-
-    if (fromBrevo) {
-        setCookie('research_email_verified', 'true', 365);
-
-        const cleanUrl = window.location.origin + window.location.pathname;
-        window.history.replaceState({}, document.title, cleanUrl);
-    }
-    const downloadSection = document.querySelector('.research-download-section');
-    if (!downloadSection) {
-        return;
-    }
-
-    const downloadBtn = document.getElementById('btnDownloadResearch');
-    const popup = document.getElementById('researchPopup');
-    const popupClose = document.getElementById('researchPopupClose');
-    const toast = document.getElementById('toastNotification');
-    const isVerified = getCookie('research_email_verified') === 'true' || fromBrevo;
-
-    function showPopup() {
-        if (!popup) return;
-        popup.classList.add('show');
-        setTimeout(function () {
-            popup.classList.add('visible');
-        }, 10);
-    }
-
-    function hidePopup() {
-        if (!popup) return;
-        popup.classList.remove('visible');
-        setTimeout(function () {
-            popup.classList.remove('show');
-        }, 300);
-    }
-
     function showToast(message, type) {
+        const toast = document.getElementById('toastNotification');
         if (!toast) return;
 
         const toastIcon = toast.querySelector('.toast-icon');
@@ -148,7 +28,7 @@
 
         if (type === 'warning') {
             toast.classList.add('warning');
-            if (toastIcon) toastIcon.textContent = '⚠';
+            if (toastIcon) toastIcon.textContent = '⚠️';
         } else {
             if (toastIcon) toastIcon.textContent = '✓';
         }
@@ -164,121 +44,223 @@
         }, 5000);
     }
 
-    function triggerDownload() {
-        showToast('Đang tải xuống...', 'success');
+    window.dmSetCookie = setCookie;
+    window.dmGetCookie = getCookie;
+    window.dmShowToast = showToast;
+    window.dmSetCookieValue = setCookie;
+
+    function showPopup() {
+        const popup = document.getElementById('researchPopup');
+        if (!popup) return;
+        popup.classList.add('show');
+        setTimeout(function () {
+            popup.classList.add('visible');
+        }, 10);
     }
 
-    if (downloadBtn) {
-        downloadBtn.addEventListener('click', function (e) {
+    function hidePopup() {
+        const popup = document.getElementById('researchPopup');
+        if (!popup) return;
+        popup.classList.remove('visible');
+        setTimeout(function () {
+            popup.classList.remove('show');
+        }, 300);
+    }
+
+    function triggerDownload() {
+        showPopup();
+    }
+
+    function handleSocialLoginSuccess() {
+        setCookie('research_email_verified', 'true', 365);
+        showToast(subscribeEmail.lang_key.login_success_reloading);
+        setTimeout(function () {
+            window.location.reload();
+        }, 500);
+    }
+
+    function checkAndPrefillForm() {
+        var $form = $('#dm-research-register-form');
+        if (!$form.length) return;
+
+        var $nameInput = $form.find('input[name="user_name"]');
+        var $emailInput = $form.find('input[name="user_email"]');
+        var $btn = $form.find('.dm-submit-btn');
+
+        var savedName = getCookie('dm_user_name');
+        var savedEmail = getCookie('dm_user_email');
+
+        if (savedName && savedEmail) {
+            $nameInput.val(savedName);
+            $emailInput.val(savedEmail);
+            $btn.text(subscribeEmail.lang_key.confirm);
+            if (!$form.find('input[name="is_logged_in_action"]').length) {
+                $form.append('<input type="hidden" name="is_logged_in_action" value="1">');
+            }
+        }
+    }
+
+    $(document).ready(function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const isSocialLoginSuccess = urlParams.get('social_login') === 'success';
+        checkAndPrefillForm();
+
+        let reportLink = '';
+        const STORAGE_KEY = 'dm_report_link_' + (window.location.pathname);
+
+        if (typeof subscribeEmail !== 'undefined' && subscribeEmail.report_link) {
+            reportLink = subscribeEmail.report_link;
+            sessionStorage.setItem(STORAGE_KEY, reportLink);
+
+            const url = new URL(window.location.href);
+            if (url.searchParams.has('report_id')) {
+                url.searchParams.delete('report_id');
+                window.history.replaceState({}, document.title, url.toString());
+            }
+        } else {
+            reportLink = sessionStorage.getItem(STORAGE_KEY);
+        }
+
+        if (reportLink) {
+            $('.link-download').attr('href', reportLink).attr('target', '_blank');
+        }
+
+        if (isSocialLoginSuccess && typeof socialLoginData !== 'undefined' && socialLoginData.isLoggedIn && socialLoginData.userEmail) {
+            const cleanUrl = window.location.origin + window.location.pathname;
+            window.history.replaceState({}, document.title, cleanUrl);
+            setTimeout(function () {
+                showToast(subscribeEmail.lang_key.login_success_reloading);
+                window.location.reload();
+            }, 500);
+        }
+
+        var $form = $('#dm-research-register-form');
+        if ($form.length) {
+            var $nameInput = $form.find('input[name="user_name"]');
+            var $emailInput = $form.find('input[name="user_email"]');
+            var $btn = $form.find('.dm-submit-btn');
+
+            $form.on('submit', function (e) {
+                e.preventDefault();
+                var originalBtnText = $btn.text();
+
+                $btn.prop('disabled', true).text(subscribeEmail.lang_key.processing);
+
+                $.ajax({
+                    url: subscribeEmail.ajaxurl,
+                    type: 'POST',
+                    data: $form.serialize() + '&action=dm_register_user',
+                    success: function (response) {
+                        if (response.success) {
+                            showToast(response.data.message, 'success');
+
+                            setCookie('research_email_verified', 'true', 365);
+                            if ($nameInput.val()) setCookie('dm_user_name', $nameInput.val(), 365);
+                            if ($emailInput.val()) setCookie('dm_user_email', $emailInput.val(), 365);
+
+                            setTimeout(function () {
+                                if (response.data.redirect_url) {
+                                    window.location.href = response.data.redirect_url;
+                                } else {
+                                    window.location.reload();
+                                }
+                            }, 1000);
+                        } else {
+                            showToast(response.data.message, 'warning');
+                            $btn.prop('disabled', false).text(originalBtnText);
+                        }
+                    },
+                    error: function () {
+                        showToast(subscribeEmail.lang_key.server_error, 'warning');
+                        $btn.prop('disabled', false).text(originalBtnText);
+                    }
+                });
+            });
+        }
+
+        $(document).on('click', '.menu-item-subscribe > a, a[href="#research-popup"]', function (e) {
             e.preventDefault();
+            const popup = document.getElementById('researchPopup');
+            if (popup) {
+                popup.classList.add('show');
+                setTimeout(function () { popup.classList.add('visible'); }, 10);
+            }
+            $('body').css('overflow', 'hidden');
+        });
+
+        $('#researchPopupClose, .research-popup-overlay').on('click', function (e) {
+            if (e.target === this || this.id === 'researchPopupClose') {
+                const popup = document.getElementById('researchPopup');
+                if (popup) {
+                    popup.classList.remove('visible');
+                    setTimeout(function () { popup.classList.remove('show'); }, 300);
+                }
+                $('body').css('overflow', '');
+            }
+        });
+
+        $(document).on('keyup', function (e) {
+            if (e.key === 'Escape') {
+                const popup = document.getElementById('researchPopup');
+                if (popup) {
+                    popup.classList.remove('visible');
+                    setTimeout(function () { popup.classList.remove('show'); }, 300);
+                }
+                $('body').css('overflow', '');
+            }
+        });
+
+        const socialButtons = document.querySelectorAll('.research-popup-social .popup-trigger');
+        socialButtons.forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                const url = this.getAttribute('href');
+                const width = 600;
+                const height = 600;
+                const left = (window.innerWidth - width) / 2;
+                const top = (window.innerHeight - height) / 2;
+                window.open(url, 'socialLoginPopup', `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes,status=yes`);
+            });
+        });
+    });
+
+    document.addEventListener('click', function (e) {
+        if (e.target && (e.target.id === 'btnDownloadResearch' || e.target.closest('#btnDownloadResearch'))) {
+            e.preventDefault();
+            const isVerified = getCookie('research_email_verified') === 'true';
 
             if (isVerified) {
                 triggerDownload();
             } else {
                 showPopup();
             }
-        });
-    }
+        }
+    });
 
-    if (popupClose) {
-        popupClose.addEventListener('click', hidePopup);
-    }
+    window.addEventListener('message', function (event) {
+        if (event.data === 'social_login_success') {
+            handleSocialLoginSuccess();
+        }
+    });
 
-    if (popup) {
-        popup.addEventListener('click', function (e) {
-            if (e.target === popup) {
-                hidePopup();
-            }
-        });
-    }
+    window.addEventListener('storage', function (event) {
+        if (event.key === 'social_login_status' && event.newValue && event.newValue.startsWith('success_')) {
+            localStorage.removeItem('social_login_status');
+            handleSocialLoginSuccess();
+        }
+    });
 
     document.addEventListener('wpcf7mailsent', function (event) {
         setCookie('research_email_verified', 'true', 365);
         hidePopup();
-        showToast('Cảm ơn bạn! Đang tải xuống tài liệu...', 'success');
+        showToast(subscribeEmail.lang_key.thank_you_downloading, 'success');
         setTimeout(function () {
             triggerDownload();
         }, 1000);
     });
+
     document.addEventListener('wpcf7invalid', function (event) {
-        showToast('Vui lòng điền đầy đủ thông tin!', 'warning');
-    });
-})();
-(function ($) {
-    $(document).ready(function () {
-        $(document).on('click', '.menu-item-subscribe > a, a[href="#subscribe-popup"]', function (e) {
-            e.preventDefault();
-            $('#subscribePopup').addClass('active');
-            $('body').css('overflow', 'hidden');
-        });
-        $('#subscribePopupClose, .subscribe-popup-overlay').on('click', function (e) {
-            if (e.target === this) {
-                $('#subscribePopup').removeClass('active');
-                $('body').css('overflow', '');
-            }
-        });
-        $(document).on('keyup', function (e) {
-            if (e.key === 'Escape') {
-                $('#subscribePopup').removeClass('active');
-                $('body').css('overflow', '');
-            }
-        });
+        showToast(subscribeEmail.lang_key.fill_all_fields, 'warning');
     });
 
-    (function () {
-        const urlParams = new URLSearchParams(window.location.search);
-        const isUnsubscribe = urlParams.get('email') === 'resubscribe';
-
-        if (isUnsubscribe) {
-            const cleanUrl = window.location.origin + window.location.pathname;
-            window.history.replaceState({}, document.title, cleanUrl);
-
-            $(window).on('load', function () {
-                $('#unsubscribePopup').addClass('active');
-                $('body').css('overflow', 'hidden');
-            });
-        }
-
-        $('#unsubscribePopupClose, .unsubscribe-popup-overlay').on('click', function (e) {
-            if (e.target === this) {
-                $('#unsubscribePopup').removeClass('active');
-                $('body').css('overflow', '');
-            }
-        });
-
-        $(document).on('keyup', function (e) {
-            if (e.key === 'Escape') {
-                $('#unsubscribePopup').removeClass('active');
-                $('body').css('overflow', '');
-            }
-        });
-
-        $('.cf7-other').hide();
-        $(document).on('change', '.wpcf7-list-item input[type="radio"], .wpcf7-list-item input[type="checkbox"]', function () {
-            var $container = $(this).closest('.wpcf7-form-control-wrap').parent();
-            var $otherField = $container.find('.cf7-other');
-
-            if ($otherField.length === 0) {
-                $otherField = $container.next('.cf7-other');
-            }
-
-            if ($(this).closest('.wpcf7-list-item').hasClass('last') && $(this).is(':checked')) {
-                $otherField.slideDown(200);
-            } else if ($(this).attr('type') === 'radio') {
-                $otherField.slideUp(200);
-            }
-        });
-    })();
 })(jQuery);
-document.addEventListener("DOMContentLoaded", function () {
-    const maxChars = 200;
-    const titles = document.querySelectorAll(".entry-title a");
-
-    titles.forEach(el => {
-        const text = el.textContent.trim();
-
-        if (text.length > maxChars) {
-            el.textContent = text.substring(0, maxChars).trim() + "…";
-        }
-    });
-});
