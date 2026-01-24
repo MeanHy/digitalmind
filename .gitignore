@@ -6,3 +6,4 @@ wp-content/wp-rocket-config
 wp-config.php
 *-backup-*.pot~
 *-backup-*.po~
+constant.php

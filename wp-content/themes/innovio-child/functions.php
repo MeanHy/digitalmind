@@ -343,7 +343,7 @@ function digitalmind_add_unsubscribe_popup()
     $form_shortcode = do_shortcode('[contact-form-7 id="' . $form_id . '"]');
 
     ?>
-    < div class="unsubscribe-popup-overlay" id="unsubscribePopup">
+    <div class="unsubscribe-popup-overlay" id="unsubscribePopup">
         <div class="unsubscribe-popup-container">
             <button class="unsubscribe-popup-close" id="unsubscribePopupClose">&times;</button>
             <div class="unsubscribe-popup-content">
@@ -356,7 +356,7 @@ function digitalmind_add_unsubscribe_popup()
                 <?php echo $form_shortcode; ?>
             </div>
         </div>
-        </div>
-        <?php
+    </div>
+    <?php
 }
 add_action('wp_footer', 'digitalmind_add_unsubscribe_popup');
