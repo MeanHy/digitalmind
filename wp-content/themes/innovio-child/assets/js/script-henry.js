@@ -74,8 +74,19 @@
     function handleSocialLoginSuccess() {
         setCookie('research_email_verified', 'true', 365);
         showToast(subscribeEmail.lang_key.login_success_reloading);
+
+        const savedPostId = sessionStorage.getItem('dm_social_login_post_id');
+        sessionStorage.removeItem('dm_social_login_post_id');
+
+        const isEnglish = window.location.pathname.startsWith('/en/');
+        let redirectUrl = isEnglish ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
+
+        if (savedPostId) {
+            redirectUrl += '?report_id=' + savedPostId;
+        }
+
         setTimeout(function () {
-            window.location.reload();
+            window.location.href = redirectUrl;
         }, 500);
     }
 
@@ -121,9 +132,27 @@
             reportLink = sessionStorage.getItem(STORAGE_KEY);
         }
 
-        if (reportLink) {
-            $('.link-download').attr('href', reportLink).attr('target', '_blank');
-        }
+        window._dmReportLink = reportLink;
+
+        $(document).on('click', '.link-download', function (e) {
+            e.preventDefault();
+            const isLoggedIn = (typeof subscribeEmail !== 'undefined' && subscribeEmail.is_logged_in)
+                || getCookie('research_email_verified') === 'true';
+
+            if (!isLoggedIn) {
+                showPopup();
+                return;
+            }
+            if (window._dmReportLink) {
+                const tempLink = document.createElement('a');
+                tempLink.href = window._dmReportLink;
+                tempLink.target = '_blank';
+                tempLink.rel = 'noopener noreferrer';
+                document.body.appendChild(tempLink);
+                tempLink.click();
+                document.body.removeChild(tempLink);
+            }
+        });
 
         if (isSocialLoginSuccess && typeof socialLoginData !== 'undefined' && socialLoginData.isLoggedIn && socialLoginData.userEmail) {
             const cleanUrl = window.location.origin + window.location.pathname;
@@ -214,6 +243,13 @@
         socialButtons.forEach(btn => {
             btn.addEventListener('click', function (e) {
                 e.preventDefault();
+
+                // Save current post_id to cookie before opening social login (so PHP can read it)
+                const postIdInput = document.querySelector('input[name="current_post_id"]');
+                if (postIdInput && postIdInput.value) {
+                    setCookie('dm_social_login_post_id', postIdInput.value, 1);
+                }
+
                 const url = this.getAttribute('href');
                 const width = 600;
                 const height = 600;

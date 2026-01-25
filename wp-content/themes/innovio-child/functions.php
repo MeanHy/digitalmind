@@ -1,5 +1,10 @@
 <?php
 require_once get_stylesheet_directory() . '/constant.php';
+add_action('after_setup_theme', function () {
+    if (is_user_logged_in() && !current_user_can('administrator')) {
+        show_admin_bar(false);
+    }
+});
 if (!function_exists('innovio_mikado_child_theme_enqueue_scripts')) {
     function innovio_mikado_child_theme_enqueue_scripts()
     {
@@ -22,6 +27,7 @@ if (!function_exists('innovio_mikado_child_theme_enqueue_scripts')) {
         $social_login_data = array(
             'ajaxurl' => admin_url('admin-ajax.php'),
             'report_link' => $report_link,
+            'is_logged_in' => is_user_logged_in(),
             'lang_key' => array(
                 'confirm' => esc_html__('Confirm', 'innovio_child'),
                 'cancel' => esc_html__('Cancel', 'innovio_child'),
@@ -179,6 +185,21 @@ function dm_social_login_callback()
             setcookie('dm_user_name', $user_name, time() + 31536000, '/');
             setcookie('dm_user_email', $user_email, time() + 31536000, '/');
         }
+
+        // Get post_id from cookie and build redirect URL
+        $post_id = isset($_COOKIE['dm_social_login_post_id']) ? intval($_COOKIE['dm_social_login_post_id']) : 0;
+        
+        // Clear the cookie
+        setcookie('dm_social_login_post_id', '', time() - 3600, '/');
+        
+        // Determine language and redirect URL
+        $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
+        $redirect_path = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
+        $redirect_url = site_url($redirect_path);
+        
+        if ($post_id) {
+            $redirect_url = add_query_arg('report_id', $post_id, $redirect_url);
+        }
         ?>
         <!DOCTYPE html>
         <html>
@@ -193,7 +214,7 @@ function dm_social_login_callback()
                     window.opener.postMessage('social_login_success', '*');
                     window.close();
                 } else {
-                    window.location.href = '/tin-tuc/';
+                    window.location.href = '<?php echo esc_url($redirect_url); ?>';
                 }
             </script>
         </body>
