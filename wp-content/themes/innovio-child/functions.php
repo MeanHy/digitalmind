@@ -145,7 +145,7 @@ function digitalmind_add_research_popup_form()
                     <?php wp_nonce_field('dm_register_action', 'dm_register_nonce'); ?>
 
                     <button type="submit" class="dm-submit-btn">
-                        <?php echo esc_html__('Sign Up & Download', 'innovio_child'); ?>
+                        <?php echo esc_html__('Download', 'innovio_child'); ?>
                     </button>
                 </form>
 
@@ -248,11 +248,13 @@ function dm_register_user()
         $redirect_path = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
         $redirect_url = site_url($redirect_path);
 
+        $download_link = '';
         if ($current_post_id) {
+            $download_link = get_field('link_for_report', $current_post_id);
             $redirect_url = add_query_arg('report_id', $current_post_id, $redirect_url);
         }
 
-        wp_send_json_success(['message' => esc_html__('Confirmed! Redirecting...', 'innovio_child'), 'redirect_url' => $redirect_url]);
+        wp_send_json_success(['message' => esc_html__('Confirmed! Redirecting...', 'innovio_child'), 'redirect_url' => $redirect_url, 'download_link' => $download_link]);
     }
 
     $name = sanitize_text_field($_POST['user_name']);
@@ -278,7 +280,14 @@ function dm_register_user()
     if ($existing_user_id) {
         wp_set_current_user($existing_user_id);
         wp_set_auth_cookie($existing_user_id);
-        wp_send_json_success(['message' => esc_html__('Login successful! Redirecting...', 'innovio_child'), 'redirect_url' => $redirect_url]);
+
+        // Get download link from ACF field
+        $download_link = '';
+        if ($current_post_id) {
+            $download_link = get_field('link_for_report', $current_post_id);
+        }
+
+        wp_send_json_success(['message' => esc_html__('Login successful! Redirecting...', 'innovio_child'), 'redirect_url' => $redirect_url, 'download_link' => $download_link]);
     }
 
     $username = sanitize_user(current(explode('@', $email)));
@@ -304,7 +313,14 @@ function dm_register_user()
 
     wp_set_current_user($user_id);
     wp_set_auth_cookie($user_id);
-    wp_send_json_success(['message' => esc_html__('Registration successful! Redirecting...', 'innovio_child'), 'redirect_url' => $redirect_url]);
+
+    // Get download link from ACF field
+    $download_link = '';
+    if ($current_post_id) {
+        $download_link = get_field('link_for_report', $current_post_id);
+    }
+
+    wp_send_json_success(['message' => esc_html__('Registration successful! Redirecting...', 'innovio_child'), 'redirect_url' => $redirect_url, 'download_link' => $download_link]);
 }
 add_action('wp_ajax_nopriv_dm_register_user', 'dm_register_user');
 add_action('wp_ajax_dm_register_user', 'dm_register_user');
@@ -349,14 +365,15 @@ function dm_sync_brevo_contact($email, $name)
  */
 function dm_handle_email_trigger()
 {
-    if (isset($_GET['trigger']) && $_GET['trigger'] === 'mail' && isset($_GET['email']) && isset($_GET['user_name'])) {
+    if (isset($_GET['utm_source']) && $_GET['utm_source'] === 'mail' && isset($_GET['email']) && isset($_GET['user_name'])) {
         $name = sanitize_text_field($_GET['user_name']);
         $email = sanitize_email($_GET['email']);
 
         setcookie('dm_user_name', $name, time() + 31536000, '/');
         setcookie('dm_user_email', $email, time() + 31536000, '/');
+        setcookie('dm_from_email', 'true', time() + 60, '/');
 
-        $current_url = remove_query_arg(['trigger', 'email', 'user_name']);
+        $current_url = remove_query_arg(['utm_source', 'email', 'user_name']);
 
         if (wp_redirect($current_url)) {
             exit;

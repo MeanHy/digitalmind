@@ -114,69 +114,73 @@
     $(document).ready(function () {
         const urlParams = new URLSearchParams(window.location.search);
         const isSocialLoginSuccess = urlParams.get('social_login') === 'success';
+        const isFromEmail = getCookie('dm_from_email') === 'true';
+
         checkAndPrefillForm();
 
-        // Get report ID from URL or from localized data
-        let currentReportId = urlParams.get('report_id') || '';
-        if (!currentReportId && typeof subscribeEmail !== 'undefined' && subscribeEmail.current_report_id) {
-            currentReportId = subscribeEmail.current_report_id;
-        }
-        // Also try to get from hidden input
-        if (!currentReportId) {
-            const hiddenInput = document.querySelector('input[name="current_post_id"]');
-            if (hiddenInput) currentReportId = hiddenInput.value;
-        }
+        if (isFromEmail) {
+            document.cookie = 'dm_from_email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 
-        // Clean URL if has report_id param
-        if (urlParams.has('report_id')) {
-            const url = new URL(window.location.href);
-            url.searchParams.delete('report_id');
-            window.history.replaceState({}, document.title, url.toString());
-        }
-
-        // Secure download via AJAX - generates one-time token
-        function requestSecureDownload(reportId) {
-            if (!reportId) {
-                showToast('Report not found', 'warning');
-                return;
-            }
-
-            $.ajax({
-                url: subscribeEmail.ajaxurl,
-                type: 'POST',
-                data: {
-                    action: 'dm_get_secure_download_link',
-                    nonce: subscribeEmail.download_nonce,
-                    report_id: reportId
-                },
-                success: function (response) {
-                    if (response.success && response.data.download_url) {
-                        // Redirect to one-time download URL
-                        window.location.href = response.data.download_url;
-                    } else {
-                        showToast(response.data.message || 'Download failed', 'warning');
-                    }
-                },
-                error: function () {
-                    showToast(subscribeEmail.lang_key.server_error, 'warning');
-                }
-            });
-        }
-
-        $(document).on('click', '.report-download-btn', function (e) {
-            e.preventDefault();
-            const isLoggedIn = (typeof subscribeEmail !== 'undefined' && subscribeEmail.is_logged_in)
-                || getCookie('research_email_verified') === 'true';
-
-            if (!isLoggedIn) {
+            setTimeout(function () {
                 showPopup();
-                return;
-            }
+            }, 500);
+        }
 
-            // Get report ID from button data attribute or from page
-            const btnReportId = $(this).data('report-id') || currentReportId;
-            requestSecureDownload(btnReportId);
-        });
+        // Old code for downloading on success page - now downloading directly on post page
+        // let currentReportId = urlParams.get('report_id') || '';
+        // if (!currentReportId && typeof subscribeEmail !== 'undefined' && subscribeEmail.current_report_id) {
+        //     currentReportId = subscribeEmail.current_report_id;
+        // }
+        // if (!currentReportId) {
+        //     const hiddenInput = document.querySelector('input[name="current_post_id"]');
+        //     if (hiddenInput) currentReportId = hiddenInput.value;
+        // }
+        // if (urlParams.has('report_id')) {
+        //     const url = new URL(window.location.href);
+        //     url.searchParams.delete('report_id');
+        //     window.history.replaceState({}, document.title, url.toString());
+        // }
+
+        // function requestSecureDownload(reportId) {
+        //     if (!reportId) {
+        //         showToast('Report not found', 'warning');
+        //         return;
+        //     }
+
+        //     $.ajax({
+        //         url: subscribeEmail.ajaxurl,
+        //         type: 'POST',
+        //         data: {
+        //             action: 'dm_get_secure_download_link',
+        //             nonce: subscribeEmail.download_nonce,
+        //             report_id: reportId
+        //         },
+        //         success: function (response) {
+        //             if (response.success && response.data.download_url) {
+        //                 window.location.href = response.data.download_url;
+        //             } else {
+        //                 showToast(response.data.message || 'Download failed', 'warning');
+        //             }
+        //         },
+        //         error: function () {
+        //             showToast(subscribeEmail.lang_key.server_error, 'warning');
+        //         }
+        //     });
+        // }
+
+        // $(document).on('click', '.report-download-btn', function (e) {
+        //     e.preventDefault();
+        //     const isLoggedIn = (typeof subscribeEmail !== 'undefined' && subscribeEmail.is_logged_in)
+        //         || getCookie('research_email_verified') === 'true';
+
+        //     if (!isLoggedIn) {
+        //         showPopup();
+        //         return;
+        //     }
+
+        //     const btnReportId = $(this).data('report-id') || currentReportId;
+        //     requestSecureDownload(btnReportId);
+        // });
 
         if (isSocialLoginSuccess && typeof socialLoginData !== 'undefined' && socialLoginData.isLoggedIn && socialLoginData.userEmail) {
             const cleanUrl = window.location.origin + window.location.pathname;
@@ -211,13 +215,24 @@
                             if ($nameInput.val()) setCookie('dm_user_name', $nameInput.val(), 365);
                             if ($emailInput.val()) setCookie('dm_user_email', $emailInput.val(), 365);
 
+                            console.log('Download link from response:', response.data.download_link);
+                            if (response.data.download_link) {
+                                const tempLink = document.createElement('a');
+                                tempLink.href = response.data.download_link;
+                                tempLink.target = '_blank';
+                                tempLink.rel = 'noopener noreferrer';
+                                document.body.appendChild(tempLink);
+                                tempLink.click();
+                                document.body.removeChild(tempLink);
+                            }
+
                             setTimeout(function () {
                                 if (response.data.redirect_url) {
                                     window.location.href = response.data.redirect_url;
                                 } else {
                                     window.location.reload();
                                 }
-                            }, 1000);
+                            }, 2000);
                         } else {
                             showToast(response.data.message, 'warning');
                             $btn.prop('disabled', false).text(originalBtnText);
@@ -268,7 +283,6 @@
             btn.addEventListener('click', function (e) {
                 e.preventDefault();
 
-                // Save current post_id to cookie before opening social login (so PHP can read it)
                 const postIdInput = document.querySelector('input[name="current_post_id"]');
                 if (postIdInput && postIdInput.value) {
                     setCookie('dm_social_login_post_id', postIdInput.value, 1);
