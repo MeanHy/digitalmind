@@ -26,7 +26,8 @@ if (!function_exists('innovio_mikado_child_theme_enqueue_scripts')) {
 
         $social_login_data = array(
             'ajaxurl' => admin_url('admin-ajax.php'),
-            'report_link' => $report_link,
+            'download_nonce' => wp_create_nonce('dm_download_nonce'),
+            'current_report_id' => isset($_GET['report_id']) ? intval($_GET['report_id']) : 0,
             'is_logged_in' => is_user_logged_in(),
             'lang_key' => array(
                 'confirm' => esc_html__('Confirm', 'innovio_child'),
@@ -206,13 +207,7 @@ function dm_social_login_callback()
         </head>
 
         <body>
-            <script>
-                if (window.opener) {
-                    window.opener.postMessage('social_login_success', '*');
-                    window.close();
-                } else {
-                    window.location.href = '<?php echo esc_url($redirect_url); ?>';
-                }
+            <script>         if (window.opener) { window.opener.postMessage('social_login_success', '*'); window.close(); } else { window.location.href = '<?php echo esc_url($redirect_url); ?>'; }
             </script>
         </body>
 
@@ -391,3 +386,57 @@ function dm_filter_archive_header_widget_meta($value, $object_id, $meta_key, $si
     return $single ? 'shop-widget' : ['shop-widget'];
 }
 add_filter('get_post_metadata', 'dm_filter_archive_header_widget_meta', 10, 4);
+
+/**
+ * AJAX: Generate one-time secure download token
+ * Token expires in 5 minutes and can only be used once
+ */
+function dm_get_secure_download_link()
+{
+    // Verify nonce
+    check_ajax_referer('dm_download_nonce', 'nonce');
+
+    // Must be "logged in" (have verified email cookie)
+    $is_verified = isset($_COOKIE['research_email_verified']) && $_COOKIE['research_email_verified'] === 'true';
+    if (!$is_verified && !is_user_logged_in()) {
+        wp_send_json_error(['message' => __('Please register to download', 'innovio_child')]);
+    }
+
+    $report_id = intval($_POST['report_id'] ?? 0);
+    if (empty($report_id)) {
+        wp_send_json_error(['message' => __('Invalid report', 'innovio_child')]);
+    }
+
+    // Verify report exists and has download link
+    $download_url = get_field('link_for_report', $report_id);
+    if (empty($download_url)) {
+        wp_send_json_error(['message' => __('Download not available', 'innovio_child')]);
+    }
+
+    // Generate unique token
+    $token = wp_generate_password(32, false);
+
+    // Get user identifier (email from cookie or user ID)
+    $user_identifier = '';
+    if (is_user_logged_in()) {
+        $user_identifier = 'user_' . get_current_user_id();
+    } elseif (isset($_COOKIE['dm_user_email'])) {
+        $user_identifier = 'email_' . sanitize_email($_COOKIE['dm_user_email']);
+    }
+
+    // Store token data in transient (expires in 5 minutes)
+    $token_data = [
+        'report_id' => $report_id,
+        'user_identifier' => $user_identifier,
+        'created_at' => time()
+    ];
+    set_transient('dm_download_token_' . $token, $token_data, 5 * MINUTE_IN_SECONDS);
+
+    // Build download URL
+    $download_page_url = get_stylesheet_directory_uri() . '/dm-download.php?token=' . $token;
+
+    wp_send_json_success(['download_url' => $download_page_url]);
+}
+add_action('wp_ajax_dm_get_secure_download_link', 'dm_get_secure_download_link');
+add_action('wp_ajax_nopriv_dm_get_secure_download_link', 'dm_get_secure_download_link');
+

@@ -116,23 +116,52 @@
         const isSocialLoginSuccess = urlParams.get('social_login') === 'success';
         checkAndPrefillForm();
 
-        let reportLink = '';
-        const STORAGE_KEY = 'dm_report_link_' + (window.location.pathname);
-
-        if (typeof subscribeEmail !== 'undefined' && subscribeEmail.report_link) {
-            reportLink = subscribeEmail.report_link;
-            sessionStorage.setItem(STORAGE_KEY, reportLink);
-
-            const url = new URL(window.location.href);
-            if (url.searchParams.has('report_id')) {
-                url.searchParams.delete('report_id');
-                window.history.replaceState({}, document.title, url.toString());
-            }
-        } else {
-            reportLink = sessionStorage.getItem(STORAGE_KEY);
+        // Get report ID from URL or from localized data
+        let currentReportId = urlParams.get('report_id') || '';
+        if (!currentReportId && typeof subscribeEmail !== 'undefined' && subscribeEmail.current_report_id) {
+            currentReportId = subscribeEmail.current_report_id;
+        }
+        // Also try to get from hidden input
+        if (!currentReportId) {
+            const hiddenInput = document.querySelector('input[name="current_post_id"]');
+            if (hiddenInput) currentReportId = hiddenInput.value;
         }
 
-        window._dmReportLink = reportLink;
+        // Clean URL if has report_id param
+        if (urlParams.has('report_id')) {
+            const url = new URL(window.location.href);
+            url.searchParams.delete('report_id');
+            window.history.replaceState({}, document.title, url.toString());
+        }
+
+        // Secure download via AJAX - generates one-time token
+        function requestSecureDownload(reportId) {
+            if (!reportId) {
+                showToast('Report not found', 'warning');
+                return;
+            }
+
+            $.ajax({
+                url: subscribeEmail.ajaxurl,
+                type: 'POST',
+                data: {
+                    action: 'dm_get_secure_download_link',
+                    nonce: subscribeEmail.download_nonce,
+                    report_id: reportId
+                },
+                success: function (response) {
+                    if (response.success && response.data.download_url) {
+                        // Redirect to one-time download URL
+                        window.location.href = response.data.download_url;
+                    } else {
+                        showToast(response.data.message || 'Download failed', 'warning');
+                    }
+                },
+                error: function () {
+                    showToast(subscribeEmail.lang_key.server_error, 'warning');
+                }
+            });
+        }
 
         $(document).on('click', '.report-download-btn', function (e) {
             e.preventDefault();
@@ -143,15 +172,10 @@
                 showPopup();
                 return;
             }
-            if (window._dmReportLink) {
-                const tempLink = document.createElement('a');
-                tempLink.href = window._dmReportLink;
-                tempLink.target = '_blank';
-                tempLink.rel = 'noopener noreferrer';
-                document.body.appendChild(tempLink);
-                tempLink.click();
-                document.body.removeChild(tempLink);
-            }
+
+            // Get report ID from button data attribute or from page
+            const btnReportId = $(this).data('report-id') || currentReportId;
+            requestSecureDownload(btnReportId);
         });
 
         if (isSocialLoginSuccess && typeof socialLoginData !== 'undefined' && socialLoginData.isLoggedIn && socialLoginData.userEmail) {
