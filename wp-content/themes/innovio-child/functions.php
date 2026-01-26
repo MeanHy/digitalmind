@@ -187,13 +187,13 @@ function dm_social_login_callback()
         }
 
         $post_id = isset($_COOKIE['dm_social_login_post_id']) ? intval($_COOKIE['dm_social_login_post_id']) : 0;
-        
+
         setcookie('dm_social_login_post_id', '', time() - 3600, '/');
-        
+
         $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
         $redirect_path = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
         $redirect_url = site_url($redirect_path);
-        
+
         if ($post_id) {
             $redirect_url = add_query_arg('report_id', $post_id, $redirect_url);
         }
@@ -378,3 +378,16 @@ function digitalmind_add_unsubscribe_popup()
     <?php
 }
 add_action('wp_footer', 'digitalmind_add_unsubscribe_popup');
+function dm_filter_archive_header_widget_meta($value, $object_id, $meta_key, $single)
+{
+    if (!is_archive() && !is_search() && !is_home() && !is_single()) {
+        return $value;
+    }
+
+    if ($meta_key !== 'mkdf_custom_header_widget_area_one_meta') {
+        return $value;
+    }
+
+    return $single ? 'shop-widget' : ['shop-widget'];
+}
+add_filter('get_post_metadata', 'dm_filter_archive_header_widget_meta', 10, 4);

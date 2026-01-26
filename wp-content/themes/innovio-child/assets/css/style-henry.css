@@ -23,6 +23,23 @@ footer .widget .mkdf-widget-title-holder {
   margin-top: 30px !important;
 }
 
+footer .wpcf7 .mkdf-btn {
+  padding: 10px !important;
+}
+
+footer .mkdf-btn.wpcf7-submit .mkdf-btn-text:before {
+  left: -20px;
+}
+
+footer .mkdf-btn.wpcf7-submit .mkdf-btn-text:after {
+  right: -20px;
+}
+
+footer .mkdf-btn.wpcf7-submit .mkdf-btn-text:after,
+footer .mkdf-btn.wpcf7-submit .mkdf-btn-text:before {
+  width: 20px;
+}
+
 .mkdf-blog-holder article .mkdf-post-image img {
   min-height: 23vh;
 }
