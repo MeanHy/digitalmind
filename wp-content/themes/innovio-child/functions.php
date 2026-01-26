@@ -186,13 +186,10 @@ function dm_social_login_callback()
             setcookie('dm_user_email', $user_email, time() + 31536000, '/');
         }
 
-        // Get post_id from cookie and build redirect URL
         $post_id = isset($_COOKIE['dm_social_login_post_id']) ? intval($_COOKIE['dm_social_login_post_id']) : 0;
         
-        // Clear the cookie
         setcookie('dm_social_login_post_id', '', time() - 3600, '/');
         
-        // Determine language and redirect URL
         $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
         $redirect_path = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
         $redirect_url = site_url($redirect_path);

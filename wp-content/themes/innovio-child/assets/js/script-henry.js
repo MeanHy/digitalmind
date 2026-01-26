@@ -134,7 +134,7 @@
 
         window._dmReportLink = reportLink;
 
-        $(document).on('click', '.link-download', function (e) {
+        $(document).on('click', '.report-download-btn', function (e) {
             e.preventDefault();
             const isLoggedIn = (typeof subscribeEmail !== 'undefined' && subscribeEmail.is_logged_in)
                 || getCookie('research_email_verified') === 'true';
