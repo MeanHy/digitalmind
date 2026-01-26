@@ -40,6 +40,30 @@ footer .mkdf-btn.wpcf7-submit .mkdf-btn-text:before {
   width: 20px;
 }
 
+footer .qodef-horizontal-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+footer .qodef-horizontal-form p {
+  margin: 0;
+}
+
+footer .qodef-horizontal-form .wpcf7-form-control-wrap,
+footer .qodef-horizontal-form input[type="email"] {
+  width: 100%;
+}
+
+footer .qodef-horizontal-form p:first-child {
+  flex: 1;
+}
+
+footer .qodef-horizontal-form button {
+  white-space: nowrap;
+}
+
+
 .mkdf-blog-holder article .mkdf-post-image img {
   min-height: 23vh;
 }
