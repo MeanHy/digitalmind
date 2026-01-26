@@ -1539,9 +1539,9 @@ footer .qodef-horizontal-form button {
 }
 
 /* Dark Section Container */
-.sec__contact-content {
+/* .sec__contact-content {
   background: #0f1219 !important;
-}
+} */
 
 @media (max-width: 768px) {
   .dm-about-section .about-title {

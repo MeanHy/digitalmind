@@ -5,6 +5,22 @@ add_action('after_setup_theme', function () {
         show_admin_bar(false);
     }
 });
+
+/**
+ * Redirect thank you pages if no report_id parameter
+ */
+function dm_redirect_thank_you_without_report_id()
+{
+    if (is_page('dang-ky-thanh-cong') && !isset($_GET['report_id'])) {
+        wp_redirect('/category/tin-tuc/research/', 301);
+        exit;
+    }
+    if (is_page('thanks-you-for-subscribe') && !isset($_GET['report_id'])) {
+        wp_redirect('/en/category/news/research/', 301);
+        exit;
+    }
+}
+add_action('template_redirect', 'dm_redirect_thank_you_without_report_id');
 if (!function_exists('innovio_mikado_child_theme_enqueue_scripts')) {
     function innovio_mikado_child_theme_enqueue_scripts()
     {
@@ -319,7 +335,6 @@ function dm_sync_brevo_contact($email, $name)
         'data_format' => 'body'
     ]);
 
-    // Uncomment for debugging
     if (is_wp_error($response)) {
         error_log('Brevo Sync Error: ' . $response->get_error_message());
     }
@@ -393,10 +408,8 @@ add_filter('get_post_metadata', 'dm_filter_archive_header_widget_meta', 10, 4);
  */
 function dm_get_secure_download_link()
 {
-    // Verify nonce
     check_ajax_referer('dm_download_nonce', 'nonce');
 
-    // Must be "logged in" (have verified email cookie)
     $is_verified = isset($_COOKIE['research_email_verified']) && $_COOKIE['research_email_verified'] === 'true';
     if (!$is_verified && !is_user_logged_in()) {
         wp_send_json_error(['message' => __('Please register to download', 'innovio_child')]);
@@ -407,16 +420,13 @@ function dm_get_secure_download_link()
         wp_send_json_error(['message' => __('Invalid report', 'innovio_child')]);
     }
 
-    // Verify report exists and has download link
     $download_url = get_field('link_for_report', $report_id);
     if (empty($download_url)) {
         wp_send_json_error(['message' => __('Download not available', 'innovio_child')]);
     }
 
-    // Generate unique token
     $token = wp_generate_password(32, false);
 
-    // Get user identifier (email from cookie or user ID)
     $user_identifier = '';
     if (is_user_logged_in()) {
         $user_identifier = 'user_' . get_current_user_id();
@@ -424,7 +434,6 @@ function dm_get_secure_download_link()
         $user_identifier = 'email_' . sanitize_email($_COOKIE['dm_user_email']);
     }
 
-    // Store token data in transient (expires in 5 minutes)
     $token_data = [
         'report_id' => $report_id,
         'user_identifier' => $user_identifier,
@@ -432,7 +441,6 @@ function dm_get_secure_download_link()
     ];
     set_transient('dm_download_token_' . $token, $token_data, 5 * MINUTE_IN_SECONDS);
 
-    // Build download URL
     $download_page_url = get_stylesheet_directory_uri() . '/dm-download.php?token=' . $token;
 
     wp_send_json_success(['download_url' => $download_page_url]);
