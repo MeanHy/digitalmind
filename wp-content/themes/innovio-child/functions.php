@@ -97,7 +97,7 @@ add_action('wp_footer', 'digitalmind_include_toast_notification');
 function digitalmind_add_subscribe_menu_item($items, $args)
 {
     if ($args->theme_location == 'main-navigation') {
-        $subscribe_text = esc_html__('SIGN UP TO RECEIVE THE REPORT', 'innovio_child');
+        $subscribe_text = esc_html__('Subscribe for newsletter', 'innovio_child');
 
         $subscribe_item = '<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-subscribe narrow">
             <a href="#research-popup" target="_self" class="subscribe-btn">
@@ -148,7 +148,7 @@ function digitalmind_add_research_popup_form()
             <button class="research-popup-close" id="researchPopupClose">&times;</button>
             <div class="research-popup-content">
                 <h3 class="research-popup-title">
-                    <?php echo esc_html__('Sign up to download', 'innovio_child'); ?>
+                    <?php echo esc_html__('Subscribe for newsletter', 'innovio_child'); ?>
                 </h3>
                 <p class="research-popup-desc">
                     <?php echo esc_html__('Please provide your information', 'innovio_child'); ?>
