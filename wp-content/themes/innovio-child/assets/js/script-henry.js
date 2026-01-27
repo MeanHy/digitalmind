@@ -126,47 +126,42 @@
             }, 500);
         }
 
-        // Old code for downloading on success page - now downloading directly on post page
-        // let currentReportId = urlParams.get('report_id') || '';
-        // if (!currentReportId && typeof subscribeEmail !== 'undefined' && subscribeEmail.current_report_id) {
-        //     currentReportId = subscribeEmail.current_report_id;
-        // }
-        // if (!currentReportId) {
-        //     const hiddenInput = document.querySelector('input[name="current_post_id"]');
-        //     if (hiddenInput) currentReportId = hiddenInput.value;
-        // }
-        // if (urlParams.has('report_id')) {
-        //     const url = new URL(window.location.href);
-        //     url.searchParams.delete('report_id');
-        //     window.history.replaceState({}, document.title, url.toString());
-        // }
+        // Auto-download on thank you page
+        let currentReportId = urlParams.get('report_id') || '';
+        if (!currentReportId && typeof subscribeEmail !== 'undefined' && subscribeEmail.current_report_id) {
+            currentReportId = subscribeEmail.current_report_id;
+        }
 
-        // function requestSecureDownload(reportId) {
-        //     if (!reportId) {
-        //         showToast('Report not found', 'warning');
-        //         return;
-        //     }
+        function requestSecureDownload(reportId) {
+            if (!reportId) {
+                return;
+            }
 
-        //     $.ajax({
-        //         url: subscribeEmail.ajaxurl,
-        //         type: 'POST',
-        //         data: {
-        //             action: 'dm_get_secure_download_link',
-        //             nonce: subscribeEmail.download_nonce,
-        //             report_id: reportId
-        //         },
-        //         success: function (response) {
-        //             if (response.success && response.data.download_url) {
-        //                 window.location.href = response.data.download_url;
-        //             } else {
-        //                 showToast(response.data.message || 'Download failed', 'warning');
-        //             }
-        //         },
-        //         error: function () {
-        //             showToast(subscribeEmail.lang_key.server_error, 'warning');
-        //         }
-        //     });
-        // }
+            $.ajax({
+                url: subscribeEmail.ajaxurl,
+                type: 'POST',
+                data: {
+                    action: 'dm_get_secure_download_link',
+                    nonce: subscribeEmail.download_nonce,
+                    report_id: reportId
+                },
+                success: function (response) {
+                    if (response.success && response.data.download_url) {
+                        window.location.href = response.data.download_url;
+                    } else {
+                        showToast(response.data.message || 'Download failed', 'warning');
+                    }
+                },
+                error: function () {
+                    showToast(subscribeEmail.lang_key.server_error, 'warning');
+                }
+            });
+        }
+
+        // Auto trigger download on thank you page if report_id exists
+        if (currentReportId && (window.location.pathname.includes('dang-ky-thanh-cong') || window.location.pathname.includes('thanks-you-for-subscribe'))) {
+            requestSecureDownload(currentReportId);
+        }
 
         // $(document).on('click', '.report-download-btn', function (e) {
         //     e.preventDefault();
@@ -215,24 +210,12 @@
                             if ($nameInput.val()) setCookie('dm_user_name', $nameInput.val(), 365);
                             if ($emailInput.val()) setCookie('dm_user_email', $emailInput.val(), 365);
 
-                            console.log('Download link from response:', response.data.download_link);
-                            if (response.data.download_link) {
-                                const tempLink = document.createElement('a');
-                                tempLink.href = response.data.download_link;
-                                tempLink.target = '_blank';
-                                tempLink.rel = 'noopener noreferrer';
-                                document.body.appendChild(tempLink);
-                                tempLink.click();
-                                document.body.removeChild(tempLink);
-                            }
-
+                            // Redirect to thank you page - file will auto-download there
                             setTimeout(function () {
                                 if (response.data.redirect_url) {
                                     window.location.href = response.data.redirect_url;
-                                } else {
-                                    window.location.reload();
                                 }
-                            }, 2000);
+                            }, 1000);
                         } else {
                             showToast(response.data.message, 'warning');
                             $btn.prop('disabled', false).text(originalBtnText);

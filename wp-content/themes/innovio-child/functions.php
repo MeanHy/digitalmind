@@ -244,17 +244,21 @@ function dm_register_user()
     if (is_user_logged_in() && isset($_POST['is_logged_in_action']) && $_POST['is_logged_in_action'] === '1') {
         $current_post_id = isset($_POST['current_post_id']) ? intval($_POST['current_post_id']) : 0;
 
+        $current_user = wp_get_current_user();
+        $name = $current_user->display_name ?: $current_user->user_login;
+        $email = $current_user->user_email;
+        $brevo_sync = dm_sync_brevo_contact($email, $name);
+        $crm_sync = dm_sync_crm_leads($email, $name);
+
         $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
         $redirect_path = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
         $redirect_url = site_url($redirect_path);
 
-        $download_link = '';
         if ($current_post_id) {
-            $download_link = get_field('link_for_report', $current_post_id);
             $redirect_url = add_query_arg('report_id', $current_post_id, $redirect_url);
         }
 
-        wp_send_json_success(['message' => esc_html__('Confirmed! Redirecting...', 'innovio_child'), 'redirect_url' => $redirect_url, 'download_link' => $download_link]);
+        wp_send_json_success(['message' => esc_html__('Confirmed! Redirecting...', 'innovio_child'), 'redirect_url' => $redirect_url, 'brevo_sync' => $brevo_sync, 'crm_sync' => $crm_sync]);
     }
 
     $name = sanitize_text_field($_POST['user_name']);
@@ -267,7 +271,8 @@ function dm_register_user()
 
     $existing_user_id = email_exists($email);
 
-    dm_sync_brevo_contact($email, $name);
+    $brevo_sync = dm_sync_brevo_contact($email, $name);
+    $crm_sync = dm_sync_crm_leads($email, $name);
     $current_post_id = isset($_POST['current_post_id']) ? intval($_POST['current_post_id']) : 0;
     $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
     $redirect_path = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
@@ -281,13 +286,7 @@ function dm_register_user()
         wp_set_current_user($existing_user_id);
         wp_set_auth_cookie($existing_user_id);
 
-        // Get download link from ACF field
-        $download_link = '';
-        if ($current_post_id) {
-            $download_link = get_field('link_for_report', $current_post_id);
-        }
-
-        wp_send_json_success(['message' => esc_html__('Login successful! Redirecting...', 'innovio_child'), 'redirect_url' => $redirect_url, 'download_link' => $download_link]);
+        wp_send_json_success(['message' => esc_html__('Login successful! Redirecting...', 'innovio_child'), 'redirect_url' => $redirect_url, 'brevo_sync' => $brevo_sync, 'crm_sync' => $crm_sync]);
     }
 
     $username = sanitize_user(current(explode('@', $email)));
@@ -314,13 +313,7 @@ function dm_register_user()
     wp_set_current_user($user_id);
     wp_set_auth_cookie($user_id);
 
-    // Get download link from ACF field
-    $download_link = '';
-    if ($current_post_id) {
-        $download_link = get_field('link_for_report', $current_post_id);
-    }
-
-    wp_send_json_success(['message' => esc_html__('Registration successful! Redirecting...', 'innovio_child'), 'redirect_url' => $redirect_url, 'download_link' => $download_link]);
+    wp_send_json_success(['message' => esc_html__('Registration successful! Redirecting...', 'innovio_child'), 'redirect_url' => $redirect_url, 'brevo_sync' => $brevo_sync, 'crm_sync' => $crm_sync]);
 }
 add_action('wp_ajax_nopriv_dm_register_user', 'dm_register_user');
 add_action('wp_ajax_dm_register_user', 'dm_register_user');
@@ -352,7 +345,62 @@ function dm_sync_brevo_contact($email, $name)
     ]);
 
     if (is_wp_error($response)) {
-        error_log('Brevo Sync Error: ' . $response->get_error_message());
+        return ['success' => false, 'message' => $response->get_error_message()];
+    }
+
+    $response_code = wp_remote_retrieve_response_code($response);
+    $response_body = wp_remote_retrieve_body($response);
+
+    if ($response_code >= 200 && $response_code < 300) {
+        return ['success' => true, 'message' => 'Synced to Brevo'];
+    } else {
+        $error_data = json_decode($response_body, true);
+        $error_msg = $error_data['message'] ?? 'HTTP ' . $response_code;
+        return ['success' => false, 'message' => $error_msg];
+    }
+}
+
+/**
+ * Sync Lead to CRM API
+ */
+function dm_sync_crm_leads($email, $name)
+{
+    $api_url = defined('DM_CRM_API_URL') ? DM_CRM_API_URL : '';
+    $authtoken = defined('DM_CRM_API_AUTHTOKEN') ? DM_CRM_API_AUTHTOKEN : '';
+
+    if (empty($api_url) || empty($authtoken)) {
+        return ['success' => false, 'message' => 'Missing API URL or Auth Token'];
+    }
+
+    $body = [
+        'source' => DM_CRM_SOURCE,
+        'status' => DM_CRM_STATUS,
+        'assigned' => DM_CRM_ASSIGNED,
+        'name' => $name,
+        'email' => $email,
+    ];
+
+    $response = wp_remote_post($api_url, [
+        'method' => 'POST',
+        'headers' => [
+            'authtoken' => $authtoken,
+        ],
+        'body' => $body,
+        'timeout' => 20,
+    ]);
+
+    if (is_wp_error($response)) {
+        return ['success' => false, 'message' => $response->get_error_message()];
+    }
+
+    $response_body = wp_remote_retrieve_body($response);
+    $response_data = json_decode($response_body, true);
+
+    if (isset($response_data['status']) && $response_data['status']) {
+        return ['success' => true, 'message' => $response_data['message'] ?? 'Synced to CRM'];
+    } else {
+        $error_msg = $response_data['message'] ?? 'Unknown error';
+        return ['success' => false, 'message' => $error_msg];
     }
 }
 
