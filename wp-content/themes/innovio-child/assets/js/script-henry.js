@@ -126,11 +126,7 @@
             }, 500);
         }
 
-        // Auto-download on thank you page
-        let currentReportId = urlParams.get('report_id') || '';
-        if (!currentReportId && typeof subscribeEmail !== 'undefined' && subscribeEmail.current_report_id) {
-            currentReportId = subscribeEmail.current_report_id;
-        }
+        let currentReportId = (typeof subscribeEmail !== 'undefined' && subscribeEmail.current_report_id) ? subscribeEmail.current_report_id : '';
 
         function requestSecureDownload(reportId) {
             if (!reportId) {
@@ -158,7 +154,6 @@
             });
         }
 
-        // Auto trigger download on thank you page if report_id exists
         if (currentReportId && (window.location.pathname.includes('dang-ky-thanh-cong') || window.location.pathname.includes('thanks-you-for-subscribe'))) {
             requestSecureDownload(currentReportId);
         }
@@ -210,7 +205,6 @@
                             if ($nameInput.val()) setCookie('dm_user_name', $nameInput.val(), 365);
                             if ($emailInput.val()) setCookie('dm_user_email', $emailInput.val(), 365);
 
-                            // Redirect to thank you page - file will auto-download there
                             setTimeout(function () {
                                 if (response.data.redirect_url) {
                                     window.location.href = response.data.redirect_url;
@@ -235,6 +229,11 @@
             if (popup) {
                 popup.classList.add('show');
                 setTimeout(function () { popup.classList.add('visible'); }, 10);
+            }
+
+            var $btn = $('#dm-research-register-form .dm-submit-btn');
+            if ($btn.length && typeof subscribeEmail !== 'undefined') {
+                $btn.text(subscribeEmail.lang_key.subscribe);
             }
             $('body').css('overflow', 'hidden');
         });

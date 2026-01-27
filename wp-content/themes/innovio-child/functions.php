@@ -7,16 +7,33 @@ add_action('after_setup_theme', function () {
 });
 
 /**
- * Redirect thank you pages if no report_id parameter
+ * Redirect thank you pages - save report_id to transient and redirect to clean URL
  */
 function dm_redirect_thank_you_without_report_id()
 {
-    if (is_page('dang-ky-thanh-cong') && !isset($_GET['report_id'])) {
-        wp_redirect('/category/tin-tuc/research/', 301);
+    $is_thank_you_vi = is_page('dang-ky-thanh-cong');
+    $is_thank_you_en = is_page('thanks-you-for-subscribe');
+
+    if (!$is_thank_you_vi && !$is_thank_you_en) {
+        return;
+    }
+
+    if (isset($_GET['report_id']) && !empty($_GET['report_id'])) {
+        $report_id = intval($_GET['report_id']);
+        $user_key = is_user_logged_in() ? 'user_' . get_current_user_id() : 'ip_' . md5($_SERVER['REMOTE_ADDR']);
+        set_transient('dm_report_id_' . $user_key, $report_id, 5 * MINUTE_IN_SECONDS);
+
+        $clean_url = $is_thank_you_en ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
+        wp_redirect(site_url($clean_url), 302);
         exit;
     }
-    if (is_page('thanks-you-for-subscribe') && !isset($_GET['report_id'])) {
-        wp_redirect('/en/category/news/research/', 301);
+
+    $user_key = is_user_logged_in() ? 'user_' . get_current_user_id() : 'ip_' . md5($_SERVER['REMOTE_ADDR']);
+    $saved_report_id = get_transient('dm_report_id_' . $user_key);
+
+    if (!$saved_report_id) {
+        $redirect_url = $is_thank_you_en ? '/en/category/news/research/' : '/category/tin-tuc/research/';
+        wp_redirect($redirect_url, 301);
         exit;
     }
 }
@@ -32,10 +49,14 @@ if (!function_exists('innovio_mikado_child_theme_enqueue_scripts')) {
         wp_enqueue_script('digitalmind-child-script-henry', get_stylesheet_directory_uri() . '/assets/js/script-henry.js', array('jquery'), '1.0.1', true);
 
         $report_link = '';
+        $current_report_id = 0;
+
         if (is_page('dang-ky-thanh-cong') || is_page('thanks-you-for-subscribe')) {
-            $report_id = isset($_GET['report_id']) ? intval($_GET['report_id']) : 0;
-            if ($report_id) {
-                $report_link = get_field('link_for_report', $report_id);
+            $user_key = is_user_logged_in() ? 'user_' . get_current_user_id() : 'ip_' . md5($_SERVER['REMOTE_ADDR']);
+            $current_report_id = get_transient('dm_report_id_' . $user_key);
+
+            if ($current_report_id) {
+                $report_link = get_field('link_for_report', $current_report_id);
                 $report_link = trim((string) $report_link);
             }
         }
@@ -43,7 +64,7 @@ if (!function_exists('innovio_mikado_child_theme_enqueue_scripts')) {
         $social_login_data = array(
             'ajaxurl' => admin_url('admin-ajax.php'),
             'download_nonce' => wp_create_nonce('dm_download_nonce'),
-            'current_report_id' => isset($_GET['report_id']) ? intval($_GET['report_id']) : 0,
+            'current_report_id' => $current_report_id ? intval($current_report_id) : 0,
             'is_logged_in' => is_user_logged_in(),
             'lang_key' => array(
                 'confirm' => esc_html__('Confirm', 'innovio_child'),
@@ -53,6 +74,8 @@ if (!function_exists('innovio_mikado_child_theme_enqueue_scripts')) {
                 'thank_you_downloading' => esc_html__('Thank you! Downloading document...', 'innovio_child'),
                 'fill_all_fields' => esc_html__('Please fill in all fields!', 'innovio_child'),
                 'login_success_reloading' => esc_html__('Login successful! Reloading...', 'innovio_child'),
+                'subscribe' => esc_html__('Subscribe', 'innovio_child'),
+                'download' => esc_html__('Download', 'innovio_child'),
             )
         );
         wp_localize_script('digitalmind-child-script-henry', 'subscribeEmail', $social_login_data);
@@ -128,7 +151,7 @@ function digitalmind_add_research_popup_form()
                     <?php echo esc_html__('Sign up to download', 'innovio_child'); ?>
                 </h3>
                 <p class="research-popup-desc">
-                    <?php echo esc_html__('Please provide your information to access the document', 'innovio_child'); ?>
+                    <?php echo esc_html__('Please provide your information', 'innovio_child'); ?>
                 </p>
                 <!-- Custom Registration Form -->
                 <form id="dm-research-register-form" class="dm-register-form" method="post">
@@ -247,8 +270,8 @@ function dm_register_user()
         $current_user = wp_get_current_user();
         $name = $current_user->display_name ?: $current_user->user_login;
         $email = $current_user->user_email;
-        $brevo_sync = dm_sync_brevo_contact($email, $name);
-        $crm_sync = dm_sync_crm_leads($email, $name);
+        // $brevo_sync = dm_sync_brevo_contact($email, $name);
+        // $crm_sync = dm_sync_crm_leads($email, $name);
 
         $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
         $redirect_path = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
@@ -271,8 +294,8 @@ function dm_register_user()
 
     $existing_user_id = email_exists($email);
 
-    $brevo_sync = dm_sync_brevo_contact($email, $name);
-    $crm_sync = dm_sync_crm_leads($email, $name);
+    // $brevo_sync = dm_sync_brevo_contact($email, $name);
+    // $crm_sync = dm_sync_crm_leads($email, $name);
     $current_post_id = isset($_POST['current_post_id']) ? intval($_POST['current_post_id']) : 0;
     $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
     $redirect_path = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
