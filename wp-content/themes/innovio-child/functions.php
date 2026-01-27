@@ -352,6 +352,7 @@ function dm_sync_brevo_contact($email, $name)
     $data = [
         'email' => $email,
         'updateEnabled' => true,
+        'listIds' => [10],
         'attributes' => [
             'FIRSTNAME' => $name
         ]
