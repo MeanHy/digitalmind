@@ -4,11 +4,9 @@
         <input type="text" />
     </div>
     <p>
-        Please enter your Envato Purchase Code to enter the administration area. Restricted to one live domain, or
-        localhost.
+        Please enter your Envato Purchase Code to enter the administration area. Restricted to one live domain, or localhost.
         Save the code in Settings > Miscellaneous > Envato Purchase Code to to hide this message permanently.
-        <a class="btn-text" href="https://help.market.envato.com/hc/en-us/articles/202822600-Where-Is-My-Purchase-Code-"
-            rel="nofollow" target="_blank">Where is my purchase code?</a>
+        <a class="btn-text" href="https://help.market.envato.com/hc/en-us/articles/202822600-Where-Is-My-Purchase-Code-" rel="nofollow" target="_blank">Where is my purchase code?</a>
     </p>
     <a href="#" class="sb-btn">Activate</a>
 </div>
@@ -17,7 +15,7 @@
         display: block;
     }
 
-    .sb-input>span {
+    .sb-input > span {
         display: block;
         width: auto;
         font-size: 17px;
@@ -38,9 +36,8 @@
     var SB_DISABLED = true;
     (function ($) {
         let button;
-        // Removed auto-verify to prevent reload loop
+        sbvpc('auto');
         $(document).ready(function () {
-            $('.sb-hide').removeClass('sb-hide'); // Show form immediately
             button = $('.sb-btn');
             $(button).on('click', function () {
                 sbvpc($.trim($('.sb-input input').val()));
