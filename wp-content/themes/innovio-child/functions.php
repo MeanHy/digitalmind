@@ -270,8 +270,8 @@ function dm_register_user()
         $current_user = wp_get_current_user();
         $name = $current_user->display_name ?: $current_user->user_login;
         $email = $current_user->user_email;
-        // $brevo_sync = dm_sync_brevo_contact($email, $name);
-        // $crm_sync = dm_sync_crm_leads($email, $name);
+        $brevo_sync = dm_sync_brevo_contact($email, $name);
+        $crm_sync = dm_sync_crm_leads($email, $name);
 
         $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
         $redirect_path = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
@@ -294,8 +294,8 @@ function dm_register_user()
 
     $existing_user_id = email_exists($email);
 
-    // $brevo_sync = dm_sync_brevo_contact($email, $name);
-    // $crm_sync = dm_sync_crm_leads($email, $name);
+    $brevo_sync = dm_sync_brevo_contact($email, $name);
+    $crm_sync = dm_sync_crm_leads($email, $name);
     $current_post_id = isset($_POST['current_post_id']) ? intval($_POST['current_post_id']) : 0;
     $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
     $redirect_path = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
