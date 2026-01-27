@@ -349,10 +349,13 @@ function dm_sync_brevo_contact($email, $name)
     $api_key = defined('DM_BREVO_API_KEY') ? DM_BREVO_API_KEY : '';
     $url = 'https://api.brevo.com/v3/contacts';
 
+    $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
+    $list_id = ($current_lang === 'en') ? 15 : 10;
+
     $data = [
         'email' => $email,
         'updateEnabled' => true,
-        'listIds' => [10],
+        'listIds' => [$list_id],
         'attributes' => [
             'FIRSTNAME' => $name
         ]
