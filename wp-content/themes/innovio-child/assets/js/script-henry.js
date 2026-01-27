@@ -154,8 +154,24 @@
             });
         }
 
-        if (currentReportId && (window.location.pathname.includes('dang-ky-thanh-cong') || window.location.pathname.includes('thanks-you-for-subscribe'))) {
-            requestSecureDownload(currentReportId);
+        // Thank you page logic - differentiate based on source
+        if (window.location.pathname.includes('dang-ky-thanh-cong') || window.location.pathname.includes('thanks-you-for-subscribe')) {
+            const dmSource = getCookie('dm_source') || subscribeEmail.dm_source || 'download';
+            const $subtitle = $('.thankyou-subtitle');
+            const $downloadBtn = $('.report-download-btn');
+
+            if (dmSource === 'download' && currentReportId) {
+                if ($subtitle.length) $subtitle.show();
+                if ($downloadBtn.length) $downloadBtn.hide();
+                requestSecureDownload(currentReportId);
+            } else if (dmSource === 'subscribe') {
+                if ($subtitle.length) $subtitle.hide();
+                if ($downloadBtn.length) $downloadBtn.show();
+            } else if (currentReportId) {
+                requestSecureDownload(currentReportId);
+            }
+
+            document.cookie = 'dm_source=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         }
 
         // $(document).on('click', '.report-download-btn', function (e) {
@@ -225,6 +241,7 @@
 
         $(document).on('click', '.menu-item-subscribe > a, a[href="#research-popup"]', function (e) {
             e.preventDefault();
+            setCookie('dm_source', 'subscribe', 1);
             const popup = document.getElementById('researchPopup');
             if (popup) {
                 popup.classList.add('show');
@@ -283,6 +300,7 @@
     document.addEventListener('click', function (e) {
         if (e.target && (e.target.id === 'btnDownloadResearch' || e.target.closest('#btnDownloadResearch'))) {
             e.preventDefault();
+            setCookie('dm_source', 'download', 1);
             const isVerified = getCookie('research_email_verified') === 'true';
 
             if (isVerified) {

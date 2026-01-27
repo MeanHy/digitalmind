@@ -66,6 +66,7 @@ if (!function_exists('innovio_mikado_child_theme_enqueue_scripts')) {
             'download_nonce' => wp_create_nonce('dm_download_nonce'),
             'current_report_id' => $current_report_id ? intval($current_report_id) : 0,
             'is_logged_in' => is_user_logged_in(),
+            'dm_source' => isset($_COOKIE['dm_source']) ? sanitize_text_field($_COOKIE['dm_source']) : '',
             'lang_key' => array(
                 'confirm' => esc_html__('Confirm', 'innovio_child'),
                 'cancel' => esc_html__('Cancel', 'innovio_child'),
@@ -270,8 +271,10 @@ function dm_register_user()
         $current_user = wp_get_current_user();
         $name = $current_user->display_name ?: $current_user->user_login;
         $email = $current_user->user_email;
-        $brevo_sync = dm_sync_brevo_contact($email, $name);
-        $crm_sync = dm_sync_crm_leads($email, $name);
+        // $brevo_sync = dm_sync_brevo_contact($email, $name);
+        // $crm_sync = dm_sync_crm_leads($email, $name);
+        $brevo_sync = true;
+        $crm_sync = true;
 
         $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
         $redirect_path = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
@@ -294,8 +297,10 @@ function dm_register_user()
 
     $existing_user_id = email_exists($email);
 
-    $brevo_sync = dm_sync_brevo_contact($email, $name);
-    $crm_sync = dm_sync_crm_leads($email, $name);
+    // $brevo_sync = dm_sync_brevo_contact($email, $name);
+    // $crm_sync = dm_sync_crm_leads($email, $name);
+    $brevo_sync = true;
+    $crm_sync = true;
     $current_post_id = isset($_POST['current_post_id']) ? intval($_POST['current_post_id']) : 0;
     $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
     $redirect_path = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
