@@ -75,14 +75,26 @@
         setCookie('research_email_verified', 'true', 365);
         showToast(subscribeEmail.lang_key.login_success_reloading);
 
-        const savedPostId = sessionStorage.getItem('dm_social_login_post_id');
-        sessionStorage.removeItem('dm_social_login_post_id');
+        const savedPostId = getCookie('dm_social_login_post_id');
+        document.cookie = 'dm_social_login_post_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
+        const source = getCookie('dm_source') || 'download';
 
         const isEnglish = window.location.pathname.startsWith('/en/');
-        let redirectUrl = isEnglish ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
+        const pathCategory = isEnglish ? '/en/category/news/research/' : '/category/tin-tuc/research/';
+        const pathSuccess = isEnglish ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
 
-        if (savedPostId) {
-            redirectUrl += '?report_id=' + savedPostId;
+        let redirectUrl = pathCategory; // Default to category
+
+        if (source === 'subscribe') {
+            redirectUrl = pathCategory;
+        } else {
+            // Download flow
+            if (savedPostId) {
+                redirectUrl = pathSuccess + '?report_id=' + savedPostId;
+            } else {
+                redirectUrl = pathCategory;
+            }
         }
 
         setTimeout(function () {
@@ -286,7 +298,7 @@
                     setCookie('dm_social_login_post_id', postIdInput.value, 1);
                 }
 
-                const url = this.getAttribute('href');
+                let url = this.getAttribute('href');
                 const width = 600;
                 const height = 600;
                 const left = (window.innerWidth - width) / 2;
@@ -313,6 +325,10 @@
     window.addEventListener('message', function (event) {
         if (event.data === 'social_login_success') {
             handleSocialLoginSuccess();
+        } else if (event.data && event.data.type === 'linkedin_login_success' && event.data.redirect_url) {
+            // LinkedIn login with direct redirect URL from server
+            setCookie('research_email_verified', 'true', 365);
+            window.location.href = event.data.redirect_url;
         }
     });
 

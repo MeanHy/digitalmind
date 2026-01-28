@@ -241,12 +241,23 @@ function dm_social_login_callback()
 
         setcookie('dm_social_login_post_id', '', time() - 3600, '/');
 
+        // Check source to handle Subscribe flow vs Download flow
+        $source = isset($_COOKIE['dm_source']) ? sanitize_text_field($_COOKIE['dm_source']) : 'download';
+        if ($source === 'subscribe') {
+            $post_id = 0;
+        }
+
         $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
-        $redirect_path = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
-        $redirect_url = site_url($redirect_path);
+
+        // Define paths
+        $path_category = ($current_lang === 'en') ? '/en/category/news/research/' : '/category/tin-tuc/research/';
+        $path_success = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
 
         if ($post_id) {
+            $redirect_url = site_url($path_success);
             $redirect_url = add_query_arg('report_id', $post_id, $redirect_url);
+        } else {
+            $redirect_url = site_url($path_category);
         }
         ?>
         <!DOCTYPE html>
@@ -257,7 +268,20 @@ function dm_social_login_callback()
         </head>
 
         <body>
-            <script>         if (window.opener) { window.opener.postMessage('social_login_success', '*'); window.close(); } else { window.location.href = '<?php echo esc_url($redirect_url); ?>'; }
+            <script>
+                if (window.opener && !window.opener.closed) {
+                    try {
+                        // Redirect parent window directly
+                        window.opener.location.href = '<?php echo esc_url($redirect_url); ?>';
+                        window.close();
+                    } catch (e) {
+                        // Fallback to message
+                        window.opener.postMessage('social_login_success', '*');
+                        window.close();
+                    }
+                } else {
+                    window.location.href = '<?php echo esc_url($redirect_url); ?>';
+                }
             </script>
         </body>
 
@@ -287,11 +311,16 @@ function dm_register_user()
         $crm_sync = true;
 
         $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
-        $redirect_path = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
-        $redirect_url = site_url($redirect_path);
+
+        // Define paths
+        $path_category = ($current_lang === 'en') ? '/en/category/news/research/' : '/category/tin-tuc/research/';
+        $path_success = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
 
         if ($current_post_id) {
+            $redirect_url = site_url($path_success);
             $redirect_url = add_query_arg('report_id', $current_post_id, $redirect_url);
+        } else {
+            $redirect_url = site_url($path_category);
         }
 
         wp_send_json_success(['message' => esc_html__('Confirmed! Redirecting...', 'innovio_child'), 'redirect_url' => $redirect_url, 'brevo_sync' => $brevo_sync, 'crm_sync' => $crm_sync]);
@@ -313,11 +342,22 @@ function dm_register_user()
     $crm_sync = true;
     $current_post_id = isset($_POST['current_post_id']) ? intval($_POST['current_post_id']) : 0;
     $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
-    $redirect_path = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
-    $redirect_url = site_url($redirect_path);
+
+    // Check source
+    $source = isset($_COOKIE['dm_source']) ? sanitize_text_field($_COOKIE['dm_source']) : 'download';
+    if ($source === 'subscribe') {
+        $current_post_id = 0;
+    }
+
+    // Define paths
+    $path_category = ($current_lang === 'en') ? '/en/category/news/research/' : '/category/tin-tuc/research/';
+    $path_success = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
 
     if ($current_post_id) {
+        $redirect_url = site_url($path_success);
         $redirect_url = add_query_arg('report_id', $current_post_id, $redirect_url);
+    } else {
+        $redirect_url = site_url($path_category);
     }
 
     if ($existing_user_id) {

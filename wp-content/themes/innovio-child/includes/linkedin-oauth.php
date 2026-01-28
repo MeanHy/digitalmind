@@ -13,14 +13,16 @@ class DM_LinkedIn_OAuth
     /**
      * Get LinkedIn Authorization URL
      */
-    public static function get_auth_url($post_id = 0)
+    public static function get_auth_url($post_id = 0, $source = 'download')
     {
         $state = wp_create_nonce('linkedin_oauth_state');
 
-        // Store post_id in transient for later use
-        if ($post_id) {
-            set_transient('dm_linkedin_post_id_' . $state, $post_id, 10 * MINUTE_IN_SECONDS);
-        }
+        // Store post_id and source in transient for later use
+        $data = [
+            'post_id' => $post_id,
+            'source' => $source
+        ];
+        set_transient('dm_linkedin_data_' . $state, $data, 10 * MINUTE_IN_SECONDS);
 
         $params = [
             'response_type' => 'code',
@@ -151,17 +153,36 @@ class DM_LinkedIn_OAuth
         setcookie('dm_user_name', $profile['name'], time() + 31536000, '/');
         setcookie('dm_user_email', $profile['email'], time() + 31536000, '/');
 
-        // Get stored post_id
-        $post_id = get_transient('dm_linkedin_post_id_' . $state);
-        delete_transient('dm_linkedin_post_id_' . $state);
+        // Get stored data (post_id)
+        $data = get_transient('dm_linkedin_data_' . $state);
+        delete_transient('dm_linkedin_data_' . $state);
 
-        // Determine redirect URL
+        $post_id = $data['post_id'] ?? 0;
+
+        // Get source from cookie
+        $source = isset($_COOKIE['dm_source']) ? sanitize_text_field($_COOKIE['dm_source']) : 'download';
+
+        // If subscribe flow, ignore post_id (treat as 0) to force redirect to Category
+        if ($source === 'subscribe') {
+            $post_id = 0;
+        }
+
+        // Determine redirect URL based on post_id
         $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
-        $redirect_path = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
-        $redirect_url = site_url($redirect_path);
+
+        // Define paths
+        $path_category = ($current_lang === 'en') ? '/en/category/news/research/' : '/category/tin-tuc/research/';
+        $path_success = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
+
+        // Logic:
+        // 1. If post_id exists -> Download flow -> Success page
+        // 2. If no post_id -> Subscribe flow -> Category page
 
         if ($post_id) {
+            $redirect_url = site_url($path_success);
             $redirect_url = add_query_arg('report_id', $post_id, $redirect_url);
+        } else {
+            $redirect_url = site_url($path_category);
         }
 
         // Output success page that closes popup
@@ -238,10 +259,26 @@ class DM_LinkedIn_OAuth
 
         <body>
             <script>
-                if (window.opener) {
-                    window.opener.postMessage('social_login_success', '*');
-                    window.close();
+                if (window.opener && !window.opener.closed) {
+                    try {
+                        // Set cookies in parent window context
+                        window.opener.document.cookie = 'research_email_verified=true; max-age=31536000; path=/';
+
+                        // Redirect parent window directly
+                        window.opener.location.href = '<?php echo esc_url($redirect_url); ?>';
+
+                        // Close popup
+                        window.close();
+                    } catch (e) {
+                        // Cross-origin error, send message instead
+                        window.opener.postMessage({
+                            type: 'linkedin_login_success',
+                            redirect_url: '<?php echo esc_url($redirect_url); ?>'
+                        }, '*');
+                        window.close();
+                    }
                 } else {
+                    // No opener, redirect in current window
                     window.location.href = '<?php echo esc_url($redirect_url); ?>';
                 }
             </script>

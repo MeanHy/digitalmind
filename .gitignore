@@ -7,3 +7,5 @@ wp-config.php
 *-backup-*.pot~
 *-backup-*.po~
 constant.php
+config.php
+.sftp.json
