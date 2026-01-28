@@ -1647,3 +1647,7 @@ footer .qodef-horizontal-form button {
     grid-template-columns: 1fr;
   }
 }
+
+.mkdf-blog-list-holder .mkdf-post-image img {
+  min-height: 24vh;
+}
