@@ -17,7 +17,6 @@ class DM_LinkedIn_OAuth
     {
         $state = wp_create_nonce('linkedin_oauth_state');
 
-        // Store post_id and source in transient for later use
         $data = [
             'post_id' => $post_id,
             'source' => $source
@@ -106,86 +105,65 @@ class DM_LinkedIn_OAuth
             return;
         }
 
-        // Check for OAuth error
         if (isset($_GET['error'])) {
             $error_desc = sanitize_text_field($_GET['error_description'] ?? 'Authorization cancelled');
             self::redirect_with_error($error_desc);
             return;
         }
 
-        // Verify state
         $state = sanitize_text_field($_GET['state'] ?? '');
         if (!wp_verify_nonce($state, 'linkedin_oauth_state')) {
             self::redirect_with_error('Invalid state parameter');
             return;
         }
 
-        // Get authorization code
         $code = sanitize_text_field($_GET['code'] ?? '');
         if (empty($code)) {
             self::redirect_with_error('No authorization code received');
             return;
         }
 
-        // Exchange code for access token
         $token_response = self::get_access_token($code);
         if (isset($token_response['error'])) {
             self::redirect_with_error($token_response['error']);
             return;
         }
 
-        // Get user profile
         $profile = self::get_user_profile($token_response['access_token']);
         if (isset($profile['error'])) {
             self::redirect_with_error($profile['error']);
             return;
         }
 
-        // Create or login user
         $user_id = self::create_or_login_user($profile);
         if (is_wp_error($user_id)) {
             self::redirect_with_error($user_id->get_error_message());
             return;
         }
 
-        // Set cookies
         setcookie('research_email_verified', 'true', time() + 31536000, '/');
         setcookie('dm_user_name', $profile['name'], time() + 31536000, '/');
         setcookie('dm_user_email', $profile['email'], time() + 31536000, '/');
 
-        // Get stored data (post_id)
         $data = get_transient('dm_linkedin_data_' . $state);
         delete_transient('dm_linkedin_data_' . $state);
 
         $post_id = $data['post_id'] ?? 0;
 
-        // Get source from cookie
         $source = isset($_COOKIE['dm_source']) ? sanitize_text_field($_COOKIE['dm_source']) : 'download';
 
-        // If subscribe flow, ignore post_id (treat as 0) to force redirect to Category
         if ($source === 'subscribe') {
             $post_id = 0;
         }
 
-        // Determine redirect URL based on post_id
         $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
 
-        // Define paths
-        // $path_category = ($current_lang === 'en') ? '/en/category/news/research/' : '/category/tin-tuc/research/';
         $path_success = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
-
-        // Logic:
-        // Always redirect to Success Page
-        // 1. If post_id exists -> Download flow -> Success page with report_id
-        // 2. If no post_id -> Subscribe flow -> Success page without report_id
-
         $redirect_url = site_url($path_success);
 
         if ($post_id) {
             $redirect_url = add_query_arg('report_id', $post_id, $redirect_url);
         }
-
-        // Output success page that closes popup
         self::output_success_page($redirect_url);
     }
 
@@ -201,17 +179,14 @@ class DM_LinkedIn_OAuth
             return new WP_Error('no_email', 'Email not provided by LinkedIn');
         }
 
-        // Check if user exists
         $existing_user_id = email_exists($email);
 
         if ($existing_user_id) {
-            // Login existing user
             wp_set_current_user($existing_user_id);
             wp_set_auth_cookie($existing_user_id);
             return $existing_user_id;
         }
 
-        // Create new user
         $username = sanitize_user(current(explode('@', $email)));
         $i = 1;
         $original_username = $username;
@@ -227,17 +202,14 @@ class DM_LinkedIn_OAuth
             return $user_id;
         }
 
-        // Update user meta
         wp_update_user([
             'ID' => $user_id,
             'first_name' => $name,
             'display_name' => $name,
         ]);
 
-        // Store LinkedIn ID
         update_user_meta($user_id, 'linkedin_id', $profile['id']);
 
-        // Login new user
         wp_set_current_user($user_id);
         wp_set_auth_cookie($user_id);
 
@@ -260,25 +232,10 @@ class DM_LinkedIn_OAuth
         <body>
             <script>
                 if (window.opener && !window.opener.closed) {
-                    try {
-                        // Set cookies in parent window context
-                        window.opener.document.cookie = 'research_email_verified=true; max-age=31536000; path=/';
-
-                        // Redirect parent window directly
-                        window.opener.location.href = '<?php echo esc_url($redirect_url); ?>';
-
-                        // Close popup
-                        window.close();
-                    } catch (e) {
-                        // Cross-origin error, send message instead
-                        window.opener.postMessage({
-                            type: 'linkedin_login_success',
-                            redirect_url: '<?php echo esc_url($redirect_url); ?>'
-                        }, '*');
-                        window.close();
-                    }
+                    window.opener.document.cookie = 'research_email_verified=true; max-age=31536000; path=/';
+                    window.opener.location.href = '<?php echo esc_url($redirect_url); ?>';
+                    window.close();
                 } else {
-                    // No opener, redirect in current window
                     window.location.href = '<?php echo esc_url($redirect_url); ?>';
                 }
             </script>
@@ -326,5 +283,4 @@ class DM_LinkedIn_OAuth
     }
 }
 
-// Initialize callback handler
 add_action('template_redirect', ['DM_LinkedIn_OAuth', 'process_callback'], 5);

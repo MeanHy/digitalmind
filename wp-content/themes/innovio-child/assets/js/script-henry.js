@@ -81,10 +81,9 @@
         const source = getCookie('dm_source') || 'download';
 
         const isEnglish = window.location.pathname.startsWith('/en/');
-        // const pathCategory = isEnglish ? '/en/category/news/research/' : '/category/tin-tuc/research/';
         const pathSuccess = isEnglish ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
 
-        let redirectUrl = pathSuccess; // Always redirect to success page
+        let redirectUrl = pathSuccess;
 
         if (savedPostId) {
             redirectUrl = pathSuccess + '?report_id=' + savedPostId;
