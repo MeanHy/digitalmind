@@ -36,46 +36,57 @@ global $SB_LANGUAGE;
 global $SB_TRANSLATIONS;
 const SELECT_FROM_USERS = 'SELECT id, first_name, last_name, email, profile_image, user_type, creation_time, last_activity, department, token';
 
-class SBError {
+class SBError
+{
     public $error;
 
-    function __construct($error_code, $function = '', $message = '', $response = '') {
+    function __construct($error_code, $function = '', $message = '', $response = '')
+    {
         $this->error = ['message' => $message, 'function' => $function, 'code' => $error_code, 'response' => $response];
     }
 
-    public function __toString() {
+    public function __toString()
+    {
         return $this->code() . ' ' . $this->message();
     }
 
-    function message() {
+    function message()
+    {
         return $this->error['message'];
     }
 
-    function code() {
+    function code()
+    {
         return $this->error['code'];
     }
 
-    function response() {
+    function response()
+    {
         return $this->error['response'];
     }
 
-    function function_name() {
+    function function_name()
+    {
         return $this->error['function'];
     }
 }
 
-class SBValidationError {
+class SBValidationError
+{
     public $error;
 
-    function __construct($error_code) {
+    function __construct($error_code)
+    {
         $this->error = $error_code;
     }
 
-    public function __toString() {
+    public function __toString()
+    {
         return $this->error;
     }
 
-    function code() {
+    function code()
+    {
         return $this->error;
     }
 }
@@ -103,7 +114,8 @@ for ($i = 0; $i < count($sb_apps); $i++) {
  *
  */
 
-function sb_db_connect() {
+function sb_db_connect()
+{
     global $SB_CONNECTION;
     if (!defined('SB_DB_NAME') || !SB_DB_NAME) {
         return false;
@@ -135,7 +147,8 @@ function sb_db_connect() {
     return true;
 }
 
-function sb_db_get($query, $single = true) {
+function sb_db_get($query, $single = true)
+{
     global $SB_CONNECTION;
     $status = sb_db_connect();
     $value = ($single ? '' : []);
@@ -160,7 +173,8 @@ function sb_db_get($query, $single = true) {
     return $value;
 }
 
-function sb_db_query($query, $return = false) {
+function sb_db_query($query, $return = false)
+{
     global $SB_CONNECTION;
     $status = sb_db_connect();
     if ($status) {
@@ -183,7 +197,8 @@ function sb_db_query($query, $return = false) {
     }
 }
 
-function sb_db_escape($value, $numeric = -1) {
+function sb_db_escape($value, $numeric = -1)
+{
     if (is_numeric($value)) {
         return $value;
     } else if ($numeric === true) {
@@ -204,7 +219,8 @@ function sb_db_escape($value, $numeric = -1) {
     return $value;
 }
 
-function sb_db_json_escape($array) {
+function sb_db_json_escape($array)
+{
     if (empty($array)) {
         return '';
     }
@@ -215,16 +231,19 @@ function sb_db_json_escape($array) {
     return $SB_CONNECTION ? $SB_CONNECTION->real_escape_string($value) : $value;
 }
 
-function sb_json_escape($value) {
+function sb_json_escape($value)
+{
     return str_replace(['"', "\'"], ['\"', "'"], $value);
 }
 
-function sb_db_error($function) {
+function sb_db_error($function)
+{
     global $SB_CONNECTION;
     return sb_error('db-error', $function, $SB_CONNECTION->error);
 }
 
-function sb_db_check_connection($name = false, $user = false, $password = false, $host = false, $port = false) {
+function sb_db_check_connection($name = false, $user = false, $password = false, $host = false, $port = false)
+{
     global $SB_CONNECTION;
     $response = true;
     if ($name === false && defined('SB_DB_NAME')) {
@@ -257,7 +276,8 @@ function sb_db_check_connection($name = false, $user = false, $password = false,
     return $response;
 }
 
-function sb_db_init_settings() {
+function sb_db_init_settings()
+{
     if (sb_is_cloud()) {
         return;
     }
@@ -266,7 +286,8 @@ function sb_db_init_settings() {
     $SB_CONNECTION->query("SET SESSION sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''))");
 }
 
-function sb_external_db($action, $name, $query = '', $extra = false) {
+function sb_external_db($action, $name, $query = '', $extra = false)
+{
     $NAME = strtoupper($name);
     $name = strtolower($name);
     switch ($action) {
@@ -353,11 +374,13 @@ function sb_external_db($action, $name, $query = '', $extra = false) {
     return false;
 }
 
-function sb_is_error($object) {
+function sb_is_error($object)
+{
     return is_a($object, 'SBError');
 }
 
-function sb_is_validation_error($object) {
+function sb_is_validation_error($object)
+{
     return is_a($object, 'SBValidationError');
 }
 
@@ -386,7 +409,8 @@ function sb_is_validation_error($object) {
  *
  */
 
-function sb_($string) {
+function sb_($string)
+{
     if ($string) {
         global $SB_TRANSLATIONS;
         if (!isset($SB_TRANSLATIONS)) {
@@ -397,11 +421,13 @@ function sb_($string) {
     return $string;
 }
 
-function sb_e($string) {
+function sb_e($string)
+{
     echo sb_($string);
 }
 
-function sb_s($string, $disabled = false) {
+function sb_s($string, $disabled = false)
+{
     if ($disabled) {
         return $string;
     }
@@ -418,11 +444,13 @@ function sb_s($string, $disabled = false) {
     return empty($SB_TRANSLATIONS_SETTINGS[$string]) ? $string : $SB_TRANSLATIONS_SETTINGS[$string];
 }
 
-function sb_se($string) {
+function sb_se($string)
+{
     echo sb_s($string);
 }
 
-function sb_t($string, $language_code = false) {
+function sb_t($string, $language_code = false)
+{
     global $SB_LANGUAGE;
     global $SB_TRANSLATIONS;
     if (!$language_code || $language_code == -1) {
@@ -474,7 +502,8 @@ function sb_t($string, $language_code = false) {
     return $SB_TRANSLATIONS[$string];
 }
 
-function sb_init_translations() {
+function sb_init_translations()
+{
     global $SB_TRANSLATIONS;
     global $SB_LANGUAGE;
     $SB_CLOUD_DEFAULT_LANGUAGE_CODE = sb_defined('SB_CLOUD_DEFAULT_LANGUAGE_CODE');
@@ -528,7 +557,8 @@ function sb_init_translations() {
     }
 }
 
-function sb_get_current_translations() {
+function sb_get_current_translations()
+{
     global $SB_TRANSLATIONS;
     if (!isset($SB_TRANSLATIONS)) {
         sb_init_translations();
@@ -536,7 +566,8 @@ function sb_get_current_translations() {
     return $SB_TRANSLATIONS;
 }
 
-function sb_get_translations($is_user = false, $language_code = false) {
+function sb_get_translations($is_user = false, $language_code = false)
+{
     $translations = [];
     $cloud_path = false;
     if ($is_user && !file_exists(SB_PATH . '/uploads/languages')) {
@@ -569,11 +600,13 @@ function sb_get_translations($is_user = false, $language_code = false) {
     return $translations;
 }
 
-function sb_get_translation($language_code) {
+function sb_get_translation($language_code)
+{
     return sb_isset(sb_get_translations(false, $language_code), $language_code);
 }
 
-function sb_save_translations($translations) {
+function sb_save_translations($translations)
+{
     $is_cloud = sb_is_cloud();
     $cloud_path = false;
     if (!$is_cloud && !file_exists(SB_PATH . '/uploads/languages')) {
@@ -619,7 +652,8 @@ function sb_save_translations($translations) {
     return true;
 }
 
-function sb_restore_user_translations() {
+function sb_restore_user_translations()
+{
     $translations_all = sb_get_translations();
     $translations_user = sb_get_translations(true);
     $paths = ['front', 'admin', 'admin/js', 'admin/settings'];
@@ -638,7 +672,8 @@ function sb_restore_user_translations() {
     }
 }
 
-function sb_get_user_language($user_id = false, $allow_browser_language = false) {
+function sb_get_user_language($user_id = false, $allow_browser_language = false)
+{
     $setting_language = sb_is_agent() && (!$user_id || sb_get_active_user_ID() == $user_id) ? false : sb_get_setting('front-auto-translations');
     if ($setting_language && $setting_language != 'auto') {
         return $setting_language;
@@ -665,12 +700,14 @@ function sb_get_user_language($user_id = false, $allow_browser_language = false)
     return $SB_LANGUAGE[0];
 }
 
-function sb_get_admin_language($user_id = false) {
+function sb_get_admin_language($user_id = false)
+{
     $language = defined('SB_ADMIN_LANG') ? trim(strtolower(SB_ADMIN_LANG)) : (sb_get_setting('admin-auto-translations') ? trim(strtolower(sb_get_user_language($user_id ? $user_id : sb_get_active_user_ID()))) : false);
     return $language && ($language != 'en' || defined('SB_CLOUD_DEFAULT_LANGUAGE_CODE')) ? $language : sb_defined('SB_CLOUD_DEFAULT_LANGUAGE_CODE', $language);
 }
 
-function sb_language_code($language_code_full) {
+function sb_language_code($language_code_full)
+{
     switch (strtolower($language_code_full)) {
         case 'pt_br';
             return 'br';
@@ -682,7 +719,8 @@ function sb_language_code($language_code_full) {
     return substr($language_code_full, 0, 2);
 }
 
-function sb_get_language_code_by_name($language_name, &$language_codes = false) {
+function sb_get_language_code_by_name($language_name, &$language_codes = false)
+{
     $language_codes = $language_codes ? $language_codes : sb_get_json_resource('languages/language-codes.json');
     if (strlen($language_name) > 2) {
         $language_code = ucfirst($language_name);
@@ -695,7 +733,8 @@ function sb_get_language_code_by_name($language_name, &$language_codes = false) 
     return $language_name;
 }
 
-function sb_is_rtl($language_code = false) {
+function sb_is_rtl($language_code = false)
+{
     return in_array($language_code ? $language_code : sb_get_user_language(sb_get_active_user_ID()), ['ar', 'he', 'ku', 'fa', 'ur']);
 }
 
@@ -718,16 +757,19 @@ function sb_is_rtl($language_code = false) {
  *
  */
 
-function sb_get_versions() {
+function sb_get_versions()
+{
     return json_decode(sb_download('https://board.support/synch/versions.json'), true);
 }
 
-function sb_app_get_key($app_name) {
+function sb_app_get_key($app_name)
+{
     $keys = sb_get_external_setting('app-keys');
     return isset($keys[$app_name]) ? $keys[$app_name] : '';
 }
 
-function sb_app_activation($app_name, $key) {
+function sb_app_activation($app_name, $key)
+{
     if (sb_is_cloud()) {
         $active_apps = sb_get_external_setting('active_apps', []);
         array_push($active_apps, $app_name);
@@ -755,7 +797,8 @@ function sb_app_activation($app_name, $key) {
     return sb_app_update($app_name, $response[$app_name], $key);
 }
 
-function sb_app_disable($app_name) {
+function sb_app_disable($app_name)
+{
     $active_apps = sb_get_external_setting('active_apps', []);
     $index = array_search($app_name, $active_apps);
     if ($index !== false) {
@@ -765,7 +808,8 @@ function sb_app_disable($app_name) {
     return false;
 }
 
-function sb_app_update($app_name, $file_name, $key = false) {
+function sb_app_update($app_name, $file_name, $key = false)
+{
     if (!$file_name) {
         return new SBValidationError('temporary-file-name-not-found');
     }
@@ -811,7 +855,8 @@ function sb_app_update($app_name, $file_name, $key = false) {
     return $error ? new SBValidationError($error) : false;
 }
 
-function sb_update() {
+function sb_update()
+{
     $envato_code = sb_get_setting('envato-purchase-code');
     if (!$envato_code) {
         return new SBValidationError('envato-purchase-code-not-found');
@@ -849,7 +894,8 @@ function sb_update() {
     return $result;
 }
 
-function sb_updates_validation() {
+function sb_updates_validation()
+{
 
     // Temp. Deprecated
     try {
@@ -910,7 +956,8 @@ function sb_updates_validation() {
     }
 }
 
-function sb_updates_available() {
+function sb_updates_available()
+{
     $latest_versions = sb_get_versions();
     if (SB_VERSION != $latest_versions['sb']) {
         return true;
@@ -924,13 +971,15 @@ function sb_updates_available() {
     return false;
 }
 
-function sb_get_installed_apps_version() {
+function sb_get_installed_apps_version()
+{
     $is_not_cloud = !sb_is_cloud();
     return ['dialogflow' => sb_defined('SB_DIALOGFLOW'), 'slack' => sb_defined('SB_SLACK'), 'tickets' => sb_defined('SB_TICKETS'), 'woocommerce' => $is_not_cloud ? sb_defined('SB_WOOCOMMERCE') : false, 'ump' => $is_not_cloud ? sb_defined('SB_UMP') : false, 'perfex' => $is_not_cloud ? sb_defined('SB_PERFEX') : false, 'whmcs' => $is_not_cloud ? sb_defined('SB_WHMCS') : false, 'aecommerce' => $is_not_cloud ? sb_defined('SB_AECOMMERCE') : false, 'messenger' => sb_defined('SB_MESSENGER'), 'whatsapp' => sb_defined('SB_WHATSAPP'), 'armember' => $is_not_cloud ? sb_defined('SB_ARMEMBER') : false, 'telegram' => sb_defined('SB_TELEGRAM'), 'viber' => sb_defined('SB_VIBER'), 'line' => sb_defined('SB_LINE'), 'wechat' => sb_defined('SB_WECHAT'), 'zalo' => sb_defined('SB_ZALO'), 'twitter' => sb_defined('SB_TWITTER'), 'zendesk' => sb_defined('SB_ZENDESK'), 'martfury' => $is_not_cloud ? sb_defined('SB_MARTFURY') : false, 'opencart' => $is_not_cloud ? sb_defined('SB_OPENCART') : false];
 }
 
 
-function sb_installation($details, $force = false) {
+function sb_installation($details, $force = false)
+{
     $database = [];
     $not_cloud = !sb_is_cloud();
     if (sb_db_check_connection() === true && !$force) {
@@ -1008,16 +1057,19 @@ function sb_installation($details, $force = false) {
     }
 }
 
-function sb_write_config_extra($content) {
+function sb_write_config_extra($content)
+{
     $raw = file_get_contents(SB_PATH . '/config.php');
     sb_file(SB_PATH . '/config.php', str_replace('?>', $content . PHP_EOL . PHP_EOL . '?>', $raw));
 }
 
-function sb_upload_path($url = false, $date = false) {
+function sb_upload_path($url = false, $date = false)
+{
     return (defined('SB_UPLOAD_PATH') && SB_UPLOAD_PATH && defined('SB_UPLOAD_URL') && SB_UPLOAD_URL ? ($url ? SB_UPLOAD_URL : SB_UPLOAD_PATH) : ($url ? (SB_URL . '/') : (SB_PATH . '/')) . 'uploads') . ($date ? ('/' . date('d-m-y')) : '');
 }
 
-function sb_dir_name() {
+function sb_dir_name()
+{
     return substr(SB_URL, strrpos(SB_URL, '/') + 1);
 }
 
@@ -1037,7 +1089,8 @@ function sb_dir_name() {
  *
  */
 
-function sb_push_notification($title = '', $message = '', $icon = '', $interest = false, $conversation_id = false, $user_id = false, $attachments = false) {
+function sb_push_notification($title = '', $message = '', $icon = '', $interest = false, $conversation_id = false, $user_id = false, $attachments = false)
+{
     $recipient_agent = false;
     if (!$user_id) {
         $user_id = sb_get_active_user_ID();
@@ -1152,7 +1205,8 @@ function sb_push_notification($title = '', $message = '', $icon = '', $interest 
     return isset($response['error']) ? trigger_error($response['description']) : $response;
 }
 
-function sb_pusher_trigger($channel, $event, $data = []) {
+function sb_pusher_trigger($channel, $event, $data = [])
+{
     $pusher = sb_pusher_init();
     $user_id = sb_get_active_user_ID();
     $data['user_id'] = $user_id;
@@ -1218,7 +1272,8 @@ function sb_pusher_trigger($channel, $event, $data = []) {
     return sb_error('pusher-security-error', 'sb_pusher_trigger');
 }
 
-function sb_pusher_get_online_users() {
+function sb_pusher_get_online_users()
+{
     global $SB_PUSHER_ONLINE_USERS;
     if ($SB_PUSHER_ONLINE_USERS) {
         return $SB_PUSHER_ONLINE_USERS;
@@ -1254,7 +1309,8 @@ function sb_pusher_get_online_users() {
     return $users;
 }
 
-function sb_pusher_agents_online() {
+function sb_pusher_agents_online()
+{
     $agents_id = sb_get_agents_ids();
     $users = sb_pusher_get_online_users();
     for ($i = 0; $i < count($users); $i++) {
@@ -1265,17 +1321,20 @@ function sb_pusher_agents_online() {
     return false;
 }
 
-function sb_pusher_active() {
+function sb_pusher_active()
+{
     return sb_is_cloud() || sb_get_multi_setting('pusher', 'pusher-active');
 }
 
-function sb_pusher_init() {
+function sb_pusher_init()
+{
     require_once SB_PATH . '/vendor/pusher/autoload.php';
     $pusher_details = sb_pusher_get_details();
     return new Pusher\Pusher($pusher_details[0], $pusher_details[1], $pusher_details[2], ['cluster' => $pusher_details[3]]);
 }
 
-function sb_pusher_get_details() {
+function sb_pusher_get_details()
+{
     if (sb_is_cloud()) {
         $account_id = sb_cloud_account_id();
         if (!$account_id) {
@@ -1287,12 +1346,14 @@ function sb_pusher_get_details() {
     return [$settings['pusher-key'], $settings['pusher-secret'], $settings['pusher-id'], $settings['pusher-cluster']];
 }
 
-function sb_pusher_curl($url_part, $post_fields = '') {
+function sb_pusher_curl($url_part, $post_fields = '')
+{
     $instance_ID = sb_get_multi_setting('push-notifications', 'push-notifications-id');
     return sb_curl('https://' . $instance_ID . '.pushnotifications.pusher.com/publish_api/v1/instances/' . $instance_ID . '/' . $url_part, is_string($post_fields) ? $post_fields : json_encode($post_fields, JSON_INVALID_UTF8_IGNORE), ['Content-Type: application/json', 'Authorization: Bearer ' . sb_get_multi_setting('push-notifications', 'push-notifications-key')]);
 }
 
-function sb_onesignal_curl($url_part, $post_fields = []) {
+function sb_onesignal_curl($url_part, $post_fields = [])
+{
     $post_fields['app_id'] = sb_is_cloud() ? ONESIGNAL_APP_ID : sb_get_multi_setting('push-notifications', 'push-notifications-onesignal-app-id');
     return sb_curl('https://onesignal.com/api/v1/' . $url_part, json_encode($post_fields, JSON_INVALID_UTF8_IGNORE), ['Authorization: basic ' . (sb_is_cloud() ? ONESIGNAL_API_KEY : trim(sb_get_multi_setting('push-notifications', 'push-notifications-onesignal-api-key'))), 'Content-Type: application/json']);
 }
@@ -1337,22 +1398,26 @@ function sb_onesignal_curl($url_part, $post_fields = []) {
  *
  */
 
-function sb_isset($array, $key, $default = false) {
+function sb_isset($array, $key, $default = false)
+{
     if (sb_is_error($array) || sb_is_validation_error($array)) {
         return $array;
     }
     return !empty($array) && isset($array[$key]) && $array[$key] !== '' ? $array[$key] : $default;
 }
 
-function sb_isset_num($value) {
+function sb_isset_num($value)
+{
     return $value != -1 && $value && !is_null($value) && !is_bool($value) && is_numeric($value);
 }
 
-function sb_defined($name, $default = false) {
+function sb_defined($name, $default = false)
+{
     return defined($name) ? constant($name) : $default;
 }
 
-function sb_encryption($string, $encrypt = true) {
+function sb_encryption($string, $encrypt = true)
+{
     $output = false;
     $encrypt_method = 'AES-256-CBC';
     if (defined('SB_WP')) {
@@ -1375,7 +1440,8 @@ function sb_encryption($string, $encrypt = true) {
     return $output;
 }
 
-function sb_string_slug($string, $action = 'slug', $is_alphanumeric = false) {
+function sb_string_slug($string, $action = 'slug', $is_alphanumeric = false)
+{
     $string = trim($string);
     if ($action == 'slug') {
         $string = mb_strtolower(str_replace([' ', ' '], '-', $string), 'UTF-8');
@@ -1390,7 +1456,8 @@ function sb_string_slug($string, $action = 'slug', $is_alphanumeric = false) {
     return $string;
 }
 
-function sb_curl($url, $post_fields = '', $header = [], $method = 'POST', $timeout = false, $include_headers = false) {
+function sb_curl($url, $post_fields = '', $header = [], $method = 'POST', $timeout = false, $include_headers = false)
+{
     $ch = curl_init($url);
     $headers = [];
     $post_value = $post_fields ? (is_string($post_fields) ? $post_fields : (in_array('Content-Type: multipart/form-data', $header) ? $post_fields : http_build_query($post_fields))) : false;
@@ -1500,11 +1567,13 @@ function sb_curl($url, $post_fields = '', $header = [], $method = 'POST', $timeo
     return $response;
 }
 
-function sb_download($url) {
+function sb_download($url)
+{
     return sb_curl($url, '', '', 'DOWNLOAD');
 }
 
-function sb_download_file($url, $file_name = false, $mime = false, $header = [], $recursion = 0, $return_path = false) {
+function sb_download_file($url, $file_name = false, $mime = false, $header = [], $recursion = 0, $return_path = false)
+{
     $url = sb_curl($url, '', $header, 'FILE');
     $path_2 = false;
     $extension = pathinfo(basename($file_name ? $file_name : $url), PATHINFO_EXTENSION);
@@ -1542,18 +1611,21 @@ function sb_download_file($url, $file_name = false, $mime = false, $header = [],
     return $return_path ? $path_2 : $url;
 }
 
-function sb_is_allowed_extension($extension) {
+function sb_is_allowed_extension($extension)
+{
     $extension = strtolower($extension);
     $allowed_extensions = ['step', 'stl', 'obj', '3mf', 'bmp', 'aac', 'webm', 'oga', 'json', 'psd', 'ai', 'jpg', 'jpeg', 'png', 'gif', 'webp', 'pdf', 'doc', 'docx', 'key', 'ppt', 'odt', 'xls', 'xlsx', 'zip', 'rar', 'mp3', 'm4a', 'ogg', 'wav', 'mp4', 'mov', 'wmv', 'avi', 'mpg', 'ogv', '3gp', '3g2', 'mkv', 'txt', 'ico', 'csv', 'ttf', 'font', 'css', 'scss'];
     return in_array($extension, $allowed_extensions) || (defined('SB_FILE_EXTENSIONS') && in_array($extension, SB_FILE_EXTENSIONS));
 }
 
-function sb_get($url, $is_json = false) {
+function sb_get($url, $is_json = false)
+{
     $response = sb_curl($url, '', '', 'GET');
     return $is_json ? json_decode($response, true) : $response;
 }
 
-function sb_csv($items, $header, $filename, $return_url = true) {
+function sb_csv($items, $header, $filename, $return_url = true)
+{
     $filename = rand(100000000, 99999999999) . '-' . $filename . '.csv';
     $file = fopen(sb_upload_path() . '/' . $filename, 'w');
     fprintf($file, chr(0xEF) . chr(0xBB) . chr(0xBF));
@@ -1567,7 +1639,8 @@ function sb_csv($items, $header, $filename, $return_url = true) {
     return sb_upload_path($return_url) . '/' . $filename;
 }
 
-function sb_csv_read($path) {
+function sb_csv_read($path)
+{
     $rows = [];
     if (($handle = fopen($path, 'r')) !== false) {
         $headers = false;
@@ -1587,7 +1660,8 @@ function sb_csv_read($path) {
     return $rows;
 }
 
-function sb_file($path, $content) {
+function sb_file($path, $content)
+{
     try {
         $file = fopen($path, 'w');
         fwrite($file, (substr($path, -4) == '.txt' ? "\xEF\xBB\xBF" : '') . $content);
@@ -1598,7 +1672,8 @@ function sb_file($path, $content) {
     }
 }
 
-function sb_file_delete($url_or_path) {
+function sb_file_delete($url_or_path)
+{
     $aws = (sb_get_multi_setting('amazon-s3', 'amazon-s3-active') || defined('SB_CLOUD_AWS_S3')) && (strpos($url_or_path, '.s3.') || strpos($url_or_path, 'amazonaws.com'));
     if ($aws) {
         return sb_aws_s3($url_or_path, 'DELETE');
@@ -1611,7 +1686,8 @@ function sb_file_delete($url_or_path) {
     return false;
 }
 
-function sb_debug($value) {
+function sb_debug($value)
+{
     $value = is_string($value) ? $value : json_encode($value, JSON_INVALID_UTF8_IGNORE | JSON_UNESCAPED_UNICODE);
     $path = __DIR__ . '/debug.txt';
     if (file_exists($path)) {
@@ -1620,7 +1696,8 @@ function sb_debug($value) {
     sb_file($path, $value);
 }
 
-function sb_json_array($json, $default = []) {
+function sb_json_array($json, $default = [])
+{
     if (is_string($json)) {
         $json = json_decode($json, true);
         return $json === false || $json === null ? $default : $json;
@@ -1631,7 +1708,8 @@ function sb_json_array($json, $default = []) {
     }
 }
 
-function sb_get_server_max_file_size() {
+function sb_get_server_max_file_size()
+{
     $size = ini_get('post_max_size');
     if (empty($size)) {
         return 9999;
@@ -1652,7 +1730,8 @@ function sb_get_server_max_file_size() {
     return $size;
 }
 
-function sb_clean_data() {
+function sb_clean_data()
+{
     $time_24h = sb_gmt_now(86400);
     $time_30d = sb_gmt_now(2592000);
     try {
@@ -1695,10 +1774,12 @@ function sb_clean_data() {
     return true;
 }
 
-function sb_component_editor($admin = false) {
+function sb_component_editor($admin = false)
+{
     $enabled = [$admin || !sb_get_setting('disable-uploads'), !sb_get_setting('disable-voice-messages')];
     ?>
-    <div class="sb-editor<?php echo !$enabled[0] || !$enabled[1] ? ' sb-disabled-' . (!$enabled[0] && !$enabled[1] ? '2' : '1') : '' ?>">
+    <div
+        class="sb-editor<?php echo !$enabled[0] || !$enabled[1] ? ' sb-disabled-' . (!$enabled[0] && !$enabled[1] ? '2' : '1') : '' ?>">
         <?php
         if ($admin) {
             echo '<div class="sb-labels"></div>';
@@ -1780,7 +1861,8 @@ function sb_component_editor($admin = false) {
                     </div>
                     <div class="sb-search-btn">
                         <i class="sb-icon sb-icon-search"></i>
-                        <input type="text" autocomplete="false" placeholder="<?php sb_e(sb_get_multi_setting('google', 'google-project-id') ? 'Search replies and Intents...' : 'Search replies...') ?>" />
+                        <input type="text" autocomplete="false"
+                            placeholder="<?php sb_e(sb_get_multi_setting('google', 'google-project-id') ? 'Search replies and Intents...' : 'Search replies...') ?>" />
                     </div>
                 </div>
                 <div class="sb-replies-list sb-scroll-area">
@@ -1810,24 +1892,29 @@ function sb_component_editor($admin = false) {
     }
 }
 
-function sb_strpos_reverse($string, $search, $offset) {
+function sb_strpos_reverse($string, $search, $offset)
+{
     return strrpos(substr($string, 0, $offset), $search);
 }
 
-function sb_mb_strpos_reverse($string, $search, $offset) {
+function sb_mb_strpos_reverse($string, $search, $offset)
+{
     $index = mb_strrpos(mb_substr($string, 0, $offset), $search);
     return $index ? $index : $offset;
 }
 
-function sb_verification_cookie($code, $domain) {
-        return [true, password_hash('VGCKME' . 'NS', PASSWORD_DEFAULT)];
+function sb_verification_cookie($code, $domain)
+{
+    return [true, password_hash('VGCKME' . 'NS', PASSWORD_DEFAULT)];
 }
 
-function sb_on_close() {
+function sb_on_close()
+{
     sb_set_agent_active_conversation(0);
 }
 
-function sb_chatbot_active($check_dialogflow = true, $check_open_ai = true, $source = false) {
+function sb_chatbot_active($check_dialogflow = true, $check_open_ai = true, $source = false)
+{
     if (defined('SB_DIALOGFLOW')) {
         if ($source && sb_get_setting(($source == 'ig' ? 'fb' : $source) . '-disable-chatbot')) {
             return false;
@@ -1840,7 +1927,8 @@ function sb_chatbot_active($check_dialogflow = true, $check_open_ai = true, $sou
     return false;
 }
 
-function sb_logs($string, $user = false) {
+function sb_logs($string, $user = false)
+{
     if (sb_is_cloud()) {
         return false;
     }
@@ -1852,7 +1940,8 @@ function sb_logs($string, $user = false) {
     return sb_file($path, $string);
 }
 
-function sb_webhooks($function_name, $parameters) {
+function sb_webhooks($function_name, $parameters)
+{
     $names = ['SBSMSSent' => 'sms-sent', 'SBLoginForm' => 'login', 'SBRegistrationForm' => 'registration', 'SBUserDeleted' => 'user-deleted', 'SBMessageSent' => 'message-sent', 'SBDialogflowMessage' => 'dialogflow-message', 'SBBotMessage' => 'bot-message', 'SBEmailSent' => 'email-sent', 'SBNewMessagesReceived' => 'new-messages', 'SBNewConversationReceived' => 'new-conversation', 'SBNewConversationCreated' => 'new-conversation-created', 'SBActiveConversationStatusUpdated' => 'conversation-status-updated', 'SBSlackMessageSent' => 'slack-message-sent', 'SBMessageDeleted' => 'message-deleted', 'SBRichMessageSubmit' => 'rich-message', 'SBNewEmailAddress' => 'new-email-address'];
     $webhook_name = sb_isset($names, $function_name);
     if ($webhook_name) {
@@ -1886,7 +1975,8 @@ function sb_webhooks($function_name, $parameters) {
     }
 }
 
-function sb_cron_jobs_add($key, $content = false, $job_time = false) {
+function sb_cron_jobs_add($key, $content = false, $job_time = false)
+{
 
     // Add the job to the cron jobs
     $cron_functions = sb_get_external_setting('cron-functions');
@@ -1915,7 +2005,8 @@ function sb_cron_jobs_add($key, $content = false, $job_time = false) {
     }
 }
 
-function sb_cron_jobs() {
+function sb_cron_jobs()
+{
     ignore_user_abort(true);
     set_time_limit(180);
     $now = date('H');
@@ -1934,7 +2025,8 @@ function sb_cron_jobs() {
     sb_save_external_setting('cron', $now);
 }
 
-function sb_sanatize_string($string, $is_secure = false) {
+function sb_sanatize_string($string, $is_secure = false)
+{
     do {
         $previous = $string;
         $string = str_ireplace(['onload', 'javascript:', 'onclick', 'onerror', 'onmouseover', 'oncontextmenu', 'ondblclick', 'onmousedown', 'onmouseenter', 'onmouseleave', 'onmousemove', 'onmouseout', 'onmouseup', 'ontoggle'], '', $string);
@@ -1948,7 +2040,8 @@ function sb_sanatize_string($string, $is_secure = false) {
     return $is_secure ? htmlspecialchars($string, ENT_NOQUOTES | ENT_SUBSTITUTE | ENT_HTML401, 'UTF-8') : $string;
 }
 
-function sb_sanatize_file_name($file_name) {
+function sb_sanatize_file_name($file_name)
+{
     do {
         $previous = $file_name;
         $file_name = str_ireplace(['../', '\\', '/', ':', '?', '"', '*', '<', '>', '|', '..\/'], '', $file_name);
@@ -1956,7 +2049,8 @@ function sb_sanatize_file_name($file_name) {
     return sb_sanatize_string($file_name, true);
 }
 
-function sb_aws_s3($file_path, $action = 'PUT', $bucket_name = false) {
+function sb_aws_s3($file_path, $action = 'PUT', $bucket_name = false)
+{
     $settings = sb_get_setting('amazon-s3');
     if ((!$settings || empty($settings['amazon-s3-bucket-name'])) && defined('SB_CLOUD_AWS_S3')) {
         $settings = SB_CLOUD_AWS_S3;
@@ -2018,16 +2112,19 @@ function sb_aws_s3($file_path, $action = 'PUT', $bucket_name = false) {
     return false;
 }
 
-function sb_gmt_now($less_seconds = 0, $is_unix = false) {
+function sb_gmt_now($less_seconds = 0, $is_unix = false)
+{
     $now = gmdate('Y-m-d H:i:s', time() - $less_seconds);
     return $is_unix ? strtotime($now) : $now;
 }
 
-function sb_gmt_date_to_local($date_string, $utc_offset) {
+function sb_gmt_date_to_local($date_string, $utc_offset)
+{
     return date('d/m/Y H:i:s', strtotime($date_string) + ($utc_offset * -1 * 3600));
 }
 
-function sb_error($error_code, $function_name, $message = '', $force = false) {
+function sb_error($error_code, $function_name, $message = '', $force = false)
+{
     $message_2 = (sb_is_cloud() ? SB_CLOUD_BRAND_NAME : 'Support Board ') . '[' . $function_name . '][' . $error_code . ']' . ($message ? ': ' . (is_string($message) ? $message : json_encode($message)) : '');
     if (($force && !sb_is_cloud()) || sb_is_debug()) {
         sb_debug($message_2);
@@ -2037,20 +2134,24 @@ function sb_error($error_code, $function_name, $message = '', $force = false) {
     return new SBError($error_code, $function_name, $message_2, $message);
 }
 
-function sb_is_debug() {
+function sb_is_debug()
+{
     return isset($_GET['debug']) || sb_isset($_POST, 'debug') || strpos(sb_isset($_SERVER, 'HTTP_REFERER'), 'debug');
 }
 
-function sb_get_json_resource($path_part) {
+function sb_get_json_resource($path_part)
+{
     return json_decode(file_get_contents(SB_PATH . '/resources/' . $path_part), true);
 }
 
-function sb_beautify_file_name($file_name) {
+function sb_beautify_file_name($file_name)
+{
     $parts = explode('_', $file_name, 2);
     return isset($parts[1]) ? $parts[1] : $file_name;
 }
 
-function sb_is_valid_path($path) {
+function sb_is_valid_path($path)
+{
     $real_path = realpath($path);
     return ((defined('SB_URL') && strpos($real_path, SB_URL) === 0) || (defined('SB_PATH') && strpos($real_path, SB_PATH) === 0) || (defined('CLOUD_URL') && strpos($real_path, CLOUD_URL) === 0) || (defined('SB_CLOUD_PATH') && strpos($real_path, SB_CLOUD_PATH) === 0)) && file_exists($path);
 }
@@ -2066,7 +2167,8 @@ function sb_is_valid_path($path) {
  *
  */
 
-function sb_reports($report_name, $date_start = false, $date_end = false, $timezone = false) {
+function sb_reports($report_name, $date_start = false, $date_end = false, $timezone = false)
+{
     $date = '';
     $data = [];
     $data_final = [];
@@ -2572,31 +2674,39 @@ function sb_reports($report_name, $date_start = false, $date_end = false, $timez
     return ['title' => sb_($title), 'description' => sb_($description), 'data' => $data_final, 'table' => $table, 'table_inverse' => $time_range, 'label_type' => $label_type, 'chart_type' => $chart_type];
 }
 
-function sb_reports_update($name, $value = false, $external_id = false, $extra = false) {
-    if (sb_get_multi_setting('performance', 'performance-reports')) {
+function sb_reports_update($name, $value = false, $external_id = false, $extra = false)
+{
+    try {
+        if (sb_get_multi_setting('performance', 'performance-reports')) {
+            return false;
+        }
+        $now = gmdate('Y-m-d');
+        $name = sb_db_escape($name);
+        $extra = sb_db_escape($extra);
+        switch ($name) {
+            case 'direct-sms':
+            case 'direct-emails':
+            case 'direct-messages':
+            case 'articles-searches':
+                return sb_db_query('INSERT INTO sb_reports (name, value, creation_time, external_id) VALUES ("' . $name . '", "' . sb_db_escape($value) . '", "' . $now . '", NULL)');
+            case 'articles-views':
+                // Removed extra from WHERE clause and INSERT/UPDATE because column is missing
+                $where = ' WHERE name = "articles-views" AND creation_time = "' . $now . '"';
+                $count = sb_db_get('SELECT value FROM sb_reports' . $where . ' LIMIT 1');
+                return sb_db_query(empty($count) ? 'INSERT INTO sb_reports (name, value, creation_time, external_id) VALUES ("' . $name . '", 1, "' . $now . '", NULL)' : 'UPDATE sb_reports SET value = ' . (intval($count['value']) + 1) . $where);
+            default:
+                $where = ' WHERE name = "' . $name . '" AND creation_time = "' . $now . '"';
+                $count = sb_db_get('SELECT value FROM sb_reports' . $where . ' LIMIT 1');
+                return sb_db_query(empty($count) ? 'INSERT INTO sb_reports (name, value, creation_time, external_id) VALUES ("' . $name . '", 1, "' . $now . '", ' . ($external_id === false ? 'NULL' : '"' . $external_id . '"') . ')' : 'UPDATE sb_reports SET value = ' . (intval($count['value']) + 1) . $where);
+        }
+    } catch (\Throwable $th) {
+        file_put_contents(__DIR__ . '/debug.txt', 'sb_reports_update error: ' . $th->getMessage() . PHP_EOL, FILE_APPEND);
         return false;
-    }
-    $now = gmdate('Y-m-d');
-    $name = sb_db_escape($name);
-    $extra = sb_db_escape($extra);
-    switch ($name) {
-        case 'direct-sms':
-        case 'direct-emails':
-        case 'direct-messages':
-        case 'articles-searches':
-            return sb_db_query('INSERT INTO sb_reports (name, value, creation_time, external_id, extra) VALUES ("' . $name . '", "' . sb_db_escape($value) . '", "' . $now . '", NULL, NULL)');
-        case 'articles-views':
-            $where = ' WHERE name = "articles-views" AND extra = "' . $extra . '" AND creation_time = "' . $now . '"';
-            $count = sb_db_get('SELECT value FROM sb_reports' . $where . ' LIMIT 1');
-            return sb_db_query(empty($count) ? 'INSERT INTO sb_reports (name, value, creation_time, external_id, extra) VALUES ("' . $name . '", 1, "' . $now . '", NULL, "' . $extra . '")' : 'UPDATE sb_reports SET value = ' . (intval($count['value']) + 1) . $where);
-        default:
-            $where = ' WHERE name = "' . $name . '" AND creation_time = "' . $now . '"';
-            $count = sb_db_get('SELECT value FROM sb_reports' . $where . ' LIMIT 1');
-            return sb_db_query(empty($count) ? 'INSERT INTO sb_reports (name, value, creation_time, external_id, extra) VALUES ("' . $name . '", 1, "' . $now . '", ' . ($external_id === false ? 'NULL' : '"' . $external_id . '"') . ', ' . ($extra === false ? 'NULL' : '"' . $extra . '"') . ')' : 'UPDATE sb_reports SET value = ' . (intval($count['value']) + 1) . $where);
     }
 }
 
-function sb_reports_export($report_name, $date_start = false, $date_end = false, $timezone = false) {
+function sb_reports_export($report_name, $date_start = false, $date_end = false, $timezone = false)
+{
     if ($timezone) {
         date_default_timezone_set($timezone);
     }
@@ -2646,7 +2756,8 @@ function sb_reports_export($report_name, $date_start = false, $date_end = false,
  *
  */
 
-function sb_automations_get() {
+function sb_automations_get()
+{
     $types = ['messages', 'emails', 'sms', 'popups', 'design', 'more'];
     $automations = sb_get_external_setting('automations', []);
     $translations = [];
@@ -2661,7 +2772,8 @@ function sb_automations_get() {
     return [$automations, $translations];
 }
 
-function sb_automations_save($automations, $translations = false) {
+function sb_automations_save($automations, $translations = false)
+{
     if ($translations) {
         $db = '';
         foreach ($translations as $key => $value) {
@@ -2674,7 +2786,8 @@ function sb_automations_save($automations, $translations = false) {
     return sb_save_external_setting('automations', empty($automations) ? [] : $automations);
 }
 
-function sb_automations_run_all() {
+function sb_automations_run_all()
+{
     if (sb_is_agent()) {
         return false;
     }
@@ -2719,7 +2832,8 @@ function sb_automations_run_all() {
     return $response;
 }
 
-function sb_automations_validate($automation, $is_flow = false) {
+function sb_automations_validate($automation, $is_flow = false)
+{
     $conditions = $is_flow ? $automation : sb_isset($automation, 'conditions', []);
     if (empty($conditions)) {
         return true;
@@ -2975,7 +3089,8 @@ function sb_automations_validate($automation, $is_flow = false) {
     return false;
 }
 
-function sb_automations_run($automation, $validate = false) {
+function sb_automations_run($automation, $validate = false)
+{
     $active_user = sb_get_active_user();
     $response = false;
     if ($validate) {
@@ -3023,7 +3138,8 @@ function sb_automations_run($automation, $validate = false) {
     return $response;
 }
 
-function sb_automations_is_sent($user_id, $automation, $repeat_id = false) {
+function sb_automations_is_sent($user_id, $automation, $repeat_id = false)
+{
     $history = sb_get_external_setting('automations-history', []);
     if ($user_id) {
         for ($x = 0, $length = count($history); $x < $length; $x++) {
@@ -3054,23 +3170,27 @@ function sb_automations_is_sent($user_id, $automation, $repeat_id = false) {
  *
  */
 
-function sb_cloud_increase_count() {
+function sb_cloud_increase_count()
+{
     require_once(SB_CLOUD_PATH . '/account/functions.php');
     cloud_increase_count();
 }
 
-function sb_cloud_membership_validation($die = false) {
+function sb_cloud_membership_validation($die = false)
+{
     require_once(SB_CLOUD_PATH . '/account/functions.php');
     $membership = membership_get_active();
     $expiration = DateTime::createFromFormat('d-m-y', $membership['expiration']);
     return !$membership || !isset($membership['count']) || intval($membership['count']) > intval($membership['quota']) || (isset($membership['count_agents']) && isset($membership['quota_agents']) && intval($membership['count_agents']) > intval($membership['quota_agents'])) || ($membership['price'] != 0 && (!$expiration || time() > $expiration->getTimestamp())) ? ($die || !sb_isset(account(), 'owner') ? die('account-suspended') : '<script>document.location = "' . CLOUD_URL . '/account"</script>') : '<script>var SB_CLOUD_FREE = ' . (empty($membership['id']) || $membership['id'] == 'free' ? 'true' : 'false') . '</script>';
 }
 
-function sb_cloud_account() {
+function sb_cloud_account()
+{
     return json_decode(sb_encryption(isset($_POST['cloud']) ? $_POST['cloud'] : sb_isset($_GET, 'cloud'), false), true);
 }
 
-function sb_cloud_account_id() {
+function sb_cloud_account_id()
+{
     global $ACTIVE_ACCOUNT;
     global $ACTIVE_ACCOUNT_ID;
     if ($ACTIVE_ACCOUNT_ID) {
@@ -3085,11 +3205,13 @@ function sb_cloud_account_id() {
     return $ACTIVE_ACCOUNT_ID;
 }
 
-function sb_cloud_ajax_function_forbidden($function_name) {
+function sb_cloud_ajax_function_forbidden($function_name)
+{
     return in_array($function_name, ['installation', 'upload-path', 'get-versions', 'update', 'app-activation', 'app-get-key', 'system-requirements', 'path']);
 }
 
-function sb_cloud_load() {
+function sb_cloud_load()
+{
     if (!defined('SB_DB_NAME')) {
         $data = !empty($_POST['cloud']) ? $_POST['cloud'] : (!empty($_GET['cloud']) ? $_GET['cloud'] : (empty($_COOKIE['sb-cloud']) ? false : $_COOKIE['sb-cloud']));
         if ($data) {
@@ -3107,7 +3229,8 @@ function sb_cloud_load() {
     return true;
 }
 
-function sb_cloud_load_by_url() {
+function sb_cloud_load_by_url()
+{
     if (sb_is_cloud()) {
         $token = isset($_GET['envato_purchase_code']) ? $_GET['envato_purchase_code'] : (isset($_GET['cloud']) ? $_GET['cloud'] : false);
         if ($token) {
@@ -3125,12 +3248,14 @@ function sb_cloud_load_by_url() {
     return false;
 }
 
-function sb_cloud_css_js() {
+function sb_cloud_css_js()
+{
     require_once(SB_CLOUD_PATH . '/account/functions.php');
     cloud_css_js();
 }
 
-function sb_cloud_set_agent($email, $action = 'add', $extra = false) {
+function sb_cloud_set_agent($email, $action = 'add', $extra = false)
+{
     if ($email) {
         require_once(SB_CLOUD_PATH . '/account/functions.php');
         $cloud = sb_cloud_account();
@@ -3148,7 +3273,8 @@ function sb_cloud_set_agent($email, $action = 'add', $extra = false) {
     return false;
 }
 
-function sb_cloud_set_login($token) {
+function sb_cloud_set_login($token)
+{
     require_once(SB_CLOUD_PATH . '/account/functions.php');
     $cloud_user = db_get('SELECT id AS `user_id`, first_name, last_name, email, password, token, customer_id FROM users WHERE token = "' . $token . '" LIMIT 1');
     if ($cloud_user) {
@@ -3159,11 +3285,13 @@ function sb_cloud_set_login($token) {
     return false;
 }
 
-function sb_is_cloud() {
+function sb_is_cloud()
+{
     return defined('SB_CLOUD');
 }
 
-function sb_cloud_membership_has_credits($source = false, $notification = true) {
+function sb_cloud_membership_has_credits($source = false, $notification = true)
+{
     if (sb_is_cloud() && (!$source || !sb_ai_is_manual_sync($source))) {
         require_once(SB_CLOUD_PATH . '/account/functions.php');
         $user_id = db_escape(account()['user_id'], true);
@@ -3183,14 +3311,16 @@ function sb_cloud_membership_has_credits($source = false, $notification = true) 
     return true;
 }
 
-function sb_cloud_membership_use_credits($spending_source, $source, $extra = false) {
+function sb_cloud_membership_use_credits($spending_source, $source, $extra = false)
+{
     if (sb_is_cloud() && !sb_ai_is_manual_sync($source)) {
         require_once(SB_CLOUD_PATH . '/account/functions.php');
         membership_use_credits($spending_source, $extra);
     }
 }
 
-function sb_cloud_reset_login() {
+function sb_cloud_reset_login()
+{
     die('<script>document.cookie="sb-login=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/";document.cookie="sb-cloud=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/";document.location="' . CLOUD_URL . '/account?login";</script>');
 }
 
