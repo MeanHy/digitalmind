@@ -995,6 +995,7 @@ footer .qodef-horizontal-form button {
   cursor: pointer;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  height: 40vh;
 }
 
 .report-card:hover {
