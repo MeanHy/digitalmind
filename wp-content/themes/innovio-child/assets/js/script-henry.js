@@ -67,6 +67,32 @@
         }, 300);
     }
 
+    function requestSecureDownload(reportId) {
+        if (!reportId) {
+            return;
+        }
+
+        $.ajax({
+            url: subscribeEmail.ajaxurl,
+            type: 'POST',
+            data: {
+                action: 'dm_get_secure_download_link',
+                nonce: subscribeEmail.download_nonce,
+                report_id: reportId
+            },
+            success: function (response) {
+                if (response.success && response.data.download_url) {
+                    window.location.href = response.data.download_url;
+                } else {
+                    showToast(response.data.message || 'Download failed', 'warning');
+                }
+            },
+            error: function () {
+                showToast(subscribeEmail.lang_key.server_error, 'warning');
+            }
+        });
+    }
+
     function triggerDownload(reportId) {
         if (!reportId && typeof subscribeEmail !== 'undefined') {
             reportId = subscribeEmail.current_report_id;
@@ -140,34 +166,8 @@
 
         let currentReportId = (typeof subscribeEmail !== 'undefined' && subscribeEmail.current_report_id) ? subscribeEmail.current_report_id : '';
 
-        function requestSecureDownload(reportId) {
-            if (!reportId) {
-                return;
-            }
-
-            $.ajax({
-                url: subscribeEmail.ajaxurl,
-                type: 'POST',
-                data: {
-                    action: 'dm_get_secure_download_link',
-                    nonce: subscribeEmail.download_nonce,
-                    report_id: reportId
-                },
-                success: function (response) {
-                    if (response.success && response.data.download_url) {
-                        window.location.href = response.data.download_url;
-                    } else {
-                        showToast(response.data.message || 'Download failed', 'warning');
-                    }
-                },
-                error: function () {
-                    showToast(subscribeEmail.lang_key.server_error, 'warning');
-                }
-            });
-        }
-
         if (window.location.pathname.includes('dang-ky-thanh-cong') || window.location.pathname.includes('thanks-you-for-subscribe')) {
-            const dmSource = getCookie('dm_source') || subscribeEmail.dm_source || 'download';
+            const dmSource = getCookie('dm_source') || subscribeEmail.dm_source || '';
             const $subtitle = $('.thankyou-subtitle');
             const $downloadBtn = $('.report-download-btn');
 
@@ -175,11 +175,9 @@
                 if ($subtitle.length) $subtitle.show();
                 if ($downloadBtn.length) $downloadBtn.hide();
                 requestSecureDownload(currentReportId);
-            } else if (dmSource === 'subscribe') {
+            } else {
                 if ($subtitle.length) $subtitle.hide();
                 if ($downloadBtn.length) $downloadBtn.show();
-            } else if (currentReportId) {
-                requestSecureDownload(currentReportId);
             }
 
             document.cookie = 'dm_source=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
@@ -312,7 +310,9 @@
             }
 
             if (typeof subscribeEmail !== 'undefined' && subscribeEmail.is_logged_in) {
-                triggerDownload(reportId);
+                const isEnglish = window.location.pathname.startsWith('/en/');
+                const thankYouPath = isEnglish ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
+                window.location.href = thankYouPath + '?report_id=' + reportId;
             } else {
                 showPopup();
             }
@@ -323,7 +323,6 @@
         if (event.data === 'social_login_success') {
             handleSocialLoginSuccess();
         } else if (event.data && event.data.type === 'linkedin_login_success' && event.data.redirect_url) {
-            // LinkedIn login with direct redirect URL from server
             setCookie('research_email_verified', 'true', 365);
             window.location.href = event.data.redirect_url;
         }

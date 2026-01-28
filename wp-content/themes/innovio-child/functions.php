@@ -31,12 +31,35 @@ function dm_redirect_thank_you_without_report_id()
         $user_key = 'user_' . get_current_user_id();
         set_transient('dm_report_id_' . $user_key, $report_id, 5 * MINUTE_IN_SECONDS);
 
+        $source = isset($_COOKIE['dm_source']) ? sanitize_text_field($_COOKIE['dm_source']) : 'download';
+        set_transient('dm_source_' . $user_key, $source, 5 * MINUTE_IN_SECONDS);
+
         $clean_url = $is_thank_you_en ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
         wp_redirect(site_url($clean_url), 302);
         exit;
     }
 }
 add_action('template_redirect', 'dm_redirect_thank_you_without_report_id');
+
+/**
+ * Get dm_source from transient or cookie
+ */
+function dm_get_source_from_transient()
+{
+    if (isset($_COOKIE['dm_source']) && !empty($_COOKIE['dm_source'])) {
+        return sanitize_text_field($_COOKIE['dm_source']);
+    }
+
+    if (is_user_logged_in()) {
+        $user_key = 'user_' . get_current_user_id();
+        $source = get_transient('dm_source_' . $user_key);
+        if ($source) {
+            return $source;
+        }
+    }
+
+    return '';
+}
 if (!function_exists('innovio_mikado_child_theme_enqueue_scripts')) {
     function innovio_mikado_child_theme_enqueue_scripts()
     {
@@ -69,7 +92,7 @@ if (!function_exists('innovio_mikado_child_theme_enqueue_scripts')) {
             'download_nonce' => wp_create_nonce('dm_download_nonce'),
             'current_report_id' => $current_report_id ? intval($current_report_id) : 0,
             'is_logged_in' => is_user_logged_in(),
-            'dm_source' => isset($_COOKIE['dm_source']) ? sanitize_text_field($_COOKIE['dm_source']) : '',
+            'dm_source' => dm_get_source_from_transient(),
             'lang_key' => array(
                 'confirm' => esc_html__('Confirm', 'innovio_child'),
                 'cancel' => esc_html__('Cancel', 'innovio_child'),
@@ -97,9 +120,14 @@ add_action('wp_footer', 'digitalmind_include_toast_notification');
 
 /**
  * Add "Đăng ký" menu item to main navigation
+ * Chỉ hiện khi user chưa đăng nhập
  */
 function digitalmind_add_subscribe_menu_item($items, $args)
 {
+    if (is_user_logged_in()) {
+        return $items;
+    }
+
     if ($args->theme_location == 'main-navigation') {
         $subscribe_text = esc_html__('Subscribe for newsletter', 'innovio_child');
 
@@ -157,7 +185,6 @@ function digitalmind_add_research_popup_form()
                 <p class="research-popup-desc">
                     <?php echo esc_html__('Please provide your information', 'innovio_child'); ?>
                 </p>
-                <!-- Custom Registration Form -->
                 <form id="dm-research-register-form" class="dm-register-form" method="post">
                     <div class="form-group">
                         <input type="text" name="user_name"
@@ -176,12 +203,10 @@ function digitalmind_add_research_popup_form()
                     </button>
                 </form>
 
-                <!-- Social Login Divider -->
                 <div class="research-popup-divider">
                     <span><?php echo esc_html__('or', 'innovio_child'); ?></span>
                 </div>
 
-                <!-- Social Icons -->
                 <?php
                 $popup_redirect_url = site_url('?social_login_mode=popup');
 
@@ -250,7 +275,6 @@ function dm_social_login_callback()
 
         setcookie('dm_social_login_post_id', '', time() - 3600, '/');
 
-        // Check source to handle Subscribe flow vs Download flow
         $source = isset($_COOKIE['dm_source']) ? sanitize_text_field($_COOKIE['dm_source']) : 'download';
         if ($source === 'subscribe') {
             $post_id = 0;
@@ -277,11 +301,9 @@ function dm_social_login_callback()
             <script>
                 if (window.opener && !window.opener.closed) {
                     try {
-                        // Redirect parent window directly
                         window.opener.location.href = '<?php echo esc_url($redirect_url); ?>';
                         window.close();
                     } catch (e) {
-                        // Fallback to message
                         window.opener.postMessage('social_login_success', '*');
                         window.close();
                     }
@@ -346,7 +368,6 @@ function dm_register_user()
     $current_post_id = isset($_POST['current_post_id']) ? intval($_POST['current_post_id']) : 0;
     $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
 
-    // Check source
     $source = isset($_COOKIE['dm_source']) ? sanitize_text_field($_COOKIE['dm_source']) : 'download';
     if ($source === 'subscribe') {
         $current_post_id = 0;
@@ -556,7 +577,6 @@ function dm_get_secure_download_link()
 {
     check_ajax_referer('dm_download_nonce', 'nonce');
 
-    // Chỉ cho phép user đã đăng nhập mới download được
     if (!is_user_logged_in()) {
         wp_send_json_error(['message' => __('Vui lòng đăng nhập để tải xuống', 'innovio_child')]);
     }
