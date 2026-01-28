@@ -302,7 +302,6 @@
             e.preventDefault();
             const targetBtn = btn || e.target;
             setCookie('dm_source', 'download', 1);
-            const isVerified = getCookie('research_email_verified') === 'true';
             const reportId = targetBtn.getAttribute('data-report-id');
 
             if (reportId) {
@@ -312,7 +311,7 @@
                 }
             }
 
-            if (isVerified) {
+            if (typeof subscribeEmail !== 'undefined' && subscribeEmail.is_logged_in) {
                 triggerDownload(reportId);
             } else {
                 showPopup();

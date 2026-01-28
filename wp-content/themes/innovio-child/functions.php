@@ -9,6 +9,7 @@ add_action('after_setup_theme', function () {
 
 /**
  * Redirect thank you pages - save report_id to transient and redirect to clean URL
+ * Chỉ cho phép truy cập trang cảm ơn khi user đã đăng nhập
  */
 function dm_redirect_thank_you_without_report_id()
 {
@@ -19,22 +20,19 @@ function dm_redirect_thank_you_without_report_id()
         return;
     }
 
+    if (!is_user_logged_in()) {
+        $redirect_url = $is_thank_you_en ? '/en/category/news/research/' : '/category/tin-tuc/research/';
+        wp_redirect(site_url($redirect_url), 302);
+        exit;
+    }
+
     if (isset($_GET['report_id']) && !empty($_GET['report_id'])) {
         $report_id = intval($_GET['report_id']);
-        $user_key = is_user_logged_in() ? 'user_' . get_current_user_id() : 'ip_' . md5($_SERVER['REMOTE_ADDR']);
+        $user_key = 'user_' . get_current_user_id();
         set_transient('dm_report_id_' . $user_key, $report_id, 5 * MINUTE_IN_SECONDS);
 
         $clean_url = $is_thank_you_en ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
         wp_redirect(site_url($clean_url), 302);
-        exit;
-    }
-
-    $user_key = is_user_logged_in() ? 'user_' . get_current_user_id() : 'ip_' . md5($_SERVER['REMOTE_ADDR']);
-    $saved_report_id = get_transient('dm_report_id_' . $user_key);
-
-    if (!$saved_report_id) {
-        $redirect_url = $is_thank_you_en ? '/en/category/news/research/' : '/category/tin-tuc/research/';
-        wp_redirect($redirect_url, 301);
         exit;
     }
 }
@@ -260,8 +258,6 @@ function dm_social_login_callback()
 
         $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
 
-        // Define paths
-        // $path_category = ($current_lang === 'en') ? '/en/category/news/research/' : '/category/tin-tuc/research/';
         $path_success = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
 
         $redirect_url = site_url($path_success);
@@ -322,8 +318,6 @@ function dm_register_user()
 
         $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
 
-        // Define paths
-        // $path_category = ($current_lang === 'en') ? '/en/category/news/research/' : '/category/tin-tuc/research/';
         $path_success = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
 
         $redirect_url = site_url($path_success);
@@ -358,15 +352,11 @@ function dm_register_user()
         $current_post_id = 0;
     }
 
-    // Define paths
-    $path_category = ($current_lang === 'en') ? '/en/category/news/research/' : '/category/tin-tuc/research/';
     $path_success = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
+    $redirect_url = site_url($path_success);
 
     if ($current_post_id) {
-        $redirect_url = site_url($path_success);
         $redirect_url = add_query_arg('report_id', $current_post_id, $redirect_url);
-    } else {
-        $redirect_url = site_url($path_category);
     }
 
     if ($existing_user_id) {
@@ -566,9 +556,9 @@ function dm_get_secure_download_link()
 {
     check_ajax_referer('dm_download_nonce', 'nonce');
 
-    $is_verified = isset($_COOKIE['research_email_verified']) && $_COOKIE['research_email_verified'] === 'true';
-    if (!$is_verified && !is_user_logged_in()) {
-        wp_send_json_error(['message' => __('Please register to download', 'innovio_child')]);
+    // Chỉ cho phép user đã đăng nhập mới download được
+    if (!is_user_logged_in()) {
+        wp_send_json_error(['message' => __('Vui lòng đăng nhập để tải xuống', 'innovio_child')]);
     }
 
     $report_id = intval($_POST['report_id'] ?? 0);
