@@ -739,6 +739,15 @@ footer .qodef-horizontal-form button {
   background: #0959a8;
 }
 
+.social-zalo {
+  background: linear-gradient(135deg, #0068ff 0%, #0052cc 100%);
+  color: #fff;
+}
+
+.social-zalo:hover {
+  background: linear-gradient(135deg, #0052cc 0%, #003d99 100%);
+}
+
 .subscribe-popup-overlay {
   display: none;
   position: fixed;

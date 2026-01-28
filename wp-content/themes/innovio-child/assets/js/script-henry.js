@@ -154,7 +154,6 @@
             });
         }
 
-        // Thank you page logic - differentiate based on source
         if (window.location.pathname.includes('dang-ky-thanh-cong') || window.location.pathname.includes('thanks-you-for-subscribe')) {
             const dmSource = getCookie('dm_source') || subscribeEmail.dm_source || 'download';
             const $subtitle = $('.thankyou-subtitle');
