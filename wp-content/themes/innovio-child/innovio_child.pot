@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Innovio Child\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-24 02:21+0000\n"
+"POT-Creation-Date: 2026-01-28 03:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -20,35 +20,57 @@ msgstr ""
 msgid "A child theme of Innovio Theme"
 msgstr ""
 
-#: functions.php:27
+#: functions.php:73
 msgid "Cancel"
 msgstr ""
 
-#: functions.php:26
+#: functions.php:72
 msgid "Confirm"
 msgstr ""
 
-#: functions.php:226
+#: functions.php:297
 msgid "Confirmed! Redirecting..."
 msgstr ""
 
-#: functions.php:86
+#: functions.php:80 functions.php:173
+msgid "Download"
+msgstr ""
+
+#: dm-download.php:45
+msgid "Download file not found"
+msgstr ""
+
+#: dm-download.php:25
+msgid ""
+"Download link has expired or already been used. Please request a new "
+"download link."
+msgstr ""
+
+#: functions.php:532
+msgid "Download not available"
+msgstr ""
+
+#: functions.php:134
 msgid "Download Now"
 msgstr ""
 
-#: functions.php:82
+#: functions.php:130
 msgid "Download Research Paper"
 msgstr ""
 
-#: functions.php:118
+#: functions.php:166
 msgid "Email Address"
 msgstr ""
 
-#: functions.php:114
+#: dm-download.php:18 dm-download.php:38 dm-download.php:45
+msgid "Error"
+msgstr ""
+
+#: functions.php:162
 msgid "Full Name"
 msgstr ""
 
-#: functions.php:83
+#: functions.php:131
 msgid "Get full access to this research document"
 msgstr ""
 
@@ -64,11 +86,23 @@ msgstr ""
 msgid "Innovio Child"
 msgstr ""
 
-#: functions.php:252
+#: dm-download.php:18
+msgid "Invalid download request"
+msgstr ""
+
+#: dm-download.php:38 functions.php:527
+msgid "Invalid report"
+msgstr ""
+
+#: dm-download.php:25
+msgid "Link Expired"
+msgstr ""
+
+#: functions.php:327
 msgid "Login successful! Redirecting..."
 msgstr ""
 
-#: functions.php:32
+#: functions.php:78
 msgid "Login successful! Reloading..."
 msgstr ""
 
@@ -76,54 +110,54 @@ msgstr ""
 msgid "Mikado Themes"
 msgstr ""
 
-#: functions.php:131
+#: functions.php:179
 msgid "or"
 msgstr ""
 
-#: functions.php:31
+#: functions.php:77
 msgid "Please fill in all fields!"
 msgstr ""
 
-#: functions.php:234
+#: functions.php:305
 msgid "Please fill in all fields."
 msgstr ""
 
-#: functions.php:108
-msgid "Please provide your information to access the document"
+#: functions.php:156
+msgid "Please provide your information"
 msgstr ""
 
-#: functions.php:28
+#: functions.php:522
+msgid "Please register to download"
+msgstr ""
+
+#: functions.php:74
 msgid "Processing..."
 msgstr ""
 
-#: functions.php:278
+#: functions.php:354
 msgid "Registration successful! Redirecting..."
 msgstr ""
 
-#: functions.php:29
+#: functions.php:75
 msgid "Server error. Please try again."
 msgstr ""
 
-#: functions.php:125
-msgid "Sign Up & Download"
+#: functions.php:79
+msgid "Subscribe"
 msgstr ""
 
-#: functions.php:105
-msgid "Sign up to download"
+#: functions.php:102 functions.php:153
+msgid "Subscribe for newsletter"
 msgstr ""
 
-#: functions.php:54
-msgid "SIGN UP TO RECEIVE THE REPORT"
-msgstr ""
-
-#: functions.php:30
+#: functions.php:76
 msgid "Thank you! Downloading document..."
 msgstr ""
 
-#: functions.php:351
+#: functions.php:486
 msgid "Unsubscribe"
 msgstr ""
 
-#: functions.php:354
+#: functions.php:489
 msgid "We are sorry to see you go. Please confirm your email to unsubscribe."
 msgstr ""

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Innovio Child\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-23 04:24+0000\n"
-"PO-Revision-Date: 2026-01-24 02:22+0000\n"
+"PO-Revision-Date: 2026-01-28 03:55+0000\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "Language: vi\n"
@@ -20,42 +20,71 @@ msgstr ""
 msgid "A child theme of Innovio Theme"
 msgstr "Một chủ đề con của Chủ đề Innovio"
 
-#: functions.php:27
+#: functions.php:73
 #, fuzzy
 msgid "Cancel"
 msgstr "Hủy bỏ"
 
-#: functions.php:26
+#: functions.php:72
 #, fuzzy
 msgid "Confirm"
 msgstr "Xác nhận"
 
-#: functions.php:226
+#: functions.php:297
 #, fuzzy
 msgid "Confirmed! Redirecting..."
 msgstr "Đã xác nhận!  Đang chuyển hướng..."
 
-#: functions.php:86
+#: functions.php:80 functions.php:173
+#, fuzzy
+msgid "Download"
+msgstr "Tải xuống"
+
+#: dm-download.php:45
+#, fuzzy
+msgid "Download file not found"
+msgstr "Không tìm thấy tập tin tải xuống"
+
+#: dm-download.php:25
+#, fuzzy
+msgid ""
+"Download link has expired or already been used. Please request a new "
+"download link."
+msgstr ""
+"Liên kết tải xuống đã hết hạn hoặc đã được sử dụng.  Vui lòng yêu cầu một "
+"liên kết tải xuống mới."
+
+#: functions.php:532
+#, fuzzy
+msgid "Download not available"
+msgstr "Tải xuống không có sẵn"
+
+#: functions.php:134
 #, fuzzy
 msgid "Download Now"
 msgstr "Tải xuống ngay"
 
-#: functions.php:82
+#: functions.php:130
 #, fuzzy
 msgid "Download Research Paper"
 msgstr "Tải tài liệu nghiên cứu"
 
-#: functions.php:118
+#: functions.php:166
 #, fuzzy
 msgid "Email Address"
 msgstr "Địa chỉ email"
 
-#: functions.php:114
+#: dm-download.php:18 dm-download.php:38 dm-download.php:45
+#, fuzzy
+msgid "Error"
+msgstr "Lỗi"
+
+#: functions.php:162
 #, fuzzy
 msgid "Full Name"
 msgstr "Tên đầy đủ"
 
-#: functions.php:83
+#: functions.php:131
 #, fuzzy
 msgid "Get full access to this research document"
 msgstr "Có toàn quyền truy cập vào tài liệu nghiên cứu này"
@@ -74,12 +103,27 @@ msgstr "https://innovio.qodeinteractive.com"
 msgid "Innovio Child"
 msgstr "Innovio Child"
 
-#: functions.php:252
+#: dm-download.php:18
+#, fuzzy
+msgid "Invalid download request"
+msgstr "Yêu cầu tải xuống không hợp lệ"
+
+#: dm-download.php:38 functions.php:527
+#, fuzzy
+msgid "Invalid report"
+msgstr "Báo cáo không hợp lệ"
+
+#: dm-download.php:25
+#, fuzzy
+msgid "Link Expired"
+msgstr "Liên kết đã hết hạn"
+
+#: functions.php:327
 #, fuzzy
 msgid "Login successful! Redirecting..."
 msgstr "Đăng nhập thành công!  Đang chuyển hướng..."
 
-#: functions.php:32
+#: functions.php:78
 #, fuzzy
 msgid "Login successful! Reloading..."
 msgstr "Đăng nhập thành công!  Đang tải lại..."
@@ -88,65 +132,65 @@ msgstr "Đăng nhập thành công!  Đang tải lại..."
 msgid "Mikado Themes"
 msgstr "Mikado Themes"
 
-#: functions.php:131
+#: functions.php:179
 msgid "or"
 msgstr "hoặc"
 
-#: functions.php:31
+#: functions.php:77
 #, fuzzy
 msgid "Please fill in all fields!"
 msgstr "Vui lòng điền vào tất cả các trường!"
 
-#: functions.php:234
+#: functions.php:305
 #, fuzzy
 msgid "Please fill in all fields."
 msgstr "Vui lòng điền vào tất cả các trường."
 
-#: functions.php:108
+#: functions.php:156
 #, fuzzy
-msgid "Please provide your information to access the document"
-msgstr "Vui lòng cung cấp thông tin của bạn để truy cập tài liệu"
+msgid "Please provide your information"
+msgstr "Vui lòng cung cấp thông tin của bạn"
 
-#: functions.php:28
+#: functions.php:522
+#, fuzzy
+msgid "Please register to download"
+msgstr "Hãy đăng ký để tải về"
+
+#: functions.php:74
 #, fuzzy
 msgid "Processing..."
 msgstr "Xử lý..."
 
-#: functions.php:278
+#: functions.php:354
 #, fuzzy
 msgid "Registration successful! Redirecting..."
 msgstr "Đăng ký thành công!  Đang chuyển hướng..."
 
-#: functions.php:29
+#: functions.php:75
 #, fuzzy
 msgid "Server error. Please try again."
 msgstr "Lỗi máy chủ.  Vui lòng thử lại."
 
-#: functions.php:125
+#: functions.php:79
+msgid "Subscribe"
+msgstr "Đăng ký"
+
+#: functions.php:102 functions.php:153
 #, fuzzy
-msgid "Sign Up & Download"
-msgstr "Đăng ký và tải xuống"
+msgid "Subscribe for newsletter"
+msgstr "Đăng ký nhận bản tin"
 
-#: functions.php:105
-msgid "Sign up to download"
-msgstr "Đăng ký thông tin để tải xuống"
-
-#: functions.php:54
-msgid "SIGN UP TO RECEIVE THE REPORT"
-msgstr "ĐĂNG KÝ NHẬN BÁO CÁO"
-
-#: functions.php:30
+#: functions.php:76
 #, fuzzy
 msgid "Thank you! Downloading document..."
 msgstr "Cảm ơn!  Đang tải tài liệu..."
 
-#: functions.php:351
-#, fuzzy
+#: functions.php:486
 #| msgid "Subscribe"
 msgid "Unsubscribe"
-msgstr "Đăng ký "
+msgstr "Hủy đăng ký "
 
-#: functions.php:354
+#: functions.php:489
 #, fuzzy
 msgid "We are sorry to see you go. Please confirm your email to unsubscribe."
 msgstr ""
