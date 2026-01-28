@@ -250,14 +250,13 @@ function dm_social_login_callback()
         $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
 
         // Define paths
-        $path_category = ($current_lang === 'en') ? '/en/category/news/research/' : '/category/tin-tuc/research/';
+        // $path_category = ($current_lang === 'en') ? '/en/category/news/research/' : '/category/tin-tuc/research/';
         $path_success = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
 
+        $redirect_url = site_url($path_success);
+
         if ($post_id) {
-            $redirect_url = site_url($path_success);
             $redirect_url = add_query_arg('report_id', $post_id, $redirect_url);
-        } else {
-            $redirect_url = site_url($path_category);
         }
         ?>
         <!DOCTYPE html>
@@ -313,14 +312,13 @@ function dm_register_user()
         $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
 
         // Define paths
-        $path_category = ($current_lang === 'en') ? '/en/category/news/research/' : '/category/tin-tuc/research/';
+        // $path_category = ($current_lang === 'en') ? '/en/category/news/research/' : '/category/tin-tuc/research/';
         $path_success = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
 
+        $redirect_url = site_url($path_success);
+
         if ($current_post_id) {
-            $redirect_url = site_url($path_success);
             $redirect_url = add_query_arg('report_id', $current_post_id, $redirect_url);
-        } else {
-            $redirect_url = site_url($path_category);
         }
 
         wp_send_json_success(['message' => esc_html__('Confirmed! Redirecting...', 'innovio_child'), 'redirect_url' => $redirect_url, 'brevo_sync' => $brevo_sync, 'crm_sync' => $crm_sync]);

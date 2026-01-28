@@ -81,20 +81,13 @@
         const source = getCookie('dm_source') || 'download';
 
         const isEnglish = window.location.pathname.startsWith('/en/');
-        const pathCategory = isEnglish ? '/en/category/news/research/' : '/category/tin-tuc/research/';
+        // const pathCategory = isEnglish ? '/en/category/news/research/' : '/category/tin-tuc/research/';
         const pathSuccess = isEnglish ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
 
-        let redirectUrl = pathCategory; // Default to category
+        let redirectUrl = pathSuccess; // Always redirect to success page
 
-        if (source === 'subscribe') {
-            redirectUrl = pathCategory;
-        } else {
-            // Download flow
-            if (savedPostId) {
-                redirectUrl = pathSuccess + '?report_id=' + savedPostId;
-            } else {
-                redirectUrl = pathCategory;
-            }
+        if (savedPostId) {
+            redirectUrl = pathSuccess + '?report_id=' + savedPostId;
         }
 
         setTimeout(function () {

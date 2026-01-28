@@ -171,18 +171,18 @@ class DM_LinkedIn_OAuth
         $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
 
         // Define paths
-        $path_category = ($current_lang === 'en') ? '/en/category/news/research/' : '/category/tin-tuc/research/';
+        // $path_category = ($current_lang === 'en') ? '/en/category/news/research/' : '/category/tin-tuc/research/';
         $path_success = ($current_lang === 'en') ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
 
         // Logic:
-        // 1. If post_id exists -> Download flow -> Success page
-        // 2. If no post_id -> Subscribe flow -> Category page
+        // Always redirect to Success Page
+        // 1. If post_id exists -> Download flow -> Success page with report_id
+        // 2. If no post_id -> Subscribe flow -> Success page without report_id
+
+        $redirect_url = site_url($path_success);
 
         if ($post_id) {
-            $redirect_url = site_url($path_success);
             $redirect_url = add_query_arg('report_id', $post_id, $redirect_url);
-        } else {
-            $redirect_url = site_url($path_category);
         }
 
         // Output success page that closes popup
