@@ -52,6 +52,10 @@ if (!function_exists('innovio_mikado_child_theme_enqueue_scripts')) {
         $report_link = '';
         $current_report_id = 0;
 
+        if (is_singular('post')) {
+            $current_report_id = get_the_ID();
+        }
+
         if (is_page('dang-ky-thanh-cong') || is_page('thanks-you-for-subscribe')) {
             $user_key = is_user_logged_in() ? 'user_' . get_current_user_id() : 'ip_' . md5($_SERVER['REMOTE_ADDR']);
             $current_report_id = get_transient('dm_report_id_' . $user_key);
@@ -129,7 +133,7 @@ function digitalmind_add_research_download_form($content)
         <div class="research-download-box">
             <h3 class="research-download-title">' . esc_html__('Download Research Paper', 'innovio_child') . '</h3>
             <p class="research-download-desc">' . esc_html__('Get full access to this research document', 'innovio_child') . '</p>
-            <button type="button" class="btn-download-research" id="btnDownloadResearch">
+            <button type="button" class="btn-download-research" id="btnDownloadResearch" data-report-id="' . get_the_ID() . '">
                 <span class="download-icon">⬇</span>
                 ' . esc_html__('Download Now', 'innovio_child') . '
             </button>

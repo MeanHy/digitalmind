@@ -67,8 +67,16 @@
         }, 300);
     }
 
-    function triggerDownload() {
-        showPopup();
+    function triggerDownload(reportId) {
+        if (!reportId && typeof subscribeEmail !== 'undefined') {
+            reportId = subscribeEmail.current_report_id;
+        }
+
+        if (reportId) {
+            requestSecureDownload(reportId);
+        } else {
+            showPopup();
+        }
     }
 
     function handleSocialLoginSuccess() {
@@ -177,19 +185,7 @@
             document.cookie = 'dm_source=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         }
 
-        // $(document).on('click', '.report-download-btn', function (e) {
-        //     e.preventDefault();
-        //     const isLoggedIn = (typeof subscribeEmail !== 'undefined' && subscribeEmail.is_logged_in)
-        //         || getCookie('research_email_verified') === 'true';
 
-        //     if (!isLoggedIn) {
-        //         showPopup();
-        //         return;
-        //     }
-
-        //     const btnReportId = $(this).data('report-id') || currentReportId;
-        //     requestSecureDownload(btnReportId);
-        // });
 
         if (isSocialLoginSuccess && typeof socialLoginData !== 'undefined' && socialLoginData.isLoggedIn && socialLoginData.userEmail) {
             const cleanUrl = window.location.origin + window.location.pathname;
@@ -301,13 +297,23 @@
     });
 
     document.addEventListener('click', function (e) {
-        if (e.target && (e.target.id === 'btnDownloadResearch' || e.target.closest('#btnDownloadResearch'))) {
+        const btn = e.target.closest('#btnDownloadResearch');
+        if (e.target && (e.target.id === 'btnDownloadResearch' || btn)) {
             e.preventDefault();
+            const targetBtn = btn || e.target;
             setCookie('dm_source', 'download', 1);
             const isVerified = getCookie('research_email_verified') === 'true';
+            const reportId = targetBtn.getAttribute('data-report-id');
+
+            if (reportId) {
+                const $formInput = $('input[name="current_post_id"]');
+                if ($formInput.length) {
+                    $formInput.val(reportId);
+                }
+            }
 
             if (isVerified) {
-                triggerDownload();
+                triggerDownload(reportId);
             } else {
                 showPopup();
             }
@@ -335,8 +341,9 @@
         setCookie('research_email_verified', 'true', 365);
         hidePopup();
         showToast(subscribeEmail.lang_key.thank_you_downloading, 'success');
+        const reportId = $('input[name="current_post_id"]').val();
         setTimeout(function () {
-            triggerDownload();
+            triggerDownload(reportId);
         }, 1000);
     });
 
