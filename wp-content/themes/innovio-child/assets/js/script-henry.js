@@ -269,9 +269,12 @@
                 }
             }
 
-            setTimeout(function () {
-                showPopup();
-            }, 500);
+            // Chỉ hiện researchPopup nếu KHÔNG có thankyou flow (không có cookies thankyou)
+            if (!showThankYou && !autoDownloadUrl && !isFromMail) {
+                setTimeout(function () {
+                    showPopup();
+                }, 500);
+            }
         }
 
         let currentReportId = (typeof subscribeEmail !== 'undefined' && subscribeEmail.current_report_id) ? subscribeEmail.current_report_id : '';
