@@ -90,6 +90,7 @@ if (!function_exists('innovio_mikado_child_theme_enqueue_scripts')) {
         $social_login_data = array(
             'ajaxurl' => admin_url('admin-ajax.php'),
             'download_nonce' => wp_create_nonce('dm_download_nonce'),
+            'register_nonce' => wp_create_nonce('dm_register_action'),
             'unsub_nonce' => wp_create_nonce('dm_unsub_nonce'),
             'current_report_id' => $current_report_id ? intval($current_report_id) : 0,
             'is_logged_in' => is_user_logged_in(),
@@ -134,7 +135,7 @@ function digitalmind_add_subscribe_menu_item($items, $args)
     }
 
     if ($args->theme_location == 'main-navigation') {
-        $subscribe_text = esc_html__('Subscribe for newsletter', 'innovio_child');
+        $subscribe_text = esc_html__('Business Partnership', 'innovio_child');
 
         $subscribe_item = '<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-subscribe narrow">
             <a href="#research-popup" target="_self" class="subscribe-btn">
@@ -375,7 +376,6 @@ function dm_register_user()
     wp_set_current_user($user_id);
     wp_set_auth_cookie($user_id);
 
-    // Kiểm tra nếu từ email flow -> tạo download URL trực tiếp
     $download_url = '';
     if (isset($_COOKIE['dm_from_email_download']) && !empty($_COOKIE['dm_from_email_download'])) {
         $report_id = intval($_COOKIE['dm_from_email_download']);
@@ -588,35 +588,51 @@ function digitalmind_add_unsubscribe_popup()
                     <div class="dm-radio-group">
                         <label class="dm-radio-option">
                             <input type="radio" name="unsub_reason" value="too_many_morning_brew">
-                            <span><?php echo esc_html__('I was getting too many newsletters from Morning Brew brands', 'innovio_child'); ?></span>
+                            <span>
+                                <?php echo esc_html__('I was getting too many newsletters from Morning Brew brands', 'innovio_child'); ?>
+                            </span>
                         </label>
                         <label class="dm-radio-option">
                             <input type="radio" name="unsub_reason" value="too_many_general">
-                            <span><?php echo esc_html__('I get too many newsletters in general', 'innovio_child'); ?></span>
+                            <span>
+                                <?php echo esc_html__('I get too many newsletters in general', 'innovio_child'); ?>
+                            </span>
                         </label>
                         <label class="dm-radio-option">
                             <input type="radio" name="unsub_reason" value="not_useful">
-                            <span><?php echo esc_html__('I did not find the content useful', 'innovio_child'); ?></span>
+                            <span>
+                                <?php echo esc_html__('I did not find the content useful', 'innovio_child'); ?>
+                            </span>
                         </label>
                         <label class="dm-radio-option">
                             <input type="radio" name="unsub_reason" value="not_expected">
-                            <span><?php echo esc_html__('The content is not what I expected it to be when I signed up', 'innovio_child'); ?></span>
+                            <span>
+                                <?php echo esc_html__('The content is not what I expected it to be when I signed up', 'innovio_child'); ?>
+                            </span>
                         </label>
                         <label class="dm-radio-option">
                             <input type="radio" name="unsub_reason" value="biased">
-                            <span><?php echo esc_html__('I found the content to be too politically biased', 'innovio_child'); ?></span>
+                            <span>
+                                <?php echo esc_html__('I found the content to be too politically biased', 'innovio_child'); ?>
+                            </span>
                         </label>
                         <label class="dm-radio-option">
                             <input type="radio" name="unsub_reason" value="switched_email">
-                            <span><?php echo esc_html__('I switched my subscription email', 'innovio_child'); ?></span>
+                            <span>
+                                <?php echo esc_html__('I switched my subscription email', 'innovio_child'); ?>
+                            </span>
                         </label>
                         <label class="dm-radio-option">
                             <input type="radio" name="unsub_reason" value="podcast">
-                            <span><?php echo esc_html__('I am now listening to the podcast instead', 'innovio_child'); ?></span>
+                            <span>
+                                <?php echo esc_html__('I am now listening to the podcast instead', 'innovio_child'); ?>
+                            </span>
                         </label>
                         <label class="dm-radio-option">
                             <input type="radio" name="unsub_reason" value="Other">
-                            <span><?php echo esc_html__('Other', 'innovio_child'); ?></span>
+                            <span>
+                                <?php echo esc_html__('Other', 'innovio_child'); ?>
+                            </span>
                         </label>
                     </div>
 

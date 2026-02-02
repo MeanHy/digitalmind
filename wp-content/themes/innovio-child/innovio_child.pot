@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Innovio Child\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-02 05:02+0000\n"
+"POT-Creation-Date: 2026-02-02 08:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,27 +16,83 @@ msgstr ""
 "X-Loco-Version: 2.6.11; wp-6.9\n"
 "X-Domain: innovio_child"
 
+#: includes/newsletter-popup.php:348
+msgid "100 – 300"
+msgstr ""
+
+#: includes/newsletter-popup.php:378
+msgid "100% privacy guaranteed. No spam."
+msgstr ""
+
+#: includes/consultation-popup.php:265
+msgid "200 million – 500 million VND"
+msgstr ""
+
+#: includes/consultation-popup.php:262
+msgid "50 million – 200 million VND"
+msgstr ""
+
+#: includes/newsletter-popup.php:340
+msgid "50 – 100"
+msgstr ""
+
+#: includes/consultation-popup.php:268
+msgid "500 million – 1 billion VND"
+msgstr ""
+
 #. Description of the theme
 msgid "A child theme of Innovio Theme"
 msgstr ""
 
-#: includes/popup-templates.php:202
+#: includes/newsletter-popup.php:146
+msgid "Agency / Partner"
+msgstr ""
+
+#: includes/popup-templates.php:121
 msgid "Analysis"
 msgstr ""
 
-#: includes/popup-templates.php:246
+#: includes/consultation-popup.php:295
+msgid "As soon as possible (ASAP)"
+msgstr ""
+
+#: includes/newsletter-popup.php:44
+msgid "Basic"
+msgstr ""
+
+#: includes/newsletter-popup.php:143
+msgid "Brand / Client"
+msgstr ""
+
+#: includes/popup-templates.php:165
 msgid "Brand identity & spatial experience"
 msgstr ""
 
-#: includes/popup-templates.php:243
+#: includes/popup-templates.php:162
 msgid "Brand positioning"
 msgstr ""
 
-#: includes/popup-templates.php:239
+#: includes/popup-templates.php:158
 msgid "Brand Strategy"
 msgstr ""
 
-#: includes/popup-templates.php:314
+#: includes/consultation-popup.php:232
+msgid "Branding & Brand Identity"
+msgstr ""
+
+#: includes/consultation-popup.php:59
+msgid "Business Email"
+msgstr ""
+
+#: includes/newsletter-popup.php:62
+msgid "Business email"
+msgstr ""
+
+#: functions.php:138
+msgid "Business Partnership"
+msgstr ""
+
+#: includes/popup-templates.php:233
 msgid ""
 "By downloading this professional resource, you agree to join Digital Mind’s "
 "business network. We are committed to protecting your information and will "
@@ -44,39 +100,67 @@ msgid ""
 "may unsubscribe at any time.)"
 msgstr ""
 
-#: includes/popup-templates.php:293
+#: includes/newsletter-popup.php:98
+msgid "C-level / Founder (Strategic insights)"
+msgstr ""
+
+#: includes/popup-templates.php:212
 msgid "Campaign Management"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:100
 msgid "Cancel"
 msgstr ""
 
-#: functions.php:98
+#: includes/consultation-popup.php:103
+msgid "Company / Brand Name"
+msgstr ""
+
+#: includes/newsletter-popup.php:325
+msgid "Company size (number of employees)"
+msgstr ""
+
+#: includes/newsletter-popup.php:135
+msgid "Company type"
+msgstr ""
+
+#: functions.php:99
 msgid "Confirm"
 msgstr ""
 
-#: functions.php:303
+#: functions.php:304
 msgid "Confirmed! Redirecting..."
 msgstr ""
 
-#: includes/popup-templates.php:275
+#: includes/consultation-popup.php:199
+msgid "Content Marketing & Creative Production"
+msgstr ""
+
+#: includes/newsletter-popup.php:207
+msgid "Content preferences"
+msgstr ""
+
+#: includes/newsletter-popup.php:263 includes/popup-templates.php:194
 msgid "Creative & Content"
 msgstr ""
 
-#: includes/popup-templates.php:261
+#: includes/newsletter-popup.php:246
+msgid "Data & Analytics"
+msgstr ""
+
+#: includes/popup-templates.php:180
 msgid "Digital & social planning"
 msgstr ""
 
-#: includes/popup-templates.php:257
+#: includes/popup-templates.php:176
 msgid "Digital Marketing & Media"
 msgstr ""
 
-#: functions.php:106 includes/popup-templates.php:41
+#: functions.php:107
 msgid "Download"
 msgstr ""
 
-#: functions.php:110
+#: functions.php:111
 msgid "Download complete!"
 msgstr ""
 
@@ -90,35 +174,51 @@ msgid ""
 "download link."
 msgstr ""
 
-#: functions.php:677
+#: functions.php:693
 msgid "Download not available"
 msgstr ""
 
-#: functions.php:169
+#: functions.php:170
 msgid "Download Now"
 msgstr ""
 
-#: functions.php:165
+#: functions.php:166
 msgid "Download Research Paper"
 msgstr ""
 
-#: includes/popup-templates.php:34
-msgid "Email Address"
+#: includes/newsletter-popup.php:181
+msgid "Education"
+msgstr ""
+
+#: includes/newsletter-popup.php:54
+msgid "Enter your full name"
 msgstr ""
 
 #: dm-download.php:15 dm-download.php:30 dm-download.php:35
 msgid "Error"
 msgstr ""
 
-#: includes/popup-templates.php:211
+#: includes/popup-templates.php:130
 msgid "Execution"
 msgstr ""
 
-#: includes/popup-templates.php:30
+#: includes/newsletter-popup.php:178
+msgid "FMCG / Retail"
+msgstr ""
+
+#: includes/newsletter-popup.php:317
+msgid "For high-intent leads – helps us better understand your business scale."
+msgstr ""
+
+#: includes/consultation-popup.php:48
 msgid "Full Name"
 msgstr ""
 
-#: functions.php:166
+#: includes/newsletter-popup.php:51
+msgid "Full name"
+msgstr ""
+
+#: functions.php:167
 msgid "Get full access to this research document"
 msgstr ""
 
@@ -130,71 +230,95 @@ msgstr ""
 msgid "https://innovio.qodeinteractive.com"
 msgstr ""
 
-#: includes/popup-templates.php:194
+#: includes/popup-templates.php:113
 msgid "Hệ thống thương mại"
 msgstr ""
 
-#: functions.php:632
+#: functions.php:648
 msgid "Hủy"
 msgstr ""
 
-#: functions.php:615
+#: functions.php:628
 msgid "I am now listening to the podcast instead"
 msgstr ""
 
-#: functions.php:599
+#: functions.php:604
 msgid "I did not find the content useful"
 msgstr ""
 
-#: functions.php:607
+#: functions.php:616
 msgid "I found the content to be too politically biased"
 msgstr ""
 
-#: functions.php:595
+#: functions.php:598
 msgid "I get too many newsletters in general"
 msgstr ""
 
-#: functions.php:611
+#: functions.php:622
 msgid "I switched my subscription email"
 msgstr ""
 
-#: functions.php:591
+#: functions.php:592
 msgid "I was getting too many newsletters from Morning Brew brands"
+msgstr ""
+
+#: includes/newsletter-popup.php:42
+msgid "Identification information"
+msgstr ""
+
+#: includes/newsletter-popup.php:78
+msgid "Important"
+msgstr ""
+
+#: includes/newsletter-popup.php:167
+msgid "Industry"
 msgstr ""
 
 #. Name of the theme
 msgid "Innovio Child"
 msgstr ""
 
-#: includes/popup-templates.php:205
+#: includes/popup-templates.php:124
 msgid "Insight"
 msgstr ""
 
-#: includes/popup-templates.php:249
+#: includes/popup-templates.php:168
 msgid "Integrated annual planning"
+msgstr ""
+
+#: includes/consultation-popup.php:148
+msgid "Integrated Strategy Consulting"
 msgstr ""
 
 #: dm-download.php:15
 msgid "Invalid download request"
 msgstr ""
 
-#: dm-download.php:30 functions.php:672
+#: dm-download.php:30 functions.php:688
 msgid "Invalid report"
 msgstr ""
 
-#: includes/popup-templates.php:279
+#: includes/newsletter-popup.php:90
+msgid "Job function"
+msgstr ""
+
+#: includes/consultation-popup.php:321
+msgid "Just exploring / researching options"
+msgstr ""
+
+#: includes/popup-templates.php:198
 msgid "Key visuals & POSM"
 msgstr ""
 
-#: includes/popup-templates.php:267
+#: includes/popup-templates.php:186
 msgid "KOL / Influencer management"
 msgstr ""
 
-#: includes/popup-templates.php:192
+#: includes/popup-templates.php:111
 msgid "Kết nối hệ thống số &"
 msgstr ""
 
-#: includes/popup-templates.php:312
+#: includes/popup-templates.php:231
 msgid "Legal Note:"
 msgstr ""
 
@@ -202,19 +326,27 @@ msgstr ""
 msgid "Link Expired"
 msgstr ""
 
-#: functions.php:346
+#: functions.php:347
 msgid "Login successful! Redirecting..."
 msgstr ""
 
-#: functions.php:104
+#: functions.php:105
 msgid "Login successful! Reloading..."
 msgstr ""
 
-#: includes/popup-templates.php:297
+#: includes/popup-templates.php:216
 msgid "Marketing campaign execution"
 msgstr ""
 
-#: includes/popup-templates.php:264
+#: includes/newsletter-popup.php:104
+msgid "Marketing Manager / Director (Team & budget management)"
+msgstr ""
+
+#: includes/newsletter-popup.php:25
+msgid "Marketing Reports & Trends"
+msgstr ""
+
+#: includes/popup-templates.php:183
 msgid "Media booking management"
 msgstr ""
 
@@ -222,125 +354,334 @@ msgstr ""
 msgid "Mikado Themes"
 msgstr ""
 
-#: includes/popup-templates.php:218
+#: includes/popup-templates.php:137
 msgid "My services"
 msgstr ""
 
-#: includes/popup-templates.php:47
-msgid "or"
+#: includes/consultation-popup.php:312
+msgid "Next quarter"
 msgstr ""
 
-#: functions.php:619
+#: includes/newsletter-popup.php:311
+msgid "Open-ended questions"
+msgstr ""
+
+#: includes/newsletter-popup.php:313
+msgid "Optional"
+msgstr ""
+
+#: functions.php:634 includes/newsletter-popup.php:187
 msgid "Other"
 msgstr ""
 
-#: functions.php:103
+#: includes/consultation-popup.php:271
+msgid "Over 1 billion VND"
+msgstr ""
+
+#: includes/newsletter-popup.php:356
+msgid "Over 300"
+msgstr ""
+
+#: includes/consultation-popup.php:244
+msgid "Part 3: Budget & Timeline"
+msgstr ""
+
+#: includes/consultation-popup.php:182
+msgid "Performance Marketing (Paid Advertising)"
+msgstr ""
+
+#: includes/consultation-popup.php:72
+msgid "Phone Number / Zalo"
+msgstr ""
+
+#: includes/consultation-popup.php:63
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: includes/newsletter-popup.php:67
+msgid "Please enter your business email."
+msgstr ""
+
+#: includes/consultation-popup.php:52 includes/newsletter-popup.php:56
+msgid "Please enter your full name."
+msgstr ""
+
+#: includes/consultation-popup.php:88
+msgid "Please enter your job title."
+msgstr ""
+
+#: includes/consultation-popup.php:77
+msgid "Please enter your phone number."
+msgstr ""
+
+#: functions.php:104
 msgid "Please fill in all fields!"
 msgstr ""
 
-#: functions.php:311
+#: functions.php:312
 msgid "Please fill in all fields."
 msgstr ""
 
-#: functions.php:667
+#: functions.php:683
 msgid "Please login to download"
 msgstr ""
 
-#: includes/popup-templates.php:25
-msgid "Please provide your information"
+#: includes/newsletter-popup.php:161
+msgid "Please select a company type."
 msgstr ""
 
-#: functions.php:626
+#: includes/newsletter-popup.php:199
+msgid "Please select an industry."
+msgstr ""
+
+#: includes/newsletter-popup.php:304
+msgid "Please select at least one topic."
+msgstr ""
+
+#: includes/newsletter-popup.php:128
+msgid "Please select your job function."
+msgstr ""
+
+#: includes/consultation-popup.php:29
+msgid ""
+"Please share your business goals and challenges. Our expert team will review "
+"your information and respond with a preliminary solution within 24 business "
+"hours."
+msgstr ""
+
+#: functions.php:642
 msgid "Please specify..."
 msgstr ""
 
-#: functions.php:100
+#: functions.php:101
 msgid "Processing..."
 msgstr ""
 
-#: includes/popup-templates.php:303
+#: includes/popup-templates.php:222
 msgid "Product launch planning"
 msgstr ""
 
-#: includes/popup-templates.php:169
+#: includes/newsletter-popup.php:76
+msgid "Professional information"
+msgstr ""
+
+#: includes/newsletter-popup.php:149
+msgid "Publisher / Media"
+msgstr ""
+
+#: includes/popup-templates.php:89
 msgid "Read More"
+msgstr ""
+
+#: includes/newsletter-popup.php:175
+msgid "Real Estate"
+msgstr ""
+
+#: includes/consultation-popup.php:25
+msgid "Register for Digital Marketing Strategy Consultation"
 msgstr ""
 
 #: functions.php:386
 msgid "Registration successful! Redirecting..."
 msgstr ""
 
-#: includes/popup-templates.php:300
+#: includes/consultation-popup.php:40
+msgid "Required"
+msgstr ""
+
+#: includes/popup-templates.php:219
 msgid "Sales kits & websites"
 msgstr ""
 
-#: functions.php:107 includes/popup-templates.php:110
+#: includes/consultation-popup.php:38
+msgid "Section 1: Contact Information"
+msgstr ""
+
+#: includes/consultation-popup.php:96
+msgid "Section 2: Business Information & Project Details"
+msgstr ""
+
+#: includes/consultation-popup.php:332
+msgid "Section 4: Understanding Your Needs (Insight)"
+msgstr ""
+
+#: includes/newsletter-popup.php:140
+msgid "Select company type"
+msgstr ""
+
+#: includes/newsletter-popup.php:172
+msgid "Select industry"
+msgstr ""
+
+#: includes/newsletter-popup.php:210
+msgid ""
+"Select up to 3 topics you are most interested in so we can personalize the "
+"content for you."
+msgstr ""
+
+#: includes/consultation-popup.php:256
+msgid "Select your estimated budget"
+msgstr ""
+
+#: includes/newsletter-popup.php:95
+msgid "Select your role"
+msgstr ""
+
+#: functions.php:108 includes/popup-templates.php:31
 msgid "Sent successfully"
 msgstr ""
 
-#: functions.php:101
-msgid "Server error. Please try again."
+#: includes/consultation-popup.php:215
+msgid "SEO (Search Engine Optimization)"
 msgstr ""
 
-#: includes/popup-templates.php:285
-msgid "Social media design"
-msgstr ""
-
-#: includes/popup-templates.php:208
-msgid "Strategy"
-msgstr ""
-
-#: functions.php:105
-msgid "Subscribe"
-msgstr ""
-
-#: functions.php:137 includes/popup-templates.php:22
-msgid "Subscribe for newsletter"
-msgstr ""
-
-#: includes/popup-templates.php:107
-msgid "Thank you for your interest"
+#: includes/newsletter-popup.php:297
+msgid "SEO / SEM"
 msgstr ""
 
 #: functions.php:102
+msgid "Server error. Please try again."
+msgstr ""
+
+#: includes/newsletter-popup.php:280
+msgid "Social Media"
+msgstr ""
+
+#: includes/consultation-popup.php:165
+msgid "Social Media & Community Management"
+msgstr ""
+
+#: includes/popup-templates.php:204
+msgid "Social media design"
+msgstr ""
+
+#: includes/newsletter-popup.php:110
+msgid "Specialist / Executive (Technical execution)"
+msgstr ""
+
+#: includes/popup-templates.php:127
+msgid "Strategy"
+msgstr ""
+
+#: includes/newsletter-popup.php:229
+msgid "Strategy & Planning"
+msgstr ""
+
+#: includes/newsletter-popup.php:116
+msgid "Student / Freelancer"
+msgstr ""
+
+#: includes/consultation-popup.php:348
+msgid "Submit & Get Free Consultation"
+msgstr ""
+
+#: functions.php:106
+msgid "Subscribe"
+msgstr ""
+
+#: includes/newsletter-popup.php:366
+msgid "Subscribe to receive reports"
+msgstr ""
+
+#: includes/newsletter-popup.php:184
+msgid "Technology / SaaS"
+msgstr ""
+
+#: includes/popup-templates.php:28
+msgid "Thank you for your interest"
+msgstr ""
+
+#: functions.php:103
 msgid "Thank you! Downloading document..."
 msgstr ""
 
-#: functions.php:603
+#: functions.php:610
 msgid "The content is not what I expected it to be when I signed up"
 msgstr ""
 
-#: functions.php:109
+#: functions.php:110
 msgid "The report has been downloaded successfully."
 msgstr ""
 
-#: functions.php:108 includes/popup-templates.php:113
+#: functions.php:109 includes/popup-templates.php:34
 msgid "The report is being downloaded."
+msgstr ""
+
+#: includes/newsletter-popup.php:82
+msgid ""
+"This information helps us segment and deliver the most relevant resources."
+msgstr ""
+
+#: includes/newsletter-popup.php:29
+msgid ""
+"To help us deliver the most relevant insights for your role and industry, "
+"please complete the expert profile below."
+msgstr ""
+
+#: includes/newsletter-popup.php:332
+msgid "Under 50"
+msgstr ""
+
+#: includes/consultation-popup.php:259
+msgid "Under 50 million VND"
 msgstr ""
 
 #: functions.php:579
 msgid "Unsubscribe"
 msgstr ""
 
-#: includes/popup-templates.php:282
+#: includes/popup-templates.php:201
 msgid "Viral videos & TVCs"
 msgstr ""
 
-#: includes/popup-templates.php:189
+#: includes/popup-templates.php:108
 msgid "VỀ DIGITAL MIND"
 msgstr ""
 
-#: includes/popup-templates.php:198
+#: includes/popup-templates.php:117
 msgid ""
 "We believe that transparent data is the key to making informed, growth-"
 "driven decisions. Digital Mind provides a scalable platform built on your "
 "organization’s existing investments."
 msgstr ""
 
+#: includes/consultation-popup.php:111
+msgid "Website or Primary Fanpage Link"
+msgstr ""
+
 #: functions.php:582
 msgid "We’re sorry to see you go. Could you tell us why you decided to leave?"
 msgstr ""
 
-#: includes/popup-templates.php:119
+#: includes/consultation-popup.php:338
+msgid "What is the biggest challenge your business is currently facing?"
+msgstr ""
+
+#: includes/consultation-popup.php:251
+msgid "What is your budget?"
+msgstr ""
+
+#: includes/consultation-popup.php:288
+msgid "When would you like to start?"
+msgstr ""
+
+#: includes/consultation-popup.php:132
+msgid "Which services are you interested in? (Multiple selections allowed)"
+msgstr ""
+
+#: includes/consultation-popup.php:303
+msgid "Within the next month"
+msgstr ""
+
+#: includes/popup-templates.php:39
 msgid "You might also like"
+msgstr ""
+
+#: includes/consultation-popup.php:363
+msgid ""
+"Your information is kept confidential in accordance with our privacy policy."
+msgstr ""
+
+#: includes/consultation-popup.php:84
+msgid "Your Job Title"
 msgstr ""

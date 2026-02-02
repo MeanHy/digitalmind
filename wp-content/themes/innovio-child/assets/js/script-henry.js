@@ -49,22 +49,26 @@
     window.dmShowToast = showToast;
     window.dmSetCookieValue = setCookie;
 
-    function showPopup() {
-        const popup = document.getElementById('researchPopup');
-        if (!popup) return;
-        popup.classList.add('show');
+    function showNewsletterPopup() {
+        var $newsletterPopup = $('#newsletterPopup');
+        var reportId = $('#newsletterForm').data('report-id');
+        if (reportId) {
+            $('#newsletterForm').data('report-id', reportId);
+        }
+        $newsletterPopup.addClass('show');
         setTimeout(function () {
-            popup.classList.add('visible');
+            $newsletterPopup.addClass('visible');
         }, 10);
+        $('body').css('overflow', 'hidden');
     }
 
-    function hidePopup() {
-        const popup = document.getElementById('researchPopup');
-        if (!popup) return;
-        popup.classList.remove('visible');
+    function hideNewsletterPopup() {
+        var $newsletterPopup = $('#newsletterPopup');
+        $newsletterPopup.removeClass('visible');
         setTimeout(function () {
-            popup.classList.remove('show');
+            $newsletterPopup.removeClass('show');
         }, 300);
+        $('body').css('overflow', '');
     }
 
     function requestSecureDownload(reportId) {
@@ -103,6 +107,14 @@
         }, 10);
     }
 
+    function hideConsultationPopup() {
+        $consultPopup.removeClass('visible');
+        setTimeout(function () {
+            $consultPopup.removeClass('show');
+        }, 300);
+        $('body').css('overflow', '');
+    }
+
     var downloadCompleteTriggered = false;
     function updateDownloadComplete() {
         if (downloadCompleteTriggered) return;
@@ -135,18 +147,6 @@
             }, 300);
         }
     });
-
-    function triggerDownload(reportId) {
-        if (!reportId && typeof subscribeEmail !== 'undefined') {
-            reportId = subscribeEmail.current_report_id;
-        }
-
-        if (reportId) {
-            requestSecureDownload(reportId);
-        } else {
-            showPopup();
-        }
-    }
 
     function handleSocialLoginSuccess() {
         setCookie('research_email_verified', 'true', 365);
@@ -199,16 +199,14 @@
         const fromEmailDownloadReportId = getCookie('dm_from_email_download');
         const showThankYou = getCookie('dm_show_thankyou') === 'true';
         const autoDownloadUrl = getCookie('dm_auto_download_url');
-        const isFromMail = getCookie('utm_source') === 'mail'; // Chỉ hiện popup khi từ mail
+        const isFromMail = getCookie('utm_source') === 'mail';
 
-        // Kiểm tra nếu đang ở trang thank-you -> không hiện popup
         const isThankYouPage = window.location.pathname.includes('thank-you') ||
             window.location.pathname.includes('cam-on') ||
             window.location.pathname.includes('thankyou') ||
             window.location.pathname.includes('dang-ky-thanh-cong') ||
             window.location.pathname.includes('thanks-you-for-subscribe');
 
-        // Chỉ hiện popup cảm ơn khi: từ mail + có cookies + KHÔNG ở trang thank-you
         if (autoDownloadUrl && showThankYou && isFromMail && !isThankYouPage) {
             document.cookie = 'dm_auto_download_url=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
             document.cookie = 'dm_show_thankyou=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
@@ -218,17 +216,14 @@
                 showThankYouPopup();
             }, 300);
 
-            // Trigger download trong iframe ẩn (để không rời trang)
             setTimeout(function () {
                 var iframe = document.createElement('iframe');
                 iframe.style.display = 'none';
 
-                // Khi iframe load xong (redirect hoàn tất) -> đổi text
                 iframe.onload = function () {
                     updateDownloadComplete();
                 };
 
-                // Fallback: nếu onload không trigger (do cross-origin), đợi 2 giây
                 setTimeout(function () {
                     updateDownloadComplete();
                 }, 2000);
@@ -237,14 +232,12 @@
                 document.body.appendChild(iframe);
             }, 500);
         } else if (showThankYou && isFromMail && !isThankYouPage) {
-            // Chỉ hiện popup (không có auto download) - từ mail + NOT on thank you page
             document.cookie = 'dm_show_thankyou=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
             document.cookie = 'utm_source=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
             setTimeout(function () {
                 showThankYouPopup();
             }, 500);
         } else if (showThankYou || autoDownloadUrl) {
-            // Nếu KHÔNG từ mail hoặc ở trang thank you -> xóa cookie, không hiện popup
             document.cookie = 'dm_show_thankyou=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
             document.cookie = 'dm_auto_download_url=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
             document.cookie = 'utm_source=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
@@ -255,13 +248,10 @@
         if (isFromEmail) {
             document.cookie = 'dm_from_email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 
-            // Nếu có report_id từ email, đánh dấu form để download trực tiếp
             if (fromEmailDownloadReportId) {
                 var $form = $('#dm-research-register-form');
                 if ($form.length) {
-                    // Đánh dấu form này là từ email - sẽ download trực tiếp
                     $form.attr('data-from-email-download', fromEmailDownloadReportId);
-                    // Cập nhật report_id vào form
                     var $postIdInput = $form.find('input[name="current_post_id"]');
                     if ($postIdInput.length) {
                         $postIdInput.val(fromEmailDownloadReportId);
@@ -269,7 +259,6 @@
                 }
             }
 
-            // Chỉ hiện researchPopup nếu KHÔNG có thankyou flow (không có cookies thankyou)
             if (!showThankYou && !autoDownloadUrl && !isFromMail) {
                 setTimeout(function () {
                     showPopup();
@@ -332,20 +321,14 @@
                             if ($nameInput.val()) setCookie('dm_user_name', $nameInput.val(), 365);
                             if ($emailInput.val()) setCookie('dm_user_email', $emailInput.val(), 365);
 
-                            // Nếu từ email link và có download_url từ server -> download trực tiếp
                             if (fromEmailDownloadId && response.data.download_url) {
-                                // Xóa cookie download
                                 document.cookie = 'dm_from_email_download=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-
-                                // Đóng popup
                                 hidePopup();
 
-                                // Trigger download - redirect về page với cookie thankyou
                                 setTimeout(function () {
                                     window.location.href = response.data.download_url;
                                 }, 500);
                             } else {
-                                // Flow bình thường - redirect đến trang thank you
                                 hidePopup();
                                 setTimeout(function () {
                                     if (response.data.redirect_url) {
@@ -369,15 +352,10 @@
         $(document).on('click', '.menu-item-subscribe > a, a[href="#research-popup"]', function (e) {
             e.preventDefault();
             setCookie('dm_source', 'subscribe', 1);
-            const popup = document.getElementById('researchPopup');
+            const popup = document.getElementById('consultationPopup');
             if (popup) {
                 popup.classList.add('show');
                 setTimeout(function () { popup.classList.add('visible'); }, 10);
-            }
-
-            var $btn = $('#dm-research-register-form .dm-submit-btn');
-            if ($btn.length && typeof subscribeEmail !== 'undefined') {
-                $btn.text(subscribeEmail.lang_key.subscribe);
             }
             $('body').css('overflow', 'hidden');
         });
@@ -433,10 +411,7 @@
             const reportId = targetBtn.getAttribute('data-report-id');
 
             if (reportId) {
-                const $formInput = $('input[name="current_post_id"]');
-                if ($formInput.length) {
-                    $formInput.val(reportId);
-                }
+                $('#newsletterForm').data('report-id', reportId);
             }
 
             if (typeof subscribeEmail !== 'undefined' && subscribeEmail.is_logged_in) {
@@ -444,7 +419,7 @@
                 const thankYouPath = isEnglish ? '/en/thanks-you-for-subscribe/' : '/dang-ky-thanh-cong/';
                 window.location.href = thankYouPath + '?report_id=' + reportId;
             } else {
-                showPopup();
+                showNewsletterPopup();
             }
         }
     });
@@ -528,6 +503,297 @@
                     $btn.prop('disabled', false).text(originalText);
                 }
             });
+        });
+
+    });
+
+    // ========================================
+    // CONSULTATION POPUP HANDLERS
+    // ========================================
+    $(document).ready(function () {
+        var $consultPopup = $('#consultationPopup');
+        var $consultForm = $('#consultationForm');
+
+        $('#consultationPopupClose').on('click', function () {
+            hideConsultationPopup();
+        });
+
+        $consultPopup.on('click', function (e) {
+            if (e.target === this) {
+                hideConsultationPopup();
+            }
+        });
+
+        $(document).on('keyup', function (e) {
+            if (e.key === 'Escape' && $consultPopup.hasClass('show')) {
+                hideConsultationPopup();
+            }
+        });
+
+        $consultForm.on('submit', function (e) {
+            e.preventDefault();
+            var isValid = true;
+            var errorMessages = [];
+            var $requiredFields = $consultForm.find('input[required]');
+
+            $consultForm.find('.consultation-error').addClass('hidden');
+            $consultForm.find('.consultation-input').removeClass('error');
+
+            $requiredFields.each(function () {
+                var $field = $(this);
+                var value = $field.val().trim();
+                var fieldName = $field.attr('name');
+                var $error = $('#error-' + $field.attr('id'));
+
+                if (!value) {
+                    isValid = false;
+                    $field.addClass('error');
+                    $error.removeClass('hidden');
+                }
+
+                if (fieldName === 'email' && value) {
+                    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(value)) {
+                        isValid = false;
+                        $field.addClass('error');
+                        $error.removeClass('hidden');
+                        errorMessages.push('Email không hợp lệ. Vui lòng nhập đúng định dạng email.');
+                    }
+                }
+
+                if (fieldName === 'phone' && value) {
+                    var phoneRegex = /^(0|\+84)(\d{9,10})$/;
+                    var cleanPhone = value.replace(/[\s\-\.]/g, '');
+                    if (!phoneRegex.test(cleanPhone)) {
+                        isValid = false;
+                        $field.addClass('error');
+                        $error.removeClass('hidden');
+                        errorMessages.push('Số điện thoại không hợp lệ. Vui lòng nhập số điện thoại Việt Nam.');
+                    }
+                }
+            });
+
+            if (!isValid) {
+                if (errorMessages.length > 0) {
+                    showToast(errorMessages[0], 'warning');
+                } else {
+                    showToast('Vui lòng điền đầy đủ thông tin bắt buộc.', 'warning');
+                }
+                return false;
+            }
+
+            var $submitBtn = $consultForm.find('.consultation-submit-btn');
+            var originalText = $submitBtn.find('span').text();
+            $submitBtn.prop('disabled', true);
+            $submitBtn.find('span').text(subscribeEmail.lang_key.processing || 'Processing...');
+
+            var ajaxData = {
+                action: 'dm_register_user',
+                dm_register_nonce: subscribeEmail.register_nonce,
+                user_name: $('#fullname').val(),
+                user_email: $('#consultation_email').val(),
+                current_post_id: subscribeEmail.current_report_id || 0
+            };
+
+            $consultForm.serializeArray().forEach(function (field) {
+                if (field.name !== 'fullname' && field.name !== 'email' && field.name !== 'dm_consultation_nonce') {
+                    ajaxData[field.name] = field.value;
+                }
+            });
+
+            $.ajax({
+                type: 'POST',
+                url: subscribeEmail.ajaxurl,
+                data: ajaxData,
+                success: function (response) {
+                    if (response.success) {
+                        showToast(subscribeEmail.lang_key.sent_successfully || 'Sent successfully!', 'success');
+                        hideConsultationPopup();
+                        $consultForm[0].reset();
+                        if (response.data && response.data.redirect_url) {
+                            window.location.href = response.data.redirect_url;
+                        } else {
+                            window.location.reload();
+                        }
+                    } else {
+                        showToast(response.data.message || 'Error occurred.', 'error');
+                        $submitBtn.prop('disabled', false);
+                        $submitBtn.find('span').text(originalText);
+                    }
+                },
+                error: function () {
+                    showToast('Connection error. Please try again.', 'error');
+                    $submitBtn.prop('disabled', false);
+                    $submitBtn.find('span').text(originalText);
+                }
+            });
+        });
+
+        $consultForm.on('input', 'input[required]', function () {
+            var $field = $(this);
+            var $error = $('#error-' + $field.attr('id'));
+            $field.removeClass('error');
+            $error.addClass('hidden');
+        });
+
+    });
+
+    // ========================================
+    // NEWSLETTER POPUP HANDLERS
+    // ========================================
+    $(document).ready(function () {
+        var $newsletterPopup = $('#newsletterPopup');
+        var $newsletterForm = $('#newsletterForm');
+
+        $(document).on('click', '#subscribeNewsLetter', function (e) {
+            e.preventDefault();
+            $('#newsletterForm').removeData('report-id');
+            showNewsletterPopup();
+        });
+
+        $('#newsletterPopupClose').on('click', hideNewsletterPopup);
+
+        $newsletterPopup.on('click', function (e) {
+            if (e.target === this) hideNewsletterPopup();
+        });
+
+        $(document).on('keyup', function (e) {
+            if (e.key === 'Escape' && $newsletterPopup.hasClass('show')) {
+                hideNewsletterPopup();
+            }
+        });
+
+        $newsletterForm.on('submit', function (e) {
+            e.preventDefault();
+            var isValid = true;
+            var errorMessages = [];
+
+            $newsletterForm.find('.newsletter-error').addClass('hidden');
+            $newsletterForm.find('.newsletter-input, .newsletter-select').removeClass('error');
+
+            var isDownloadFlow = $newsletterForm.data('report-id') && $newsletterForm.data('report-id') > 0;
+
+            if (isDownloadFlow) {
+                var $nameField = $('#nl_fullname');
+                var $emailField = $('#nl_email');
+
+                if (!$nameField.val() || $nameField.val().trim() === '') {
+                    isValid = false;
+                    $nameField.addClass('error');
+                    $('#error-nl_fullname').removeClass('hidden');
+                }
+
+                var emailVal = $emailField.val() ? $emailField.val().trim() : '';
+                if (!emailVal || emailVal === '') {
+                    isValid = false;
+                    $emailField.addClass('error');
+                    $('#error-nl_email').removeClass('hidden');
+                } else {
+                    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(emailVal)) {
+                        isValid = false;
+                        $emailField.addClass('error');
+                        $('#error-nl_email').removeClass('hidden');
+                        errorMessages.push('Email không hợp lệ.');
+                    }
+                }
+            } else {
+                // Full validation for newsletter subscription
+                $newsletterForm.find('input[required], select[required]').each(function () {
+                    var $field = $(this);
+                    var value = $field.val();
+                    if (!value || value.trim() === '') {
+                        isValid = false;
+                        $field.addClass('error');
+                        $('#error-' + $field.attr('id')).removeClass('hidden');
+                    }
+                });
+
+                var $emailField = $('#nl_email');
+                var emailVal = $emailField.val() ? $emailField.val().trim() : '';
+                if (emailVal) {
+                    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(emailVal)) {
+                        isValid = false;
+                        $emailField.addClass('error');
+                        $('#error-nl_email').removeClass('hidden');
+                        errorMessages.push('Email không hợp lệ.');
+                    }
+                }
+
+                var checkedInterests = $newsletterForm.find('input[name="interests[]"]:checked').length;
+                if (checkedInterests === 0) {
+                    isValid = false;
+                    $('#error-interests').removeClass('hidden');
+                } else {
+                    $('#error-interests').addClass('hidden');
+                }
+            }
+
+            if (!isValid) {
+                if (errorMessages.length > 0) {
+                    showToast(errorMessages[0], 'warning');
+                } else {
+                    showToast('Vui lòng kiểm tra lại thông tin.', 'warning');
+                }
+                return false;
+            }
+
+            var $submitBtn = $newsletterForm.find('.newsletter-submit-btn');
+            var originalText = $submitBtn.find('span').text();
+
+            $submitBtn.prop('disabled', true);
+            $submitBtn.find('span').text('Đang xử lý...');
+
+            var ajaxData = {
+                action: 'dm_register_user',
+                dm_register_nonce: subscribeEmail.register_nonce,
+                user_name: $('#nl_fullname').val(),
+                user_email: $('#nl_email').val(),
+                current_post_id: $newsletterForm.data('report-id') || 0
+            };
+
+            $newsletterForm.serializeArray().forEach(function (field) {
+                if (field.name !== 'fullname' && field.name !== 'email' && field.name !== 'dm_newsletter_nonce') {
+                    ajaxData[field.name] = field.value;
+                }
+            });
+
+            $.ajax({
+                type: 'POST',
+                url: subscribeEmail.ajaxurl,
+                data: ajaxData,
+                success: function (response) {
+                    if (response.success) {
+                        showToast('Đăng ký nhận báo cáo thành công!', 'success');
+                        hideNewsletterPopup();
+                        $newsletterForm[0].reset();
+                        if (response.data && response.data.redirect_url) {
+                            window.location.href = response.data.redirect_url;
+                        } else {
+                            window.location.reload();
+                        }
+                    } else {
+                        showToast(response.data.message || 'Error occurred.', 'error');
+                        $submitBtn.prop('disabled', false);
+                        $submitBtn.find('span').text(originalText);
+                    }
+                },
+                error: function () {
+                    showToast('Connection error. Please try again.', 'error');
+                    $submitBtn.prop('disabled', false);
+                    $submitBtn.find('span').text(originalText);
+                }
+            });
+        });
+
+        $newsletterForm.on('input change', 'input, select', function () {
+            $(this).removeClass('error');
+            $('#error-' + $(this).attr('id')).addClass('hidden');
+
+            if ($(this).attr('name') === 'interests[]') {
+                $('#error-interests').addClass('hidden');
+            }
         });
 
     });
