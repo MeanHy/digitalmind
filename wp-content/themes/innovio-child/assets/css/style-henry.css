@@ -72,6 +72,8 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
 }
 
 /* Force full-width cho page dang-ky-thanh-cong */
+.page-id-5006 .mkdf-container-inner,
+.page-id-5658 .mkdf-container-inner,
 .page-id-6931 .mkdf-container-inner,
 .page-id-6906 .mkdf-container-inner {
   width: 100% !important;
