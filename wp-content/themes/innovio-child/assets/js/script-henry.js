@@ -93,6 +93,49 @@
         });
     }
 
+    function showThankYouPopup() {
+        var $popup = $('#thankYouPopup');
+        if (!$popup.length) return;
+
+        $popup.addClass('show');
+        setTimeout(function () {
+            $popup.addClass('visible');
+        }, 10);
+    }
+
+    var downloadCompleteTriggered = false;
+    function updateDownloadComplete() {
+        if (downloadCompleteTriggered) return;
+        downloadCompleteTriggered = true;
+
+        var $title = $('#thankYouTitle');
+        var $desc = $('#thankYouDesc');
+
+        if ($title.length) $title.text(subscribeEmail.lang_key.download_complete_title);
+        if ($desc.length) $desc.text(subscribeEmail.lang_key.download_complete);
+
+        setTimeout(function () {
+            var $popup = $('#thankYouPopup');
+            $popup.removeClass('visible');
+            setTimeout(function () {
+                $popup.removeClass('show');
+                if ($title.length) $title.text(subscribeEmail.lang_key.sent_successfully);
+                if ($desc.length) $desc.text(subscribeEmail.lang_key.report_downloading);
+                downloadCompleteTriggered = false;
+            }, 300);
+        }, 100000);
+    }
+
+    $(document).on('click', '#thankYouPopupClose, .thankyou-popup-overlay', function (e) {
+        if (e.target === this || this.id === 'thankYouPopupClose') {
+            var $popup = $('#thankYouPopup');
+            $popup.removeClass('visible');
+            setTimeout(function () {
+                $popup.removeClass('show');
+            }, 300);
+        }
+    });
+
     function triggerDownload(reportId) {
         if (!reportId && typeof subscribeEmail !== 'undefined') {
             reportId = subscribeEmail.current_report_id;
@@ -153,11 +196,78 @@
         const urlParams = new URLSearchParams(window.location.search);
         const isSocialLoginSuccess = urlParams.get('social_login') === 'success';
         const isFromEmail = getCookie('dm_from_email') === 'true';
+        const fromEmailDownloadReportId = getCookie('dm_from_email_download');
+        const showThankYou = getCookie('dm_show_thankyou') === 'true';
+        const autoDownloadUrl = getCookie('dm_auto_download_url');
+        const isFromMail = getCookie('utm_source') === 'mail'; // Chỉ hiện popup khi từ mail
+
+        // Kiểm tra nếu đang ở trang thank-you -> không hiện popup
+        const isThankYouPage = window.location.pathname.includes('thank-you') ||
+            window.location.pathname.includes('cam-on') ||
+            window.location.pathname.includes('thankyou') ||
+            window.location.pathname.includes('dang-ky-thanh-cong') ||
+            window.location.pathname.includes('thanks-you-for-subscribe');
+
+        // Chỉ hiện popup cảm ơn khi: từ mail + có cookies + KHÔNG ở trang thank-you
+        if (autoDownloadUrl && showThankYou && isFromMail && !isThankYouPage) {
+            document.cookie = 'dm_auto_download_url=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            document.cookie = 'dm_show_thankyou=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            document.cookie = 'utm_source=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
+            setTimeout(function () {
+                showThankYouPopup();
+            }, 300);
+
+            // Trigger download trong iframe ẩn (để không rời trang)
+            setTimeout(function () {
+                var iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+
+                // Khi iframe load xong (redirect hoàn tất) -> đổi text
+                iframe.onload = function () {
+                    updateDownloadComplete();
+                };
+
+                // Fallback: nếu onload không trigger (do cross-origin), đợi 2 giây
+                setTimeout(function () {
+                    updateDownloadComplete();
+                }, 2000);
+
+                iframe.src = decodeURIComponent(autoDownloadUrl);
+                document.body.appendChild(iframe);
+            }, 500);
+        } else if (showThankYou && isFromMail && !isThankYouPage) {
+            // Chỉ hiện popup (không có auto download) - từ mail + NOT on thank you page
+            document.cookie = 'dm_show_thankyou=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            document.cookie = 'utm_source=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            setTimeout(function () {
+                showThankYouPopup();
+            }, 500);
+        } else if (showThankYou || autoDownloadUrl) {
+            // Nếu KHÔNG từ mail hoặc ở trang thank you -> xóa cookie, không hiện popup
+            document.cookie = 'dm_show_thankyou=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            document.cookie = 'dm_auto_download_url=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            document.cookie = 'utm_source=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        }
 
         checkAndPrefillForm();
 
         if (isFromEmail) {
             document.cookie = 'dm_from_email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
+            // Nếu có report_id từ email, đánh dấu form để download trực tiếp
+            if (fromEmailDownloadReportId) {
+                var $form = $('#dm-research-register-form');
+                if ($form.length) {
+                    // Đánh dấu form này là từ email - sẽ download trực tiếp
+                    $form.attr('data-from-email-download', fromEmailDownloadReportId);
+                    // Cập nhật report_id vào form
+                    var $postIdInput = $form.find('input[name="current_post_id"]');
+                    if ($postIdInput.length) {
+                        $postIdInput.val(fromEmailDownloadReportId);
+                    }
+                }
+            }
 
             setTimeout(function () {
                 showPopup();
@@ -203,6 +313,7 @@
             $form.on('submit', function (e) {
                 e.preventDefault();
                 var originalBtnText = $btn.text();
+                var fromEmailDownloadId = $form.attr('data-from-email-download');
 
                 $btn.prop('disabled', true).text(subscribeEmail.lang_key.processing);
 
@@ -218,11 +329,27 @@
                             if ($nameInput.val()) setCookie('dm_user_name', $nameInput.val(), 365);
                             if ($emailInput.val()) setCookie('dm_user_email', $emailInput.val(), 365);
 
-                            setTimeout(function () {
-                                if (response.data.redirect_url) {
-                                    window.location.href = response.data.redirect_url;
-                                }
-                            }, 1000);
+                            // Nếu từ email link và có download_url từ server -> download trực tiếp
+                            if (fromEmailDownloadId && response.data.download_url) {
+                                // Xóa cookie download
+                                document.cookie = 'dm_from_email_download=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
+                                // Đóng popup
+                                hidePopup();
+
+                                // Trigger download - redirect về page với cookie thankyou
+                                setTimeout(function () {
+                                    window.location.href = response.data.download_url;
+                                }, 500);
+                            } else {
+                                // Flow bình thường - redirect đến trang thank you
+                                hidePopup();
+                                setTimeout(function () {
+                                    if (response.data.redirect_url) {
+                                        window.location.href = response.data.redirect_url;
+                                    }
+                                }, 500);
+                            }
                         } else {
                             showToast(response.data.message, 'warning');
                             $btn.prop('disabled', false).text(originalBtnText);
@@ -335,18 +462,71 @@
         }
     });
 
-    document.addEventListener('wpcf7mailsent', function (event) {
-        setCookie('research_email_verified', 'true', 365);
-        hidePopup();
-        showToast(subscribeEmail.lang_key.thank_you_downloading, 'success');
-        const reportId = $('input[name="current_post_id"]').val();
-        setTimeout(function () {
-            triggerDownload(reportId);
-        }, 1000);
-    });
+    $(document).ready(function () {
+        var $unsubPopup = $('#unsubscribePopup');
 
-    document.addEventListener('wpcf7invalid', function (event) {
-        showToast(subscribeEmail.lang_key.fill_all_fields, 'warning');
+        if ($unsubPopup.length) {
+            $('#unsubscribePopupClose, .unsubscribe-popup-overlay').on('click', function (e) {
+                if (e.target === this || this.id === 'unsubscribePopupClose') {
+                    $unsubPopup.removeClass('active');
+                }
+            });
+
+            $unsubPopup.on('change', 'input[name="unsub_reason"]', function () {
+                var $otherInput = $unsubPopup.find('.dm-other-reason-input');
+                if ($(this).val() === 'Other') {
+                    $otherInput.fadeIn();
+                } else {
+                    $otherInput.fadeOut();
+                }
+            });
+        }
+
+        const isFromUnsubscribe = getCookie('dm_from_email_unsubscribe');
+        if (isFromUnsubscribe) {
+            $unsubPopup.addClass('active');
+
+            const emailCookie = getCookie('dm_user_email_unsubscribe');
+            if (emailCookie) {
+                $('#dm_unsub_email').val(decodeURIComponent(emailCookie));
+            }
+        }
+
+        $('#dm_unsub_form').on('submit', function (e) {
+            e.preventDefault();
+            var $form = $(this);
+            var $btn = $form.find('button[type="submit"]');
+            var originalText = $btn.text();
+
+            $btn.prop('disabled', true).text('Processing...');
+
+            var formData = $form.serialize();
+            formData += '&action=dm_unsubscribe';
+            formData += '&nonce=' + $('#dm_unsub_nonce_field').val();
+
+            $.ajax({
+                url: subscribeEmail.ajaxurl,
+                type: 'POST',
+                data: formData,
+                success: function (response) {
+                    if (response.success) {
+                        showToast(response.message, 'success');
+                        setTimeout(function () {
+                            $('#unsubscribePopup').removeClass('active');
+                            location.reload(); // Optional
+                        }, 2000);
+                    } else {
+                        showToast(response.message, 'warning');
+                        $btn.prop('disabled', false).text(originalText);
+                    }
+                },
+                error: function () {
+                    showToast(subscribeEmail.lang_key.server_error, 'warning');
+                    $btn.prop('disabled', false).text(originalText);
+                }
+            });
+        });
+
     });
 
 })(jQuery);

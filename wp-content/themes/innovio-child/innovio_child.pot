@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Innovio Child\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-28 03:54+0000\n"
+"POT-Creation-Date: 2026-02-02 05:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -20,57 +20,105 @@ msgstr ""
 msgid "A child theme of Innovio Theme"
 msgstr ""
 
-#: functions.php:73
+#: includes/popup-templates.php:202
+msgid "Analysis"
+msgstr ""
+
+#: includes/popup-templates.php:246
+msgid "Brand identity & spatial experience"
+msgstr ""
+
+#: includes/popup-templates.php:243
+msgid "Brand positioning"
+msgstr ""
+
+#: includes/popup-templates.php:239
+msgid "Brand Strategy"
+msgstr ""
+
+#: includes/popup-templates.php:314
+msgid ""
+"By downloading this professional resource, you agree to join Digital Mind’s "
+"business network. We are committed to protecting your information and will "
+"use it solely to share relevant market updates, trends, and solutions. (You "
+"may unsubscribe at any time.)"
+msgstr ""
+
+#: includes/popup-templates.php:293
+msgid "Campaign Management"
+msgstr ""
+
+#: functions.php:99
 msgid "Cancel"
 msgstr ""
 
-#: functions.php:72
+#: functions.php:98
 msgid "Confirm"
 msgstr ""
 
-#: functions.php:297
+#: functions.php:303
 msgid "Confirmed! Redirecting..."
 msgstr ""
 
-#: functions.php:80 functions.php:173
+#: includes/popup-templates.php:275
+msgid "Creative & Content"
+msgstr ""
+
+#: includes/popup-templates.php:261
+msgid "Digital & social planning"
+msgstr ""
+
+#: includes/popup-templates.php:257
+msgid "Digital Marketing & Media"
+msgstr ""
+
+#: functions.php:106 includes/popup-templates.php:41
 msgid "Download"
 msgstr ""
 
-#: dm-download.php:45
+#: functions.php:110
+msgid "Download complete!"
+msgstr ""
+
+#: dm-download.php:35
 msgid "Download file not found"
 msgstr ""
 
-#: dm-download.php:25
+#: dm-download.php:20
 msgid ""
 "Download link has expired or already been used. Please request a new "
 "download link."
 msgstr ""
 
-#: functions.php:532
+#: functions.php:677
 msgid "Download not available"
 msgstr ""
 
-#: functions.php:134
+#: functions.php:169
 msgid "Download Now"
 msgstr ""
 
-#: functions.php:130
+#: functions.php:165
 msgid "Download Research Paper"
 msgstr ""
 
-#: functions.php:166
+#: includes/popup-templates.php:34
 msgid "Email Address"
 msgstr ""
 
-#: dm-download.php:18 dm-download.php:38 dm-download.php:45
+#: dm-download.php:15 dm-download.php:30 dm-download.php:35
 msgid "Error"
 msgstr ""
 
-#: functions.php:162
+#: includes/popup-templates.php:211
+msgid "Execution"
+msgstr ""
+
+#: includes/popup-templates.php:30
 msgid "Full Name"
 msgstr ""
 
-#: functions.php:131
+#: functions.php:166
 msgid "Get full access to this research document"
 msgstr ""
 
@@ -82,82 +130,217 @@ msgstr ""
 msgid "https://innovio.qodeinteractive.com"
 msgstr ""
 
+#: includes/popup-templates.php:194
+msgid "Hệ thống thương mại"
+msgstr ""
+
+#: functions.php:632
+msgid "Hủy"
+msgstr ""
+
+#: functions.php:615
+msgid "I am now listening to the podcast instead"
+msgstr ""
+
+#: functions.php:599
+msgid "I did not find the content useful"
+msgstr ""
+
+#: functions.php:607
+msgid "I found the content to be too politically biased"
+msgstr ""
+
+#: functions.php:595
+msgid "I get too many newsletters in general"
+msgstr ""
+
+#: functions.php:611
+msgid "I switched my subscription email"
+msgstr ""
+
+#: functions.php:591
+msgid "I was getting too many newsletters from Morning Brew brands"
+msgstr ""
+
 #. Name of the theme
 msgid "Innovio Child"
 msgstr ""
 
-#: dm-download.php:18
+#: includes/popup-templates.php:205
+msgid "Insight"
+msgstr ""
+
+#: includes/popup-templates.php:249
+msgid "Integrated annual planning"
+msgstr ""
+
+#: dm-download.php:15
 msgid "Invalid download request"
 msgstr ""
 
-#: dm-download.php:38 functions.php:527
+#: dm-download.php:30 functions.php:672
 msgid "Invalid report"
 msgstr ""
 
-#: dm-download.php:25
+#: includes/popup-templates.php:279
+msgid "Key visuals & POSM"
+msgstr ""
+
+#: includes/popup-templates.php:267
+msgid "KOL / Influencer management"
+msgstr ""
+
+#: includes/popup-templates.php:192
+msgid "Kết nối hệ thống số &"
+msgstr ""
+
+#: includes/popup-templates.php:312
+msgid "Legal Note:"
+msgstr ""
+
+#: dm-download.php:20
 msgid "Link Expired"
 msgstr ""
 
-#: functions.php:327
+#: functions.php:346
 msgid "Login successful! Redirecting..."
 msgstr ""
 
-#: functions.php:78
+#: functions.php:104
 msgid "Login successful! Reloading..."
+msgstr ""
+
+#: includes/popup-templates.php:297
+msgid "Marketing campaign execution"
+msgstr ""
+
+#: includes/popup-templates.php:264
+msgid "Media booking management"
 msgstr ""
 
 #. Author of the theme
 msgid "Mikado Themes"
 msgstr ""
 
-#: functions.php:179
+#: includes/popup-templates.php:218
+msgid "My services"
+msgstr ""
+
+#: includes/popup-templates.php:47
 msgid "or"
 msgstr ""
 
-#: functions.php:77
+#: functions.php:619
+msgid "Other"
+msgstr ""
+
+#: functions.php:103
 msgid "Please fill in all fields!"
 msgstr ""
 
-#: functions.php:305
+#: functions.php:311
 msgid "Please fill in all fields."
 msgstr ""
 
-#: functions.php:156
+#: functions.php:667
+msgid "Please login to download"
+msgstr ""
+
+#: includes/popup-templates.php:25
 msgid "Please provide your information"
 msgstr ""
 
-#: functions.php:522
-msgid "Please register to download"
+#: functions.php:626
+msgid "Please specify..."
 msgstr ""
 
-#: functions.php:74
+#: functions.php:100
 msgid "Processing..."
 msgstr ""
 
-#: functions.php:354
+#: includes/popup-templates.php:303
+msgid "Product launch planning"
+msgstr ""
+
+#: includes/popup-templates.php:169
+msgid "Read More"
+msgstr ""
+
+#: functions.php:386
 msgid "Registration successful! Redirecting..."
 msgstr ""
 
-#: functions.php:75
+#: includes/popup-templates.php:300
+msgid "Sales kits & websites"
+msgstr ""
+
+#: functions.php:107 includes/popup-templates.php:110
+msgid "Sent successfully"
+msgstr ""
+
+#: functions.php:101
 msgid "Server error. Please try again."
 msgstr ""
 
-#: functions.php:79
+#: includes/popup-templates.php:285
+msgid "Social media design"
+msgstr ""
+
+#: includes/popup-templates.php:208
+msgid "Strategy"
+msgstr ""
+
+#: functions.php:105
 msgid "Subscribe"
 msgstr ""
 
-#: functions.php:102 functions.php:153
+#: functions.php:137 includes/popup-templates.php:22
 msgid "Subscribe for newsletter"
 msgstr ""
 
-#: functions.php:76
+#: includes/popup-templates.php:107
+msgid "Thank you for your interest"
+msgstr ""
+
+#: functions.php:102
 msgid "Thank you! Downloading document..."
 msgstr ""
 
-#: functions.php:486
+#: functions.php:603
+msgid "The content is not what I expected it to be when I signed up"
+msgstr ""
+
+#: functions.php:109
+msgid "The report has been downloaded successfully."
+msgstr ""
+
+#: functions.php:108 includes/popup-templates.php:113
+msgid "The report is being downloaded."
+msgstr ""
+
+#: functions.php:579
 msgid "Unsubscribe"
 msgstr ""
 
-#: functions.php:489
-msgid "We are sorry to see you go. Please confirm your email to unsubscribe."
+#: includes/popup-templates.php:282
+msgid "Viral videos & TVCs"
+msgstr ""
+
+#: includes/popup-templates.php:189
+msgid "VỀ DIGITAL MIND"
+msgstr ""
+
+#: includes/popup-templates.php:198
+msgid ""
+"We believe that transparent data is the key to making informed, growth-"
+"driven decisions. Digital Mind provides a scalable platform built on your "
+"organization’s existing investments."
+msgstr ""
+
+#: functions.php:582
+msgid "We’re sorry to see you go. Could you tell us why you decided to leave?"
+msgstr ""
+
+#: includes/popup-templates.php:119
+msgid "You might also like"
 msgstr ""

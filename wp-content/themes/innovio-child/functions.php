@@ -90,6 +90,7 @@ if (!function_exists('innovio_mikado_child_theme_enqueue_scripts')) {
         $social_login_data = array(
             'ajaxurl' => admin_url('admin-ajax.php'),
             'download_nonce' => wp_create_nonce('dm_download_nonce'),
+            'unsub_nonce' => wp_create_nonce('dm_unsub_nonce'),
             'current_report_id' => $current_report_id ? intval($current_report_id) : 0,
             'is_logged_in' => is_user_logged_in(),
             'dm_source' => dm_get_source_from_transient(),
@@ -103,6 +104,10 @@ if (!function_exists('innovio_mikado_child_theme_enqueue_scripts')) {
                 'login_success_reloading' => esc_html__('Login successful! Reloading...', 'innovio_child'),
                 'subscribe' => esc_html__('Subscribe', 'innovio_child'),
                 'download' => esc_html__('Download', 'innovio_child'),
+                'sent_successfully' => esc_html__('Sent successfully', 'innovio_child'),
+                'report_downloading' => esc_html__('The report is being downloaded.', 'innovio_child'),
+                'download_complete' => esc_html__('The report has been downloaded successfully.', 'innovio_child'),
+                'download_complete_title' => esc_html__('Download complete!', 'innovio_child'),
             )
         );
         wp_localize_script('digitalmind-child-script-henry', 'subscribeEmail', $social_login_data);
@@ -172,87 +177,8 @@ add_filter('the_content', 'digitalmind_add_research_download_form');
 /**
  * Add Popup Form to footer (only on research posts)
  */
-function digitalmind_add_research_popup_form()
-{
-    ?>
-    <div class="research-popup-overlay" id="researchPopup">
-        <div class="research-popup-container">
-            <button class="research-popup-close" id="researchPopupClose">&times;</button>
-            <div class="research-popup-content">
-                <h3 class="research-popup-title">
-                    <?php echo esc_html__('Subscribe for newsletter', 'innovio_child'); ?>
-                </h3>
-                <p class="research-popup-desc">
-                    <?php echo esc_html__('Please provide your information', 'innovio_child'); ?>
-                </p>
-                <form id="dm-research-register-form" class="dm-register-form" method="post">
-                    <div class="form-group">
-                        <input type="text" name="user_name"
-                            placeholder="<?php echo esc_attr__('Full Name', 'innovio_child'); ?>" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="user_email"
-                            placeholder="<?php echo esc_attr__('Email Address', 'innovio_child'); ?>" required>
-                    </div>
-
-                    <input type="hidden" name="current_post_id" value="<?php echo get_the_ID(); ?>">
-                    <?php wp_nonce_field('dm_register_action', 'dm_register_nonce'); ?>
-
-                    <button type="submit" class="dm-submit-btn">
-                        <?php echo esc_html__('Download', 'innovio_child'); ?>
-                    </button>
-                </form>
-
-                <div class="research-popup-divider">
-                    <span><?php echo esc_html__('or', 'innovio_child'); ?></span>
-                </div>
-
-                <?php
-                $popup_redirect_url = site_url('?social_login_mode=popup');
-
-                $fb_login_url = site_url('/wp-login.php?loginSocial=facebook&redirect=' . urlencode($popup_redirect_url));
-                $google_login_url = site_url('/wp-login.php?loginSocial=google&redirect=' . urlencode($popup_redirect_url));
-                $linkedin_login_url = DM_LinkedIn_OAuth::get_auth_url(get_the_ID());
-                ?>
-                <div class="research-popup-social">
-                    <a href="<?php echo esc_url($fb_login_url); ?>" class="social-icon-btn social-facebook popup-trigger"
-                        title="Facebook">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="currentColor">
-                            <path
-                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                        </svg>
-                    </a>
-                    <a href="<?php echo esc_url($google_login_url); ?>" class="social-icon-btn social-gmail popup-trigger"
-                        title="Google">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="currentColor">
-                            <path
-                                d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
-                        </svg>
-                    </a>
-                    <a href="<?php echo esc_url($linkedin_login_url); ?>"
-                        class="social-icon-btn social-linkedin popup-trigger" title="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="currentColor">
-                            <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                        </svg>
-                    </a>
-                    <a href="#" class="social-icon-btn social-zalo popup-trigger" title="Zalo" onclick="return false;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="currentColor">
-                            <path
-                                d="M19 6h-14c-0.6 0-1 0.4-1 1s0.4 1 1 1h11.6l-12.3 13.5c-0.4 0.5-0.1 1.2 0.5 1.4 0.2 0.1 0.3 0.1 0.5 0.1h14c0.6 0 1-0.4 1-1s-0.4-1-1-1h-11.6l12.3-13.5c0.4-0.5 0.1-1.2-0.5-1.4-0.2-0.1-0.3-0.1-0.5-0.1z" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <?php
-}
-add_action('wp_footer', 'digitalmind_add_research_popup_form');
+// Include popup templates
+require_once get_stylesheet_directory() . '/includes/popup-templates.php';
 
 /**
  * Handle Social Login Popup Callback
@@ -321,6 +247,32 @@ function dm_social_login_callback()
 add_action('template_redirect', 'dm_social_login_callback');
 
 /**
+ * Helper function to generate secure download URL with token
+ */
+function dm_generate_download_url($report_id, $user_identifier = '')
+{
+    if (empty($report_id)) {
+        return '';
+    }
+
+    $download_link = get_field('link_for_report', $report_id);
+    if (empty($download_link)) {
+        return '';
+    }
+
+    $token = wp_generate_password(32, false);
+
+    $token_data = [
+        'report_id' => $report_id,
+        'user_identifier' => $user_identifier,
+        'created_at' => time()
+    ];
+    set_transient('dm_download_token_' . $token, $token_data, 5 * MINUTE_IN_SECONDS);
+
+    return get_stylesheet_directory_uri() . '/dm-download.php?token=' . $token;
+}
+
+/**
  * Handle AJAX User Registration
  */
 function dm_register_user()
@@ -384,7 +336,19 @@ function dm_register_user()
         wp_set_current_user($existing_user_id);
         wp_set_auth_cookie($existing_user_id);
 
-        wp_send_json_success(['message' => esc_html__('Login successful! Redirecting...', 'innovio_child'), 'redirect_url' => $redirect_url, 'brevo_sync' => $brevo_sync, 'crm_sync' => $crm_sync]);
+        $download_url = '';
+        if (isset($_COOKIE['dm_from_email_download']) && !empty($_COOKIE['dm_from_email_download'])) {
+            $report_id = intval($_COOKIE['dm_from_email_download']);
+            $download_url = dm_generate_download_url($report_id, 'user_' . $existing_user_id);
+        }
+
+        wp_send_json_success([
+            'message' => esc_html__('Login successful! Redirecting...', 'innovio_child'),
+            'redirect_url' => $redirect_url,
+            'download_url' => $download_url,
+            'brevo_sync' => $brevo_sync,
+            'crm_sync' => $crm_sync
+        ]);
     }
 
     $username = sanitize_user(current(explode('@', $email)));
@@ -411,7 +375,20 @@ function dm_register_user()
     wp_set_current_user($user_id);
     wp_set_auth_cookie($user_id);
 
-    wp_send_json_success(['message' => esc_html__('Registration successful! Redirecting...', 'innovio_child'), 'redirect_url' => $redirect_url, 'brevo_sync' => $brevo_sync, 'crm_sync' => $crm_sync]);
+    // Kiểm tra nếu từ email flow -> tạo download URL trực tiếp
+    $download_url = '';
+    if (isset($_COOKIE['dm_from_email_download']) && !empty($_COOKIE['dm_from_email_download'])) {
+        $report_id = intval($_COOKIE['dm_from_email_download']);
+        $download_url = dm_generate_download_url($report_id, 'user_' . $user_id);
+    }
+
+    wp_send_json_success([
+        'message' => esc_html__('Registration successful! Redirecting...', 'innovio_child'),
+        'redirect_url' => $redirect_url,
+        'download_url' => $download_url,
+        'brevo_sync' => $brevo_sync,
+        'crm_sync' => $crm_sync
+    ]);
 }
 add_action('wp_ajax_nopriv_dm_register_user', 'dm_register_user');
 add_action('wp_ajax_dm_register_user', 'dm_register_user');
@@ -515,16 +492,76 @@ function dm_sync_crm_leads($email, $name)
  */
 function dm_handle_email_trigger()
 {
+
+    if (isset($_GET['utm_source']) && $_GET['utm_source'] === 'unsubscribe' && isset($_GET['email'])) {
+        $email = sanitize_email($_GET['email']);
+
+        setcookie('dm_user_email_unsubscribe', $email, time() + 31536000, '/');
+        setcookie('dm_from_email_unsubscribe', 'true', time() + 60, '/');
+
+        $current_url = remove_query_arg(['utm_source', 'email']);
+        if (wp_redirect($current_url)) {
+            exit;
+        }
+    }
+
     if (isset($_GET['utm_source']) && $_GET['utm_source'] === 'mail' && isset($_GET['email']) && isset($_GET['user_name'])) {
         $name = sanitize_text_field($_GET['user_name']);
         $email = sanitize_email($_GET['email']);
 
+        setcookie('utm_source', 'mail', time() + 60, '/');
         setcookie('dm_user_name', $name, time() + 31536000, '/');
         setcookie('dm_user_email', $email, time() + 31536000, '/');
-        setcookie('dm_from_email', 'true', time() + 60, '/');
 
         $current_url = remove_query_arg(['utm_source', 'email', 'user_name']);
+        $post_id = url_to_postid($current_url);
 
+        if ($post_id && has_category('research', $post_id)) {
+            $existing_user_id = email_exists($email);
+
+            if ($existing_user_id) {
+                wp_set_current_user($existing_user_id);
+                wp_set_auth_cookie($existing_user_id, true);
+                $user_identifier = 'user_' . $existing_user_id;
+            } else {
+                $username = sanitize_user(current(explode('@', $email)));
+                $i = 1;
+                $original_username = $username;
+                while (username_exists($username)) {
+                    $username = $original_username . $i;
+                    $i++;
+                }
+
+                $password = wp_generate_password();
+                $user_id = wp_create_user($username, $password, $email);
+
+                if (!is_wp_error($user_id)) {
+                    wp_update_user([
+                        'ID' => $user_id,
+                        'first_name' => $name,
+                        'display_name' => $name
+                    ]);
+                    wp_set_current_user($user_id);
+                    wp_set_auth_cookie($user_id, true);
+                    $user_identifier = 'user_' . $user_id;
+                } else {
+                    $user_identifier = 'email_' . $email;
+                }
+            }
+
+            $download_url = dm_generate_download_url($post_id, $user_identifier);
+
+            if ($download_url) {
+                setcookie('dm_auto_download_url', $download_url, time() + 60, '/');
+                setcookie('dm_show_thankyou', 'true', time() + 60, '/');
+
+                if (wp_redirect($current_url)) {
+                    exit;
+                }
+            }
+        }
+
+        setcookie('dm_from_email', 'true', time() + 60, '/');
         if (wp_redirect($current_url)) {
             exit;
         }
@@ -533,10 +570,6 @@ function dm_handle_email_trigger()
 add_action('init', 'dm_handle_email_trigger');
 function digitalmind_add_unsubscribe_popup()
 {
-    $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'vi';
-    $form_id = ($current_lang === 'en') ? 'b5b7d98' : '14a4451';
-    $form_shortcode = do_shortcode('[contact-form-7 id="' . $form_id . '"]');
-
     ?>
     <div class="unsubscribe-popup-overlay" id="unsubscribePopup">
         <div class="unsubscribe-popup-container">
@@ -546,9 +579,60 @@ function digitalmind_add_unsubscribe_popup()
                     <?php echo esc_html__('Unsubscribe', 'innovio_child'); ?>
                 </h3>
                 <p class="unsubscribe-popup-desc">
-                    <?php echo esc_html__('We are sorry to see you go. Please confirm your email to unsubscribe.', 'innovio_child'); ?>
+                    <?php echo esc_html__('We’re sorry to see you go. Could you tell us why you decided to leave?', 'innovio_child'); ?>
                 </p>
-                <?php echo $form_shortcode; ?>
+
+                <form id="dm_unsub_form" class="dm-unsub-form">
+                    <?php wp_nonce_field('dm_unsub_nonce', 'dm_unsub_nonce_field'); ?>
+
+                    <div class="dm-radio-group">
+                        <label class="dm-radio-option">
+                            <input type="radio" name="unsub_reason" value="too_many_morning_brew">
+                            <span><?php echo esc_html__('I was getting too many newsletters from Morning Brew brands', 'innovio_child'); ?></span>
+                        </label>
+                        <label class="dm-radio-option">
+                            <input type="radio" name="unsub_reason" value="too_many_general">
+                            <span><?php echo esc_html__('I get too many newsletters in general', 'innovio_child'); ?></span>
+                        </label>
+                        <label class="dm-radio-option">
+                            <input type="radio" name="unsub_reason" value="not_useful">
+                            <span><?php echo esc_html__('I did not find the content useful', 'innovio_child'); ?></span>
+                        </label>
+                        <label class="dm-radio-option">
+                            <input type="radio" name="unsub_reason" value="not_expected">
+                            <span><?php echo esc_html__('The content is not what I expected it to be when I signed up', 'innovio_child'); ?></span>
+                        </label>
+                        <label class="dm-radio-option">
+                            <input type="radio" name="unsub_reason" value="biased">
+                            <span><?php echo esc_html__('I found the content to be too politically biased', 'innovio_child'); ?></span>
+                        </label>
+                        <label class="dm-radio-option">
+                            <input type="radio" name="unsub_reason" value="switched_email">
+                            <span><?php echo esc_html__('I switched my subscription email', 'innovio_child'); ?></span>
+                        </label>
+                        <label class="dm-radio-option">
+                            <input type="radio" name="unsub_reason" value="podcast">
+                            <span><?php echo esc_html__('I am now listening to the podcast instead', 'innovio_child'); ?></span>
+                        </label>
+                        <label class="dm-radio-option">
+                            <input type="radio" name="unsub_reason" value="Other">
+                            <span><?php echo esc_html__('Other', 'innovio_child'); ?></span>
+                        </label>
+                    </div>
+
+                    <!-- Hidden input for "Other" text -->
+                    <div class="dm-other-reason-input" style="display:none; margin-top: 10px;">
+                        <input type="text" name="other_reason_text"
+                            placeholder="<?php echo esc_attr__('Please specify...', 'innovio_child'); ?>"
+                            style="width: 100%; padding: 8px;">
+                    </div>
+
+                    <div class="dm-form-actions" style="margin-top: 20px; text-align: center;">
+                        <button type="submit" class="dm-submit-btn dm-unsub-submit-btn">
+                            <?php echo esc_html__('Hủy', 'innovio_child'); ?>
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -577,8 +661,10 @@ function dm_get_secure_download_link()
 {
     check_ajax_referer('dm_download_nonce', 'nonce');
 
-    if (!is_user_logged_in()) {
-        wp_send_json_error(['message' => __('Vui lòng đăng nhập để tải xuống', 'innovio_child')]);
+    $has_email_verified = isset($_COOKIE['dm_user_email']) && !empty($_COOKIE['dm_user_email']);
+
+    if (!is_user_logged_in() && !$has_email_verified) {
+        wp_send_json_error(['message' => __('Please login to download', 'innovio_child')]);
     }
 
     $report_id = intval($_POST['report_id'] ?? 0);
@@ -613,4 +699,3 @@ function dm_get_secure_download_link()
 }
 add_action('wp_ajax_dm_get_secure_download_link', 'dm_get_secure_download_link');
 add_action('wp_ajax_nopriv_dm_get_secure_download_link', 'dm_get_secure_download_link');
-

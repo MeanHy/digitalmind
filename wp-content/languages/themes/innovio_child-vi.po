@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Innovio Child\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-23 04:24+0000\n"
-"PO-Revision-Date: 2026-01-28 03:55+0000\n"
+"PO-Revision-Date: 2026-02-02 05:02+0000\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "Language: vi\n"
@@ -20,32 +20,89 @@ msgstr ""
 msgid "A child theme of Innovio Theme"
 msgstr "Một chủ đề con của Chủ đề Innovio"
 
-#: functions.php:73
+#: includes/popup-templates.php:202
+#, fuzzy
+msgid "Analysis"
+msgstr "Phân tích"
+
+#: includes/popup-templates.php:246
+#, fuzzy
+msgid "Brand identity & spatial experience"
+msgstr "Nhận diện thương hiệu & trải nghiệm không gian"
+
+#: includes/popup-templates.php:243
+#, fuzzy
+msgid "Brand positioning"
+msgstr "Định vị thương hiệu"
+
+#: includes/popup-templates.php:239
+#, fuzzy
+msgid "Brand Strategy"
+msgstr "Chiến lược thương hiệu"
+
+#: includes/popup-templates.php:314
+msgid ""
+"By downloading this professional resource, you agree to join Digital Mind’s "
+"business network. We are committed to protecting your information and will "
+"use it solely to share relevant market updates, trends, and solutions. (You "
+"may unsubscribe at any time.)"
+msgstr ""
+"Bằng việc tải tài liệu chuyên môn này, bạn đồng ý gia nhập mạng lưới kết nối "
+"doanh nghiệp của Digital Mind. Chúng tôi cam kết bảo mật thông tin và chỉ sử "
+"dụng dữ liệu này để gửi đến bạn những cập nhật thị trường, xu hướng và giải "
+"pháp liên quan. (Bạn có thể hủy nhận tin bất cứ lúc nào)."
+
+#: includes/popup-templates.php:293
+#, fuzzy
+msgid "Campaign Management"
+msgstr "Quản lý chiến dịch"
+
+#: functions.php:99
 #, fuzzy
 msgid "Cancel"
 msgstr "Hủy bỏ"
 
-#: functions.php:72
+#: functions.php:98
 #, fuzzy
 msgid "Confirm"
 msgstr "Xác nhận"
 
-#: functions.php:297
+#: functions.php:303
 #, fuzzy
 msgid "Confirmed! Redirecting..."
 msgstr "Đã xác nhận!  Đang chuyển hướng..."
 
-#: functions.php:80 functions.php:173
+#: includes/popup-templates.php:275
+#, fuzzy
+msgid "Creative & Content"
+msgstr "Sáng tạo & Nội dung"
+
+#: includes/popup-templates.php:261
+#, fuzzy
+msgid "Digital & social planning"
+msgstr "Lập kế hoạch kỹ thuật số và xã hội"
+
+#: includes/popup-templates.php:257
+#, fuzzy
+msgid "Digital Marketing & Media"
+msgstr "Tiếp thị & Truyền thông Kỹ thuật số"
+
+#: functions.php:106 includes/popup-templates.php:41
 #, fuzzy
 msgid "Download"
 msgstr "Tải xuống"
 
-#: dm-download.php:45
+#: functions.php:110
+#, fuzzy
+msgid "Download complete!"
+msgstr "Tải xuống hoàn tất!"
+
+#: dm-download.php:35
 #, fuzzy
 msgid "Download file not found"
 msgstr "Không tìm thấy tập tin tải xuống"
 
-#: dm-download.php:25
+#: dm-download.php:20
 #, fuzzy
 msgid ""
 "Download link has expired or already been used. Please request a new "
@@ -54,37 +111,42 @@ msgstr ""
 "Liên kết tải xuống đã hết hạn hoặc đã được sử dụng.  Vui lòng yêu cầu một "
 "liên kết tải xuống mới."
 
-#: functions.php:532
+#: functions.php:677
 #, fuzzy
 msgid "Download not available"
 msgstr "Tải xuống không có sẵn"
 
-#: functions.php:134
+#: functions.php:169
 #, fuzzy
 msgid "Download Now"
 msgstr "Tải xuống ngay"
 
-#: functions.php:130
+#: functions.php:165
 #, fuzzy
 msgid "Download Research Paper"
 msgstr "Tải tài liệu nghiên cứu"
 
-#: functions.php:166
+#: includes/popup-templates.php:34
 #, fuzzy
 msgid "Email Address"
 msgstr "Địa chỉ email"
 
-#: dm-download.php:18 dm-download.php:38 dm-download.php:45
+#: dm-download.php:15 dm-download.php:30 dm-download.php:35
 #, fuzzy
 msgid "Error"
 msgstr "Lỗi"
 
-#: functions.php:162
+#: includes/popup-templates.php:211
+#, fuzzy
+msgid "Execution"
+msgstr "Thi hành"
+
+#: includes/popup-templates.php:30
 #, fuzzy
 msgid "Full Name"
 msgstr "Tên đầy đủ"
 
-#: functions.php:131
+#: functions.php:166
 #, fuzzy
 msgid "Get full access to this research document"
 msgstr "Có toàn quyền truy cập vào tài liệu nghiên cứu này"
@@ -99,100 +161,270 @@ msgstr "http://themeforest.net/user/mikado-themes"
 msgid "https://innovio.qodeinteractive.com"
 msgstr "https://innovio.qodeinteractive.com"
 
+#: includes/popup-templates.php:194
+#, fuzzy
+msgid "Hệ thống thương mại"
+msgstr "Hệ thống thương mại"
+
+#: functions.php:632
+#, fuzzy
+msgid "Hủy"
+msgstr "Hủy bỏ"
+
+#: functions.php:615
+#, fuzzy
+msgid "I am now listening to the podcast instead"
+msgstr "Bây giờ tôi đang nghe podcast"
+
+#: functions.php:599
+#, fuzzy
+msgid "I did not find the content useful"
+msgstr "Tôi không thấy nội dung này hữu ích"
+
+#: functions.php:607
+#, fuzzy
+msgid "I found the content to be too politically biased"
+msgstr "Tôi thấy nội dung này quá thiên về mặt chính trị"
+
+#: functions.php:595
+#, fuzzy
+msgid "I get too many newsletters in general"
+msgstr "Nói chung tôi nhận được quá nhiều bản tin"
+
+#: functions.php:611
+#, fuzzy
+msgid "I switched my subscription email"
+msgstr "Tôi đã chuyển đổi email đăng ký của mình"
+
+#: functions.php:591
+#, fuzzy
+msgid "I was getting too many newsletters from Morning Brew brands"
+msgstr "Tôi nhận được quá nhiều bản tin từ các thương hiệu Morning Brew"
+
 #. Name of the theme
 msgid "Innovio Child"
 msgstr "Innovio Child"
 
-#: dm-download.php:18
+#: includes/popup-templates.php:205
+#, fuzzy
+msgid "Insight"
+msgstr "Cái nhìn thấu suốt"
+
+#: includes/popup-templates.php:249
+#, fuzzy
+msgid "Integrated annual planning"
+msgstr "Lập kế hoạch tổng hợp hàng năm"
+
+#: dm-download.php:15
 #, fuzzy
 msgid "Invalid download request"
 msgstr "Yêu cầu tải xuống không hợp lệ"
 
-#: dm-download.php:38 functions.php:527
+#: dm-download.php:30 functions.php:672
 #, fuzzy
 msgid "Invalid report"
 msgstr "Báo cáo không hợp lệ"
 
-#: dm-download.php:25
+#: includes/popup-templates.php:279
+#, fuzzy
+msgid "Key visuals & POSM"
+msgstr "Hình ảnh chính & POSM"
+
+#: includes/popup-templates.php:267
+#, fuzzy
+msgid "KOL / Influencer management"
+msgstr "Quản lý KOL / Người ảnh hưởng"
+
+#: includes/popup-templates.php:192
+#, fuzzy
+msgid "Kết nối hệ thống số &"
+msgstr "Kết nối hệ thống số &"
+
+#: includes/popup-templates.php:312
+#, fuzzy
+msgid "Legal Note:"
+msgstr "Lưu ý pháp lý:"
+
+#: dm-download.php:20
 #, fuzzy
 msgid "Link Expired"
 msgstr "Liên kết đã hết hạn"
 
-#: functions.php:327
+#: functions.php:346
 #, fuzzy
 msgid "Login successful! Redirecting..."
 msgstr "Đăng nhập thành công!  Đang chuyển hướng..."
 
-#: functions.php:78
+#: functions.php:104
 #, fuzzy
 msgid "Login successful! Reloading..."
 msgstr "Đăng nhập thành công!  Đang tải lại..."
+
+#: includes/popup-templates.php:297
+#, fuzzy
+msgid "Marketing campaign execution"
+msgstr "Thực hiện chiến dịch tiếp thị"
+
+#: includes/popup-templates.php:264
+#, fuzzy
+msgid "Media booking management"
+msgstr "Quản lý đặt chỗ phương tiện truyền thông"
 
 #. Author of the theme
 msgid "Mikado Themes"
 msgstr "Mikado Themes"
 
-#: functions.php:179
+#: includes/popup-templates.php:218
+#, fuzzy
+msgid "My services"
+msgstr "Dịch vụ của tôi"
+
+#: includes/popup-templates.php:47
 msgid "or"
 msgstr "hoặc"
 
-#: functions.php:77
+#: functions.php:619
+#, fuzzy
+msgid "Other"
+msgstr "Khác"
+
+#: functions.php:103
 #, fuzzy
 msgid "Please fill in all fields!"
 msgstr "Vui lòng điền vào tất cả các trường!"
 
-#: functions.php:305
+#: functions.php:311
 #, fuzzy
 msgid "Please fill in all fields."
 msgstr "Vui lòng điền vào tất cả các trường."
 
-#: functions.php:156
+#: functions.php:667
+msgid "Please login to download"
+msgstr "Hãy đăng nhập để tải xuống"
+
+#: includes/popup-templates.php:25
 #, fuzzy
 msgid "Please provide your information"
 msgstr "Vui lòng cung cấp thông tin của bạn"
 
-#: functions.php:522
+#: functions.php:626
 #, fuzzy
-msgid "Please register to download"
-msgstr "Hãy đăng ký để tải về"
+msgid "Please specify..."
+msgstr "Hãy chỉ rõ..."
 
-#: functions.php:74
+#: functions.php:100
 #, fuzzy
 msgid "Processing..."
 msgstr "Xử lý..."
 
-#: functions.php:354
+#: includes/popup-templates.php:303
+#, fuzzy
+msgid "Product launch planning"
+msgstr "Lập kế hoạch ra mắt sản phẩm"
+
+#: includes/popup-templates.php:169
+#, fuzzy
+msgid "Read More"
+msgstr "Đọc thêm"
+
+#: functions.php:386
 #, fuzzy
 msgid "Registration successful! Redirecting..."
 msgstr "Đăng ký thành công!  Đang chuyển hướng..."
 
-#: functions.php:75
+#: includes/popup-templates.php:300
+#, fuzzy
+msgid "Sales kits & websites"
+msgstr "Bộ công cụ và trang web bán hàng"
+
+#: functions.php:107 includes/popup-templates.php:110
+#, fuzzy
+msgid "Sent successfully"
+msgstr "Đã gửi thành công"
+
+#: functions.php:101
 #, fuzzy
 msgid "Server error. Please try again."
 msgstr "Lỗi máy chủ.  Vui lòng thử lại."
 
-#: functions.php:79
+#: includes/popup-templates.php:285
+#, fuzzy
+msgid "Social media design"
+msgstr "Thiết kế phương tiện truyền thông xã hội"
+
+#: includes/popup-templates.php:208
+#, fuzzy
+msgid "Strategy"
+msgstr "Chiến lược"
+
+#: functions.php:105
 msgid "Subscribe"
 msgstr "Đăng ký"
 
-#: functions.php:102 functions.php:153
+#: functions.php:137 includes/popup-templates.php:22
 #, fuzzy
 msgid "Subscribe for newsletter"
 msgstr "Đăng ký nhận bản tin"
 
-#: functions.php:76
+#: includes/popup-templates.php:107
+#, fuzzy
+msgid "Thank you for your interest"
+msgstr "Cảm ơn bạn đã quan tâm"
+
+#: functions.php:102
 #, fuzzy
 msgid "Thank you! Downloading document..."
 msgstr "Cảm ơn!  Đang tải tài liệu..."
 
-#: functions.php:486
+#: functions.php:603
+#, fuzzy
+msgid "The content is not what I expected it to be when I signed up"
+msgstr "Nội dung không như tôi mong đợi khi đăng ký"
+
+#: functions.php:109
+#, fuzzy
+msgid "The report has been downloaded successfully."
+msgstr "Báo cáo đã được tải xuống thành công."
+
+#: functions.php:108 includes/popup-templates.php:113
+#, fuzzy
+msgid "The report is being downloaded."
+msgstr "Báo cáo đang được tải xuống."
+
+#: functions.php:579
 #| msgid "Subscribe"
 msgid "Unsubscribe"
 msgstr "Hủy đăng ký "
 
-#: functions.php:489
+#: includes/popup-templates.php:282
 #, fuzzy
-msgid "We are sorry to see you go. Please confirm your email to unsubscribe."
+msgid "Viral videos & TVCs"
+msgstr "Video và TVC lan truyền"
+
+#: includes/popup-templates.php:189
+#, fuzzy
+msgid "VỀ DIGITAL MIND"
+msgstr "VỀ TÂM TRÍ KỸ THUẬT SỐ"
+
+#: includes/popup-templates.php:198
+#, fuzzy
+msgid ""
+"We believe that transparent data is the key to making informed, growth-"
+"driven decisions. Digital Mind provides a scalable platform built on your "
+"organization’s existing investments."
 msgstr ""
-"Chúng tôi rất tiếc khi thấy bạn đi.  Vui lòng xác nhận email của bạn để hủy "
-"đăng ký."
+"Chúng tôi tin rằng dữ liệu minh bạch là chìa khóa để đưa ra các quyết định "
+"sáng suốt và thúc đẩy tăng trưởng.  Digital Mind cung cấp nền tảng có thể mở "
+"rộng được xây dựng dựa trên các khoản đầu tư hiện có của tổ chức bạn."
+
+#: functions.php:582
+#, fuzzy
+msgid "We’re sorry to see you go. Could you tell us why you decided to leave?"
+msgstr ""
+"Chúng tôi rất tiếc khi thấy bạn đi.  Bạn có thể cho chúng tôi biết lý do tại "
+"sao bạn quyết định rời đi?"
+
+#: includes/popup-templates.php:119
+#, fuzzy
+msgid "You might also like"
+msgstr "Bạn cũng có thể thích"
