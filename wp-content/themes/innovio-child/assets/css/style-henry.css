@@ -2240,7 +2240,8 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   padding: 5px 12px;
   line-height: 1;
   transition: all 0.3s ease;
-  z-index: 10;
+  z-index: 30;
+  /* Higher than sticky header */
   border-radius: 50%;
 }
 
@@ -2254,8 +2255,11 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   padding: 40px 30px;
   text-align: center;
   color: #fff;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 20;
   overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .newsletter-header-circle-1 {

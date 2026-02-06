@@ -16,9 +16,8 @@ function digitalmind_add_newsletter_popup()
     ?>
     <div class="newsletter-popup-overlay" id="newsletterPopup">
         <div class="newsletter-popup-container">
-            <button class="newsletter-popup-close" id="newsletterPopupClose">&times;</button>
-
             <div class="newsletter-popup-header">
+                <button class="newsletter-popup-close" id="newsletterPopupClose">&times;</button>
                 <div class="newsletter-header-circle-1"></div>
                 <div class="newsletter-header-circle-2"></div>
                 <h1 class="newsletter-popup-main-title">
