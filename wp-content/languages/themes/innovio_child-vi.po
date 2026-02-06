@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Innovio Child\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-23 04:24+0000\n"
-"PO-Revision-Date: 2026-02-06 03:46+0000\n"
+"PO-Revision-Date: 2026-02-06 04:20+0000\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "Language: vi\n"
@@ -25,25 +25,10 @@ msgstr "100 – 300"
 msgid "100% privacy guaranteed. No spam."
 msgstr "Đảm bảo quyền riêng tư 100%.  Không có thư rác."
 
-#: includes/consultation-popup.php:265
-#, fuzzy
-msgid "200 million – 500 million VND"
-msgstr "200 triệu – 500 triệu đồng"
-
-#: includes/consultation-popup.php:262
-#, fuzzy
-msgid "50 million – 200 million VND"
-msgstr "50 triệu – 200 triệu đồng"
-
 #: includes/newsletter-popup.php:340
 #, fuzzy
 msgid "50 – 100"
 msgstr "50 – 100"
-
-#: includes/consultation-popup.php:268
-#, fuzzy
-msgid "500 million – 1 billion VND"
-msgstr "500 triệu – 1 tỷ đồng"
 
 #. Description of the theme
 #, fuzzy
@@ -59,11 +44,6 @@ msgstr "Đại lý / Đối tác"
 #, fuzzy
 msgid "Analysis"
 msgstr "Phân tích"
-
-#: includes/consultation-popup.php:295
-#, fuzzy
-msgid "As soon as possible (ASAP)"
-msgstr "Càng sớm càng tốt (càng sớm càng tốt)"
 
 #: includes/newsletter-popup.php:44
 msgid "Basic"
@@ -89,25 +69,10 @@ msgstr "Định vị thương hiệu"
 msgid "Brand Strategy"
 msgstr "Chiến lược thương hiệu"
 
-#: includes/consultation-popup.php:232
-#, fuzzy
-msgid "Branding & Brand Identity"
-msgstr "Xây dựng thương hiệu & Nhận diện thương hiệu"
-
-#: includes/consultation-popup.php:59
-#, fuzzy
-msgid "Business Email"
-msgstr "Email doanh nghiệp"
-
 #: includes/newsletter-popup.php:62
 #, fuzzy
 msgid "Business email"
 msgstr "Email doanh nghiệp"
-
-#: functions.php:139
-#, fuzzy
-msgid "Business Partnership"
-msgstr "Hợp tác kinh doanh"
 
 #: includes/popup-templates.php:233
 msgid ""
@@ -136,11 +101,6 @@ msgstr "Quản lý chiến dịch"
 msgid "Cancel"
 msgstr "Hủy bỏ"
 
-#: includes/consultation-popup.php:103
-#, fuzzy
-msgid "Company / Brand Name"
-msgstr "Công ty / Tên thương hiệu"
-
 #: includes/newsletter-popup.php:325
 #, fuzzy
 msgid "Company size (number of employees)"
@@ -156,15 +116,10 @@ msgstr "Loại hình công ty"
 msgid "Confirm"
 msgstr "Xác nhận"
 
-#: functions.php:299
+#: functions.php:277
 #, fuzzy
 msgid "Confirmed! Redirecting..."
 msgstr "Đã xác nhận!  Đang chuyển hướng..."
-
-#: includes/consultation-popup.php:199
-#, fuzzy
-msgid "Content Marketing & Creative Production"
-msgstr "Tiếp thị Nội dung & Sản xuất Sáng tạo"
 
 #: includes/newsletter-popup.php:207
 #, fuzzy
@@ -215,17 +170,17 @@ msgstr ""
 "Liên kết tải xuống đã hết hạn hoặc đã được sử dụng.  Vui lòng yêu cầu một "
 "liên kết tải xuống mới."
 
-#: functions.php:688
+#: functions.php:666
 #, fuzzy
 msgid "Download not available"
 msgstr "Tải xuống không có sẵn"
 
-#: functions.php:171
+#: functions.php:149
 #, fuzzy
 msgid "Download Now"
 msgstr "Tải xuống ngay"
 
-#: functions.php:167
+#: functions.php:145
 #, fuzzy
 msgid "Download Research Paper"
 msgstr "Tải tài liệu nghiên cứu"
@@ -250,6 +205,11 @@ msgstr "Lỗi"
 msgid "Execution"
 msgstr "Thi hành"
 
+#: functions.php:113
+#, fuzzy
+msgid "Fill in the information to download the report"
+msgstr "Điền thông tin để tải báo cáo"
+
 #: includes/newsletter-popup.php:178
 #, fuzzy
 msgid "FMCG / Retail"
@@ -262,17 +222,12 @@ msgstr ""
 "Dành cho khách hàng tiềm năng có ý định cao – giúp chúng tôi hiểu rõ hơn về "
 "quy mô kinh doanh của bạn."
 
-#: includes/consultation-popup.php:48
-#, fuzzy
-msgid "Full Name"
-msgstr "Tên đầy đủ"
-
 #: includes/newsletter-popup.php:51
 #, fuzzy
 msgid "Full name"
 msgstr "Tên đầy đủ"
 
-#: functions.php:168
+#: functions.php:146
 #, fuzzy
 msgid "Get full access to this research document"
 msgstr "Có toàn quyền truy cập vào tài liệu nghiên cứu này"
@@ -292,37 +247,37 @@ msgstr "https://innovio.qodeinteractive.com"
 msgid "Hệ thống thương mại"
 msgstr "Hệ thống thương mại"
 
-#: functions.php:643
+#: functions.php:621
 #, fuzzy
 msgid "Hủy"
 msgstr "Hủy bỏ"
 
-#: functions.php:623
+#: functions.php:601
 #, fuzzy
 msgid "I am now listening to the podcast instead"
 msgstr "Bây giờ tôi đang nghe podcast"
 
-#: functions.php:599
+#: functions.php:577
 #, fuzzy
 msgid "I did not find the content useful"
 msgstr "Tôi không thấy nội dung này hữu ích"
 
-#: functions.php:611
+#: functions.php:589
 #, fuzzy
 msgid "I found the content to be too politically biased"
 msgstr "Tôi thấy nội dung này quá thiên về mặt chính trị"
 
-#: functions.php:593
+#: functions.php:571
 #, fuzzy
 msgid "I get too many newsletters in general"
 msgstr "Nói chung tôi nhận được quá nhiều bản tin"
 
-#: functions.php:617
+#: functions.php:595
 #, fuzzy
 msgid "I switched my subscription email"
 msgstr "Tôi đã chuyển đổi email đăng ký của mình"
 
-#: functions.php:587
+#: functions.php:565
 #, fuzzy
 msgid "I was getting too many newsletters from Morning Brew brands"
 msgstr "Tôi nhận được quá nhiều bản tin từ các thương hiệu Morning Brew"
@@ -356,17 +311,12 @@ msgstr "Cái nhìn thấu suốt"
 msgid "Integrated annual planning"
 msgstr "Lập kế hoạch tổng hợp hàng năm"
 
-#: includes/consultation-popup.php:148
-#, fuzzy
-msgid "Integrated Strategy Consulting"
-msgstr "Tư vấn chiến lược tích hợp"
-
 #: dm-download.php:15
 #, fuzzy
 msgid "Invalid download request"
 msgstr "Yêu cầu tải xuống không hợp lệ"
 
-#: dm-download.php:30 functions.php:683
+#: dm-download.php:30 functions.php:661
 #, fuzzy
 msgid "Invalid report"
 msgstr "Báo cáo không hợp lệ"
@@ -375,11 +325,6 @@ msgstr "Báo cáo không hợp lệ"
 #, fuzzy
 msgid "Job function"
 msgstr "Chức năng công việc"
-
-#: includes/consultation-popup.php:321
-#, fuzzy
-msgid "Just exploring / researching options"
-msgstr "Chỉ cần khám phá/nghiên cứu các lựa chọn"
 
 #: includes/popup-templates.php:198
 #, fuzzy
@@ -406,7 +351,7 @@ msgstr "Lưu ý pháp lý:"
 msgid "Link Expired"
 msgstr "Liên kết đã hết hạn"
 
-#: functions.php:342
+#: functions.php:320
 #, fuzzy
 msgid "Login successful! Redirecting..."
 msgstr "Đăng nhập thành công!  Đang chuyển hướng..."
@@ -426,7 +371,7 @@ msgstr "Thực hiện chiến dịch tiếp thị"
 msgid "Marketing Manager / Director (Team & budget management)"
 msgstr "Giám đốc/Giám đốc Tiếp thị (Quản lý nhóm và ngân sách)"
 
-#: includes/newsletter-popup.php:25
+#: functions.php:114 includes/newsletter-popup.php:25
 #, fuzzy
 msgid "Marketing Reports & Trends"
 msgstr "Báo cáo & Xu hướng Tiếp thị"
@@ -445,11 +390,6 @@ msgstr "Mikado Themes"
 msgid "My services"
 msgstr "Dịch vụ của tôi"
 
-#: includes/consultation-popup.php:312
-#, fuzzy
-msgid "Next quarter"
-msgstr "Quý tiếp theo"
-
 #: includes/newsletter-popup.php:311
 #, fuzzy
 msgid "Open-ended questions"
@@ -460,77 +400,42 @@ msgstr "Những câu hỏi mở"
 msgid "Optional"
 msgstr "Không bắt buộc"
 
-#: includes/consultation-popup.php:353 includes/newsletter-popup.php:373
+#: includes/newsletter-popup.php:373
 #, fuzzy
 msgid "or sign in with"
 msgstr "hoặc đăng ký bằng"
 
-#: functions.php:629 includes/newsletter-popup.php:187
+#: functions.php:607 includes/newsletter-popup.php:187
 #, fuzzy
 msgid "Other"
 msgstr "Khác"
-
-#: includes/consultation-popup.php:271
-#, fuzzy
-msgid "Over 1 billion VND"
-msgstr "Trên 1 tỷ đồng"
 
 #: includes/newsletter-popup.php:356
 #, fuzzy
 msgid "Over 300"
 msgstr "Hơn 300"
 
-#: includes/consultation-popup.php:244
-#, fuzzy
-msgid "Part 3: Budget & Timeline"
-msgstr "Phần 3: Ngân sách & Dòng thời gian"
-
-#: includes/consultation-popup.php:182
-#, fuzzy
-msgid "Performance Marketing (Paid Advertising)"
-msgstr "Tiếp thị hiệu suất (Quảng cáo trả phí)"
-
-#: includes/consultation-popup.php:72
-#, fuzzy
-msgid "Phone Number / Zalo"
-msgstr "Số Điện Thoại/Zalo"
-
-#: includes/consultation-popup.php:63
-#, fuzzy
-msgid "Please enter a valid email address."
-msgstr "Vui lòng nhập địa chỉ email hợp lệ."
-
 #: includes/newsletter-popup.php:67
 #, fuzzy
 msgid "Please enter your business email."
 msgstr "Vui lòng nhập email doanh nghiệp của bạn."
 
-#: includes/consultation-popup.php:52 includes/newsletter-popup.php:56
+#: includes/newsletter-popup.php:56
 #, fuzzy
 msgid "Please enter your full name."
 msgstr "Vui lòng nhập tên đầy đủ của bạn."
-
-#: includes/consultation-popup.php:88
-#, fuzzy
-msgid "Please enter your job title."
-msgstr "Vui lòng nhập chức danh công việc của bạn."
-
-#: includes/consultation-popup.php:77
-#, fuzzy
-msgid "Please enter your phone number."
-msgstr "Vui lòng nhập số điện thoại của bạn."
 
 #: functions.php:105
 #, fuzzy
 msgid "Please fill in all fields!"
 msgstr "Vui lòng điền vào tất cả các trường!"
 
-#: functions.php:307
+#: functions.php:285
 #, fuzzy
 msgid "Please fill in all fields."
 msgstr "Vui lòng điền vào tất cả các trường."
 
-#: functions.php:678
+#: functions.php:656
 msgid "Please login to download"
 msgstr "Hãy đăng nhập để tải xuống"
 
@@ -554,18 +459,7 @@ msgstr "Vui lòng chọn ít nhất một chủ đề."
 msgid "Please select your job function."
 msgstr "Vui lòng chọn chức năng công việc của bạn."
 
-#: includes/consultation-popup.php:29
-#, fuzzy
-msgid ""
-"Please share your business goals and challenges. Our expert team will review "
-"your information and respond with a preliminary solution within 24 business "
-"hours."
-msgstr ""
-"Hãy chia sẻ mục tiêu và thách thức kinh doanh của bạn.  Đội ngũ chuyên gia "
-"của chúng tôi sẽ xem xét thông tin của bạn và phản hồi bằng giải pháp sơ bộ "
-"trong vòng 24 giờ làm việc."
-
-#: functions.php:637
+#: functions.php:615
 #, fuzzy
 msgid "Please specify..."
 msgstr "Hãy chỉ rõ..."
@@ -600,40 +494,15 @@ msgstr "Đọc thêm"
 msgid "Real Estate"
 msgstr "Bất động sản"
 
-#: includes/consultation-popup.php:25
-#, fuzzy
-msgid "Register for Digital Marketing Strategy Consultation"
-msgstr "Đăng ký tư vấn chiến lược Digital Marketing"
-
-#: functions.php:381
+#: functions.php:359
 #, fuzzy
 msgid "Registration successful! Redirecting..."
 msgstr "Đăng ký thành công!  Đang chuyển hướng..."
-
-#: includes/consultation-popup.php:40
-#, fuzzy
-msgid "Required"
-msgstr "Yêu cầu"
 
 #: includes/popup-templates.php:219
 #, fuzzy
 msgid "Sales kits & websites"
 msgstr "Bộ công cụ và trang web bán hàng"
-
-#: includes/consultation-popup.php:38
-#, fuzzy
-msgid "Section 1: Contact Information"
-msgstr "Phần 1: Thông tin liên hệ"
-
-#: includes/consultation-popup.php:96
-#, fuzzy
-msgid "Section 2: Business Information & Project Details"
-msgstr "Phần 2: Thông tin doanh nghiệp & chi tiết dự án"
-
-#: includes/consultation-popup.php:332
-#, fuzzy
-msgid "Section 4: Understanding Your Needs (Insight)"
-msgstr "Phần 4: Tìm hiểu nhu cầu của bạn (Insight)"
 
 #: includes/newsletter-popup.php:140
 #, fuzzy
@@ -654,11 +523,6 @@ msgstr ""
 "Chọn tối đa 3 chủ đề bạn quan tâm nhất để chúng tôi có thể cá nhân hóa nội "
 "dung cho bạn."
 
-#: includes/consultation-popup.php:256
-#, fuzzy
-msgid "Select your estimated budget"
-msgstr "Chọn ngân sách ước tính của bạn"
-
 #: includes/newsletter-popup.php:95
 #, fuzzy
 msgid "Select your role"
@@ -668,11 +532,6 @@ msgstr "Chọn vai trò của bạn"
 #, fuzzy
 msgid "Sent successfully"
 msgstr "Đã gửi thành công"
-
-#: includes/consultation-popup.php:215
-#, fuzzy
-msgid "SEO (Search Engine Optimization)"
-msgstr "SEO (Tối ưu hóa công cụ tìm kiếm)"
 
 #: includes/newsletter-popup.php:297
 #, fuzzy
@@ -688,11 +547,6 @@ msgstr "Lỗi máy chủ.  Vui lòng thử lại."
 #, fuzzy
 msgid "Social Media"
 msgstr "Truyền thông xã hội"
-
-#: includes/consultation-popup.php:165
-#, fuzzy
-msgid "Social Media & Community Management"
-msgstr "Truyền thông xã hội và quản lý cộng đồng"
 
 #: includes/popup-templates.php:204
 #, fuzzy
@@ -719,11 +573,6 @@ msgstr "Chiến lược & Kế hoạch"
 msgid "Student / Freelancer"
 msgstr "Sinh viên / Freelancer"
 
-#: includes/consultation-popup.php:348
-#, fuzzy
-msgid "Submit & Get Free Consultation"
-msgstr "Gửi và nhận tư vấn miễn phí"
-
 #: functions.php:107
 msgid "Subscribe"
 msgstr "Đăng ký"
@@ -748,7 +597,7 @@ msgstr "Cảm ơn bạn đã quan tâm"
 msgid "Thank you! Downloading document..."
 msgstr "Cảm ơn!  Đang tải tài liệu..."
 
-#: functions.php:605
+#: functions.php:583
 #, fuzzy
 msgid "The content is not what I expected it to be when I signed up"
 msgstr "Nội dung không như tôi mong đợi khi đăng ký"
@@ -785,12 +634,7 @@ msgstr ""
 msgid "Under 50"
 msgstr "Dưới 50"
 
-#: includes/consultation-popup.php:259
-#, fuzzy
-msgid "Under 50 million VND"
-msgstr "Dưới 50 triệu đồng"
-
-#: functions.php:574
+#: functions.php:552
 #| msgid "Subscribe"
 msgid "Unsubscribe"
 msgstr "Hủy đăng ký "
@@ -816,57 +660,14 @@ msgstr ""
 "sáng suốt và thúc đẩy tăng trưởng.  Digital Mind cung cấp nền tảng có thể mở "
 "rộng được xây dựng dựa trên các khoản đầu tư hiện có của tổ chức bạn."
 
-#: includes/consultation-popup.php:111
-#, fuzzy
-msgid "Website or Primary Fanpage Link"
-msgstr "Liên kết trang web hoặc trang web chính"
-
-#: functions.php:577
+#: functions.php:555
 #, fuzzy
 msgid "We’re sorry to see you go. Could you tell us why you decided to leave?"
 msgstr ""
 "Chúng tôi rất tiếc khi thấy bạn đi.  Bạn có thể cho chúng tôi biết lý do tại "
 "sao bạn quyết định rời đi?"
 
-#: includes/consultation-popup.php:338
-#, fuzzy
-msgid "What is the biggest challenge your business is currently facing?"
-msgstr ""
-"Thách thức lớn nhất mà doanh nghiệp của bạn hiện đang phải đối mặt là gì?"
-
-#: includes/consultation-popup.php:251
-#, fuzzy
-msgid "What is your budget?"
-msgstr "Ngân sách của bạn là bao nhiêu?"
-
-#: includes/consultation-popup.php:288
-#, fuzzy
-msgid "When would you like to start?"
-msgstr "Khi nào bạn muốn bắt đầu?"
-
-#: includes/consultation-popup.php:132
-#, fuzzy
-msgid "Which services are you interested in? (Multiple selections allowed)"
-msgstr "Bạn quan tâm đến dịch vụ nào?  (Cho phép nhiều lựa chọn)"
-
-#: includes/consultation-popup.php:303
-#, fuzzy
-msgid "Within the next month"
-msgstr "Trong vòng tháng tới"
-
 #: includes/popup-templates.php:39
 #, fuzzy
 msgid "You might also like"
 msgstr "Bạn cũng có thể thích"
-
-#: includes/consultation-popup.php:406
-#, fuzzy
-msgid ""
-"Your information is kept confidential in accordance with our privacy policy."
-msgstr ""
-"Thông tin của bạn được giữ bí mật theo chính sách bảo mật của chúng tôi."
-
-#: includes/consultation-popup.php:84
-#, fuzzy
-msgid "Your Job Title"
-msgstr "Chức danh của bạn"

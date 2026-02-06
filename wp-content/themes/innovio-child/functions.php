@@ -110,6 +110,8 @@ if (!function_exists('innovio_mikado_child_theme_enqueue_scripts')) {
                 'report_downloading' => esc_html__('The report is being downloaded.', 'innovio_child'),
                 'download_complete' => esc_html__('The report has been downloaded successfully.', 'innovio_child'),
                 'download_complete_title' => esc_html__('Download complete!', 'innovio_child'),
+                'fill_info_to_download' => esc_html__('Fill in the information to download the report', 'innovio_child'),
+                'newsletter_title' => esc_html__('Marketing Reports & Trends', 'innovio_child'),
             )
         );
         wp_localize_script('digitalmind-child-script-henry', 'subscribeEmail', $social_login_data);
@@ -124,30 +126,6 @@ function digitalmind_include_toast_notification()
     include get_stylesheet_directory() . '/templates/toast-notification.php';
 }
 add_action('wp_footer', 'digitalmind_include_toast_notification');
-
-/**
- * Add "Đăng ký" menu item to main navigation
- * Chỉ hiện khi user chưa đăng nhập
- */
-function digitalmind_add_subscribe_menu_item($items, $args)
-{
-    if (is_user_logged_in()) {
-        return $items;
-    }
-
-    if ($args->theme_location == 'main-navigation') {
-        $subscribe_text = esc_html__('Business Partnership', 'innovio_child');
-
-        $subscribe_item = '<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-subscribe narrow">
-            <a href="#research-popup" target="_self" class="subscribe-btn">
-                <span class="subscribe-btn-text">' . esc_html($subscribe_text) . '</span>
-            </a>
-        </li>';
-        $items .= $subscribe_item;
-    }
-    return $items;
-}
-add_filter('wp_nav_menu_items', 'digitalmind_add_subscribe_menu_item', 10, 2);
 
 /**
  * Show Download Button at the end of Research category posts

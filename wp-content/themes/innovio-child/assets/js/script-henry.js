@@ -91,9 +91,14 @@
     // Specific popup functions using common logic
     function showNewsletterPopup() {
         var reportId = $('#newsletterForm').data('report-id');
-        if (reportId) {
-            $('#newsletterForm').data('report-id', reportId);
+        var $title = $('.newsletter-popup-main-title');
+        var $btnText = $('.newsletter-submit-btn span');
+
+        if (reportId && reportId > 0) {
+            $title.text(subscribeEmail.lang_key.fill_info_to_download);
+            $btnText.text(subscribeEmail.lang_key.download);
         }
+
         showPopup('#newsletterPopup');
     }
 
@@ -105,9 +110,6 @@
         showPopup('#thankYouPopup');
     }
 
-    function hideConsultationPopup() {
-        hidePopup('#consultationPopup');
-    }
 
     // ========================================
     // DOWNLOAD FUNCTIONS
@@ -414,12 +416,7 @@
         $(document).on('click', '.menu-item-subscribe > a, a[href="#research-popup"]', function (e) {
             e.preventDefault();
             setCookie('dm_source', 'subscribe', 1);
-            const popup = document.getElementById('consultationPopup');
-            if (popup) {
-                popup.classList.add('show');
-                setTimeout(function () { popup.classList.add('visible'); }, 10);
-            }
-            $('body').css('overflow', 'hidden');
+            showNewsletterPopup();
         });
 
         $('#researchPopupClose, .research-popup-overlay').on('click', function (e) {
@@ -559,121 +556,7 @@
 
     });
 
-    // ========================================
-    // CONSULTATION POPUP HANDLERS
-    // ========================================
-    $(document).ready(function () {
-        var $consultPopup = $('#consultationPopup');
-        var $consultForm = $('#consultationForm');
 
-        $('#consultationPopupClose').on('click', function () {
-            hideConsultationPopup();
-        });
-
-        $consultPopup.on('click', function (e) {
-            if (e.target === this) {
-                hideConsultationPopup();
-            }
-        });
-
-        $(document).on('keyup', function (e) {
-            if (e.key === 'Escape' && $consultPopup.hasClass('show')) {
-                hideConsultationPopup();
-            }
-        });
-
-        $consultForm.on('submit', function (e) {
-            e.preventDefault();
-            $consultForm.find('.consultation-error').addClass('hidden');
-            $consultForm.find('.consultation-input').removeClass('error');
-
-            var isValid = checkRequiredFields($consultForm);
-            var errorMessages = [];
-
-            // Validate Email
-            var $emailField = $('#consultation_email');
-            var emailVal = $emailField.val() ? $emailField.val().trim() : '';
-            if (emailVal && !isValidEmail(emailVal)) {
-                isValid = false;
-                $emailField.addClass('error');
-                $('#error-consultation_email').removeClass('hidden');
-                errorMessages.push('Email không hợp lệ. Vui lòng nhập đúng định dạng email.');
-            }
-
-            // Validate Phone
-            var $phoneField = $('#phone');
-            var phoneVal = $phoneField.val() ? $phoneField.val().trim() : '';
-            if (phoneVal && !isValidVietnamPhone(phoneVal)) {
-                isValid = false;
-                $phoneField.addClass('error');
-                $('#error-phone').removeClass('hidden');
-                errorMessages.push('Số điện thoại không hợp lệ. Vui lòng nhập số điện thoại Việt Nam.');
-            }
-
-            if (!isValid) {
-                if (errorMessages.length > 0) {
-                    showToast(errorMessages[0], 'warning');
-                } else {
-                    showToast('Vui lòng điền đầy đủ thông tin bắt buộc.', 'warning');
-                }
-                return false;
-            }
-
-            var $submitBtn = $consultForm.find('.consultation-submit-btn');
-            var originalText = $submitBtn.find('span').text();
-            $submitBtn.prop('disabled', true);
-            $submitBtn.find('span').text(subscribeEmail.lang_key.processing || 'Processing...');
-
-            var ajaxData = {
-                action: 'dm_register_user',
-                dm_register_nonce: subscribeEmail.register_nonce,
-                user_name: $('#fullname').val(),
-                user_email: $('#consultation_email').val(),
-                current_post_id: subscribeEmail.current_report_id || 0
-            };
-
-            $consultForm.serializeArray().forEach(function (field) {
-                if (field.name !== 'fullname' && field.name !== 'email' && field.name !== 'dm_consultation_nonce') {
-                    ajaxData[field.name] = field.value;
-                }
-            });
-
-            $.ajax({
-                type: 'POST',
-                url: subscribeEmail.ajaxurl,
-                data: ajaxData,
-                success: function (response) {
-                    if (response.success) {
-                        showToast(subscribeEmail.lang_key.sent_successfully || 'Sent successfully!', 'success');
-                        hideConsultationPopup();
-                        $consultForm[0].reset();
-                        if (response.data && response.data.redirect_url) {
-                            window.location.href = response.data.redirect_url;
-                        } else {
-                            window.location.reload();
-                        }
-                    } else {
-                        showToast(response.data.message || 'Error occurred.', 'error');
-                        $submitBtn.prop('disabled', false);
-                        $submitBtn.find('span').text(originalText);
-                    }
-                },
-                error: function () {
-                    showToast('Connection error. Please try again.', 'error');
-                    $submitBtn.prop('disabled', false);
-                    $submitBtn.find('span').text(originalText);
-                }
-            });
-        });
-
-        $consultForm.on('input', 'input[required]', function () {
-            var $field = $(this);
-            var $error = $('#error-' + $field.attr('id'));
-            $field.removeClass('error');
-            $error.addClass('hidden');
-        });
-
-    });
 
     // ========================================
     // NEWSLETTER POPUP HANDLERS

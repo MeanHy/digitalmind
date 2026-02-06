@@ -238,5 +238,5 @@ function digitalmind_add_research_popup_form()
     <?php
 }
 add_action('wp_footer', 'digitalmind_add_research_popup_form');
-require_once get_stylesheet_directory() . '/includes/consultation-popup.php';
+
 require_once get_stylesheet_directory() . '/includes/newsletter-popup.php';
