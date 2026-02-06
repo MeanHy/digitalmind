@@ -101,7 +101,7 @@
         } else {
             // Subscribe flow - reset to default texts
             $title.html(subscribeEmail.lang_key.newsletter_title);
-            $btnText.html(subscribeEmail.lang_key.subscribe_btn);
+            $btnText.html(subscribeEmail.lang_key.subscribe);
         }
 
         showPopup('#newsletterPopup');
