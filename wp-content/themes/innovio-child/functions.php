@@ -112,6 +112,7 @@ if (!function_exists('innovio_mikado_child_theme_enqueue_scripts')) {
                 'download_complete_title' => esc_html__('Download complete!', 'innovio_child'),
                 'fill_info_to_download' => esc_html__('Fill in the information to download the report', 'innovio_child'),
                 'newsletter_title' => esc_html__('Marketing Reports & Trends', 'innovio_child'),
+                'subscribe_btn' => esc_html__('Đăng ký nhận báo cáo', 'innovio_child'),
             )
         );
         wp_localize_script('digitalmind-child-script-henry', 'subscribeEmail', $social_login_data);

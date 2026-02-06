@@ -22,7 +22,7 @@ function digitalmind_add_newsletter_popup()
                 <div class="newsletter-header-circle-1"></div>
                 <div class="newsletter-header-circle-2"></div>
                 <h1 class="newsletter-popup-main-title">
-                    <?php echo esc_html__(' ', 'innovio_child'); ?>
+                    <?php echo esc_html__('Marketing Reports & Trends', 'innovio_child'); ?>
                 </h1>
                 <p class="newsletter-popup-subtitle">
                     "

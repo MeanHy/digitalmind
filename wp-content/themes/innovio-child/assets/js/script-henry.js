@@ -95,8 +95,13 @@
         var $btnText = $('.newsletter-submit-btn span');
 
         if (reportId && reportId > 0) {
-            $title.text(subscribeEmail.lang_key.fill_info_to_download);
-            $btnText.text(subscribeEmail.lang_key.download);
+            // Download flow
+            $title.html(subscribeEmail.lang_key.fill_info_to_download);
+            $btnText.html(subscribeEmail.lang_key.download);
+        } else {
+            // Subscribe flow - reset to default texts
+            $title.html(subscribeEmail.lang_key.newsletter_title);
+            $btnText.html(subscribeEmail.lang_key.subscribe_btn);
         }
 
         showPopup('#newsletterPopup');
