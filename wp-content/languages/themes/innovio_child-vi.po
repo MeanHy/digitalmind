@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Innovio Child\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-23 04:24+0000\n"
-"PO-Revision-Date: 2026-02-02 08:22+0000\n"
+"PO-Revision-Date: 2026-02-06 03:46+0000\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "Language: vi\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "100 – 300"
 msgstr "100 – 300"
 
-#: includes/newsletter-popup.php:378
+#: includes/newsletter-popup.php:438
 #, fuzzy
 msgid "100% privacy guaranteed. No spam."
 msgstr "Đảm bảo quyền riêng tư 100%.  Không có thư rác."
@@ -66,9 +66,8 @@ msgid "As soon as possible (ASAP)"
 msgstr "Càng sớm càng tốt (càng sớm càng tốt)"
 
 #: includes/newsletter-popup.php:44
-#, fuzzy
 msgid "Basic"
-msgstr "Nền tảng"
+msgstr "Cơ bản"
 
 #: includes/newsletter-popup.php:143
 #, fuzzy
@@ -105,7 +104,7 @@ msgstr "Email doanh nghiệp"
 msgid "Business email"
 msgstr "Email doanh nghiệp"
 
-#: functions.php:138
+#: functions.php:139
 #, fuzzy
 msgid "Business Partnership"
 msgstr "Hợp tác kinh doanh"
@@ -132,7 +131,7 @@ msgstr "Cấp độ C / Người sáng lập (Hiểu biết sâu sắc về chi�
 msgid "Campaign Management"
 msgstr "Quản lý chiến dịch"
 
-#: functions.php:100
+#: functions.php:101
 #, fuzzy
 msgid "Cancel"
 msgstr "Hủy bỏ"
@@ -152,12 +151,12 @@ msgstr "Quy mô công ty (số lượng nhân viên)"
 msgid "Company type"
 msgstr "Loại hình công ty"
 
-#: functions.php:99
+#: functions.php:100
 #, fuzzy
 msgid "Confirm"
 msgstr "Xác nhận"
 
-#: functions.php:304
+#: functions.php:299
 #, fuzzy
 msgid "Confirmed! Redirecting..."
 msgstr "Đã xác nhận!  Đang chuyển hướng..."
@@ -192,12 +191,12 @@ msgstr "Lập kế hoạch kỹ thuật số và xã hội"
 msgid "Digital Marketing & Media"
 msgstr "Tiếp thị & Truyền thông Kỹ thuật số"
 
-#: functions.php:107
+#: functions.php:108
 #, fuzzy
 msgid "Download"
 msgstr "Tải xuống"
 
-#: functions.php:111
+#: functions.php:112
 #, fuzzy
 msgid "Download complete!"
 msgstr "Tải xuống hoàn tất!"
@@ -216,17 +215,17 @@ msgstr ""
 "Liên kết tải xuống đã hết hạn hoặc đã được sử dụng.  Vui lòng yêu cầu một "
 "liên kết tải xuống mới."
 
-#: functions.php:693
+#: functions.php:688
 #, fuzzy
 msgid "Download not available"
 msgstr "Tải xuống không có sẵn"
 
-#: functions.php:170
+#: functions.php:171
 #, fuzzy
 msgid "Download Now"
 msgstr "Tải xuống ngay"
 
-#: functions.php:166
+#: functions.php:167
 #, fuzzy
 msgid "Download Research Paper"
 msgstr "Tải tài liệu nghiên cứu"
@@ -273,7 +272,7 @@ msgstr "Tên đầy đủ"
 msgid "Full name"
 msgstr "Tên đầy đủ"
 
-#: functions.php:167
+#: functions.php:168
 #, fuzzy
 msgid "Get full access to this research document"
 msgstr "Có toàn quyền truy cập vào tài liệu nghiên cứu này"
@@ -293,37 +292,37 @@ msgstr "https://innovio.qodeinteractive.com"
 msgid "Hệ thống thương mại"
 msgstr "Hệ thống thương mại"
 
-#: functions.php:648
+#: functions.php:643
 #, fuzzy
 msgid "Hủy"
 msgstr "Hủy bỏ"
 
-#: functions.php:628
+#: functions.php:623
 #, fuzzy
 msgid "I am now listening to the podcast instead"
 msgstr "Bây giờ tôi đang nghe podcast"
 
-#: functions.php:604
+#: functions.php:599
 #, fuzzy
 msgid "I did not find the content useful"
 msgstr "Tôi không thấy nội dung này hữu ích"
 
-#: functions.php:616
+#: functions.php:611
 #, fuzzy
 msgid "I found the content to be too politically biased"
 msgstr "Tôi thấy nội dung này quá thiên về mặt chính trị"
 
-#: functions.php:598
+#: functions.php:593
 #, fuzzy
 msgid "I get too many newsletters in general"
 msgstr "Nói chung tôi nhận được quá nhiều bản tin"
 
-#: functions.php:622
+#: functions.php:617
 #, fuzzy
 msgid "I switched my subscription email"
 msgstr "Tôi đã chuyển đổi email đăng ký của mình"
 
-#: functions.php:592
+#: functions.php:587
 #, fuzzy
 msgid "I was getting too many newsletters from Morning Brew brands"
 msgstr "Tôi nhận được quá nhiều bản tin từ các thương hiệu Morning Brew"
@@ -367,7 +366,7 @@ msgstr "Tư vấn chiến lược tích hợp"
 msgid "Invalid download request"
 msgstr "Yêu cầu tải xuống không hợp lệ"
 
-#: dm-download.php:30 functions.php:688
+#: dm-download.php:30 functions.php:683
 #, fuzzy
 msgid "Invalid report"
 msgstr "Báo cáo không hợp lệ"
@@ -407,12 +406,12 @@ msgstr "Lưu ý pháp lý:"
 msgid "Link Expired"
 msgstr "Liên kết đã hết hạn"
 
-#: functions.php:347
+#: functions.php:342
 #, fuzzy
 msgid "Login successful! Redirecting..."
 msgstr "Đăng nhập thành công!  Đang chuyển hướng..."
 
-#: functions.php:105
+#: functions.php:106
 #, fuzzy
 msgid "Login successful! Reloading..."
 msgstr "Đăng nhập thành công!  Đang tải lại..."
@@ -461,7 +460,12 @@ msgstr "Những câu hỏi mở"
 msgid "Optional"
 msgstr "Không bắt buộc"
 
-#: functions.php:634 includes/newsletter-popup.php:187
+#: includes/consultation-popup.php:353 includes/newsletter-popup.php:373
+#, fuzzy
+msgid "or sign in with"
+msgstr "hoặc đăng ký bằng"
+
+#: functions.php:629 includes/newsletter-popup.php:187
 #, fuzzy
 msgid "Other"
 msgstr "Khác"
@@ -516,17 +520,17 @@ msgstr "Vui lòng nhập chức danh công việc của bạn."
 msgid "Please enter your phone number."
 msgstr "Vui lòng nhập số điện thoại của bạn."
 
-#: functions.php:104
+#: functions.php:105
 #, fuzzy
 msgid "Please fill in all fields!"
 msgstr "Vui lòng điền vào tất cả các trường!"
 
-#: functions.php:312
+#: functions.php:307
 #, fuzzy
 msgid "Please fill in all fields."
 msgstr "Vui lòng điền vào tất cả các trường."
 
-#: functions.php:683
+#: functions.php:678
 msgid "Please login to download"
 msgstr "Hãy đăng nhập để tải xuống"
 
@@ -561,12 +565,12 @@ msgstr ""
 "của chúng tôi sẽ xem xét thông tin của bạn và phản hồi bằng giải pháp sơ bộ "
 "trong vòng 24 giờ làm việc."
 
-#: functions.php:642
+#: functions.php:637
 #, fuzzy
 msgid "Please specify..."
 msgstr "Hãy chỉ rõ..."
 
-#: functions.php:101
+#: functions.php:102
 #, fuzzy
 msgid "Processing..."
 msgstr "Xử lý..."
@@ -601,7 +605,7 @@ msgstr "Bất động sản"
 msgid "Register for Digital Marketing Strategy Consultation"
 msgstr "Đăng ký tư vấn chiến lược Digital Marketing"
 
-#: functions.php:386
+#: functions.php:381
 #, fuzzy
 msgid "Registration successful! Redirecting..."
 msgstr "Đăng ký thành công!  Đang chuyển hướng..."
@@ -660,7 +664,7 @@ msgstr "Chọn ngân sách ước tính của bạn"
 msgid "Select your role"
 msgstr "Chọn vai trò của bạn"
 
-#: functions.php:108 includes/popup-templates.php:31
+#: functions.php:109 includes/popup-templates.php:31
 #, fuzzy
 msgid "Sent successfully"
 msgstr "Đã gửi thành công"
@@ -675,7 +679,7 @@ msgstr "SEO (Tối ưu hóa công cụ tìm kiếm)"
 msgid "SEO / SEM"
 msgstr "SEO / SEM"
 
-#: functions.php:102
+#: functions.php:103
 #, fuzzy
 msgid "Server error. Please try again."
 msgstr "Lỗi máy chủ.  Vui lòng thử lại."
@@ -720,7 +724,7 @@ msgstr "Sinh viên / Freelancer"
 msgid "Submit & Get Free Consultation"
 msgstr "Gửi và nhận tư vấn miễn phí"
 
-#: functions.php:106
+#: functions.php:107
 msgid "Subscribe"
 msgstr "Đăng ký"
 
@@ -739,22 +743,22 @@ msgstr "Công nghệ / SaaS"
 msgid "Thank you for your interest"
 msgstr "Cảm ơn bạn đã quan tâm"
 
-#: functions.php:103
+#: functions.php:104
 #, fuzzy
 msgid "Thank you! Downloading document..."
 msgstr "Cảm ơn!  Đang tải tài liệu..."
 
-#: functions.php:610
+#: functions.php:605
 #, fuzzy
 msgid "The content is not what I expected it to be when I signed up"
 msgstr "Nội dung không như tôi mong đợi khi đăng ký"
 
-#: functions.php:110
+#: functions.php:111
 #, fuzzy
 msgid "The report has been downloaded successfully."
 msgstr "Báo cáo đã được tải xuống thành công."
 
-#: functions.php:109 includes/popup-templates.php:34
+#: functions.php:110 includes/popup-templates.php:34
 #, fuzzy
 msgid "The report is being downloaded."
 msgstr "Báo cáo đang được tải xuống."
@@ -786,7 +790,7 @@ msgstr "Dưới 50"
 msgid "Under 50 million VND"
 msgstr "Dưới 50 triệu đồng"
 
-#: functions.php:579
+#: functions.php:574
 #| msgid "Subscribe"
 msgid "Unsubscribe"
 msgstr "Hủy đăng ký "
@@ -817,7 +821,7 @@ msgstr ""
 msgid "Website or Primary Fanpage Link"
 msgstr "Liên kết trang web hoặc trang web chính"
 
-#: functions.php:582
+#: functions.php:577
 #, fuzzy
 msgid "We’re sorry to see you go. Could you tell us why you decided to leave?"
 msgstr ""
@@ -855,7 +859,7 @@ msgstr "Trong vòng tháng tới"
 msgid "You might also like"
 msgstr "Bạn cũng có thể thích"
 
-#: includes/consultation-popup.php:363
+#: includes/consultation-popup.php:406
 #, fuzzy
 msgid ""
 "Your information is kept confidential in accordance with our privacy policy."

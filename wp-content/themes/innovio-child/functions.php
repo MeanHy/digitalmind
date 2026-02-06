@@ -1,12 +1,13 @@
 <?php
 require_once get_stylesheet_directory() . '/constant.php';
 require_once get_stylesheet_directory() . '/includes/linkedin-oauth.php';
+require_once get_stylesheet_directory() . '/includes/popup-templates.php';
+
 add_action('after_setup_theme', function () {
     if (is_user_logged_in() && !current_user_can('administrator')) {
         show_admin_bar(false);
     }
 });
-
 /**
  * Redirect thank you pages - save report_id to transient and redirect to clean URL
  * Chỉ cho phép truy cập trang cảm ơn khi user đã đăng nhập
@@ -174,12 +175,6 @@ function digitalmind_add_research_download_form($content)
     return $content . $download_section;
 }
 add_filter('the_content', 'digitalmind_add_research_download_form');
-
-/**
- * Add Popup Form to footer (only on research posts)
- */
-// Include popup templates
-require_once get_stylesheet_directory() . '/includes/popup-templates.php';
 
 /**
  * Handle Social Login Popup Callback

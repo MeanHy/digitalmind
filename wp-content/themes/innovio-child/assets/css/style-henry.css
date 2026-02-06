@@ -71,7 +71,6 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   min-height: 23vh;
 }
 
-/* Force full-width cho page dang-ky-thanh-cong */
 .page-id-5006 .mkdf-container-inner,
 .page-id-5658 .mkdf-container-inner,
 .page-id-6931 .mkdf-container-inner,
@@ -84,7 +83,6 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
 .entry-title a {
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  /* tối đa 3 dòng */
   -webkit-box-orient: vertical;
   overflow: hidden;
 
@@ -724,6 +722,7 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
 
 .social-facebook:hover {
   background: #166fe5;
+  color: #fff;
 }
 
 .social-gmail {
@@ -733,6 +732,7 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
 
 .social-gmail:hover {
   background: #d33426;
+  color: #fff;
 }
 
 .social-linkedin {
@@ -742,6 +742,7 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
 
 .social-linkedin:hover {
   background: #0959a8;
+  color: #fff;
 }
 
 .social-zalo {
@@ -2692,6 +2693,8 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
   transform: scale(0.9);
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .newsletter-popup-overlay.visible .newsletter-popup-container {
@@ -2786,6 +2789,7 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
 
 .newsletter-form {
   padding: 30px 40px 40px;
+  flex: 1;
 }
 
 .newsletter-section {
@@ -3038,9 +3042,23 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   color: #333;
 }
 
-.newsletter-footer {
-  padding-top: 20px;
+/* Sticky submit button wrapper */
+.newsletter-submit-sticky {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  padding: 20px 0;
   text-align: center;
+  border-top: 1px solid #eee;
+  margin-left: -40px;
+  margin-right: -40px;
+  margin-bottom: -20px;
+}
+
+.newsletter-footer {
+  padding: 20px 40px 30px;
+  text-align: center;
+  background: #fff;
 }
 
 .newsletter-submit-btn {

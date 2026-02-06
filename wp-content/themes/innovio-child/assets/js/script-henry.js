@@ -1,5 +1,11 @@
 ﻿(function ($) {
     "use strict";
+
+    // ========================================
+    // UTILITY FUNCTIONS
+    // Cookie management, toast notifications
+    // ========================================
+
     function setCookie(name, value, days) {
         const expires = new Date();
         expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -49,27 +55,63 @@
     window.dmShowToast = showToast;
     window.dmSetCookieValue = setCookie;
 
-    function showNewsletterPopup() {
-        var $newsletterPopup = $('#newsletterPopup');
-        var reportId = $('#newsletterForm').data('report-id');
-        if (reportId) {
-            $('#newsletterForm').data('report-id', reportId);
-        }
-        $newsletterPopup.addClass('show');
+    // ========================================
+    // POPUP MANAGEMENT
+    // Generic popup show/hide functions
+    // ========================================
+
+    /**
+     * Show popup by ID with consistent animation
+     */
+    function showPopup(popupId) {
+        var $popup = $(popupId);
+        if (!$popup.length) return;
+
+        $popup.addClass('show');
         setTimeout(function () {
-            $newsletterPopup.addClass('visible');
+            $popup.addClass('visible');
         }, 10);
         $('body').css('overflow', 'hidden');
     }
 
-    function hideNewsletterPopup() {
-        var $newsletterPopup = $('#newsletterPopup');
-        $newsletterPopup.removeClass('visible');
+    /**
+     * Hide popup by ID with consistent animation
+     */
+    function hidePopup(popupId) {
+        var $popup = $(popupId);
+        if (!$popup.length) return;
+
+        $popup.removeClass('visible');
         setTimeout(function () {
-            $newsletterPopup.removeClass('show');
+            $popup.removeClass('show');
         }, 300);
         $('body').css('overflow', '');
     }
+
+    // Specific popup functions using common logic
+    function showNewsletterPopup() {
+        var reportId = $('#newsletterForm').data('report-id');
+        if (reportId) {
+            $('#newsletterForm').data('report-id', reportId);
+        }
+        showPopup('#newsletterPopup');
+    }
+
+    function hideNewsletterPopup() {
+        hidePopup('#newsletterPopup');
+    }
+
+    function showThankYouPopup() {
+        showPopup('#thankYouPopup');
+    }
+
+    function hideConsultationPopup() {
+        hidePopup('#consultationPopup');
+    }
+
+    // ========================================
+    // DOWNLOAD FUNCTIONS
+    // ========================================
 
     function requestSecureDownload(reportId) {
         if (!reportId) {
@@ -97,24 +139,6 @@
         });
     }
 
-    function showThankYouPopup() {
-        var $popup = $('#thankYouPopup');
-        if (!$popup.length) return;
-
-        $popup.addClass('show');
-        setTimeout(function () {
-            $popup.addClass('visible');
-        }, 10);
-    }
-
-    function hideConsultationPopup() {
-        $consultPopup.removeClass('visible');
-        setTimeout(function () {
-            $consultPopup.removeClass('show');
-        }, 300);
-        $('body').css('overflow', '');
-    }
-
     var downloadCompleteTriggered = false;
     function updateDownloadComplete() {
         if (downloadCompleteTriggered) return;
@@ -140,13 +164,48 @@
 
     $(document).on('click', '#thankYouPopupClose, .thankyou-popup-overlay', function (e) {
         if (e.target === this || this.id === 'thankYouPopupClose') {
-            var $popup = $('#thankYouPopup');
-            $popup.removeClass('visible');
-            setTimeout(function () {
-                $popup.removeClass('show');
-            }, 300);
+            hidePopup('#thankYouPopup');
         }
     });
+
+    // ========================================
+    // SOCIAL LOGIN & HELPER FUNCTIONS
+    // ========================================
+
+    function isValidEmail(email) {
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    function isValidVietnamPhone(phone) {
+        var phoneRegex = /^(0|\+84)(\d{9,10})$/;
+        var cleanPhone = phone.replace(/[\s\-\.]/g, '');
+        return phoneRegex.test(cleanPhone);
+    }
+
+    function checkRequiredFields($container) {
+        var isValid = true;
+        var $requiredFields = $container.find('input[required], select[required]');
+
+        $requiredFields.each(function () {
+            var $field = $(this);
+            var value = $field.val();
+
+            // Handle trim if it's a string
+            if (value && typeof value === 'string') {
+                value = value.trim();
+            }
+
+            if (!value) {
+                isValid = false;
+                $field.addClass('error');
+                $('#error-' + $field.attr('id')).removeClass('hidden');
+            }
+        });
+
+        return isValid;
+    }
+
 
     function handleSocialLoginSuccess() {
         setCookie('research_email_verified', 'true', 365);
@@ -192,6 +251,9 @@
         }
     }
 
+    // ========================================
+    // FORM HANDLERS & DOWNLOAD LOGIC
+    // ========================================
     $(document).ready(function () {
         const urlParams = new URLSearchParams(window.location.search);
         const isSocialLoginSuccess = urlParams.get('social_login') === 'success';
@@ -261,7 +323,7 @@
 
             if (!showThankYou && !autoDownloadUrl && !isFromMail) {
                 setTimeout(function () {
-                    showPopup();
+                    showPopup('#researchPopup');
                 }, 500);
             }
         }
@@ -323,13 +385,13 @@
 
                             if (fromEmailDownloadId && response.data.download_url) {
                                 document.cookie = 'dm_from_email_download=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-                                hidePopup();
+                                hidePopup('#researchPopup');
 
                                 setTimeout(function () {
                                     window.location.href = response.data.download_url;
                                 }, 500);
                             } else {
-                                hidePopup();
+                                hidePopup('#researchPopup');
                                 setTimeout(function () {
                                     if (response.data.redirect_url) {
                                         window.location.href = response.data.redirect_url;
@@ -362,23 +424,13 @@
 
         $('#researchPopupClose, .research-popup-overlay').on('click', function (e) {
             if (e.target === this || this.id === 'researchPopupClose') {
-                const popup = document.getElementById('researchPopup');
-                if (popup) {
-                    popup.classList.remove('visible');
-                    setTimeout(function () { popup.classList.remove('show'); }, 300);
-                }
-                $('body').css('overflow', '');
+                hidePopup('#researchPopup');
             }
         });
 
         $(document).on('keyup', function (e) {
             if (e.key === 'Escape') {
-                const popup = document.getElementById('researchPopup');
-                if (popup) {
-                    popup.classList.remove('visible');
-                    setTimeout(function () { popup.classList.remove('show'); }, 300);
-                }
-                $('body').css('overflow', '');
+                hidePopup('#researchPopup');
             }
         });
 
@@ -532,46 +584,31 @@
 
         $consultForm.on('submit', function (e) {
             e.preventDefault();
-            var isValid = true;
-            var errorMessages = [];
-            var $requiredFields = $consultForm.find('input[required]');
-
             $consultForm.find('.consultation-error').addClass('hidden');
             $consultForm.find('.consultation-input').removeClass('error');
 
-            $requiredFields.each(function () {
-                var $field = $(this);
-                var value = $field.val().trim();
-                var fieldName = $field.attr('name');
-                var $error = $('#error-' + $field.attr('id'));
+            var isValid = checkRequiredFields($consultForm);
+            var errorMessages = [];
 
-                if (!value) {
-                    isValid = false;
-                    $field.addClass('error');
-                    $error.removeClass('hidden');
-                }
+            // Validate Email
+            var $emailField = $('#consultation_email');
+            var emailVal = $emailField.val() ? $emailField.val().trim() : '';
+            if (emailVal && !isValidEmail(emailVal)) {
+                isValid = false;
+                $emailField.addClass('error');
+                $('#error-consultation_email').removeClass('hidden');
+                errorMessages.push('Email không hợp lệ. Vui lòng nhập đúng định dạng email.');
+            }
 
-                if (fieldName === 'email' && value) {
-                    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(value)) {
-                        isValid = false;
-                        $field.addClass('error');
-                        $error.removeClass('hidden');
-                        errorMessages.push('Email không hợp lệ. Vui lòng nhập đúng định dạng email.');
-                    }
-                }
-
-                if (fieldName === 'phone' && value) {
-                    var phoneRegex = /^(0|\+84)(\d{9,10})$/;
-                    var cleanPhone = value.replace(/[\s\-\.]/g, '');
-                    if (!phoneRegex.test(cleanPhone)) {
-                        isValid = false;
-                        $field.addClass('error');
-                        $error.removeClass('hidden');
-                        errorMessages.push('Số điện thoại không hợp lệ. Vui lòng nhập số điện thoại Việt Nam.');
-                    }
-                }
-            });
+            // Validate Phone
+            var $phoneField = $('#phone');
+            var phoneVal = $phoneField.val() ? $phoneField.val().trim() : '';
+            if (phoneVal && !isValidVietnamPhone(phoneVal)) {
+                isValid = false;
+                $phoneField.addClass('error');
+                $('#error-phone').removeClass('hidden');
+                errorMessages.push('Số điện thoại không hợp lệ. Vui lòng nhập số điện thoại Việt Nam.');
+            }
 
             if (!isValid) {
                 if (errorMessages.length > 0) {
@@ -674,6 +711,7 @@
             var isDownloadFlow = $newsletterForm.data('report-id') && $newsletterForm.data('report-id') > 0;
 
             if (isDownloadFlow) {
+                // Simplified validation for download: only name + email
                 var $nameField = $('#nl_fullname');
                 var $emailField = $('#nl_email');
 
@@ -684,41 +722,27 @@
                 }
 
                 var emailVal = $emailField.val() ? $emailField.val().trim() : '';
-                if (!emailVal || emailVal === '') {
+                if (!emailVal) {
                     isValid = false;
                     $emailField.addClass('error');
                     $('#error-nl_email').removeClass('hidden');
-                } else {
-                    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(emailVal)) {
-                        isValid = false;
-                        $emailField.addClass('error');
-                        $('#error-nl_email').removeClass('hidden');
-                        errorMessages.push('Email không hợp lệ.');
-                    }
+                } else if (!isValidEmail(emailVal)) {
+                    isValid = false;
+                    $emailField.addClass('error');
+                    $('#error-nl_email').removeClass('hidden');
+                    errorMessages.push('Email không hợp lệ.');
                 }
             } else {
                 // Full validation for newsletter subscription
-                $newsletterForm.find('input[required], select[required]').each(function () {
-                    var $field = $(this);
-                    var value = $field.val();
-                    if (!value || value.trim() === '') {
-                        isValid = false;
-                        $field.addClass('error');
-                        $('#error-' + $field.attr('id')).removeClass('hidden');
-                    }
-                });
+                isValid = checkRequiredFields($newsletterForm);
 
                 var $emailField = $('#nl_email');
                 var emailVal = $emailField.val() ? $emailField.val().trim() : '';
-                if (emailVal) {
-                    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(emailVal)) {
-                        isValid = false;
-                        $emailField.addClass('error');
-                        $('#error-nl_email').removeClass('hidden');
-                        errorMessages.push('Email không hợp lệ.');
-                    }
+                if (emailVal && !isValidEmail(emailVal)) {
+                    isValid = false;
+                    $emailField.addClass('error');
+                    $('#error-nl_email').removeClass('hidden');
+                    errorMessages.push('Email không hợp lệ.');
                 }
 
                 var checkedInterests = $newsletterForm.find('input[name="interests[]"]:checked').length;

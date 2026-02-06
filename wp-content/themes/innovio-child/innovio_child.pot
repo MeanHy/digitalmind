@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Innovio Child\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-02 08:19+0000\n"
+"POT-Creation-Date: 2026-02-06 03:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "100 – 300"
 msgstr ""
 
-#: includes/newsletter-popup.php:378
+#: includes/newsletter-popup.php:438
 msgid "100% privacy guaranteed. No spam."
 msgstr ""
 
@@ -88,7 +88,7 @@ msgstr ""
 msgid "Business email"
 msgstr ""
 
-#: functions.php:138
+#: functions.php:139
 msgid "Business Partnership"
 msgstr ""
 
@@ -108,7 +108,7 @@ msgstr ""
 msgid "Campaign Management"
 msgstr ""
 
-#: functions.php:100
+#: functions.php:101
 msgid "Cancel"
 msgstr ""
 
@@ -124,11 +124,11 @@ msgstr ""
 msgid "Company type"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:100
 msgid "Confirm"
 msgstr ""
 
-#: functions.php:304
+#: functions.php:299
 msgid "Confirmed! Redirecting..."
 msgstr ""
 
@@ -156,11 +156,11 @@ msgstr ""
 msgid "Digital Marketing & Media"
 msgstr ""
 
-#: functions.php:107
+#: functions.php:108
 msgid "Download"
 msgstr ""
 
-#: functions.php:111
+#: functions.php:112
 msgid "Download complete!"
 msgstr ""
 
@@ -174,15 +174,15 @@ msgid ""
 "download link."
 msgstr ""
 
-#: functions.php:693
+#: functions.php:688
 msgid "Download not available"
 msgstr ""
 
-#: functions.php:170
+#: functions.php:171
 msgid "Download Now"
 msgstr ""
 
-#: functions.php:166
+#: functions.php:167
 msgid "Download Research Paper"
 msgstr ""
 
@@ -218,7 +218,7 @@ msgstr ""
 msgid "Full name"
 msgstr ""
 
-#: functions.php:167
+#: functions.php:168
 msgid "Get full access to this research document"
 msgstr ""
 
@@ -234,31 +234,31 @@ msgstr ""
 msgid "Hệ thống thương mại"
 msgstr ""
 
-#: functions.php:648
+#: functions.php:643
 msgid "Hủy"
 msgstr ""
 
-#: functions.php:628
+#: functions.php:623
 msgid "I am now listening to the podcast instead"
 msgstr ""
 
-#: functions.php:604
+#: functions.php:599
 msgid "I did not find the content useful"
 msgstr ""
 
-#: functions.php:616
+#: functions.php:611
 msgid "I found the content to be too politically biased"
 msgstr ""
 
-#: functions.php:598
+#: functions.php:593
 msgid "I get too many newsletters in general"
 msgstr ""
 
-#: functions.php:622
+#: functions.php:617
 msgid "I switched my subscription email"
 msgstr ""
 
-#: functions.php:592
+#: functions.php:587
 msgid "I was getting too many newsletters from Morning Brew brands"
 msgstr ""
 
@@ -294,7 +294,7 @@ msgstr ""
 msgid "Invalid download request"
 msgstr ""
 
-#: dm-download.php:30 functions.php:688
+#: dm-download.php:30 functions.php:683
 msgid "Invalid report"
 msgstr ""
 
@@ -326,11 +326,11 @@ msgstr ""
 msgid "Link Expired"
 msgstr ""
 
-#: functions.php:347
+#: functions.php:342
 msgid "Login successful! Redirecting..."
 msgstr ""
 
-#: functions.php:105
+#: functions.php:106
 msgid "Login successful! Reloading..."
 msgstr ""
 
@@ -370,7 +370,11 @@ msgstr ""
 msgid "Optional"
 msgstr ""
 
-#: functions.php:634 includes/newsletter-popup.php:187
+#: includes/consultation-popup.php:353 includes/newsletter-popup.php:373
+msgid "or sign in with"
+msgstr ""
+
+#: functions.php:629 includes/newsletter-popup.php:187
 msgid "Other"
 msgstr ""
 
@@ -414,15 +418,15 @@ msgstr ""
 msgid "Please enter your phone number."
 msgstr ""
 
-#: functions.php:104
+#: functions.php:105
 msgid "Please fill in all fields!"
 msgstr ""
 
-#: functions.php:312
+#: functions.php:307
 msgid "Please fill in all fields."
 msgstr ""
 
-#: functions.php:683
+#: functions.php:678
 msgid "Please login to download"
 msgstr ""
 
@@ -449,11 +453,11 @@ msgid ""
 "hours."
 msgstr ""
 
-#: functions.php:642
+#: functions.php:637
 msgid "Please specify..."
 msgstr ""
 
-#: functions.php:101
+#: functions.php:102
 msgid "Processing..."
 msgstr ""
 
@@ -481,7 +485,7 @@ msgstr ""
 msgid "Register for Digital Marketing Strategy Consultation"
 msgstr ""
 
-#: functions.php:386
+#: functions.php:381
 msgid "Registration successful! Redirecting..."
 msgstr ""
 
@@ -527,7 +531,7 @@ msgstr ""
 msgid "Select your role"
 msgstr ""
 
-#: functions.php:108 includes/popup-templates.php:31
+#: functions.php:109 includes/popup-templates.php:31
 msgid "Sent successfully"
 msgstr ""
 
@@ -539,7 +543,7 @@ msgstr ""
 msgid "SEO / SEM"
 msgstr ""
 
-#: functions.php:102
+#: functions.php:103
 msgid "Server error. Please try again."
 msgstr ""
 
@@ -575,7 +579,7 @@ msgstr ""
 msgid "Submit & Get Free Consultation"
 msgstr ""
 
-#: functions.php:106
+#: functions.php:107
 msgid "Subscribe"
 msgstr ""
 
@@ -591,19 +595,19 @@ msgstr ""
 msgid "Thank you for your interest"
 msgstr ""
 
-#: functions.php:103
+#: functions.php:104
 msgid "Thank you! Downloading document..."
 msgstr ""
 
-#: functions.php:610
+#: functions.php:605
 msgid "The content is not what I expected it to be when I signed up"
 msgstr ""
 
-#: functions.php:110
+#: functions.php:111
 msgid "The report has been downloaded successfully."
 msgstr ""
 
-#: functions.php:109 includes/popup-templates.php:34
+#: functions.php:110 includes/popup-templates.php:34
 msgid "The report is being downloaded."
 msgstr ""
 
@@ -626,7 +630,7 @@ msgstr ""
 msgid "Under 50 million VND"
 msgstr ""
 
-#: functions.php:579
+#: functions.php:574
 msgid "Unsubscribe"
 msgstr ""
 
@@ -649,7 +653,7 @@ msgstr ""
 msgid "Website or Primary Fanpage Link"
 msgstr ""
 
-#: functions.php:582
+#: functions.php:577
 msgid "We’re sorry to see you go. Could you tell us why you decided to leave?"
 msgstr ""
 
@@ -677,7 +681,7 @@ msgstr ""
 msgid "You might also like"
 msgstr ""
 
-#: includes/consultation-popup.php:363
+#: includes/consultation-popup.php:406
 msgid ""
 "Your information is kept confidential in accordance with our privacy policy."
 msgstr ""
