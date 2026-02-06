@@ -363,7 +363,7 @@ function digitalmind_add_newsletter_popup()
                 <div class="newsletter-submit-sticky">
                     <button type="submit" class="newsletter-submit-btn">
                         <span>
-                            <?php echo esc_html__('Subscribe to receive reports', 'innovio_child'); ?>
+                            <?php echo esc_html__('Subscribe to our newsletter', 'innovio_child'); ?>
                         </span>
                     </button>
                 </div>

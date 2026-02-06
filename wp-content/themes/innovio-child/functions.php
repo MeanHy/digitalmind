@@ -111,7 +111,7 @@ if (!function_exists('innovio_mikado_child_theme_enqueue_scripts')) {
                 'download_complete' => esc_html__('The report has been downloaded successfully.', 'innovio_child'),
                 'download_complete_title' => esc_html__('Download complete!', 'innovio_child'),
                 'fill_info_to_download' => esc_html__('Fill in the information to download the report', 'innovio_child'),
-                'newsletter_title' => esc_html__('Marketing Reports & Trends', 'innovio_child'),
+                'newsletter_title' => esc_html__('Subscribe to our newsletter', 'innovio_child'),
                 'subscribe_btn' => esc_html__('Subscribe to receive reports', 'innovio_child'),
             )
         );
