@@ -1,3 +1,18 @@
+/* Font  */
+@font-face {
+  font-family: BeVietnamPro;
+  src: url(../fonts/BeVietnamPro-Light.ttf);
+}
+
+@font-face {
+  font-family: BeVietnamProBold;
+  src: url(../fonts/BeVietnamPro-SemiBold.ttf);
+}
+
+.page-id-7005 .mkdf-container-inner {
+  width: unset;
+}
+
 h6 {
   font-size: 24px !important;
 }
@@ -196,7 +211,7 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   flex: 1;
   font-size: 15px;
   color: #333;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'BeVietnamPro', sans-serif;
 }
 
 .mkdf-filter-arrow {
@@ -242,7 +257,7 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   color: #333;
   cursor: pointer;
   transition: background 0.15s ease;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'BeVietnamPro', sans-serif;
 }
 
 .mkdf-filter-option:hover {
@@ -264,7 +279,7 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   border-radius: 6px;
   font-size: 14px;
   color: #333;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'BeVietnamPro', sans-serif;
 }
 
 .mkdf-post-count .mkdf-count-number {
@@ -449,7 +464,7 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   font-weight: 700;
   color: #1a365d;
   margin-bottom: 40px;
-  font-family: 'RobotoBold', sans-serif;
+  font-family: 'BeVietnamProBold', sans-serif;
 }
 
 /* Form Row - 2 columns */
@@ -478,7 +493,7 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   font-weight: 500;
   color: #1a365d;
   margin-bottom: 8px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'BeVietnamPro', sans-serif;
 }
 
 .cf7-download-form label .required {
@@ -497,7 +512,7 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   border: 1px solid #cbd5e0;
   border-radius: 4px;
   font-size: 15px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'BeVietnamPro', sans-serif;
   color: #2d3748;
   background: #fff;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -561,7 +576,7 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   font-size: 14px;
   color: #4a5568;
   margin-left: 8px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'BeVietnamPro', sans-serif;
 }
 
 .cf7-download-form .checkbox-group input[type="checkbox"] {
@@ -584,7 +599,7 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   font-size: 14px;
   color: #4a5568;
   margin-left: 8px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'BeVietnamPro', sans-serif;
 }
 
 .cf7-download-form .radio-group input[type="radio"] {
@@ -599,7 +614,7 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   line-height: 1.6;
   color: #4a5568;
   margin: 25px 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'BeVietnamPro', sans-serif;
 }
 
 .cf7-download-form .privacy-text p {
@@ -632,7 +647,7 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   border-radius: 4px;
   cursor: pointer;
   transition: background 0.3s ease;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'BeVietnamPro', sans-serif;
 }
 
 .cf7-download-form input[type="submit"]:hover,
@@ -2382,7 +2397,7 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   border: 1px solid #ddd !important;
   border-radius: 8px !important;
   font-size: 14px !important;
-  font-family: 'Roboto', sans-serif !important;
+  font-family: 'BeVietnamPro', sans-serif !important;
   color: #333 !important;
   background: #fff !important;
   transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
@@ -2664,4 +2679,135 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
     padding: 14px 30px;
     font-size: 13px;
   }
+}
+
+.sec_solution h5.mkdf-iwt-title {
+  min-height: 80px;
+}
+
+#btn_solution .wpb_wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#btn_solution {
+  display: none;
+}
+
+.sec_solution .mkdf-iwt-icon img {
+  width: 80px;
+}
+
+.sec_solution .mkdf-btn.mkdf-btn-simple {
+  color: #2968b2;
+}
+
+.sec_solution .mkdf-iwt-link-button .mkdf-btn {
+  border: 1px solid;
+  padding: 0 0 0 20px !important;
+}
+
+.sec_solution .mkdf-btn.mkdf-btn-simple .mkdf-btn-plus {
+  border: none;
+}
+
+.sec_solution .mkdf-btn.mkdf-btn-simple:not(.mkdf-btn-custom-border-hover):hover {
+  border-color: #2968b2 !important;
+}
+
+.mkdf-btn {
+  border-radius: 5px !important;
+}
+
+.mkdf-post-read-more-button .mkdf-btn.mkdf-btn-simple {
+  border: 1px solid #d7e3f7 !important;
+  padding: 0 0 0 10px !important;
+}
+
+.mkdf-btn.mkdf-btn-simple .mkdf-btn-plus {
+  border: none !important;
+}
+
+.mkdf-post-read-more-button .mkdf-btn.mkdf-btn-simple:not(.mkdf-btn-custom-border-hover):hover {
+  border-color: #d7e3f7 !important;
+}
+
+/* ========================================
+   POLYLANG LANGUAGE SWITCHER - CUSTOM UI
+   ======================================== */
+
+/* Wrapper của widget */
+.mkdf-header-widget-area-one .widget_polylang {
+  display: flex;
+  align-items: center;
+  margin: 0 8px 0 0;
+}
+
+/* Ẩn label screen-reader */
+.widget_polylang .screen-reader-text {
+  display: none;
+}
+
+/* Custom select container - dùng wrapper pseudo */
+.widget_polylang {
+  position: relative;
+}
+
+/* Reset native select + custom style */
+.widget_polylang .pll-switcher-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'BeVietnamPro', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 28px 5px 12px;
+  min-width: 60px;
+  width: unset !important;
+  outline: none;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  /* Mũi tên SVG nhỏ */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 9px center;
+  line-height: 1;
+}
+
+.widget_polylang .pll-switcher-select:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.widget_polylang .pll-switcher-select:focus {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+}
+
+/* Khi header dark (scrolled / dark skin) */
+.mkdf-dark-header .mkdf-page-header>div:not(.mkdf-sticky-header) .widget_polylang .pll-switcher-select,
+.mkdf-sticky-header .widget_polylang .pll-switcher-select {
+  border-color: rgba(41, 104, 178, 0.5);
+  color: #2968B2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%232968B2' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+.mkdf-dark-header .mkdf-page-header>div:not(.mkdf-sticky-header) .widget_polylang .pll-switcher-select:hover,
+.mkdf-sticky-header .widget_polylang .pll-switcher-select:hover {
+  background-color: rgba(41, 104, 178, 0.08);
+  border-color: #2968B2;
+}
+
+/* Option text màu đen (trong dropdown list) */
+.widget_polylang .pll-switcher-select option {
+  color: #222;
+  background: #fff;
+  font-size: 13px;
 }
