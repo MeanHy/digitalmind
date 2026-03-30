@@ -9,8 +9,29 @@
   src: url(../fonts/BeVietnamPro-SemiBold.ttf);
 }
 
-.page-id-7005 .mkdf-container-inner {
+.page-id-7005 .mkdf-container-inner,
+.page-id-5037 .mkdf-container-inner,
+.page-id-5687 .mkdf-container-inner,
+.page-id-6052 .mkdf-container-inner,
+.page-id-5045 .mkdf-container-inner,
+.page-id-5694 .mkdf-container-inner,
+.page-id-7239 .mkdf-container-inner,
+.page-id-7296 .mkdf-container-inner,
+.page-id-1090 .mkdf-container-inner{
   width: unset;
+}
+
+.page-id-5045 .mkdf-row-grid-section-wrapper .mkdf-row-grid-section,
+.page-id-5694 .mkdf-row-grid-section-wrapper .mkdf-row-grid-section,
+.page-id-7239 .mkdf-row-grid-section-wrapper .mkdf-row-grid-section,
+.page-id-7296 .mkdf-row-grid-section-wrapper .mkdf-row-grid-section,
+.page-id-1090 .mkdf-row-grid-section-wrapper .mkdf-row-grid-section{
+  width: 1300px;
+}
+
+.vc_custom_1541608528684 .mkdf-single-image-holder img{
+  width: 700px;
+  padding-left: 150px;
 }
 
 h6 {
@@ -89,7 +110,8 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
 .page-id-5006 .mkdf-container-inner,
 .page-id-5658 .mkdf-container-inner,
 .page-id-6931 .mkdf-container-inner,
-.page-id-6906 .mkdf-container-inner {
+.page-id-6906 .mkdf-container-inner,
+.page-id-5037 .mkdf-container-inner {
   width: 100% !important;
   max-width: 100% !important;
   padding: 0 !important;
@@ -2682,7 +2704,11 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
 }
 
 .sec_solution h5.mkdf-iwt-title {
-  min-height: 80px;
+  min-height: 50px;
+}
+
+.sec_solution .mkdf-iwt .mkdf-iwt-text {
+  min-height: 75px;
 }
 
 #btn_solution .wpb_wrapper {
@@ -2732,28 +2758,20 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   border-color: #d7e3f7 !important;
 }
 
-/* ========================================
-   POLYLANG LANGUAGE SWITCHER - CUSTOM UI
-   ======================================== */
-
-/* Wrapper của widget */
 .mkdf-header-widget-area-one .widget_polylang {
   display: flex;
   align-items: center;
   margin: 0 8px 0 0;
 }
 
-/* Ẩn label screen-reader */
 .widget_polylang .screen-reader-text {
   display: none;
 }
 
-/* Custom select container - dùng wrapper pseudo */
 .widget_polylang {
   position: relative;
 }
 
-/* Reset native select + custom style */
 .widget_polylang .pll-switcher-select {
   appearance: none;
   -webkit-appearance: none;
@@ -2773,7 +2791,6 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   width: unset !important;
   outline: none;
   transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
-  /* Mũi tên SVG nhỏ */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 9px center;
@@ -2791,7 +2808,6 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
 }
 
-/* Khi header dark (scrolled / dark skin) */
 .mkdf-dark-header .mkdf-page-header>div:not(.mkdf-sticky-header) .widget_polylang .pll-switcher-select,
 .mkdf-sticky-header .widget_polylang .pll-switcher-select {
   border-color: rgba(41, 104, 178, 0.5);
@@ -2805,9 +2821,64 @@ footer .widget.widget_custom_html .textwidget.custom-html-widget a {
   border-color: #2968B2;
 }
 
-/* Option text màu đen (trong dropdown list) */
 .widget_polylang .pll-switcher-select option {
   color: #222;
   background: #fff;
   font-size: 13px;
+}
+
+div[data-cky-tag="powered-by"] {
+  display: none !important;
+}
+
+.wpcf7-form button[type="submit"].is-loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.wpcf7-form button[type="submit"].is-loading .mkdf-btn-text {
+  visibility: hidden;
+}
+
+.wpcf7-form button[type="submit"].is-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  margin-top: -9px;
+  margin-left: -9px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: cf7-spin 0.7s linear infinite;
+}
+
+@keyframes cf7-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.sec__process__2 .mkdf-roadmap .mkdf-roadmap-item .mkdf-roadmap-curve{
+  background-color: #ffffff;
+}
+.sec__process span.mkdf-ris-title, .sec__process__2 span.mkdf-ris-title{
+  padding: 0 5px;
+}
+.sec__process__2 .mkdf-ris-title{
+  color: #ffffff !important;
+}
+.sec__process .mkdf-roadmap.mkdf-roadmap-skin-light .mkdf-roadmap-item .mkdf-roadmap-item-circle{
+  background-color: #4256d6 !important;
+}
+.mkdf-tabs.mkdf-white-skin.mkdf-tabs-simple .mkdf-tabs-nav li a{
+  color: #666a80 !important;
+}
+.mkdf-section-title-holder .mkdf-st-title .mkdf-st-title-hightlight{
+  overflow: unset !important;
+}
+.vc_row.mkdf-grid-lines-light .mkdf-grid-line-center-left, .vc_row.mkdf-grid-lines-light .mkdf-grid-line-center-right, .vc_row.mkdf-grid-lines-light .mkdf-grid-line-left, .vc_row.mkdf-grid-lines-light .mkdf-grid-line-right{
+  background-color: #ffffff00 !important;
 }

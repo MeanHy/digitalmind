@@ -1,4 +1,4 @@
-﻿(function ($) {
+(function ($) {
     "use strict";
 
     // ========================================
@@ -710,4 +710,32 @@
 
     });
 
+})(jQuery);
+
+// CF7 Submit Loading Effect
+(function ($) {
+    document.addEventListener('wpcf7beforesubmit', function (e) {
+        var $btn = $(e.target).find('button[type="submit"]');
+        $btn.addClass('is-loading');
+    }, false);
+
+    document.addEventListener('wpcf7mailsent', function (e) {
+        var $btn = $(e.target).find('button[type="submit"]');
+        $btn.removeClass('is-loading');
+    }, false);
+
+    document.addEventListener('wpcf7invalid', function (e) {
+        var $btn = $(e.target).find('button[type="submit"]');
+        $btn.removeClass('is-loading');
+    }, false);
+
+    document.addEventListener('wpcf7spam', function (e) {
+        var $btn = $(e.target).find('button[type="submit"]');
+        $btn.removeClass('is-loading');
+    }, false);
+
+    document.addEventListener('wpcf7mailfailed', function (e) {
+        var $btn = $(e.target).find('button[type="submit"]');
+        $btn.removeClass('is-loading');
+    }, false);
 })(jQuery);
