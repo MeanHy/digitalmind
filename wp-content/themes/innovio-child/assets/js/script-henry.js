@@ -268,7 +268,7 @@
         const fromEmailDownloadReportId = getCookie('dm_from_email_download');
         const showThankYou = getCookie('dm_show_thankyou') === 'true';
         const autoDownloadUrl = getCookie('dm_auto_download_url');
-        const isFromMail = getCookie('utm_source') === 'mail';
+        const isFromMail = !!getCookie('utm_source');
 
         const isThankYouPage = window.location.pathname.includes('thank-you') ||
             window.location.pathname.includes('cam-on') ||

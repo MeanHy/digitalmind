@@ -137,13 +137,13 @@ function digitalmind_add_research_download_form($content)
     if (!is_singular('post')) {
         return $content;
     }
-    if (!has_category('research')) {
+    if (!has_category('research') && !has_category('tieu-diem')) {
         return $content;
     }
     $download_section = '
     <div class="research-download-section" data-verified="false">
         <div class="research-download-box">
-            <h3 class="research-download-title">' . esc_html__('Download Research Paper', 'innovio_child') . '</h3>
+            <h4 class="research-download-title">' . esc_html__('Download Research Paper', 'innovio_child') . '</h4>
             <p class="research-download-desc">' . esc_html__('Get full access to this research document', 'innovio_child') . '</p>
             <button type="button" class="btn-download-research" id="btnDownloadResearch" data-report-id="' . get_the_ID() . '">
                 <span class="download-icon">⬇</span>
@@ -479,15 +479,15 @@ function dm_handle_email_trigger()
         }
     }
 
-    if (isset($_GET['utm_source']) && $_GET['utm_source'] === 'mail' && isset($_GET['email']) && isset($_GET['user_name'])) {
+    if (isset($_GET['utm_source']) && $_GET['utm_source'] !== 'unsubscribe' && isset($_GET['email']) && isset($_GET['user_name'])) {
         $name = sanitize_text_field($_GET['user_name']);
         $email = sanitize_email($_GET['email']);
 
-        setcookie('utm_source', 'mail', time() + 60, '/');
+        setcookie('utm_source', sanitize_text_field($_GET['utm_source']), time() + 60, '/');
         setcookie('dm_user_name', $name, time() + 31536000, '/');
         setcookie('dm_user_email', $email, time() + 31536000, '/');
 
-        $current_url = remove_query_arg(['utm_source', 'email', 'user_name']);
+        $current_url = remove_query_arg(['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_id', 'email', 'user_name']);
         $post_id = url_to_postid($current_url);
 
         if ($post_id && has_category('research', $post_id)) {
